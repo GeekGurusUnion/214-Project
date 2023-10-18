@@ -9,7 +9,11 @@ Iwan de Jong (u22498037@tuks.co.za)  <a href="https://github.com/iwandejong" tar
 </p>
 
 <details>
-<summary>Coding Standards</summary>
+<summary>
+
+## Coding Standards
+
+</summary>
 <!-- ## Coding Standards -->
 
 ### 1. Organizational
