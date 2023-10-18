@@ -11,7 +11,7 @@ Iwan de Jong (u22498037@tuks.co.za)  <a href="https://github.com/iwandejong" tar
 <details>
 <summary>
 
-## Coding Standards
+<h1>Coding Standards</h1>
 
 </summary>
 <!-- ## Coding Standards -->
