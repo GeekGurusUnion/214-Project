@@ -20,8 +20,7 @@ Iwan de Jong (u22498037@tuks.co.za) [![Github](https://img.shields.io/badge/-@iw
 <summary>
 <h3>Coding Standards</h3>
 </summary>
-
-### 1. Organizational
+<h2>1. Organizational</h2>
 
 **1.1. Use a version control system**
 - Never keep files checked out for long periods.
