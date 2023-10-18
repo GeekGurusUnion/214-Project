@@ -18,9 +18,7 @@ Iwan de Jong (u22498037@tuks.co.za) [![Github](https://img.shields.io/badge/-@iw
 
 <details>
 <summary>
-
-## Coding Standards
-
+<h1>Coding Standards</h1>
 </summary>
 
 ### 1. Organizational
@@ -144,9 +142,7 @@ https://stackoverflow.com/questions/1452721/why-is-using-namespace-std-considere
 </details>
 <details>
 <summary>
-
-## Git Standards
-
+<h1>Git Standards</h1>
 </summary>
 
 ## Repository Rules
