@@ -2,21 +2,14 @@
 
 ## Group Organization
 ### Members
-<p>
 
-Iwan de Jong (u22498037@tuks.co.za)  <a href="https://github.com/iwandejong" target="_blank"><img alt="GitHub" src="https://img.shields.io/badge/-@iwandejong-181717?style=flat-square&logo=GitHub&logoColor=white"></a>
+Tiaan Pouwels (u21675229@tuks.co.za) [![Github](https://img.shields.io/badge/-@Tiaan2-181717?style&logo=GitHub)](https://github.com/Tiaan2)
+Dawie Reyneke (u21438112@tuks.co.za) [![Github](https://img.shields.io/badge/-@ReynekeD-181717?style&logo=GitHub)](https://github.com/ReynekeD)
+Xavier Reynolds (u********@tuks.co.za) [![Github](https://img.shields.io/badge/-@Xavier893-181717?style&logo=GitHub)](https://github.com/Xavier893)
+Keith Homan (u21473103@tuks.co.za) [![Github](https://img.shields.io/badge/-@d1scrd-181717?style&logo=GitHub)](https://github.com/d1scrd)
+Jacobus Smit (u21489476@tuks.co.za) [![Github](https://img.shields.io/badge/-@SW1F7YY-181717?style&logo=GitHub)](https://github.com/SW1F7YY)
+Iwan de Jong (u22498037@tuks.co.za) [![Github](https://img.shields.io/badge/-@iwandejong-181717?style&logo=GitHub)](https://github.com/iwandejong)
 
-Iwan de Jong (u22498037@tuks.co.za)  <a href="https://github.com/iwandejong" target="_blank"><img alt="GitHub" src="https://img.shields.io/badge/-@iwandejong-181717?style=flat-square&logo=GitHub&logoColor=white"></a>
-
-Iwan de Jong (u22498037@tuks.co.za)  <a href="https://github.com/iwandejong" target="_blank"><img alt="GitHub" src="https://img.shields.io/badge/-@iwandejong-181717?style=flat-square&logo=GitHub&logoColor=white"></a>
-
-Iwan de Jong (u22498037@tuks.co.za)  <a href="https://github.com/iwandejong" target="_blank"><img alt="GitHub" src="https://img.shields.io/badge/-@iwandejong-181717?style=flat-square&logo=GitHub&logoColor=white"></a>
-
-Iwan de Jong (u22498037@tuks.co.za)  <a href="https://github.com/iwandejong" target="_blank"><img alt="GitHub" src="https://img.shields.io/badge/-@iwandejong-181717?style=flat-square&logo=GitHub&logoColor=white"></a>
-
-Iwan de Jong (u22498037@tuks.co.za)  <a href="https://github.com/iwandejong" target="_blank"><img alt="GitHub" src="https://img.shields.io/badge/-@iwandejong-181717?style=flat-square&logo=GitHub&logoColor=white"></a>
-
-</p>
 
 <details>
 <summary>
