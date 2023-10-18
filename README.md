@@ -138,7 +138,6 @@ http://micro-os-plus.github.io/develop/sutter-101/ <br>
 https://google.github.io/styleguide/cppguide.html <br>
 
 https://stackoverflow.com/questions/1452721/why-is-using-namespace-std-considered-bad-practice
-
 </details>
 <details>
 <summary>
