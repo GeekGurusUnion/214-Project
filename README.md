@@ -18,7 +18,7 @@ Iwan de Jong (u22498037@tuks.co.za) [![Github](https://img.shields.io/badge/-@iw
 
 <details>
 <summary>
-<h3>Coding Standards</h3>
+<h3 style="line-height: 0.5">Coding Standards</h3>
 </summary>
 <h2>1. Organizational</h2>
 
