@@ -9,9 +9,9 @@ Iwan de Jong (u22498037@tuks.co.za)  <a href="https://github.com/iwandejong" tar
 </p>
 
 <details>
-<summary><samp>&#9776;</samp> Coding Standards</summary>
+<summary>Coding Standards</summary>
 <!-- ## Coding Standards -->
-<p markdown = "1">
+
 ### 1. Organizational
 
 **1.1. Use a version control system**
