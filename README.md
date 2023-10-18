@@ -14,7 +14,6 @@ Iwan de Jong (u22498037@tuks.co.za)  <a href="https://github.com/iwandejong" tar
 <h1>Coding Standards</h1>
 
 </summary>
-<!-- ## Coding Standards -->
 
 ### 1. Organizational
 
@@ -129,8 +128,9 @@ Prefer using exceptions over `cout`. This keeps the output clean.
 
 ### Sources
 http://micro-os-plus.github.io/develop/sutter-101/
-https://google.github.io/styleguide/cppguide.html
-https://stackoverflow.com/questions/1452721/why-is-using-namespace-std-considered-bad-practice
 
+https://google.github.io/styleguide/cppguide.html
+
+https://stackoverflow.com/questions/1452721/why-is-using-namespace-std-considered-bad-practice
 </p>
 </details>
