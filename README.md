@@ -11,7 +11,7 @@ Iwan de Jong (u22498037@tuks.co.za)  <a href="https://github.com/iwandejong" tar
 <details>
 <summary>
 
-<h1>Coding Standards</h1>
+## Coding Standards
 
 </summary>
 
@@ -127,10 +127,11 @@ Agree with your constructor's parameters: member variables are initialized in th
 Prefer using exceptions over `cout`. This keeps the output clean.
 
 ### Sources
-http://micro-os-plus.github.io/develop/sutter-101/
+http://micro-os-plus.github.io/develop/sutter-101/ <br>
 
-https://google.github.io/styleguide/cppguide.html
+https://google.github.io/styleguide/cppguide.html <br>
 
 https://stackoverflow.com/questions/1452721/why-is-using-namespace-std-considered-bad-practice
+
 </p>
 </details>
