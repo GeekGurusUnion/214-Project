@@ -149,6 +149,10 @@ https://stackoverflow.com/questions/1452721/why-is-using-namespace-std-considere
 
 </summary>
 
+## Repository Rules
+- Fork the Organization's repo to work and test code locally.
+- Reduce the frequency of pull requests unless the advancement is impeded by a required feature from a particular team member.
+
 ## Committing Code
 - Make atomic commits of changes, even across multiple files, in logical units. That is, as much as possible, each commit should be focused on one specific purpose.
 - As much as possible, make sure a commit does not contain unnecessary whitespace changes. This can be checked as follows:
