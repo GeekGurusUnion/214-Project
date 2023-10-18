@@ -138,7 +138,6 @@ https://google.github.io/styleguide/cppguide.html <br>
 
 https://stackoverflow.com/questions/1452721/why-is-using-namespace-std-considered-bad-practice
 </details>
-<hr width="100%"/>
 <details>
 <summary>
 <h3 style="line-height: 0.5">Git Standards</h3>
