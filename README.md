@@ -72,7 +72,7 @@ More time is spent reading code than writing it.
 Variables introduce state, and you should have to deal with as little state as possible, with lifetimes as short as possible.
 
 **3.3. Always initialize variables**
-This is a common source of C++ bugs. Initialize variables upon definition.
+This is a common source of C++ hotfixs. Initialize variables upon definition.
 
 **3.4. Avoid long functions**
 Excessively long functions and nested code blocks are often caused by failing to give one function one cohesive responsibility (As explained in **2.1**).
@@ -141,5 +141,93 @@ https://google.github.io/styleguide/cppguide.html <br>
 
 https://stackoverflow.com/questions/1452721/why-is-using-namespace-std-considered-bad-practice
 
-</p>
+</details>
+<details>
+<summary>
+
+## Git Standards
+
+</summary>
+
+## Committing Code
+- Make atomic commits of changes, even across multiple files, in logical units. That is, as much as possible, each commit should be focused on one specific purpose.
+- As much as possible, make sure a commit does not contain unnecessary whitespace changes. This can be checked as follows:
+```
+$ git diff --check
+```
+
+### Commit Messages
+For consistency, try and use the imperative present tense when creating a message. Examples:
+
+- Use "Add tests for" instead of "I added tests for"
+- Use "Change x to y" instead of "Changed x to y"
+
+## Branching
+
+### 1. Main Branches
+Our main repository will have `main` as the evergreen branch.
+
+### 2. Supporting Branches
+To aid in ease of tracking new features, a few sub-branches have been added:
+- Feature branches
+- Dev branches
+- Hotfix branches
+
+These branches may have a limited lifetime and will be removed eventually.
+
+### 3. Feature Branches
+**3.1. Naming Convention**
+Feature Branches must be named `feature-<featureClassification>` (referred to as `feature-id`). 
+
+**3.2. Merging Feature Branches**
+These feature-branches must be merged onto the `dev`-branch.
+
+```
+$ git checkout -b feature-id dev    // creates a local branch for the new feature
+$ git push origin feature-id        // makes the new feature remotely available                
+```
+
+And for actually merging onto `dev`-branch:
+```
+$ git merge dev
+```
+
+When development on the feature is complete, the lead (or engineer in charge) should merge changes into master and then make sure the remote branch is deleted.
+```
+$ git checkout dev                  // change to the master branch  
+$ git merge --no-ff feature-id      // makes sure to create a commit object during merge
+$ git push origin dev               // push merge changes
+$ git push origin :feature-id       // deletes the remote branch
+```
+
+### 4. Hotfix Branches
+**3.1. Naming Convention**
+Feature Branches must be named `hotfix-<hotfixClassification>` (referred to as `hotfix-id`). 
+
+**4.2. Merging Hotfix Branches**
+These hotfix-branches must be merged onto the `main`-branch.
+
+```
+$ git checkout -b hotfix-id master                     // creates a local branch for the new hotfix
+$ git push origin hotfix-id                            // makes the new hotfix remotely available
+```
+
+And for actually merging onto the `main`-branch:
+```
+$ git merge master                                  // merges changes from master into hotfix branch
+```
+
+When development on the hotfix is complete, [the Lead] should merge changes into master and then make sure the remote branch is deleted.
+```
+$ git checkout master                               // change to the master branch  
+$ git merge --no-ff hotfix-id                          // makes sure to create a commit object during merge
+$ git push origin master                            // push merge changes
+$ git push origin :hotfix-id                           // deletes the remote branch
+```
+
+### Sources
+https://gist.github.com/digitaljhelms/4287848 <br>
+
+https://gist.github.com/digitaljhelms/3761873 <br>
+
 </details>
