@@ -24,12 +24,13 @@ Iwan de Jong (u22498037@tuks.co.za) [![Github](https://img.shields.io/badge/-@iw
 
 **1.1. Use a version control system**
 
-- Never keep files checked out for long periods.
-- Ensure that checked-in code doesn't break the build.
+- Never keep files checked out for long periods (small incremental updates, make a pull request after a night's work onto Organization's `dev` branch).
+- Ensure that checked-in code doesn't break the build (Github Actions doesn't do everything).
 
 **1.2. Code Reviews**
 
 - Peer-review other's work so that you understand what is going on and ensure their code isn't breaking your code.
+- Make a Github issue to describe the problem and assign the relevant person to the issue.
 
 **1.3. File Names**
 
@@ -167,6 +168,11 @@ https://stackoverflow.com/questions/1452721/why-is-using-namespace-std-considere
 ### 1. Repository Rules
 - Fork the Organization's repo to work and test code locally.
 - Reduce the frequency of pull requests unless the advancement is impeded by a required feature from a particular team member.
+
+**1.1. Basic Workflow**
+1. Make sure to fetch latest updates from the organization's repo onto your forked repo by running `git fetch upstream && git merge upstream/main`
+2. Commit frequently, but also narrow-down commits to provide clarity
+3. After a night's work, create a pull request to merge onto organization's repo such that other members can sync with your latest changes.
 
 ### 2. Committing Code
 - Make atomic commits of changes, even across multiple files, in logical units. That is, as much as possible, each commit should be focused on one specific purpose.
