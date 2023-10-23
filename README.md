@@ -46,7 +46,7 @@ Examples of acceptable file names:
 **2.1. Give entity *one* cohesive responsibility**
 
 - For each entity, focus on one thing at a time.
-- Give each entity (variable, class, function) one well-defined responsibility.
+- Give each entity (variable (member), class, function) one well-defined responsibility.
 - As the entity grows, the scope increases, but it should not diverge.
 
 **2.2. KISS (Keep It Simple Software)**
