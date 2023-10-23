@@ -174,7 +174,6 @@ https://stackoverflow.com/questions/1452721/why-is-using-namespace-std-considere
 ```
 git fetch upstream && git merge upstream/<branch>
 ```
-
 2. **Make sure you are working in `origin/main`**
 2. Commit frequently to the respective branch, but also narrow-down commits to provide clarity
 3. After a night's work, create a pull request to merge onto organization's repo such that other members can sync with your latest changes. **Make sure your pull request directs to the correct branch**
