@@ -7,7 +7,7 @@ Tiaan Pouwels (u21675229@tuks.co.za) [![Github](https://img.shields.io/badge/-@T
 
 Dawie Reyneke (u21438112@tuks.co.za) [![Github](https://img.shields.io/badge/-@ReynekeD-181717?style&logo=GitHub)](https://github.com/ReynekeD)
 
-Xavier Reynolds (u********@tuks.co.za) [![Github](https://img.shields.io/badge/-@Xavier893-181717?style&logo=GitHub)](https://github.com/Xavier893)
+Xavier Reynolds (u20526254@tuks.co.za) [![Github](https://img.shields.io/badge/-@Xavier893-181717?style&logo=GitHub)](https://github.com/Xavier893)
 
 Keith Homan (u21473103@tuks.co.za) [![Github](https://img.shields.io/badge/-@d1scrd-181717?style&logo=GitHub)](https://github.com/d1scrd)
 
