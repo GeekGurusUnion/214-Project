@@ -176,7 +176,13 @@ git fetch upstream && git merge upstream/<branch>
 ```
 2. **Make sure you are working in `origin/main`**
 2. Commit frequently to the respective branch, but also narrow-down commits to provide clarity
-3. After a night's work, create a pull request to merge onto organization's repo such that other members can sync with your latest changes. **Make sure your pull request directs to the correct branch**
+3. After a night's work, create a pull request to merge onto organization's repo such that other members can sync with your latest changes.
+4. **Make sure your pull request directs to the correct branch:**
+<img width="416" alt="image" src="https://github.com/GeekGurusUnion/214-PA5/assets/29703077/6ae5ab7f-31de-4fba-8a3a-16fbac687d8b">
+
+Example workflow:
+When working on the `dev` branch, use `git fetch upstream/dev`. You can make your own branches in your forked repo as needed. When creating a Pull Request, select the `dev` branch on the Organization side (see image above).
+This applies to all branches (e.g. working with `hotfix` branch causes a PR to be directed to the organization's `hotfix`-branch)
 
 ### 2. Committing Code
 - Make atomic commits of changes, even across multiple files, in logical units. That is, as much as possible, each commit should be focused on one specific purpose.
