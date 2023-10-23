@@ -24,13 +24,13 @@ Iwan de Jong (u22498037@tuks.co.za) [![Github](https://img.shields.io/badge/-@iw
 
 **1.1. Use a version control system**
 
-- Never keep files checked out for long periods (small incremental updates, make a pull request after a night's work onto Organization's `dev` branch (see Git Standards 1.1. for more info).
+- Never keep files checked out for long periods (small incremental updates (see Git Standards 1.1. for more info)).
 - Ensure that checked-in code doesn't break the build (Github Actions doesn't do everything).
 
 **1.2. Code Reviews**
 
 - Peer-review other's work so that you understand what is going on and ensure their code isn't breaking your code.
-- Make a Github issue to describe the problem and assign the relevant person to the issue.
+- Make a Github issue to describe the problem and assign the responsible person to the issue.
 
 **1.3. File Names**
 
