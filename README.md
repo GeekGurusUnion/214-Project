@@ -16,10 +16,11 @@ Jacobus Smit (u21489476@tuks.co.za) [![Github](https://img.shields.io/badge/-@SW
 Iwan de Jong (u22498037@tuks.co.za) [![Github](https://img.shields.io/badge/-@iwandejong-181717?style&logo=GitHub)](https://github.com/iwandejong)
 
 
-<details>
 <summary>
 <h3 style="line-height: 0.5">Coding Standards</h3>
 </summary>
+
+<details>
 <h2>1. Organizational</h2>
 
 **1.1. Use a version control system**
@@ -138,10 +139,12 @@ https://google.github.io/styleguide/cppguide.html <br>
 
 https://stackoverflow.com/questions/1452721/why-is-using-namespace-std-considered-bad-practice
 </details>
-<details>
+
 <summary>
 <h3 style="line-height: 0.5">Git Standards</h3>
 </summary>
+
+<details>
 
 ## Repository Rules
 - Fork the Organization's repo to work and test code locally.
