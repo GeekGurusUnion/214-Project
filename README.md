@@ -162,10 +162,6 @@ https://stackoverflow.com/questions/1452721/why-is-using-namespace-std-considere
 
 ## Git Standards
 
-<summary>
-<h3 style="line-height: 0.5">Git Standards</h3>
-</summary>
-
 <details>
 
 ## Repository Rules
