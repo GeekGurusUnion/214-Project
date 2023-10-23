@@ -164,29 +164,29 @@ https://stackoverflow.com/questions/1452721/why-is-using-namespace-std-considere
 
 <details>
 
-## Repository Rules
+### 1. Repository Rules
 - Fork the Organization's repo to work and test code locally.
 - Reduce the frequency of pull requests unless the advancement is impeded by a required feature from a particular team member.
 
-## Committing Code
+### 2. Committing Code
 - Make atomic commits of changes, even across multiple files, in logical units. That is, as much as possible, each commit should be focused on one specific purpose.
 - As much as possible, make sure a commit does not contain unnecessary whitespace changes. This can be checked as follows:
 ```
 $ git diff --check
 ```
 
-### Commit Messages
+### 3. Commit Messages
 For consistency, try and use the imperative present tense when creating a message. Examples:
 
 - Use "Add tests for" instead of "I added tests for"
 - Use "Change x to y" instead of "Changed x to y"
 
-## Branching
+### 4. Branching
 
-### 1. Main Branches
+### 4.1. Main Branches
 Our main repository will have `main` as the evergreen branch.
 
-### 2. Supporting Branches
+### 4.2. Supporting Branches
 To aid in ease of tracking new features, a few sub-branches have been added:
 - Feature branches
 - Dev branches
@@ -194,12 +194,12 @@ To aid in ease of tracking new features, a few sub-branches have been added:
 
 These branches may have a limited lifetime and will be removed eventually.
 
-### 3. Feature Branches
-**3.1. Naming Convention**
+### 4.3. Feature Branches
+**4.3.1. Naming Convention**
 
 Feature Branches must be named `feature-<featureClassification>` (referred to as `feature-id`). 
 
-**3.2. Merging Feature Branches**
+**4.3.2. Merging Feature Branches**
 
 These feature-branches must be merged onto the `dev`-branch.
 
@@ -221,12 +221,12 @@ $ git push origin dev               // push merge changes
 $ git push origin :feature-id       // deletes the remote branch
 ```
 
-### 4. Hotfix Branches
-**3.1. Naming Convention**
+### 4.4. Hotfix Branches
+**4.4.1. Naming Convention**
 
 Feature Branches must be named `hotfix-<hotfixClassification>` (referred to as `hotfix-id`). 
 
-**4.2. Merging Hotfix Branches**
+**4.4.2. Merging Hotfix Branches**
 
 These hotfix-branches must be merged onto the `main`-branch.
 
