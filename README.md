@@ -166,13 +166,18 @@ https://stackoverflow.com/questions/1452721/why-is-using-namespace-std-considere
 <details>
 
 ### 1. Repository Rules
-- Fork the Organization's repo to work and test code locally - **fork all the branches & pull request to the respective branch on the Organization's repo**
+- Fork the Organization's repo to work and test code locally - **fork ONLY the `main` branches & pull request to the respective branch on the Organization's repo**
 - Reduce the frequency of pull requests unless the advancement is impeded by a required feature from a particular team member.
 
 **1.1. Basic Workflow**
-1. Make sure to fetch latest updates from the organization's repo onto your forked repo by running `git fetch upstream && git merge upstream/main`
-2. Commit frequently, but also narrow-down commits to provide clarity
-3. After a night's work, create a pull request to merge onto organization's repo such that other members can sync with your latest changes.
+1. Make sure to fetch latest updates from the organization's repo onto your forked repo by running 
+```
+git fetch upstream && git merge upstream/<branch>
+```
+
+2. **Make sure you are working in `origin/main`**
+2. Commit frequently to the respective branch, but also narrow-down commits to provide clarity
+3. After a night's work, create a pull request to merge onto organization's repo such that other members can sync with your latest changes. **Make sure your pull request directs to the correct branch**
 
 ### 2. Committing Code
 - Make atomic commits of changes, even across multiple files, in logical units. That is, as much as possible, each commit should be focused on one specific purpose.
