@@ -1,4 +1,4 @@
-# 214-PA5
+# COS 214 Project
 
 ## Group Organization
 ### Members
