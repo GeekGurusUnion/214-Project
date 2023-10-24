@@ -172,7 +172,7 @@ https://stackoverflow.com/questions/1452721/why-is-using-namespace-std-considere
 **1.1. Basic Workflow**
 1. Make sure to fetch latest updates from the organization's repo onto your forked repo by running 
 ```
-git fetch upstream && git merge upstream/<branch>
+git fetch upstream && git merge upstream/dev
 ```
 2. **Make sure you are working in `origin/main`**
 2. Commit frequently to the respective branch, but also narrow-down commits to provide clarity
