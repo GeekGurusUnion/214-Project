@@ -10,6 +10,7 @@
 #include "Table.h"
 #include "Command.h"
 #include "Waiter.h"
+#include "TableIterator.h"
 #include <iostream> 
 
 class RestaurantTable : public Table {
@@ -19,15 +20,24 @@ class RestaurantTable : public Table {
         Command* cT;
         Command* tO;
         Waiter* waiter;
-
+        TableIterator* tableIterator;
+        int tableNumber;
+        
     public:
-        RestaurantTable();
+        RestaurantTable(int i, Iterator* tableIterator);
         ~RestaurantTable();
         void TransitionTo(State *state);
+        
         void setState(State* state);
-        void placeOrder();
-        void confirmOrder();
-        void cleanTable();
+        State* getState();
+
+        void occupy();
+        void empty();
+
+        TableIterator* createIterator();
+
+        Waiter* getWaiter() const;
+        void setWaiter(Waiter* waiter);
 };
 
 #endif  // RESTAURANT_TABLE_H_

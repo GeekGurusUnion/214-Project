@@ -3,11 +3,13 @@
 #include "CleanTable.h"
 #include "TakeOrder.h"
 
-RestaurantTable::RestaurantTable() {
+RestaurantTable::RestaurantTable(int i, Iterator* tableIterator) {
     currentState = new StateEmpty();
     this->cO = new ConfirmOrder(this->waiter);
     this->cT = new CleanTable(this->waiter); 
     this->tO = new TakeOrder(this->waiter);
+    this->tableNumber = i;
+    tableIterator = createIterator();
 }
 
 RestaurantTable::~RestaurantTable() {
@@ -19,7 +21,7 @@ void RestaurantTable::TransitionTo(State *state) {
     if (this->currentState != nullptr)
         delete this->currentState;
     this->currentState = state;
-    this->currentState->set_Table(this);
+    // this->currentState->setTable(this);
 }
 
 void RestaurantTable::setState(State* state) {
@@ -30,10 +32,6 @@ State* RestaurantTable::getState() {
     return this->currentState;
 }
 
-void RestaurantTable::reserve() {
-    currentState->reserve();
-}
-
 void RestaurantTable::occupy() {
     currentState->occupy();
 }
@@ -41,3 +39,7 @@ void RestaurantTable::occupy() {
 void RestaurantTable::empty() {
     currentState->empty();
 };
+
+TableIterator* RestaurantTable::createIterator() {
+    return new TableIterator(this);
+}
