@@ -1,5 +1,5 @@
 #include "adapter.h"
-#include "HeadChef.h"
+#include "headChef.h"
 #include <iostream>
 
 int main() {
