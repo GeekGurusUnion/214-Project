@@ -2,14 +2,16 @@
 #define ORDER_H
 
 #include "MenuItem.h"
+#include <stack>
 
 // * a linked list //
 class Order {
     private:
-        MenuItem* head = nullptr;
+        std::stack<MenuItem*> items = std::stack<MenuItem*>();
         bool status = false;
     public:
         void addItem(MenuItem* item);
+        bool inMenu(MenuItem* item);
         void setStatus(bool status);
         void removeItem(std::string name);
 };
