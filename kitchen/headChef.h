@@ -1,14 +1,39 @@
 #pragma once
+
 #include "dishFactory.h"
+#include "handler.h"
+#include "ingredientHandler.h"
 
-class headchef {
+class headChef {
+private:
+    handler *startOfChain;
+
 public:
-    dish* prepareDish(const KitchenOrder& order) {
-        if (order.getItem() == "Burger") {
-            burgerFactory burgerFactory;
-            return burgerFactory.createDish(order);
-        }
 
-        return nullptr;
+    headChef() : startOfChain(nullptr) {
+        startOfChain = new RemoveIngredientHandler("onion");
+        handler *nextHandler = new AddIngredientHandler("cheese");
+        startOfChain->setNextHandler(nextHandler);
+    }
+
+    dish *prepareDish(const KitchenOrder &order) {
+        dish *createdDish;
+        if (order.getItem() == "Burger") {
+            burgerFactory burgerFactoryInstance;
+            createdDish = burgerFactoryInstance.createDish(order);
+        } else {
+            createdDish = nullptr;
+        }
+        startOfChain->handle(createdDish);
+        return createdDish;
+    }
+
+    ~headChef() {
+        handler *current = startOfChain;
+        while (current) {
+            handler *toDelete = current;
+            current = current->nextHandler;
+            delete toDelete;
+        }
     }
 };

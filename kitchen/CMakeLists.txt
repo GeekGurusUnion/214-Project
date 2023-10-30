@@ -12,4 +12,7 @@ add_executable(FlyweightFighters_COS214_Project
         dishFactory.h
         dishFactory.cpp
         adapter.h
-        ingredientHandler.h)
+        ingredientHandler.h
+        burger.h
+        ingredientHandler.cpp
+)

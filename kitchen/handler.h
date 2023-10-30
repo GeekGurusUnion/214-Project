@@ -2,7 +2,7 @@
 #include "dish.h"
 
 class handler {
-protected:
+public:
     handler* nextHandler;
 
 public:
