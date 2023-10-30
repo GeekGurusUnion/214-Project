@@ -1,16 +1,20 @@
-#include "adapter.h"
+#include "OrderAdapter.h"
 #include "headChef.h"
 #include <iostream>
 
 int main() {
-    FloorOrder floorOrder({"Burger", "NoOnion", "ExtraCheese"});
-    KitchenOrder kitchenOrder = adapter::adapt(floorOrder);
-    for(const auto &val : kitchenOrder.getCustomizations()) {
-        std::cout << val << "\n ";
-    }
-    headChef headChef;
-    dish* finalDish = headChef.prepareDish(kitchenOrder);
-    std::cout << finalDish->getDescription() << std::endl;
-    delete finalDish;
+    
+    OrderAdapter* floorOrder = new OrderAdapter({"Burger", "NoMushrooms", "ExtraCheese"});
+    RestaurantOrder* restaurantOrder = floorOrder->PlaceOrder();
+
+    headChef* Chef = new headChef(restaurantOrder->getItem(), restaurantOrder->getCustomizations());
+
+    MenuItem* menuItem = Chef->prepareItem();
+    
+    std::cout << menuItem->getDescription() << std::endl;
+
+    delete Chef;
+    delete restaurantOrder;
+    delete floorOrder;
     return 0;
 }

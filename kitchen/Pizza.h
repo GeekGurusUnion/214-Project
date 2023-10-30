@@ -2,12 +2,12 @@
 
 #include "MenuItem.h"
 
-class Burger : public MenuItem
+class Pizza : public MenuItem
 {
 public:
     std::string getDescription() const
     {
-        std::string description = "Burger with: ";
+        std::string description = "Pizza with: ";
         for (const auto &item : this->itemsList)
         {
             description += item + ", ";

@@ -1,58 +1,22 @@
 #pragma once
 
-#include "dishFactory.h"
-#include "handler.h"
-#include "ingredientHandler.h"
+#include <vector>
+#include <string>
 
-class headChef {
-private:
-    handler *startOfChain;
+#include "BurgerChef.h"
+#include "PizzaChef.h"
+#include "AddGarlic.h"
 
+class headChef
+{
 public:
+    headChef(const std::string &item, const std::vector<std::string> &customizations);
+    MenuItem* prepareItem();
 
-    headChef() : startOfChain(nullptr) {
-        startOfChain = createHandlerChain();
-    }
-
-    handler *createHandlerChain() {
-        handler *start = new AddingredientHandler("Cheese");
-        handler *current = start;
-
-        handler *next = new RemoveingredientHandler("Onion");
-        current->setNextHandler(next);
-        current = next;
-
-
-        next = new AddingredientHandler("Tomato");
-        current->setNextHandler(next);
-        current = next;
-
-        return start;
-    }
-
-
-    dish *prepareDish(const KitchenOrder &order) {
-        dish *createdDish;
-        if (order.getItem() == "Burger") {
-            burgerFactory burgerFactoryInstance;
-            createdDish = burgerFactoryInstance.createDish(order);
-        } else {
-            createdDish = nullptr;
-        }
-
-        for (const auto &customization: order.getCustomizations()) {
-            startOfChain->handle(createdDish, customization);
-        }
-
-        return createdDish;
-    }
-
-    ~headChef() {
-        handler *current = startOfChain;
-        while (current) {
-            handler *toDelete = current;
-            current = current->nextHandler;
-            delete toDelete;
-        }
-    }
+private:
+    std::string item;
+    std::vector<std::string> customizations;
+    BurgerChef* burgerChef;
+    PizzaChef* pizzaChef;
+    CustomizationHandler *customizationHandler;
 };
