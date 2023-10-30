@@ -10,7 +10,8 @@
 // Aggregate (Iterator) [interface]
 
 #include "Order.h"
-class Observer;
+#include "State.h"
+#include "Observer.h"
 
 class Table {
     public:
