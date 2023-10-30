@@ -4,8 +4,10 @@
 // Facade (Facade)
 
 #include "RestaurantTable.h"
+#include "Waiter.h"
 #include "TableIterator.h"
 #include "WaiterIterator.h"
+#include "StateOccupied.h"
 #include <vector>
 
 class Facade {
@@ -13,32 +15,24 @@ class Facade {
         Iterator* waiterIterator = new WaiterIterator();
         Iterator* tableIterator = new TableIterator();
         std::vector<Table*> tables;
+        std::vector<Waiter*> waiters;
+
+        const int waiterSize = 4;
+        const int tablesPerWaiter = 3;
+        const int totalTables = 12;
+
     public:
-        Facade(int tableSize) {
-            for (int i = 0; i < tableSize; i++) {
-                tables.push_back(new RestaurantTable());
-            }
-        }
-        Iterator* getWaiterIterator() {
-            return waiterIterator;
-        }
-        Iterator* getTableIterator() {
-            return tableIterator;
-        }
-        Table* getTable(int index) {
-            return tables[index];
-        }
+        Facade();
+        Iterator* getWaiterIterator();
+        Iterator* getTableIterator();
+        Table* getTable(int index);
+        void getSeated();
+        void addToOrder(int tableNumber, MenuItem* item);
+        void confirmOrder();
 
-        void getSeated() {
-            while (waiterIterator->hasNext()) {
-                RestaurantTable* table = waiterIterator->next();
-                table->setState((State*) new StateOccupied());
-            }
-        }
-
-
-
-
+        int getWaiterSize() const { return waiterSize; }
+        int getTablesPerWaiter() const { return tablesPerWaiter; }
+        int getTotalTables() const { return totalTables; }
 };
 
 #endif // FACADE_H
