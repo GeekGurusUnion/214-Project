@@ -1,6 +1,6 @@
 #pragma once
 #include "handler.h"
-#include "Burger.h"
+#include "burger.h"
 
 class AddIngredientHandler : public handler {
 private:
