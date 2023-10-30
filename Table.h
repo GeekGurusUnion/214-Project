@@ -18,15 +18,18 @@ class Table {
         Table();
         void takeOrder();
         void setOrder(Order* o);
-        void setState(State* s);
-        State* getState();
         Order* getOrder();
         void setObserver(Observer* o);
         void notifyObserver();
         virtual void detachObserver(Observer* o) = 0;
         // moet die virtual wees?
+        virtual void reserve();
+        virtual void occupy();
+        virtual void empty();
+        virtual void confirmOrder();
+        virtual void cleanTable();
+        virtual void placeOrder();
     private:
-        State* state;
         Order* order;
         Observer* observer;
 };
