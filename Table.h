@@ -14,6 +14,11 @@
 #include "Observer.h"
 
 class Table {
+    private:
+        State* currentState;
+        Waiter* waiter;
+        Observer* observer;
+        int tableId;
     public:
         Table();
         void takeOrder();
@@ -23,11 +28,6 @@ class Table {
         Order* getOrder();
         void setObserver(Observer* o);
         void notifyObserver();
-        virtual void detachObserver(Observer* o) = 0;
-        // moet die virtual wees?
-    private:
-        State* state;
-        Order* order;
-        Observer* observer;
+        virtual void detachObserver(Observer* o);
 };
 #endif // TABLE_H
