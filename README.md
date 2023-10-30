@@ -166,23 +166,21 @@ https://stackoverflow.com/questions/1452721/why-is-using-namespace-std-considere
 <details>
 
 ### 1. Repository Rules
-- Fork the Organization's repo to work and test code locally - **fork ONLY the `main` branches**
+- Clone the Organization's repo.
 - Reduce the frequency of pull requests unless the advancement is impeded by a required feature from a particular team member.
 
 **1.1. Basic Workflow**
 1. Make sure to fetch latest updates from the organization's repo onto your forked repo by running 
 ```
-git fetch upstream && git merge upstream/dev
+git fetch origin && git merge origin/dev
 ```
-2. **Make sure you are working in `origin/main`**
+2. **Make sure you are working in `origin/dev`**
 2. Commit frequently to the respective branch, but also narrow-down commits to provide clarity
 3. After a night's work, create a pull request to merge onto organization's repo such that other members can sync with your latest changes.
-4. **Make sure your pull request directs to the correct branch:**
-<img width="416" alt="image" src="https://github.com/GeekGurusUnion/214-PA5/assets/29703077/6ae5ab7f-31de-4fba-8a3a-16fbac687d8b">
+4. **Make sure your pull request directs to the correct branch**
 
 Example workflow:
-When working on the `dev` branch, use `git fetch upstream/dev`. You can make your own branches in your forked repo as needed. When creating a Pull Request, select the `dev` branch on the Organization side (see image above).
-This applies to all branches (e.g. working with `hotfix` branch causes a PR to be directed to the organization's `hotfix`-branch)
+When working on the `dev` branch, use `git fetch origin`. You can make your own branches in your forked repo as needed.
 
 ### 2. Committing Code
 - Make atomic commits of changes, even across multiple files, in logical units. That is, as much as possible, each commit should be focused on one specific purpose.
