@@ -4,7 +4,6 @@
 #include "MenuItem.h"
 #include <stack>
 
-// * a linked list //
 class Order {
     private:
         std::stack<MenuItem*> items = std::stack<MenuItem*>();

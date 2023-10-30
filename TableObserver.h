@@ -1,11 +1,13 @@
 #ifndef TABLEOBSERVER_H
 #define TABLEOBSERVER_H
+
+// ConcreteObserver (Observer)
+
 #include "Observer.h"
 #include "RestaurantTable.h"
 #include "State.h"
-// concrete observer
-class TableObserver:public Observer
-{
+
+class TableObserver:public Observer {
     public:
         TableObserver(RestaurantTable* t);
         void update();
@@ -14,4 +16,4 @@ class TableObserver:public Observer
         //observer state
         State* observerState;
 };
-#endif // !TABLEOBSERVER_H
+#endif // TABLEOBSERVER_H

@@ -5,9 +5,14 @@
 
 #ifndef TABLE_H
 #define TABLE_H
+
+// Subject (Observer) [interface]
+// Aggregate (Iterator) [interface]
+
 #include "Order.h"
 #include "State.h"
-class Table{
+
+class Table {
     public:
         Table();
         void takeOrder();
@@ -24,4 +29,4 @@ class Table{
         Order* order;
         Observer* observer;
 };
-#endif // !TABLE_H
+#endif // TABLE_H

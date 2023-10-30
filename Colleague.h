@@ -3,6 +3,8 @@
 
 #include "Mediator.h"
 
+// Colleague (Mediator) [interface]
+
 class Colleague {
     protected:
         Mediator* mediator;

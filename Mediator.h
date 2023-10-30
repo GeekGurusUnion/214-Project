@@ -1,6 +1,8 @@
 #ifndef MEDIATOR_H
 #define MEDIATOR_H
 
+// Mediator (Mediator) [interface]
+
 #include "Colleague.h"
 
 class Mediator {

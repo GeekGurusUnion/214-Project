@@ -1,6 +1,8 @@
 #ifndef ITERATOR_H
 #define ITERATOR_H
 
+// Iterator (Iterator) [interface]
+
 class Iterator {
     public:
         virtual bool hasNext() = 0;

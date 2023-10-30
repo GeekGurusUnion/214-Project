@@ -1,11 +1,14 @@
 #ifndef OBSERVER_H
 #define OBSERVER_H
+
+// Observer (Observer) [interface]
+
 #include <iostream>
 #include "Table.h"
-using namespace std;
-class Observer
-{
+
+class Observer {
     public:
         virtual void update() = 0;
 };
-#endif // !OBSERVER_H
+
+#endif // OBSERVER_H
