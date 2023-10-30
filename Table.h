@@ -22,7 +22,7 @@ class Table {
         Order* getOrder();
         void setObserver(Observer* o);
         void notifyObserver();
-        void detachObserver(Observer* o);
+        virtual void detachObserver(Observer* o) = 0;
         // moet die virtual wees?
     private:
         State* state;
