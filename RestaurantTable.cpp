@@ -23,6 +23,10 @@ void RestaurantTable::setState(State* state) {
     currentState = state;
 }
 
+State* RestaurantTable::getState() {
+    return this->currentState;
+}
+
 void RestaurantTable::reserve() {
     currentState->reserve();
 }

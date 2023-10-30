@@ -20,6 +20,7 @@ class RestaurantTable : public Table {
         ~RestaurantTable();
         void TransitionTo(State *state);
         void setState(State* state);
+        State* getState();
         void reserve();
         void occupy();
         void empty();
