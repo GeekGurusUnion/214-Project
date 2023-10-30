@@ -26,7 +26,7 @@ class Table {
         Order* getOrder();
         void setObserver(Observer* o);
         void notifyObserver();
-        virtual void detachObserver(Observer* o) = 0;
+        virtual void detachObserver(Observer* o);
         // moet die virtual wees?
         virtual void reserve();
         virtual void occupy();
