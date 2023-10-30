@@ -6,13 +6,12 @@
 // * a linked list //
 class Order {
     private:
-        MenuItem* head;
-        MenuItem* tail;
-        bool status;
+        MenuItem* head = nullptr;
+        bool status = false;
     public:
-        Order(); // default constructor
-        // add any other constructors you need here
-        // add any other member functions you need here
+        void addItem(MenuItem* item);
+        void setStatus(bool status);
+        void removeItem(std::string name);
 };
 
 #endif // ORDER_H

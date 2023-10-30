@@ -10,7 +10,6 @@ class MenuItem {
         bool vegetarian;
         double price;
     public:
-        MenuItem();
         MenuItem(std::string name, std::string description, bool vegetarian, double price);
         std::string getName();
         std::string getDescription();
