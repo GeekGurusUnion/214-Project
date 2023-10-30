@@ -5,7 +5,6 @@ class handler {
 public:
     handler* nextHandler;
 
-public:
     handler() : nextHandler(nullptr) {}
     virtual ~handler() {}
 
@@ -13,5 +12,6 @@ public:
         nextHandler = next;
     }
 
-    virtual void handle(dish* dish) = 0;
+    virtual bool canHandle(const std::string& customization) = 0;
+    virtual void handle(dish* dish, const std::string& customization) = 0;
 };

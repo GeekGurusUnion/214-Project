@@ -2,24 +2,45 @@
 #include "handler.h"
 #include "burger.h"
 
-class AddIngredientHandler : public handler {
-private:
+class ingredientHandler : public handler {
+protected:
     std::string ingredient;
-
 public:
-    AddIngredientHandler(const std::string& ingredient) : ingredient(ingredient) {}
+    ingredientHandler(const std::string& ingredient) : ingredient(ingredient) {}
+    virtual ~ingredientHandler() {}
 
-    void handle(dish* dish) override;
-
+    virtual bool canHandle(const std::string& customization) = 0;
+    virtual void handle(dish* d, const std::string& customization) = 0;
 };
 
-class RemoveIngredientHandler : public handler {
-private:
-    std::string ingredient;
-
+class AddingredientHandler : public ingredientHandler {
 public:
-    RemoveIngredientHandler(const std::string& ingredient) : ingredient(ingredient) {}
+    AddingredientHandler(const std::string& ingredient) : ingredientHandler(ingredient) {}
 
-    void handle(dish* dish) override;
+    bool canHandle(const std::string& customization) override {
+        return customization == "Extra" + ingredient;
+    }
 
+    void handle(dish* d, const std::string& customization) override {
+        if(canHandle(customization)) {
+           d->addComponent(customization);
+        }
+        if(nextHandler) nextHandler->handle(d, customization);
+    }
+};
+
+class RemoveingredientHandler : public ingredientHandler {
+public:
+    RemoveingredientHandler(const std::string& ingredient) : ingredientHandler(ingredient) {}
+
+    bool canHandle(const std::string& customization) override {
+        return customization == "No" + ingredient;
+    }
+
+    void handle(dish* d, const std::string& customization) override {
+        if(canHandle(customization)) {
+            d->removeComponent(customization);
+        }
+        if(nextHandler) nextHandler->handle(d, customization);
+    }
 };

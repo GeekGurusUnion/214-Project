@@ -11,10 +11,25 @@ private:
 public:
 
     headChef() : startOfChain(nullptr) {
-        startOfChain = new RemoveIngredientHandler("onion");
-        handler *nextHandler = new AddIngredientHandler("cheese");
-        startOfChain->setNextHandler(nextHandler);
+        startOfChain = createHandlerChain();
     }
+
+    handler *createHandlerChain() {
+        handler *start = new AddingredientHandler("Cheese");
+        handler *current = start;
+
+        handler *next = new RemoveingredientHandler("Onion");
+        current->setNextHandler(next);
+        current = next;
+
+
+        next = new AddingredientHandler("Tomato");
+        current->setNextHandler(next);
+        current = next;
+
+        return start;
+    }
+
 
     dish *prepareDish(const KitchenOrder &order) {
         dish *createdDish;
@@ -24,7 +39,11 @@ public:
         } else {
             createdDish = nullptr;
         }
-        startOfChain->handle(createdDish);
+
+        for (const auto &customization: order.getCustomizations()) {
+            startOfChain->handle(createdDish, customization);
+        }
+
         return createdDish;
     }
 

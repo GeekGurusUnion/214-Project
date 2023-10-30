@@ -14,5 +14,4 @@ add_executable(FlyweightFighters_COS214_Project
         adapter.h
         ingredientHandler.h
         burger.h
-        ingredientHandler.cpp
 )

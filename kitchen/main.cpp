@@ -5,6 +5,9 @@
 int main() {
     FloorOrder floorOrder({"Burger", "NoOnion", "ExtraCheese"});
     KitchenOrder kitchenOrder = adapter::adapt(floorOrder);
+    for(const auto &val : kitchenOrder.getCustomizations()) {
+        std::cout << val << "\n ";
+    }
     headChef headChef;
     dish* finalDish = headChef.prepareDish(kitchenOrder);
     std::cout << finalDish->getDescription() << std::endl;

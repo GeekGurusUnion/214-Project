@@ -14,5 +14,4 @@ add_executable(FlyweightFighters_COS214_Project
         kitchen/adapter.h
         kitchen/ingredientHandler.h
         kitchen/burger.h
-        kitchen/ingredientHandler.cpp
 )
