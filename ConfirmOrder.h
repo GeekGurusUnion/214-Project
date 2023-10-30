@@ -3,11 +3,15 @@
 
 // ConcreteCommand (Command)
 
+#include "Command.h"
+#include "Waiter.h"
+
 class ConfirmOrder {
     public:
-        ConfirmOrder() {
-            // constructor code here
-        }
+        ConfirmOrder(Waiter* waiter);
+        void execute();
+    private:
+        Waiter* waiter;
 };
 
 #endif // CONFIRMORDER_H

@@ -6,7 +6,12 @@
 
 class Waiter {
     public:
-        Waiter(); // default constructor
+        Waiter(int id);
+        void placeOrder();
+        void cleanUp();
+        void confirmOrder();
+    private:
+        int waiterId;
 };
 
 #endif // WAITER_H

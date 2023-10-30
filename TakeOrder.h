@@ -3,9 +3,15 @@
 
 // ConcreteCommand (Command)
 
+#include "Command.h"
+#include "Waiter.h"
+
 class TakeOrder {
     public:
-        TakeOrder(); // constructor
+        TakeOrder(Waiter* waiter);
+        void execute();
+    private:
+        Waiter* waiter;
 };
 
 #endif // TAKEORDER_H

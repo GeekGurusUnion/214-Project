@@ -3,9 +3,15 @@
 
 // ConcreteCommand (Command)
 
+#include "Command.h"
+#include "Waiter.h"
+
 class CleanTable {
     public:
-        CleanTable(); // constructor
+        CleanTable(Waiter* waiter);
+        void execute();
+    private:
+        Waiter* waiter;
 };
 
 #endif // CLEANTABLE_H
