@@ -1,0 +1,21 @@
+name: Lint
+
+on: [push, pull_request]
+
+jobs:
+  clang-tidy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: sudo apt-get install clang-tidy cmake g++
+
+      - name: Setup and run clang-tidy
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          make
