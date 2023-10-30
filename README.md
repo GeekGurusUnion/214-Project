@@ -1,5 +1,5 @@
 # COS 214 Project
-[![Dev Status](https://github.com/GeekGurusUnion/214-Project/actions/workflows/lint.yml/badge.svg?branch=dev)](https://github.com/GeekGurusUnion/214-Project/actions/workflows/lint.yml)
+[![Lint](https://github.com/GeekGurusUnion/214-Project/actions/workflows/lint.yml/badge.svg?branch=dev)](https://github.com/GeekGurusUnion/214-Project/actions/workflows/lint.yml)
 
 ## Group Organization
 ### Members
