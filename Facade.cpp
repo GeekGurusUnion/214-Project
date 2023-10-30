@@ -43,6 +43,17 @@ void Facade::getSeated() {
     }
     if (table != nullptr) {
         table->occupy();
+        getWaiter(table);
+    }
+}
+
+void Facade::getWaiter(RestaurantTable* table) {
+    Waiter* waiter = nullptr;
+    while (waiterIterator->hasNext() && !waiterIterator->isAvailable()) {
+        waiter = (Waiter*) waiterIterator->next();
+    }
+    if (waiter != nullptr) {
+        table->setWaiter(waiter);
     }
 }
 

@@ -2,6 +2,8 @@
 #define FACADE_H
 
 // Facade (Facade)
+// ConcreteAggregate (Iterator)
+// Client (Main)
 
 #include "RestaurantTable.h"
 #include "Waiter.h"
@@ -12,8 +14,8 @@
 
 class Facade {
     private:
-        Iterator* waiterIterator = new WaiterIterator();
-        Iterator* tableIterator = new TableIterator();
+        Iterator* waiterIterator = new WaiterIterator(waiters);
+        Iterator* tableIterator = new TableIterator(tables);
         std::vector<Table*> tables;
         std::vector<Waiter*> waiters;
 
@@ -27,12 +29,15 @@ class Facade {
         Iterator* getTableIterator();
         Table* getTable(int index);
         void getSeated();
+        void getWaiter(RestaurantTable* table);
         void addToOrder(int tableNumber, MenuItem* item);
         void confirmOrder();
 
         int getWaiterSize() const { return waiterSize; }
         int getTablesPerWaiter() const { return tablesPerWaiter; }
         int getTotalTables() const { return totalTables; }
+
+        TableIterator* createIterator();
 };
 
 #endif // FACADE_H

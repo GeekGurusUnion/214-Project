@@ -9,7 +9,6 @@ RestaurantTable::RestaurantTable(int i, Iterator* tableIterator) {
     this->cT = new CleanTable(this->waiter); 
     this->tO = new TakeOrder(this->waiter);
     this->tableNumber = i;
-    tableIterator = createIterator();
 }
 
 RestaurantTable::~RestaurantTable() {
@@ -21,7 +20,6 @@ void RestaurantTable::TransitionTo(State *state) {
     if (this->currentState != nullptr)
         delete this->currentState;
     this->currentState = state;
-    // this->currentState->setTable(this);
 }
 
 void RestaurantTable::setState(State* state) {
@@ -40,6 +38,10 @@ void RestaurantTable::empty() {
     currentState->empty();
 };
 
-TableIterator* RestaurantTable::createIterator() {
-    return new TableIterator(this);
+Waiter* RestaurantTable::getWaiter() const {
+    return waiter;
+}
+
+void RestaurantTable::setWaiter(Waiter* waiter) {
+    this->waiter = waiter;
 }

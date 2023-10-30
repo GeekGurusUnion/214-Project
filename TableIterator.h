@@ -5,12 +5,18 @@
 
 #include "Iterator.h"
 #include "RestaurantTable.h"
+#include <vector>
 
 class TableIterator : public Iterator {
     private:
-        // RestaurantTable* restaurantTable;
+        std::vector<Table*> tables;
+        int position;
     public:
-        TableIterator();
+        TableIterator(std::vector<Table*> tables);
+        ~TableIterator();
+
+        void* first();
+        Table* currentItem();
         bool hasNext();
         void* next();
 };
