@@ -1,5 +1,6 @@
 #ifndef WAITER_H
 #define WAITER_H
+#include "WaiterState.h"
 
 // Receiver (Command)
 // Context (State)
@@ -11,6 +12,7 @@ class Waiter {
         void cleanUp();
         void confirmOrder();
     private:
+        WaiterState* state;
         int waiterId;
 };
 

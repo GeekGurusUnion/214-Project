@@ -5,6 +5,11 @@
 
 #include "Iterator.h"
 
-class WaiterIterator : public Iterator {};
+class WaiterIterator : public Iterator {
+    public:
+        WaiterIterator() {}
+        bool hasNext();
+        void* next();
+};
 
 #endif // WAITER_ITERATOR_H

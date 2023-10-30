@@ -3,16 +3,13 @@
 
 // ConcreteIterator (Iterator)
 
-#include "Table.h"
+#include "Iterator.h"
 
-class TableIterator {
+class TableIterator : public Iterator {
     public:
-        TableIterator(Table* table) : table_(table), row_(0), col_(0) {}
-
-    private:
-        Table* table_;
-        int row_;
-        int col_;
+        TableIterator();
+        bool hasNext();
+        void* next();
 };
 
 #endif // TABLE_ITERATOR_H
