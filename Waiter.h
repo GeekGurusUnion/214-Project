@@ -1,13 +1,15 @@
 #ifndef WAITER_H
 #define WAITER_H
-#include "WaiterState.h"
 
 // Receiver (Command)
 // Context (State)
 
+#include "WaiterState.h"
+#include "WaiterIterator.h"
+
 class Waiter {
     public:
-        Waiter(int id);
+        Waiter(Iterator* waiterIterator);
         void placeOrder();
         void cleanUp();
         void confirmOrder();
