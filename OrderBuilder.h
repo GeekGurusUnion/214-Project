@@ -10,7 +10,6 @@ class OrderBuilder : public Builder {
     public:
         OrderBuilder addItem(MenuItem* item);
         OrderBuilder setStatus(bool status); // order confirmed or not
-        Order* build();
 };
 
 #endif // ORDER_BUILDER_H
