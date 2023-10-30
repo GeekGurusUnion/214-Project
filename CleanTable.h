@@ -6,7 +6,7 @@
 #include "Command.h"
 #include "Waiter.h"
 
-class CleanTable {
+class CleanTable : public Command {
     public:
         CleanTable(Waiter* waiter);
         void execute();

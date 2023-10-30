@@ -1,12 +1,15 @@
 #include "RestaurantTable.h"
+#include "ConfirmOrder.h"
+#include "CleanTable.h"
+#include "TakeOrder.h"
 
 RestaurantTable::RestaurantTable() {
     currentState = new StateEmpty();
+    this->cO = new ConfirmOrder(this->waiter);
+    this->cT = new CleanTable(this->waiter); 
+    this->tO = new TakeOrder(this->waiter);
 }
 
-RestaurantTable::RestaurantTable(State *state) : currentState(nullptr) {
-    this->TransitionTo(state);
-}
 RestaurantTable::~RestaurantTable() {
     delete currentState;
 }
@@ -21,6 +24,10 @@ void RestaurantTable::TransitionTo(State *state) {
 
 void RestaurantTable::setState(State* state) {
     currentState = state;
+}
+
+State* RestaurantTable::getState() {
+    return this->currentState;
 }
 
 void RestaurantTable::reserve() {
