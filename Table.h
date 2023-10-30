@@ -11,6 +11,7 @@
 
 #include "Order.h"
 #include "State.h"
+#include "Observer.h"
 
 class Table {
     public:
