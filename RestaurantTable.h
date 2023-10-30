@@ -33,9 +33,7 @@ class RestaurantTable : public Table {
 
         void occupy();
         void empty();
-
-        TableIterator* createIterator();
-
+        
         Waiter* getWaiter() const;
         void setWaiter(Waiter* waiter);
 };
