@@ -1,36 +1,36 @@
-#include "RestaurantTable.h"\
+#include "RestaurantTable.h"
 
 RestaurantTable::RestaurantTable() {
-        currentState = new StateEmpty();
-    }
+    currentState = new StateEmpty();
+}
 
 RestaurantTable::RestaurantTable(State *state) : currentState(nullptr) {
     this->TransitionTo(state);
 }
-~RestaurantTable() {
+RestaurantTable::~RestaurantTable() {
     delete currentState;
 }
 
-void TransitionTo(State *state) {
+void RestaurantTable::TransitionTo(State *state) {
     std::cout << "Context: Transition to " << typeid(*state).name() << ".\n";
     if (this->currentState != nullptr)
         delete this->currentState;
     this->currentState = state;
-    this->currentState->set_context(this);
+    this->currentState->set_Table(this);
 }
 
-void setState(State* state) {
+void RestaurantTable::setState(State* state) {
     currentState = state;
 }
 
-void reserve() {
+void RestaurantTable::reserve() {
     currentState->reserve();
 }
 
-void occupy() {
+void RestaurantTable::occupy() {
     currentState->occupy();
 }
 
-void empty() {
+void RestaurantTable::empty() {
     currentState->empty();
 };

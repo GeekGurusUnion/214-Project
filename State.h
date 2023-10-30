@@ -5,11 +5,9 @@ class RestaurantTable;  // Forward declaration of RestaurantTable       //Not su
 
 class State {
     protected:
-        RestaurantTable *context_;      // Not sure if this is needed
+        RestaurantTable *table;      // Not sure if this is needed
     public:
-        void set_context(RestaurantTable *context) {
-            this->context_ = context;
-        }
+        void set_Table(RestaurantTable *table);
         virtual void reserve() = 0;
         virtual void occupy() = 0;
         virtual void empty() = 0;
