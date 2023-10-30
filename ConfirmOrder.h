@@ -6,7 +6,7 @@
 #include "Command.h"
 #include "Waiter.h"
 
-class ConfirmOrder {
+class ConfirmOrder : public Command {
     public:
         ConfirmOrder(Waiter* waiter);
         void execute();
