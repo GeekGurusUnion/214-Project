@@ -11,6 +11,7 @@ class headChef
 {
 public:
     headChef();
+    ~headChef();
     void setOrder(const std::string &item, const std::vector<std::string> &customizations);
     MenuItem* prepareItem();
 

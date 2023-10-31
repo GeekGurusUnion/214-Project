@@ -7,6 +7,7 @@
 
 class BurgerChef : public Chef {
 public:
+	~BurgerChef() override;
 	MenuItem* prepareItem(const std::string &item);
 };
 

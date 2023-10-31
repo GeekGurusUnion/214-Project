@@ -1,8 +1,8 @@
 #include "MenuItem.h"
 
-// void MenuItem::customize()
-// {
-// }
+MenuItem::~MenuItem()
+{
+}
 
 void MenuItem::addComponent(const std::string &component)
 {

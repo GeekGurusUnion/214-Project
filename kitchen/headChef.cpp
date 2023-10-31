@@ -1,9 +1,19 @@
 #include "headChef.h"
 
-headChef::headChef()// : item(item), customizations(customizations)
+headChef::headChef()
 {
     this->burgerChef = new BurgerChef();
     this->pizzaChef = new PizzaChef();
+}
+
+headChef::~headChef()
+{
+    delete this->burgerChef;
+    delete this->pizzaChef;
+
+    if (customizationHandler != NULL){
+        delete customizationHandler;
+    }
 }
 
 void headChef::setOrder(const std::string &item, const std::vector<std::string> &customizations){

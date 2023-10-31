@@ -15,20 +15,20 @@ int main() {
     
     std::cout << menuItem->getDescription() << std::endl;
 
-    floorOrder = new OrderAdapter({"hawaiianPizza", "ExtraGarlic"});
-    restaurantOrder = floorOrder->PlaceOrder();
+    // floorOrder = new OrderAdapter({"hawaiianPizza", "ExtraGarlic"});
+    // restaurantOrder = floorOrder->PlaceOrder();
 
     
-    Chef->setOrder(restaurantOrder->getItem(), restaurantOrder->getCustomizations());
+    // Chef->setOrder(restaurantOrder->getItem(), restaurantOrder->getCustomizations());
 
-    menuItem = Chef->prepareItem();
+    // menuItem = Chef->prepareItem();
     
-    std::cout << menuItem->getDescription() << std::endl;
+    // std::cout << menuItem->getDescription() << std::endl;
 
 
     delete Chef;
-    delete restaurantOrder;
     delete floorOrder;
+    delete menuItem;
 
     return 0;
 }

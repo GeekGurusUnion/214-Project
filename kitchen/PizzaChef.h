@@ -9,5 +9,6 @@ class PizzaChef : public Chef
 {
 
 public:
+	~PizzaChef() override;
 	MenuItem *prepareItem(const std::string &item);
 };

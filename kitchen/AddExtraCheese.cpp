@@ -1,10 +1,20 @@
 #include "AddExtraCheese.h"
 
-AddExtraCheese::AddExtraCheese(){
+AddExtraCheese::AddExtraCheese()
+{
 	this->successor = new RemoveMushrooms();
 }
 
-void AddExtraCheese::HandleExtra(MenuItem* item,  const std::vector<std::string> &customizations) {
+AddExtraCheese::~AddExtraCheese()
+{
+	if (successor != NULL)
+	{
+		delete this->successor;
+	}
+}
+
+void AddExtraCheese::HandleExtra(MenuItem *item, const std::vector<std::string> &customizations)
+{
 	int count = std::count(customizations.begin(), customizations.end(), "ExtraCheese");
 
 	if (count > 0)

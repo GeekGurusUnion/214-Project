@@ -1,6 +1,11 @@
 #include "PizzaChef.h"
 
-MenuItem* PizzaChef::prepareItem(const std::string &item) {
+PizzaChef::~PizzaChef()
+{
+}
+
+MenuItem *PizzaChef::prepareItem(const std::string &item)
+{
 	if (item == "pepperoniPizza")
 	{
 		return new PepperoniPizza();

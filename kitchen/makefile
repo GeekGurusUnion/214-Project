@@ -1,6 +1,7 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall
 EXECUTABLE = myprogram
+VALGRIND = valgrind
 
 SRC_FILES = $(wildcard *.cpp)
 OBJ_FILES = $(patsubst %.cpp, %.o, $(SRC_FILES))
@@ -16,7 +17,10 @@ $(EXECUTABLE): $(OBJ_FILES)
 run: $(EXECUTABLE)
 	./$(EXECUTABLE)
 
+valgrind: $(EXECUTABLE)
+	$(VALGRIND) --leak-check=full ./$(EXECUTABLE)
+
 clean:
 	rm -f $(EXECUTABLE) $(OBJ_FILES)
 
-.PHONY: all run clean
+.PHONY: all run valgrind clean

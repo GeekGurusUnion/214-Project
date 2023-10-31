@@ -10,12 +10,11 @@ public:
 	RestaurantOrder(const std::string &item, const std::vector<std::string> &customizations)
 		: item(item), customizations(customizations) {}
 
-	void PrepareOrder();
+	~RestaurantOrder();
 
 	std::string getItem() const;
-	std::vector<std::string> getCustomizations() const;
 
-	// void UpdateOrder(std::vector<std::string> contains, std::vector<std::string> customizations);
+	std::vector<std::string> getCustomizations() const;
 
 private:
 	std::string item;

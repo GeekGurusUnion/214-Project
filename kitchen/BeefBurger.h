@@ -5,8 +5,6 @@
 class BeefBurger : public Burger
 {
 public:
-    BeefBurger()
-    {
-        this->itemsList = {"buns", "beefPatty", "cheese", "tomato", "lettuce"};
-    }
+    BeefBurger();
+    ~BeefBurger() override;
 };

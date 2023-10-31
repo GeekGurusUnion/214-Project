@@ -11,8 +11,8 @@ protected:
 	std::vector<std::string> itemsList;
 
 public:
-	// void customize();
-
+	virtual ~MenuItem();
+	
 	void addComponent(const std::string &component);
 
 	void removeComponent(const std::string &component);

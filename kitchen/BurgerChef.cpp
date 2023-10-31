@@ -1,5 +1,9 @@
 #include "BurgerChef.h"
 
+BurgerChef::~BurgerChef()
+{
+}
+
 MenuItem *BurgerChef::prepareItem(const std::string &item)
 {
 	if (item == "beefBurger")

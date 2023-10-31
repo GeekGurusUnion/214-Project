@@ -1,5 +1,9 @@
 #include "FloorOrder.h"
 
+FloorOrder::~FloorOrder()
+{
+}
+
 void FloorOrder::PlaceOrder()
 {
 }

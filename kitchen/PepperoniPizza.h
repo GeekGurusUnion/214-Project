@@ -5,8 +5,6 @@
 class PepperoniPizza : public Pizza
 {
 public:
-    PepperoniPizza()
-    {
-        this->itemsList = {"base", "TomatoPaste", "cheese", "pepperoni", "mushrooms"};
-    }
+    PepperoniPizza();
+    ~PepperoniPizza() override;
 };
