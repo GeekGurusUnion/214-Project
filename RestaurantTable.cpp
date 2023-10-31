@@ -1,14 +1,8 @@
 #include "RestaurantTable.h"
-#include "ConfirmOrder.h"
-#include "CleanTable.h"
-#include "TakeOrder.h"
 
-RestaurantTable::RestaurantTable(int i, Iterator* tableIterator) {
-    currentState = new StateEmpty();
-    this->cO = new ConfirmOrder(this->waiter);
-    this->cT = new CleanTable(this->waiter); 
-    this->tO = new TakeOrder(this->waiter);
+RestaurantTable::RestaurantTable(int i) {
     this->tableNumber = i;
+    this->currentState->setTable(this);
 }
 
 RestaurantTable::~RestaurantTable() {
@@ -36,12 +30,4 @@ void RestaurantTable::occupy() {
 
 void RestaurantTable::empty() {
     currentState->empty();
-};
-
-Waiter* RestaurantTable::getWaiter() const {
-    return waiter;
-}
-
-void RestaurantTable::setWaiter(Waiter* waiter) {
-    this->waiter = waiter;
 }
