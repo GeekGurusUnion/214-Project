@@ -4,6 +4,11 @@ TakeOrder::TakeOrder(Waiter* waiter) {
     this->waiter = waiter;
 }
 
-void TakeOrder::execute() {
-    this->waiter->placeOrder();
+void TakeOrder::execute(RestaurantTable* rt, MenuItem* m) {
+    Order* o = this->waiter->getOrder(rt);
+    if (o == nullptr) {
+        std::cout << "TakeOrder: No order found for table " << rt << ".\n";
+        return;
+    }
+    this->waiter->addItem(rt, m);
 }

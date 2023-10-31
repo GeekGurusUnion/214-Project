@@ -3,9 +3,11 @@
 
 // Command (Command) [interface]
 
+#include "RestaurantTable.h"
+
 class Command {
     public: 
-        virtual void execute() = 0;
+        virtual void execute(RestaurantTable*, MenuItem*) = 0;
 };
 
 #endif // COMMAND_H

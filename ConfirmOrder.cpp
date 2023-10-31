@@ -4,6 +4,6 @@ ConfirmOrder::ConfirmOrder(Waiter* waiter) {
     this->waiter = waiter;
 }
 
-void ConfirmOrder::execute() {
-    this->waiter->confirmOrder();
+void ConfirmOrder::execute(RestaurantTable* rt, MenuItem* m = nullptr) {
+    waiter->confirmOrder(rt);
 }

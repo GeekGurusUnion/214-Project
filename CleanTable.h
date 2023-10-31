@@ -9,7 +9,7 @@
 class CleanTable : public Command {
     public:
         CleanTable(Waiter* waiter);
-        void execute();
+        void execute(RestaurantTable* rt, MenuItem* m);
     private:
         Waiter* waiter;
 };

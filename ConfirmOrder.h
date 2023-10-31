@@ -9,7 +9,7 @@
 class ConfirmOrder : public Command {
     public:
         ConfirmOrder(Waiter* waiter);
-        void execute();
+        void execute(RestaurantTable* rt, MenuItem* m = nullptr);
     private:
         Waiter* waiter;
 };

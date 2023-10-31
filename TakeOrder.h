@@ -7,11 +7,11 @@
 #include "Waiter.h"
 
 class TakeOrder : public Command {
-    public:
-        TakeOrder(Waiter* waiter);
-        void execute();
     private:
         Waiter* waiter;
+    public:
+        TakeOrder(Waiter* waiter);
+        void execute(RestaurantTable* rt, MenuItem* m);
 };
 
 #endif // TAKEORDER_H
