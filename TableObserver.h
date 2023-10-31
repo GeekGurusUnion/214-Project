@@ -7,13 +7,14 @@
 #include "RestaurantTable.h"
 #include "State.h"
 
-class TableObserver:public Observer {
+class TableObserver: public Observer {
     public:
         TableObserver(RestaurantTable* t);
         void update();
     private:
         RestaurantTable* table;
-        //observer state
+        // observer state
+        // get observer state through table.
         State* observerState;
 };
 #endif // TABLEOBSERVER_H
