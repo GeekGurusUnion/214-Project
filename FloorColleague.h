@@ -9,7 +9,6 @@
 class FloorColleague : public Colleague {
     public:
         FloorColleague(Mediator* mediator);
-        void notify();
 };
 
 #endif // FLOOR_COLLEAGUE_H
