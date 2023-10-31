@@ -4,14 +4,16 @@
 // ConcreteCommand (Command)
 
 #include "Command.h"
-#include "Waiter.h"
+class Waiter;
+class RestaurantTable;
+class MenuItem;
 
 class ConfirmOrder : public Command {
-    public:
-        ConfirmOrder(Waiter* waiter);
-        void execute(RestaurantTable* rt, MenuItem* m = nullptr);
     private:
         Waiter* waiter;
+    public:
+        ConfirmOrder(Waiter* waiter);
+        void execute(RestaurantTable* rt, MenuItem* m);
 };
 
 #endif // CONFIRMORDER_H

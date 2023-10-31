@@ -1,6 +1,7 @@
 #include "StateOccupied.h"
+#include "RestaurantTable.h"
 
-StateOccupied::StateOccupied() {
+StateOccupied::StateOccupied() : State() {
     stateName = "Occupied";
 }
 
@@ -20,4 +21,8 @@ void StateOccupied::serve() {
 
 std::string StateOccupied::getStateName() {
     return stateName;
+}
+
+bool StateOccupied::isOccupied() {
+    return true;
 }

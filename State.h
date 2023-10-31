@@ -7,10 +7,6 @@
 
 class RestaurantTable;
 
-// #include "StateEmpty.h"
-// #include "StateOccupied.h"
-// #include "StateServe.h"
-
 class State {
     protected:
         RestaurantTable* table = nullptr;
@@ -22,6 +18,11 @@ class State {
         virtual void empty() = 0;
         virtual std::string getStateName() = 0;
         virtual ~State() {};
+        virtual bool isOccupied() = 0;
 };
+
+#include "StateEmpty.h"
+#include "StateOccupied.h"
+#include "StateServe.h"
 
 #endif  // STATE_H_

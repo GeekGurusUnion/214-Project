@@ -3,15 +3,14 @@
 
 // Mediator (Mediator) [interface]
 
-#include "FloorColleague.h"
-#include "KitchenColleague.h"
+class Colleague;
 #include <vector>
 
 class Mediator {
     private:
         std::vector<Colleague*> colleagues;
     public:
-        virtual void notify(Colleague* colleague);
+        void notify(Colleague* colleague);
         virtual void addColleague(Colleague* colleague);
 };
 

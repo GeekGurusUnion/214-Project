@@ -1,6 +1,9 @@
 #include "Waiter.h"
+#include "WaiterStateAvailable.h"
+#include "WaiterStateUnavailable.h"
 
 Waiter::Waiter(int totalOrders, FloorColleague *fc) {
+    this->totalOrders = totalOrders;
     orders = new Order*[totalOrders];
     for (int i = 0; i < totalOrders; i++) {
         orders[i] = nullptr;
@@ -50,6 +53,13 @@ void Waiter::setWaiterState(WaiterState* state) {
     this->state->setWaiter(this);
 }
 
-Order* getOrder(RestaurantTable* rt) {
+Order* Waiter::getOrder(RestaurantTable* rt) {
     return rt->getOrder();
+}
+
+bool Waiter::isAvailable() {
+    if (busyOrders < totalOrders) {
+        return true;
+    }
+    return false;
 }

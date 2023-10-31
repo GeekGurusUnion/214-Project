@@ -4,14 +4,14 @@
 // ConcreteCommand (Command)
 
 #include "Command.h"
-#include "Waiter.h"
+class Waiter;
 
 class CleanTable : public Command {
+    private:
+        Waiter* waiter;
     public:
         CleanTable(Waiter* waiter);
         void execute(RestaurantTable* rt, MenuItem* m);
-    private:
-        Waiter* waiter;
 };
 
 #endif // CLEANTABLE_H

@@ -8,13 +8,13 @@
 #include "State.h"
 
 class TableObserver: public Observer {
-    public:
-        TableObserver(RestaurantTable* t);
-        void update();
     private:
         RestaurantTable* table;
         // observer state
         // get observer state through table.
         State* observerState;
+    public:
+        TableObserver(RestaurantTable* t);
+        void update();
 };
 #endif // TABLEOBSERVER_H

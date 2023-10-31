@@ -3,7 +3,8 @@
 
 // Command (Command) [interface]
 
-#include "RestaurantTable.h"
+class RestaurantTable;
+class MenuItem;
 
 class Command {
     public: 

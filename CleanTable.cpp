@@ -1,4 +1,5 @@
 #include "CleanTable.h"
+#include "Waiter.h" // Include the header file for Waiter class
 
 CleanTable::CleanTable(Waiter* waiter) {
     this->waiter = waiter;

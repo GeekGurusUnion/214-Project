@@ -9,16 +9,17 @@
 
 class TableIterator : public Iterator {
     private:
-        std::vector<Table*> tables;
+        std::vector<RestaurantTable*> tables;
         int position;
     public:
-        TableIterator(std::vector<Table*> tables);
+        TableIterator(std::vector<RestaurantTable*> tables);
         ~TableIterator();
 
         void* first();
         Table* currentItem();
         bool hasNext();
         void* next();
+        bool isAvailable(RestaurantTable* table);
 };
 
 #endif // TABLE_ITERATOR_H

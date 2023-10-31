@@ -4,7 +4,7 @@
 // ConcreteCommand (Command)
 
 #include "Command.h"
-#include "Waiter.h"
+class Waiter;
 
 class TakeOrder : public Command {
     private:

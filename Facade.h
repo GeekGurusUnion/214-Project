@@ -11,6 +11,10 @@
 // #include "WaiterIterator.h"
 #include "StateOccupied.h"
 #include "ConcreteMediator.h"
+
+#include "FloorColleague.h"
+#include "KitchenColleague.h"
+
 #include <vector>
 
 class WaiterIterator;
@@ -18,10 +22,10 @@ class TableIterator;
 
 class Facade {
     private:
-        Iterator* waiterIterator = new WaiterIterator(waiters);
-        Iterator* tableIterator = new TableIterator(tables);
-        std::vector<Table*> tables = std::vector<Table*>();
+        std::vector<RestaurantTable*> tables = std::vector<RestaurantTable*>();
         std::vector<Waiter*> waiters = std::vector<Waiter*>();
+        WaiterIterator* waiterIterator = new WaiterIterator(waiters);
+        TableIterator* tableIterator = new TableIterator(tables);
 
         Mediator* mediator = new ConcreteMediator();
 
@@ -34,6 +38,7 @@ class Facade {
 
     public:
         Facade();
+        ~Facade();
 
         void getSeated();
         void addToOrder(int tableNumber, MenuItem* item);
@@ -43,7 +48,7 @@ class Facade {
 
         // getters and setters if client wants to access it (part of the facade pattern)
 
-        void addTable(Table* table);
+        void addTable(RestaurantTable* table);
         void addWaiter(Waiter* waiter);
 
         Iterator* getWaiterIterator();

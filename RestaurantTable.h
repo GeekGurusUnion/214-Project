@@ -12,7 +12,11 @@
 
 class Waiter;
 
-class Command;
+// class Command;
+// class ConfirmOrder;
+// class CleanTable;
+// class TakeOrder;
+
 #include "ConfirmOrder.h"
 #include "CleanTable.h"
 #include "TakeOrder.h"
@@ -42,6 +46,14 @@ class RestaurantTable : public Table {
         
         Waiter* getWaiter() const;
         void setWaiter(Waiter* waiter);
+
+        void confirmOrder();
+        void cleanTable();
+        void addToOrder(MenuItem* item);
+
+        Order* getOrder() const;
+
+        bool isAvailable() const;
 };
 
 #endif  // RESTAURANT_TABLE_H_

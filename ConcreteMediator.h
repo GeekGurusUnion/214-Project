@@ -7,7 +7,7 @@
 
 class ConcreteMediator : public Mediator {
     public:
-        void notify(Colleague* colleague);
+        ConcreteMediator();
 };
 
 #endif // CONCRETEMEDIATOR_H

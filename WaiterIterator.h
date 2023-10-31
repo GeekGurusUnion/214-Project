@@ -18,7 +18,9 @@ class WaiterIterator : public Iterator {
         Waiter* currentItem();
         bool hasNext();
         void* next();
+        bool isAvailable();
         ~WaiterIterator();
+        bool isAvailable(Waiter* waiter);
 };
 
 #endif // WAITER_ITERATOR_H

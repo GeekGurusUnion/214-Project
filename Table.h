@@ -9,34 +9,18 @@
 // Subject (Observer) [interface]
 // Aggregate (Iterator) [interface]
 
-#include "Order.h"
 #include "State.h"
-#include "Observer.h"
-
 class Waiter;
-
+class Observer;
+class Order;
+class MenuItem;
 
 class Table {
-    private:
+    protected:
         State* currentState;
         Waiter* waiter;
         Observer* observer;
         Order* order;
         int tableId;
-    public:
-        Table();
-        void takeOrder();
-        void setOrder(Order* o);
-        Order* getOrder();
-        void setObserver(Observer* o);
-        void notifyObserver();
-        virtual void detachObserver(Observer* o);
-        // moet die virtual wees?
-        virtual void reserve();
-        virtual void occupy();
-        virtual void empty();
-        virtual void confirmOrder();
-        virtual void cleanTable();
-        virtual void addToOrder(MenuItem* item);
 };
 #endif // TABLE_H

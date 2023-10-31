@@ -1,6 +1,7 @@
 #include "StateEmpty.h"
+#include "RestaurantTable.h"
 
-StateEmpty::StateEmpty() {
+StateEmpty::StateEmpty() : State() {
     stateName = "Empty";
 }
 
@@ -19,4 +20,8 @@ void StateEmpty::serve() {
 
 std::string StateEmpty::getStateName() {
     return stateName;
+}
+
+bool StateEmpty::isOccupied() {
+    return false;
 }

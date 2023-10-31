@@ -1,4 +1,6 @@
 #include "WaiterStateAvailable.h"
+#include "WaiterStateUnavailable.h"
+#include "Waiter.h"
 
 void WaiterStateAvailable::isAvailable() {
     std::cout << "Waiter is already available." << std::endl;

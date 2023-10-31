@@ -12,7 +12,7 @@ Facade::Facade() {
     }
 }
 
-void Facade::addTable(Table* table) {
+void Facade::addTable(RestaurantTable* table) {
     tables.push_back(table);
 }
 
@@ -44,22 +44,10 @@ int Facade::getTotalTables() const {
     return totalTables;
 }
 
-int Facade::getWaiterSize() const {
-    return waiterSize;
-}
-
-int Facade::getTablesPerWaiter() const {
-    return tablesPerWaiter;
-}
-
-int Facade::getTotalTables() const {
-    return totalTables;
-}
-
 
 void Facade::getSeated() {
-    RestaurantTable* table = nullptr;
-    while (tableIterator->hasNext() && !tableIterator->isAvailable()) {
+    RestaurantTable* table = (RestaurantTable*) tableIterator->next();
+    while (tableIterator->hasNext() && !tableIterator->isAvailable(table)) {
         table = (RestaurantTable*) tableIterator->next();
     }
     if (table != nullptr) {
@@ -69,8 +57,8 @@ void Facade::getSeated() {
 }
 
 void Facade::getWaiter(RestaurantTable* table) {
-    Waiter* waiter = nullptr;
-    while (waiterIterator->hasNext() && !waiterIterator->isAvailable()) {
+    Waiter* waiter = (Waiter*) waiterIterator->next();
+    while (waiterIterator->hasNext() && !waiterIterator->isAvailable(waiter)) {
         waiter = (Waiter*) waiterIterator->next();
     }
     if (waiter != nullptr) {

@@ -1,6 +1,6 @@
 #include "TableIterator.h"
 
-TableIterator::TableIterator(std::vector<Table*> tables) {
+TableIterator::TableIterator(std::vector<RestaurantTable*> tables) {
     this->tables = tables;
     this->position = 0;
 }
@@ -24,4 +24,8 @@ void* TableIterator::next() {
     Table* table = tables[position];
     position++;
     return table;
+}
+
+bool TableIterator::isAvailable(RestaurantTable* table) {
+    return table->isAvailable();
 }

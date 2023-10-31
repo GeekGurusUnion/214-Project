@@ -1,4 +1,5 @@
 #include "RestaurantTable.h"
+#include "Command.h"
 
 RestaurantTable::RestaurantTable(int i) {
     this->tableNumber = i;
@@ -30,4 +31,32 @@ void RestaurantTable::occupy() {
 
 void RestaurantTable::empty() {
     currentState->empty();
+}
+
+Waiter* RestaurantTable::getWaiter() const {
+    return waiter;
+}
+
+void RestaurantTable::setWaiter(Waiter* waiter) {
+    this->waiter = waiter;
+}
+
+void RestaurantTable::confirmOrder() {
+    this->cO->execute(this, nullptr);
+}
+
+void RestaurantTable::cleanTable() {
+    this->cT->execute(this, nullptr);
+}
+
+void RestaurantTable::addToOrder(MenuItem* item) {
+    this->tO->execute(this, item);
+}
+
+Order* RestaurantTable::getOrder() const {
+    return this->order;
+}
+
+bool RestaurantTable::isAvailable() const {
+    return currentState->isOccupied();
 }

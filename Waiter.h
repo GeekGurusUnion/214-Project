@@ -16,6 +16,7 @@ class Waiter {
         WaiterState* state;
         Order** orders;
         int busyOrders = 0;
+        int totalOrders;
         FloorColleague* floorColleague;
     public:
         Waiter(int totalOrders, FloorColleague *fc);
@@ -25,6 +26,7 @@ class Waiter {
         void confirmOrder(RestaurantTable* rt);
         void addOrder(Order* o);
         Order* getOrder(RestaurantTable* rt);
+        bool isAvailable();
 };
 
 #endif // WAITER_H

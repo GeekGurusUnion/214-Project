@@ -1,6 +1,7 @@
 #include "StateServe.h"
+#include "RestaurantTable.h"
 
-StateServe::StateServe() {
+StateServe::StateServe() : State() {
     stateName = "Serving";
 }
 
@@ -19,4 +20,8 @@ void StateServe::serve() {
 
 std::string StateServe::getStateName() {
     return stateName;
+}
+
+bool StateServe::isOccupied() {
+    return true;
 }

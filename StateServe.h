@@ -8,10 +8,12 @@
 
 class StateServe : public State {
     public:
+        StateServe();
         void serve();
         void occupy();
         void empty();
         std::string getStateName();
+        bool isOccupied();
 };
 
 #endif  // STATE_RESERVED_H_

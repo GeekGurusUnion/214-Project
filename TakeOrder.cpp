@@ -1,4 +1,6 @@
 #include "TakeOrder.h"
+#include "Order.h"
+#include "Waiter.h"
 
 TakeOrder::TakeOrder(Waiter* waiter) {
     this->waiter = waiter;
