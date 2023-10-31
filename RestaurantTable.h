@@ -8,23 +8,26 @@
 
 #include "StateEmpty.h"
 #include "Table.h"
-#include "Command.h"
+
+#include "ConfirmOrder.h"
+#include "CleanTable.h"
+#include "TakeOrder.h"
+
 #include "Waiter.h"
 #include "TableIterator.h"
 #include <iostream> 
 
 class RestaurantTable : public Table {
     private:
-        State* currentState;
-        Command* cO;
-        Command* cT;
-        Command* tO;
-        Waiter* waiter;
-        TableIterator* tableIterator;
+        State* currentState = new StateEmpty();
+        Waiter* waiter = nullptr;
+        Command* cO = new ConfirmOrder(waiter);
+        Command* cT = new CleanTable(waiter); 
+        Command* tO = new TakeOrder(waiter);
         int tableNumber;
         
     public:
-        RestaurantTable(int i, Iterator* tableIterator);
+        RestaurantTable(int i);
         ~RestaurantTable();
         void TransitionTo(State *state);
         
