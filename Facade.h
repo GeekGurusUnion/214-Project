@@ -7,11 +7,14 @@
 
 #include "RestaurantTable.h"
 #include "Waiter.h"
-#include "TableIterator.h"
-#include "WaiterIterator.h"
+// #include "TableIterator.h"
+// #include "WaiterIterator.h"
 #include "StateOccupied.h"
 #include "ConcreteMediator.h"
 #include <vector>
+
+class WaiterIterator;
+class TableIterator;
 
 class Facade {
     private:

@@ -4,11 +4,12 @@
 // State (State) [interface]
 
 #include <iostream> 
-#include "RestaurantTable.h"
 
-#include "StateEmpty.h"
-#include "StateOccupied.h"
-#include "StateServe.h"
+class RestaurantTable;
+
+// #include "StateEmpty.h"
+// #include "StateOccupied.h"
+// #include "StateServe.h"
 
 class State {
     protected:

@@ -1,10 +1,10 @@
 #ifndef COLLEAGUE_H
 #define COLLEAGUE_H
 
-#include "Mediator.h"
-#include "Order.h"
-
 // Colleague (Mediator) [interface]
+
+class Mediator;
+class Order;
 
 class Colleague {
     protected:

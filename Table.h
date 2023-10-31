@@ -13,11 +13,15 @@
 #include "State.h"
 #include "Observer.h"
 
+class Waiter;
+
+
 class Table {
     private:
         State* currentState;
         Waiter* waiter;
         Observer* observer;
+        Order* order;
         int tableId;
     public:
         Table();
@@ -34,8 +38,5 @@ class Table {
         virtual void confirmOrder();
         virtual void cleanTable();
         virtual void addToOrder(MenuItem* item);
-    private:
-        Order* order;
-        Observer* observer;
 };
 #endif // TABLE_H

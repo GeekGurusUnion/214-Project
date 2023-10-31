@@ -1,9 +1,9 @@
 #ifndef KITCHEN_COLLEAGUE_H
 #define KITCHEN_COLLEAGUE_H
 
-#include "Colleague.h"
-
 // ConcreteColleague
+
+#include "Colleague.h"
 
 class KitchenColleague : public Colleague {
     public:

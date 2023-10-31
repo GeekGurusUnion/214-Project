@@ -7,13 +7,16 @@
 // ConcreteAggregate (Iterator)
 
 #include "StateEmpty.h"
+
 #include "Table.h"
 
+class Waiter;
+
+class Command;
 #include "ConfirmOrder.h"
 #include "CleanTable.h"
 #include "TakeOrder.h"
 
-#include "Waiter.h"
 #include "TableIterator.h"
 #include <iostream> 
 

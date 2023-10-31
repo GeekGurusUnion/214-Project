@@ -3,10 +3,12 @@
 
 // State (State) [interface]
 
-#include "Waiter.h"
+// #include "Waiter.h"
 
-#include "WaiterStateAvailable.h"
-#include "WaiterStateUnavailable.h"
+class Waiter;
+
+// #include "WaiterStateAvailable.h"
+// #include "WaiterStateUnavailable.h"
 
 class WaiterState {
     protected:
