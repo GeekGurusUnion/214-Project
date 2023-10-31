@@ -10,7 +10,8 @@
 class headChef
 {
 public:
-    headChef(const std::string &item, const std::vector<std::string> &customizations);
+    headChef();
+    void setOrder(const std::string &item, const std::vector<std::string> &customizations);
     MenuItem* prepareItem();
 
 private:

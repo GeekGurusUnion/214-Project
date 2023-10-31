@@ -1,9 +1,14 @@
 #include "headChef.h"
 
-headChef::headChef(const std::string &item, const std::vector<std::string> &customizations) : item(item), customizations(customizations)
+headChef::headChef()// : item(item), customizations(customizations)
 {
     this->burgerChef = new BurgerChef();
     this->pizzaChef = new PizzaChef();
+}
+
+void headChef::setOrder(const std::string &item, const std::vector<std::string> &customizations){
+    this->item = item;
+    this->customizations = customizations;
 }
 
 MenuItem* headChef::prepareItem()

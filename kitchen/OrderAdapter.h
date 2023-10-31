@@ -11,12 +11,14 @@ class OrderAdapter : public FloorOrder {
 
 public:
 	OrderAdapter(const std::vector<std::string>& details) : FloorOrder(details){}
-	RestaurantOrder* restaurantOrder;
 
 	RestaurantOrder* PlaceOrder();
 
 	// void TranslateOrder();
 
 	// void changeOrder(std::list<std::string> raw);
+
+private:
+	RestaurantOrder* restaurantOrder;
 };
 
