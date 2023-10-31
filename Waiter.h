@@ -4,18 +4,27 @@
 // Receiver (Command)
 // Context (State)
 
+#include <iostream>
+
 #include "WaiterState.h"
 #include "WaiterIterator.h"
+#include "Order.h"
+#include "FloorColleague.h"
 
 class Waiter {
-    public:
-        Waiter(Iterator* waiterIterator);
-        void placeOrder();
-        void cleanUp();
-        void confirmOrder();
     private:
         WaiterState* state;
-        int waiterId;
+        Order** orders;
+        int busyOrders = 0;
+        FloorColleague* floorColleague;
+    public:
+        Waiter(int totalOrders, FloorColleague *fc);
+        void setWaiterState(WaiterState* state);
+        void addItem(RestaurantTable* rt, MenuItem* m);
+        void cleanUp(RestaurantTable* rt);
+        void confirmOrder(RestaurantTable* rt);
+        void addOrder(Order* o);
+        Order* getOrder(RestaurantTable* rt);
 };
 
 #endif // WAITER_H
