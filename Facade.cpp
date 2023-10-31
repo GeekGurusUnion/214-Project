@@ -12,6 +12,14 @@ Facade::Facade() {
     }
 }
 
+void Facade::addTable(Table* table) {
+    tables.push_back(table);
+}
+
+void Facade::addWaiter(Waiter* waiter) {
+    waiters.push_back(waiter);
+}
+
 Iterator* Facade::getWaiterIterator() {
     return waiterIterator;
 }
@@ -36,6 +44,19 @@ int Facade::getTotalTables() const {
     return totalTables;
 }
 
+int Facade::getWaiterSize() const {
+    return waiterSize;
+}
+
+int Facade::getTablesPerWaiter() const {
+    return tablesPerWaiter;
+}
+
+int Facade::getTotalTables() const {
+    return totalTables;
+}
+
+
 void Facade::getSeated() {
     RestaurantTable* table = nullptr;
     while (tableIterator->hasNext() && !tableIterator->isAvailable()) {
@@ -55,5 +76,15 @@ void Facade::getWaiter(RestaurantTable* table) {
     if (waiter != nullptr) {
         table->setWaiter(waiter);
     }
+}
+
+void Facade::addToOrder(int tableNumber, MenuItem* item) {
+    RestaurantTable* table = (RestaurantTable*) tables[tableNumber];
+    table->addToOrder(item);
+}
+
+void Facade::confirmOrder(int tableNumber) {
+    RestaurantTable* table = (RestaurantTable*) tables[tableNumber];
+    table->confirmOrder();
 }
 

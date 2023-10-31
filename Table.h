@@ -33,7 +33,7 @@ class Table {
         virtual void empty();
         virtual void confirmOrder();
         virtual void cleanTable();
-        virtual void placeOrder();
+        virtual void addToOrder(MenuItem* item);
     private:
         Order* order;
         Observer* observer;

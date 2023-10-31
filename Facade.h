@@ -16,8 +16,8 @@ class Facade {
     private:
         Iterator* waiterIterator = new WaiterIterator(waiters);
         Iterator* tableIterator = new TableIterator(tables);
-        std::vector<Table*> tables;
-        std::vector<Waiter*> waiters;
+        std::vector<Table*> tables = std::vector<Table*>();
+        std::vector<Waiter*> waiters = std::vector<Waiter*>();
 
         const int waiterSize = 4;
         const int tablesPerWaiter = 3;
@@ -25,17 +25,24 @@ class Facade {
 
     public:
         Facade();
+
+        void getSeated();
+        void addToOrder(int tableNumber, MenuItem* item);
+        void confirmOrder(int tableNumber);
+
+        void getWaiter(RestaurantTable* table); // called by getSeated(); - should be called internally only
+
+        // getters and setters if client wants to access it (part of the facade pattern)
+
+        void addTable(Table* table);
+        void addWaiter(Waiter* waiter);
+
         Iterator* getWaiterIterator();
         Iterator* getTableIterator();
         Table* getTable(int index);
-        void getSeated();
-        void getWaiter(RestaurantTable* table);
-        void addToOrder(int tableNumber, MenuItem* item);
-        void confirmOrder();
-
-        int getWaiterSize() const { return waiterSize; }
-        int getTablesPerWaiter() const { return tablesPerWaiter; }
-        int getTotalTables() const { return totalTables; }
+        int getWaiterSize() const;
+        int getTablesPerWaiter() const;
+        int getTotalTables() const;
 
         TableIterator* createIterator();
 };
