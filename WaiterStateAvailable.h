@@ -5,10 +5,10 @@
 
 #include "WaiterState.h"
 
-class WaiterAvailable : public WaiterState {
+class WaiterStateAvailable : public WaiterState {
     public:
-        bool hasNext();
-        void* next();
+        void isAvailable();
+        void isUnavailable();
 };
 
 #endif // WAITER__STATE_AVAILABLE_H

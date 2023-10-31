@@ -6,19 +6,12 @@
 #include "State.h"
 #include <iostream> 
 
-class ReservedState : public State {
+class StateServe : public State {
     public:
-        void reserve() {
-            std::cout << "Table is already reserved." << std::endl;
-        }
-
-        void occupy() {
-            std::cout << "Table is reserved and cannot be occupied." << std::endl;
-        }
-
-        void empty() {
-            std::cout << "Table is now empty." << std::endl;
-        }
+        void serve();
+        void occupy();
+        void empty();
+        std::string getStateName();
 };
 
 #endif  // STATE_RESERVED_H_

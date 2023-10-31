@@ -8,17 +8,10 @@
 
 class StateOccupied : public State {
     public:
-        void reserve() {
-            std::cout << "Table is occupied and cannot be reserved." << std::endl;
-        }
-
-        void occupy() {
-            std::cout << "Table is already occupied." << std::endl;
-        }
-
-        void empty() {
-            std::cout << "Table is now empty." << std::endl;
-        }
+        void serve();
+        void occupy();
+        void empty();
+        std::string getStateName();
 };
 
 #endif  // STATE_OCCUPIED_H_

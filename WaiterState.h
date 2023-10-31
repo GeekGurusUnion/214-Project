@@ -3,10 +3,18 @@
 
 // State (State) [interface]
 
+#include "Waiter.h"
+
+#include "WaiterStateAvailable.h"
+#include "WaiterStateUnavailable.h"
+
 class WaiterState {
+    protected:
+        Waiter* waiter;
     public:
-        virtual bool hasNext() = 0;
-        virtual void* next() = 0;
+        void setWaiter(Waiter* waiter);
+        virtual void isAvailable() = 0;
+        virtual void isUnavailable() = 0;
 };
 
 #endif // WAITER_STATE_H

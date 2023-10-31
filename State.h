@@ -4,13 +4,22 @@
 // State (State) [interface]
 
 #include <iostream> 
-class RestaurantTable;  // Forward declaration of RestaurantTable       //Not sure if this is needed
+#include "RestaurantTable.h"
+
+#include "StateEmpty.h"
+#include "StateOccupied.h"
+#include "StateServe.h"
 
 class State {
+    protected:
+        RestaurantTable* table = nullptr;
+        std::string stateName;
     public:
-        virtual void reserve() = 0;
+        void setTable(RestaurantTable* table);
+        virtual void serve() = 0;
         virtual void occupy() = 0;
         virtual void empty() = 0;
+        virtual std::string getStateName() = 0;
         virtual ~State() {};
 };
 
