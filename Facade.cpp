@@ -3,12 +3,12 @@
 Facade::Facade() {
     // Create waiters
     for (int i = 0; i < waiterSize; i++) {
-        waiters.push_back(new Waiter(waiterIterator));
+        waiters.push_back(new Waiter(tablesPerWaiter, floorColleague));
     }
 
     // Create tables
     for (int i = 0; i < totalTables; i++) {
-        tables.push_back(new RestaurantTable(i, tableIterator));
+        tables.push_back(new RestaurantTable(i));
     }
 }
 

@@ -10,6 +10,7 @@
 #include "TableIterator.h"
 #include "WaiterIterator.h"
 #include "StateOccupied.h"
+#include "ConcreteMediator.h"
 #include <vector>
 
 class Facade {
@@ -18,6 +19,8 @@ class Facade {
         Iterator* tableIterator = new TableIterator(tables);
         std::vector<Table*> tables = std::vector<Table*>();
         std::vector<Waiter*> waiters = std::vector<Waiter*>();
+
+        FloorColleague* floorColleague = new FloorColleague(new ConcreteMediator());
 
         const int waiterSize = 4;
         const int tablesPerWaiter = 3;
