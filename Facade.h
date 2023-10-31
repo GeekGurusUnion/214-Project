@@ -20,7 +20,10 @@ class Facade {
         std::vector<Table*> tables = std::vector<Table*>();
         std::vector<Waiter*> waiters = std::vector<Waiter*>();
 
-        FloorColleague* floorColleague = new FloorColleague(new ConcreteMediator());
+        Mediator* mediator = new ConcreteMediator();
+
+        FloorColleague* floorColleague = new FloorColleague(mediator);
+        KitchenColleague* kitchenColleague = new KitchenColleague(mediator);
 
         const int waiterSize = 4;
         const int tablesPerWaiter = 3;

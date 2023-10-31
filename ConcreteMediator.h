@@ -4,7 +4,6 @@
 // ConcreteMediator
 
 #include "Mediator.h"
-#include "FloorColleague.h"
 
 class ConcreteMediator : public Mediator {
     public:

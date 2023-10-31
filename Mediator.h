@@ -3,7 +3,8 @@
 
 // Mediator (Mediator) [interface]
 
-#include "Colleague.h"
+#include "FloorColleague.h"
+#include "KitchenColleague.h"
 #include <vector>
 
 class Mediator {
