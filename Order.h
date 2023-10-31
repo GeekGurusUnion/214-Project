@@ -2,19 +2,21 @@
 #define ORDER_H
 
 #include "MenuItem.h"
-#include <stack>
+#include "RestaurantTable.h"
+#include <vector>
 
 class Order {
     private:
-        std::stack<MenuItem*> items = std::stack<MenuItem*>();
+        std::vector<MenuItem*> items = std::vector<MenuItem*>();
+        RestaurantTable* table;
         bool status = false;
-        int id = 0;
     public:
-        Order(int id);
+        Order(RestaurantTable* table);
         void addItem(MenuItem* item);
         bool inMenu(MenuItem* item);
         void setStatus(bool status);
         void removeItem(std::string name);
+        RestaurantTable* getTable();
 };
 
 #endif // ORDER_H

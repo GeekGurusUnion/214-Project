@@ -1,26 +1,24 @@
 #include "Order.h"
 
+Order::Order(RestaurantTable* table) {
+    this->table = table;
+}
+
 void Order::addItem(MenuItem* item) {
     if (inMenu(item)) {
         item++;
         return;
     }
-    items.push(item);
+    items.push_back(item);
 }
 
 bool Order::inMenu(MenuItem* item) {
-    std::stack<MenuItem*> temp = std::stack<MenuItem*>();
     bool found = false;
-    while (!items.empty()) {
-        if (items.top()->getName() == item->getName()) {
+    for (auto& i : items) {
+        if (i->getName() == item->getName()) {
             found = true;
+            break;
         }
-        temp.push(items.top());
-        items.pop();
-    }
-    while (!temp.empty()) {
-        items.push(temp.top());
-        temp.pop();
     }
     return found;
 }
@@ -30,15 +28,15 @@ void Order::setStatus(bool status) {
 }
 
 void Order::removeItem(std::string name) {
-    std::stack<MenuItem*> temp = std::stack<MenuItem*>();
-    while (!items.empty()) {
-        if (items.top()->getName() != name) {
-            temp.push(items.top());
+    std::vector<MenuItem*> temp;
+    for (auto& i : items) {
+        if (i->getName() != name) {
+            temp.push_back(i);
         }
-        items.pop();
     }
-    while (!temp.empty()) {
-        items.push(temp.top());
-        temp.pop();
-    }
+    items = temp;
+}
+
+RestaurantTable* Order::getTable() {
+    return table;
 }
