@@ -1,3 +1,6 @@
+#include "Facade.h"
+
 int main() {
-  return 0;
+    Facade* facade = new Facade();
+    return 0;
 }
