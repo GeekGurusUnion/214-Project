@@ -9,7 +9,7 @@ void* TableIterator::first() {
     return tables[0];
 }
 
-Table* TableIterator::currentItem() {
+RestaurantTable* TableIterator::currentItem() {
     return tables[position];
 }
 
@@ -21,11 +21,17 @@ bool TableIterator::hasNext() {
 }
 
 void* TableIterator::next() {
-    Table* table = tables[position];
+    if (position >= tables.size()) {
+        return nullptr;
+    }
+    RestaurantTable* table = tables[position];
     position++;
+    if (table == nullptr) {
+        return nullptr;
+    }
     return table;
 }
 
 bool TableIterator::isAvailable(RestaurantTable* table) {
-    return table->isAvailable();
+    return table != nullptr && table->isAvailable();
 }

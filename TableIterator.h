@@ -16,7 +16,7 @@ class TableIterator : public Iterator {
         ~TableIterator();
 
         void* first();
-        Table* currentItem();
+        RestaurantTable* currentItem();
         bool hasNext();
         void* next();
         bool isAvailable(RestaurantTable* table);
