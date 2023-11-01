@@ -12,5 +12,7 @@ void TakeOrder::execute(RestaurantTable* rt, MenuItem* m) {
         std::cout << "TakeOrder: No order found for table " << rt << ".\n";
         return;
     }
-    this->waiter->addItem(rt, m);
+    if (m != nullptr) {
+        this->waiter->addItem(rt, m);
+    }
 }
