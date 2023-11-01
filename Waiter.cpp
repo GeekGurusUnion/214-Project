@@ -5,9 +5,9 @@
 Waiter::Waiter(std::string name, int totalOrders, FloorColleague *fc) {
     this->name = name;
     this->totalOrders = totalOrders;
-    orders = new Order*[totalOrders];
+    tables = new RestaurantTable*[totalOrders];
     for (int i = 0; i < totalOrders; i++) {
-        orders[i] = nullptr;
+        tables[i] = nullptr;
     }
     this->setWaiterState(new WaiterStateAvailable());
     this->floorColleague = fc;
@@ -39,14 +39,14 @@ void Waiter::confirmOrder(RestaurantTable* rt) {
     floorColleague->changed();
 }
 
-void Waiter::addOrder(Order* o) {
+void Waiter::addOrder(RestaurantTable* rt) {
     busyOrders++;
-    if (busyOrders > sizeof(orders)) {
+    if (busyOrders > sizeof(tables)) {
         std::cout << "Waiter: Sorry, I can't take any more orders.\n";
         this->setWaiterState(new WaiterStateUnavailable());
         return;
     }
-    orders[busyOrders] = o;
+    tables[busyOrders] = rt;
 }
 
 void Waiter::setWaiterState(WaiterState* state) {
@@ -55,7 +55,12 @@ void Waiter::setWaiterState(WaiterState* state) {
 }
 
 Order* Waiter::getOrder(RestaurantTable* rt) {
-    return rt->getOrder();
+    for (int i = 0; i < sizeof(tables); i++) {
+        if (tables[i] == rt) {
+            return rt->getOrder();
+        }
+    }
+    return nullptr;
 }
 
 bool Waiter::isAvailable() {

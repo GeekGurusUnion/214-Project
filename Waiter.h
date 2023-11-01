@@ -15,7 +15,7 @@ class Waiter {
     private:
         std::string name;
         WaiterState* state;
-        Order** orders;
+        RestaurantTable** tables;
         int busyOrders = 0;
         int totalOrders;
         FloorColleague* floorColleague;
@@ -25,7 +25,7 @@ class Waiter {
         void addItem(RestaurantTable* rt, MenuItem* m);
         void cleanUp(RestaurantTable* rt);
         void confirmOrder(RestaurantTable* rt);
-        void addOrder(Order* o);
+        void addOrder(RestaurantTable* rt);
         Order* getOrder(RestaurantTable* rt);
         bool isAvailable();
         std::string getName() const;
