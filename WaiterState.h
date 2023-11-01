@@ -16,8 +16,10 @@ class WaiterState {
         Waiter* waiter;
     public:
         void setWaiter(Waiter* waiter);
-        virtual void isAvailable() = 0;
-        virtual void isUnavailable() = 0;
+        virtual void setAvailable() = 0;
+        virtual void setUnavailable() = 0;
+        virtual bool isAvailable() = 0;
+        virtual bool isUnavailable() = 0;
 };
 
 #endif // WAITER_STATE_H
