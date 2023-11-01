@@ -10,6 +10,9 @@ Facade::Facade() {
     for (int i = 0; i < totalTables; i++) {
         tables.push_back(new RestaurantTable(i));
     }
+
+    waiterIterator = new WaiterIterator(waiters);
+    tableIterator = new TableIterator(tables);
 }
 
 void Facade::addTable(RestaurantTable* table) {
@@ -48,15 +51,16 @@ int Facade::getTotalTables() const {
 void Facade::getSeated() {
     RestaurantTable* table = (RestaurantTable*) tableIterator->next();
     while (tableIterator->hasNext() && !tableIterator->isAvailable(table)) {
-        std::cout << "searching for a table" << std::endl;
+        // std::cout << tableIterator->isAvailable(table) << std::endl;
+        // std::cout << "searching for a table" << std::endl;
         table = (RestaurantTable*) tableIterator->next();
     }
-    std::cout << "Found a table" << std::endl;
+    // std::cout << "Found a table" << std::endl;
     if (table != nullptr) {
         table->occupy();
         getWaiter(table);
     }
-    std::cout << "Table " << table->getTableNumber() << " is occupied by " << table->getWaiter()->getName() << std::endl;
+    std::cout << "Table " << table->getTableNumber() << " is now served by waiter " << table->getWaiter()->getName() << std::endl;
 }
 
 void Facade::getWaiter(RestaurantTable* table) {
