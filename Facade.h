@@ -27,6 +27,8 @@ class Facade {
         WaiterIterator* waiterIterator;
         TableIterator* tableIterator;
 
+        std::vector<MenuItem*> menu = std::vector<MenuItem*>();
+
         Mediator* mediator = new ConcreteMediator();
 
         FloorColleague* floorColleague = new FloorColleague(mediator);
@@ -43,7 +45,7 @@ class Facade {
         ~Facade();
 
         void getSeated();
-        void addToOrder(int tableNumber, MenuItem* item);
+        void addToOrder(int tableNumber, std::string itemName);
         void confirmOrder(int tableNumber);
 
         void getWaiter(RestaurantTable* table); // called by getSeated(); - should be called internally only
@@ -55,12 +57,14 @@ class Facade {
 
         Iterator* getWaiterIterator();
         Iterator* getTableIterator();
-        Table* getTable(int index);
+        RestaurantTable* getTable(int index);
         int getWaiterSize() const;
         int getTablesPerWaiter() const;
         int getTotalTables() const;
 
         TableIterator* createIterator();
+
+        MenuItem* getMenuItem(std::string name);
 };
 
 #endif // FACADE_H

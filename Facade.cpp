@@ -13,6 +13,17 @@ Facade::Facade() {
 
     waiterIterator = new WaiterIterator(waiters);
     tableIterator = new TableIterator(tables);
+
+    menu.push_back(new MenuItem("Chicken", 10.99));
+    menu.push_back(new MenuItem("Beef", 12.99));
+    menu.push_back(new MenuItem("Pork", 11.99));
+    menu.push_back(new MenuItem("Fish", 13.99));
+    menu.push_back(new MenuItem("Lamb", 14.99));
+    menu.push_back(new MenuItem("Pasta", 15.99));
+    menu.push_back(new MenuItem("Pizza", 16.99));
+    menu.push_back(new MenuItem("Salad", 17.99));
+    menu.push_back(new MenuItem("Soup", 18.99));
+    menu.push_back(new MenuItem("Steak", 19.99));
 }
 
 void Facade::addTable(RestaurantTable* table) {
@@ -31,7 +42,7 @@ Iterator* Facade::getTableIterator() {
     return tableIterator;
 }
 
-Table* Facade::getTable(int index) {
+RestaurantTable* Facade::getTable(int index) {
     return tables[index];
 }
 
@@ -47,6 +58,14 @@ int Facade::getTotalTables() const {
     return totalTables;
 }
 
+MenuItem *Facade::getMenuItem(std::string name) {
+    for (int i = 0; i < menu.size(); i++) {
+        if (menu[i]->getName() == name) {
+            return menu[i];
+        }
+    }
+    return nullptr;
+}
 
 void Facade::getSeated() {
     RestaurantTable* table = (RestaurantTable*) tableIterator->first();
@@ -74,8 +93,17 @@ void Facade::getWaiter(RestaurantTable* table) {
     }
 }
 
-void Facade::addToOrder(int tableNumber, MenuItem* item) {
+void Facade::addToOrder(int tableNumber, std::string itemName) {
+    MenuItem* item = getMenuItem(itemName);
+    if (item == nullptr) {
+        std::cout << "Sorry, we don't have that item on the menu!" << std::endl;
+        return;
+    }
     RestaurantTable* table = (RestaurantTable*) tables[tableNumber];
+    if (table->isAvailable()) {
+        std::cout << "Sorry, that table is not occupied!" << std::endl;
+        return;
+    }
     table->addToOrder(item);
 }
 
