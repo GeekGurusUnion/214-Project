@@ -18,17 +18,20 @@ Facade::Facade() {
 
     waiterIterator = createWaiterIterator();
     tableIterator = createTableIterator();
+}
 
-    menu.push_back(new MenuItem("Chicken", 10.99));
-    menu.push_back(new MenuItem("Beef", 12.99));
-    menu.push_back(new MenuItem("Pork", 11.99));
-    menu.push_back(new MenuItem("Fish", 13.99));
-    menu.push_back(new MenuItem("Lamb", 14.99));
-    menu.push_back(new MenuItem("Pasta", 15.99));
-    menu.push_back(new MenuItem("Pizza", 16.99));
-    menu.push_back(new MenuItem("Salad", 17.99));
-    menu.push_back(new MenuItem("Soup", 18.99));
-    menu.push_back(new MenuItem("Steak", 19.99));
+Facade::~Facade() {
+    for (int i = 0; i < waiters.size(); i++) {
+        delete waiters[i];
+    }
+    for (int i = 0; i < tables.size(); i++) {
+        delete tables[i];
+    }
+    delete waiterIterator;
+    delete tableIterator;
+    delete floorColleague;
+    delete kitchenColleague;
+    delete mediator;
 }
 
 void Facade::addTable(RestaurantTable* table) {
@@ -74,16 +77,6 @@ WaiterIterator* Facade::createWaiterIterator() {
     return new WaiterIterator(waiters);
 }
 
-MenuItem *Facade::getMenuItem(std::string name)
-{
-    for (int i = 0; i < menu.size(); i++) {
-        if (menu[i]->getName() == name) {
-            return menu[i];
-        }
-    }
-    return nullptr;
-}
-
 void Facade::getSeated() {
     tableIterator = createTableIterator();
     RestaurantTable* table = (RestaurantTable*) tableIterator->first();
@@ -124,18 +117,12 @@ void Facade::getWaiter(RestaurantTable* table) {
 }
 
 void Facade::addToOrder(int tableNumber, std::string itemName) {
-    MenuItem* item = getMenuItem(itemName);
-    if (item == nullptr) {
-        std::cout << error << "Sorry, we don't have that item on the menu!" << reset << std::endl;
-        return;
-    }
     RestaurantTable* table = getTable(tableNumber);
     if (!table || table->isAvailable()) {
         std::cout << error << "Sorry, that table is not occupied!" << reset << std::endl;
         return;
     }
-    table->addToOrder(item);
-    std::cout << success << itemName << " added to your order!" << reset << std::endl;
+    table->addToOrder(itemName);
 }
 
 void Facade::confirmOrder(int tableNumber) {

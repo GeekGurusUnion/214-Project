@@ -27,8 +27,6 @@ class Facade {
         WaiterIterator* waiterIterator;
         TableIterator* tableIterator;
 
-        std::vector<MenuItem*> menu = std::vector<MenuItem*>();
-
         Mediator* mediator = new ConcreteMediator();
 
         FloorColleague* floorColleague = new FloorColleague(mediator);
