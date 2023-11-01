@@ -64,6 +64,8 @@ class Facade {
         WaiterIterator* createWaiterIterator();
 
         MenuItem* getMenuItem(std::string name);
+
+        void leaveTable(int tableNumber);
 };
 
 #endif // FACADE_H
