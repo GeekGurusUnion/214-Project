@@ -7,6 +7,7 @@
 
 class WaiterStateUnavailable : public WaiterState {
     public:
+        WaiterStateUnavailable(Waiter* waiter);
         bool isAvailable();
         bool isUnavailable();
         void setAvailable();

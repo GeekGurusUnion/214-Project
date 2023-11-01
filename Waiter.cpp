@@ -5,7 +5,7 @@
 Waiter::Waiter(std::string name, int totalOrders, FloorColleague *fc) {
     this->name = name;
     this->totalOrders = totalOrders;
-    this->setWaiterState(new WaiterStateAvailable());
+    this->setWaiterState(new WaiterStateAvailable(this));
     this->floorColleague = fc;
 }
 
@@ -51,7 +51,6 @@ void Waiter::addOrder(RestaurantTable* rt) {
 
 void Waiter::setWaiterState(WaiterState* state) {
     this->state = state;
-    this->state->setWaiter(this);
 }
 
 Order* Waiter::getOrder(RestaurantTable* rt) {

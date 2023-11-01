@@ -7,11 +7,11 @@
 
 class WaiterStateAvailable : public WaiterState {
     public:
-        void setAvailable();
-        void setUnavailable();
+        WaiterStateAvailable(Waiter* waiter);
         bool isAvailable();
         bool isUnavailable();
-
+        void setAvailable();
+        void setUnavailable();
 };
 
 #endif // WAITER__STATE_AVAILABLE_H

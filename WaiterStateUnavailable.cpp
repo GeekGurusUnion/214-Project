@@ -2,7 +2,7 @@
 #include "WaiterStateAvailable.h"
 #include "Waiter.h"
 
-
+WaiterStateUnavailable::WaiterStateUnavailable(Waiter* waiter) : WaiterState(waiter) {}
 
 bool WaiterStateUnavailable::isAvailable() {
     // std::cout << "Waiter is now available." << std::endl;
@@ -16,7 +16,7 @@ bool WaiterStateUnavailable::isUnavailable() {
 
 void WaiterStateUnavailable::setAvailable() {
     // std::cout << "Waiter is now available." << std::endl;
-    waiter->setWaiterState(new WaiterStateAvailable());
+    waiter->setWaiterState(new WaiterStateAvailable(waiter));
 }
 
 void WaiterStateUnavailable::setUnavailable() {

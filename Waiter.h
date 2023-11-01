@@ -16,7 +16,7 @@
 class Waiter {
     private:
         std::string name;
-        WaiterState* state = new WaiterStateAvailable();
+        WaiterState* state;
         std::vector<RestaurantTable*> tables = std::vector<RestaurantTable*>();
         int busyOrders = 0;
         int totalOrders;

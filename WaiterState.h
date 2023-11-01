@@ -11,10 +11,13 @@ class Waiter;
 // #include "WaiterStateAvailable.h"
 // #include "WaiterStateUnavailable.h"
 
+class Waiter;
+
 class WaiterState {
     protected:
         Waiter* waiter;
     public:
+        WaiterState(Waiter* waiter);
         void setWaiter(Waiter* waiter);
         virtual void setAvailable() = 0;
         virtual void setUnavailable() = 0;

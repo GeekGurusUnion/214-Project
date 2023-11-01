@@ -5,7 +5,9 @@ errorCount:
 run:
 	./main
 leaks:
-	leaks -atExit -- ./main.o
+	leaks -atExit -- ./main
+leaks2:
+	leaks -atExit -- ./main | grep LEAK:
 
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall
