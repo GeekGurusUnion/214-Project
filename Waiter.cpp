@@ -5,7 +5,7 @@
 Waiter::Waiter(std::string name, int totalOrders, FloorColleague *fc) {
     this->name = name;
     this->totalOrders = totalOrders;
-    tables = new RestaurantTable*[totalOrders];
+    tables = std::vector<RestaurantTable*>(totalOrders);
     for (int i = 0; i < totalOrders; i++) {
         tables[i] = nullptr;
     }
@@ -46,7 +46,7 @@ void Waiter::addOrder(RestaurantTable* rt) {
         this->setWaiterState(new WaiterStateUnavailable());
         return;
     }
-    tables[busyOrders] = rt;
+    tables.push_back(rt);
 }
 
 void Waiter::setWaiterState(WaiterState* state) {
