@@ -8,7 +8,7 @@
 
 #include "StateEmpty.h"
 
-#include "Table.h"
+// #include "Table.h"
 
 class Waiter;
 
@@ -17,6 +17,9 @@ class Waiter;
 // class CleanTable;
 // class TakeOrder;
 
+#include "Order.h"
+class Order;
+
 #include "ConfirmOrder.h"
 #include "CleanTable.h"
 #include "TakeOrder.h"
@@ -24,7 +27,7 @@ class Waiter;
 #include "TableIterator.h"
 #include <iostream> 
 
-class RestaurantTable : public Table {
+class RestaurantTable {
     private:
         State* currentState = new StateEmpty();
         Waiter* waiter = nullptr;
@@ -32,6 +35,7 @@ class RestaurantTable : public Table {
         Command* cT = new CleanTable(waiter); 
         Command* tO = new TakeOrder(waiter);
         int tableNumber;
+        Order* order;
         
     public:
         RestaurantTable(int i);

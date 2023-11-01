@@ -3,6 +3,7 @@
 
 RestaurantTable::RestaurantTable(int i) : tableNumber(i) {
     this->currentState->setTable(this);
+    this->order = new Order(this);
 }
 
 RestaurantTable::~RestaurantTable() {

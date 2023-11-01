@@ -78,6 +78,8 @@
         "utility": "cpp",
         "filesystem": "cpp",
         "*.tcc": "cpp",
-        "__functional_03": "cpp"
+        "__functional_03": "cpp",
+        "__verbose_abort": "cpp",
+        "charconv": "cpp"
     }
 }
