@@ -77,6 +77,16 @@ WaiterIterator* Facade::createWaiterIterator() {
     return new WaiterIterator(waiters);
 }
 
+void Facade::leaveTable(int tableNumber) {
+    RestaurantTable* table = getTable(tableNumber);
+    if (!table || table->isAvailable()) {
+        std::cout << error << "Sorry, that table is not occupied!" << reset << std::endl;
+        return;
+    }
+    table->empty();
+    std::cout << success << "Table " << table->getTableNumber() << " is now empty." << reset << std::endl;
+}
+
 void Facade::getSeated() {
     tableIterator = createTableIterator();
     RestaurantTable* table = (RestaurantTable*) tableIterator->first();
