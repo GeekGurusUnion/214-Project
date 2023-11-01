@@ -1,7 +1,7 @@
 #include "RestaurantTable.h"
 #include "Command.h"
 
-RestaurantTable::RestaurantTable(int i) {
+RestaurantTable::RestaurantTable(int i) : Table() {
     this->tableNumber = i;
     this->currentState->setTable(this);
 }
