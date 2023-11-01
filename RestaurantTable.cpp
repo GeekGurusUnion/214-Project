@@ -2,7 +2,6 @@
 #include "Command.h"
 
 RestaurantTable::RestaurantTable(int i) : tableNumber(i) {
-    // this->tableNumber = i;
     this->currentState->setTable(this);
 }
 
@@ -26,7 +25,7 @@ State* RestaurantTable::getState() {
 }
 
 void RestaurantTable::occupy() {
-    std::cout << "Changing state" << std::endl;
+    // std::cout << "Changing state" << std::endl;
     currentState->occupy();
 }
 
@@ -65,7 +64,7 @@ Order* RestaurantTable::getOrder() const {
 }
 
 bool RestaurantTable::isAvailable() const {
-    return currentState->isOccupied();
+    return !currentState->isOccupied();
 }
 
 int RestaurantTable::getTableNumber() const {
