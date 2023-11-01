@@ -1,7 +1,7 @@
 #include "StateServe.h"
 #include "RestaurantTable.h"
 
-StateServe::StateServe() : State() {
+StateServe::StateServe(RestaurantTable* table) : State(table) {
     stateName = "Serving";
 }
 
@@ -11,7 +11,7 @@ void StateServe::occupy() {
 
 void StateServe::empty() {
     std::cout << "Table is now empty." << std::endl;
-    table->setState(new StateEmpty());
+    table->setState(new StateEmpty(table));
 }
 
 void StateServe::serve() {

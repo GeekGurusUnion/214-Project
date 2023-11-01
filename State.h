@@ -12,6 +12,7 @@ class State {
         RestaurantTable* table = nullptr;
         std::string stateName;
     public:
+        State(RestaurantTable* table);
         void setTable(RestaurantTable* table);
         virtual void serve() = 0;
         virtual void occupy() = 0;

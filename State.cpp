@@ -1,5 +1,10 @@
 #include "State.h"
 
-void State::setTable(RestaurantTable* table) {
+State::State(RestaurantTable *table) {
+    this->table = table;
+}
+
+void State::setTable(RestaurantTable *table)
+{
     this->table = table;
 }

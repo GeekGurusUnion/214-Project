@@ -1,13 +1,13 @@
 #include "StateEmpty.h"
 #include "RestaurantTable.h"
 
-StateEmpty::StateEmpty() : State() {
+StateEmpty::StateEmpty(RestaurantTable* table) : State(table) {
     stateName = "Empty";
 }
 
 void StateEmpty::occupy() {
     std::cout << "Table is now occupied." << std::endl;
-    table->setState(new StateOccupied());
+    table->setState(new StateOccupied(table));
 }
 
 void StateEmpty::empty() {

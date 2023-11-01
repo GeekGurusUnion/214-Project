@@ -10,7 +10,7 @@ class RestaurantTable;
 
 class StateOccupied : public State {
     public:
-        StateOccupied();
+        StateOccupied(RestaurantTable* table);
         void serve();
         void occupy();
         void empty();

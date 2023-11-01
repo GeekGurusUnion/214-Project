@@ -8,7 +8,7 @@
 
 class StateServe : public State {
     public:
-        StateServe();
+        StateServe(RestaurantTable* table);
         void serve();
         void occupy();
         void empty();

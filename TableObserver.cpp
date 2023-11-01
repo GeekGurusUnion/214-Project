@@ -13,7 +13,6 @@ void TableObserver::update(std::string item, bool isItem) {
     observerState = table->getState();
     if (observerState->getStateName() == "Empty") {
         std::cout << "Table is empty." << std::endl;
-        table->cleanTable();
     }
     else if (observerState->getStateName() == "Serving") {
         std::cout << "Serving food." << std::endl;

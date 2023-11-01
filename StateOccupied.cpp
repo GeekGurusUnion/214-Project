@@ -1,7 +1,7 @@
 #include "StateOccupied.h"
 #include "RestaurantTable.h"
 
-StateOccupied::StateOccupied() : State() {
+StateOccupied::StateOccupied(RestaurantTable* table) : State(table) {
     stateName = "Occupied";
 }
 
@@ -11,12 +11,12 @@ void StateOccupied::occupy() {
 
 void StateOccupied::empty() {
     std::cout << "Table is now empty." << std::endl;
-    table->setState(new StateEmpty());
+    table->setState(new StateEmpty(table));
 }
 
 void StateOccupied::serve() {
     std::cout << "Table is occupied, serving food." << std::endl;
-    table->setState(new StateServe());
+    table->setState(new StateServe(table));
 }
 
 std::string StateOccupied::getStateName() {

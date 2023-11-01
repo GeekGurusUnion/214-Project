@@ -33,7 +33,7 @@ class Order;
 
 class RestaurantTable {
     private:
-        State* currentState = new StateEmpty();
+        State* currentState = new StateEmpty(this);
         Waiter* waiter = nullptr;
         
         int tableNumber;
