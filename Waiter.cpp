@@ -5,10 +5,6 @@
 Waiter::Waiter(std::string name, int totalOrders, FloorColleague *fc) {
     this->name = name;
     this->totalOrders = totalOrders;
-    tables = std::vector<RestaurantTable*>(totalOrders);
-    for (int i = 0; i < totalOrders; i++) {
-        tables[i] = nullptr;
-    }
     this->setWaiterState(new WaiterStateAvailable());
     this->floorColleague = fc;
 }
@@ -41,7 +37,7 @@ void Waiter::confirmOrder(RestaurantTable* rt) {
 
 void Waiter::addOrder(RestaurantTable* rt) {
     busyOrders++;
-    if (busyOrders > sizeof(tables)) {
+    if (busyOrders > totalOrders) {
         std::cout << "Waiter: Sorry, I can't take any more orders.\n";
         this->setWaiterState(new WaiterStateUnavailable());
         return;
@@ -55,9 +51,9 @@ void Waiter::setWaiterState(WaiterState* state) {
 }
 
 Order* Waiter::getOrder(RestaurantTable* rt) {
-    for (int i = 0; i < sizeof(tables); i++) {
-        if (tables[i] == rt) {
-            return rt->getOrder();
+    for (auto& t : tables) {
+        if (t == rt) {
+            return t->getOrder();
         }
     }
     return nullptr;

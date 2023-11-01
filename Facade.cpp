@@ -105,6 +105,7 @@ void Facade::addToOrder(int tableNumber, std::string itemName) {
         return;
     }
     table->addToOrder(item);
+    std::cout << itemName << " added to your order!" << std::endl;
 }
 
 void Facade::confirmOrder(int tableNumber) {
