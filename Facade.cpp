@@ -48,8 +48,10 @@ int Facade::getTotalTables() const {
 void Facade::getSeated() {
     RestaurantTable* table = (RestaurantTable*) tableIterator->next();
     while (tableIterator->hasNext() && !tableIterator->isAvailable(table)) {
+        std::cout << "searching for a table" << std::endl;
         table = (RestaurantTable*) tableIterator->next();
     }
+    std::cout << "Found a table" << std::endl;
     if (table != nullptr) {
         table->occupy();
         getWaiter(table);

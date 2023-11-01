@@ -1,8 +1,8 @@
 #include "RestaurantTable.h"
 #include "Command.h"
 
-RestaurantTable::RestaurantTable(int i) : Table() {
-    this->tableNumber = i;
+RestaurantTable::RestaurantTable(int i) : tableNumber(i) {
+    // this->tableNumber = i;
     this->currentState->setTable(this);
 }
 
@@ -26,6 +26,7 @@ State* RestaurantTable::getState() {
 }
 
 void RestaurantTable::occupy() {
+    std::cout << "Changing state" << std::endl;
     currentState->occupy();
 }
 
@@ -54,7 +55,13 @@ void RestaurantTable::addToOrder(MenuItem* item) {
 }
 
 Order* RestaurantTable::getOrder() const {
-    return this->order;
+    if (this->order != nullptr) {
+        return this->order;
+    }
+    else {
+        std::cout << "Error: Order is null." << std::endl;
+        return nullptr;
+    }
 }
 
 bool RestaurantTable::isAvailable() const {
