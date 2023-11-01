@@ -8,6 +8,10 @@ int main() {
     facade->addToOrder(1, "Steak");
     facade->addToOrder(12, "Spinach");
     facade->addToOrder(12, "Steak");
+    facade->addToOrder(12, "Steak");
+    facade->addToOrder(12, "Burger");
+    facade->confirmOrder(12);
+    facade->leaveTable(12);
     delete facade;
     return 0;
 }
