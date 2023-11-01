@@ -2,7 +2,8 @@
 #include "WaiterStateAvailable.h"
 #include "WaiterStateUnavailable.h"
 
-Waiter::Waiter(int totalOrders, FloorColleague *fc) {
+Waiter::Waiter(std::string name, int totalOrders, FloorColleague *fc) {
+    this->name = name;
     this->totalOrders = totalOrders;
     orders = new Order*[totalOrders];
     for (int i = 0; i < totalOrders; i++) {
@@ -62,4 +63,8 @@ bool Waiter::isAvailable() {
         return true;
     }
     return false;
+}
+
+std::string Waiter::getName() const {
+    return this->name;
 }

@@ -13,13 +13,14 @@
 
 class Waiter {
     private:
+        std::string name;
         WaiterState* state;
         Order** orders;
         int busyOrders = 0;
         int totalOrders;
         FloorColleague* floorColleague;
     public:
-        Waiter(int totalOrders, FloorColleague *fc);
+        Waiter(std::string name, int totalOrders, FloorColleague *fc);
         void setWaiterState(WaiterState* state);
         void addItem(RestaurantTable* rt, MenuItem* m);
         void cleanUp(RestaurantTable* rt);
@@ -27,6 +28,7 @@ class Waiter {
         void addOrder(Order* o);
         Order* getOrder(RestaurantTable* rt);
         bool isAvailable();
+        std::string getName() const;
 };
 
 #endif // WAITER_H

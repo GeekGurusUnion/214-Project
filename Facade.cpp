@@ -3,7 +3,7 @@
 Facade::Facade() {
     // Create waiters
     for (int i = 0; i < waiterSize; i++) {
-        waiters.push_back(new Waiter(tablesPerWaiter, floorColleague));
+        waiters.push_back(new Waiter(waiterNames[i], tablesPerWaiter, floorColleague));
     }
 
     // Create tables
@@ -54,6 +54,7 @@ void Facade::getSeated() {
         table->occupy();
         getWaiter(table);
     }
+    std::cout << "Table " << table->getTableNumber() << " is occupied by " << table->getWaiter()->getName() << std::endl;
 }
 
 void Facade::getWaiter(RestaurantTable* table) {

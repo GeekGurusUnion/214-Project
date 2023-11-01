@@ -36,6 +36,8 @@ class Facade {
         const int tablesPerWaiter = 3;
         const int totalTables = 12;
 
+        std::string waiterNames[4] = {"John", "Jane", "Jack", "Jill"};
+
     public:
         Facade();
         ~Facade();
