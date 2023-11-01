@@ -49,7 +49,7 @@ int Facade::getTotalTables() const {
 
 
 void Facade::getSeated() {
-    RestaurantTable* table = (RestaurantTable*) tableIterator->next();
+    RestaurantTable* table = (RestaurantTable*) tableIterator->first();
     while (tableIterator->hasNext() && !tableIterator->isAvailable(table)) {
         // std::cout << tableIterator->isAvailable(table) << std::endl;
         // std::cout << "searching for a table" << std::endl;
@@ -64,11 +64,12 @@ void Facade::getSeated() {
 }
 
 void Facade::getWaiter(RestaurantTable* table) {
-    Waiter* waiter = (Waiter*) waiterIterator->next();
+    Waiter* waiter = (Waiter*) waiterIterator->first();
     while (waiterIterator->hasNext() && !waiterIterator->isAvailable(waiter)) {
         waiter = (Waiter*) waiterIterator->next();
     }
     if (waiter != nullptr) {
+        waiter->addOrder(table);
         table->setWaiter(waiter);
     }
 }
