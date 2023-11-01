@@ -20,6 +20,14 @@ Waiter::Waiter(std::string name, int totalOrders, FloorColleague *fc) {
     menu.push_back(new MenuItem("Steak", 19.99));
 }
 
+Waiter::~Waiter() {
+    for (int i = 0; i < menu.size(); i++) {
+        delete menu[i];
+    }
+    delete state;
+    delete floorColleague;
+}
+
 // TODO: Figure out a way to add to the Order obj stack (build the order)
 void Waiter::addItem(RestaurantTable* rt, MenuItem* m) {
     Order* o = getOrder(rt);

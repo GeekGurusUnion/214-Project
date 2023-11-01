@@ -24,6 +24,7 @@ class Waiter {
         std::vector<MenuItem*> menu = std::vector<MenuItem*>();
     public:
         Waiter(std::string name, int totalOrders, FloorColleague *fc);
+        ~Waiter();
         void setWaiterState(WaiterState* state);
         void addItem(RestaurantTable* rt, MenuItem* m);
         void cleanUp(RestaurantTable* rt);

@@ -9,6 +9,9 @@ RestaurantTable::RestaurantTable(int i) : tableNumber(i) {
 
 RestaurantTable::~RestaurantTable() {
     delete currentState;
+    delete waiter;
+    delete order;
+    delete observer;
 }
 
 void RestaurantTable::TransitionTo(State *state) {
@@ -19,6 +22,7 @@ void RestaurantTable::TransitionTo(State *state) {
 }
 
 void RestaurantTable::setState(State* state) {
+    delete this->currentState;
     currentState = state;
 }
 
@@ -41,6 +45,7 @@ Waiter* RestaurantTable::getWaiter() const {
 
 void RestaurantTable::setWaiter(Waiter* waiter) {
     this->waiter = waiter;
+    delete this->observer;
     this->observer = new TableObserver(this);
 }
 

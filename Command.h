@@ -9,6 +9,7 @@ class MenuItem;
 class Command {
     public: 
         virtual void execute(RestaurantTable*, MenuItem*) = 0;
+        virtual ~Command() {};
 };
 
 #endif // COMMAND_H

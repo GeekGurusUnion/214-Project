@@ -9,6 +9,14 @@ TableObserver::TableObserver(RestaurantTable* t) {
     this->tO = new TakeOrder(t->getWaiter());
 }
 
+TableObserver::~TableObserver() {
+    delete cO;
+    delete cT;
+    delete tO;
+    delete table;
+    delete observerState;
+}
+
 void TableObserver::update(std::string item, bool isItem) {
     observerState = table->getState();
     if (observerState->getStateName() == "Empty") {
