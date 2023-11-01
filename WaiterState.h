@@ -18,6 +18,7 @@ class WaiterState {
         Waiter* waiter;
     public:
         WaiterState(Waiter* waiter);
+        virtual ~WaiterState() {};
         void setWaiter(Waiter* waiter);
         virtual void setAvailable() = 0;
         virtual void setUnavailable() = 0;

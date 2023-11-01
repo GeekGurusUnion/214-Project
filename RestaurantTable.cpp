@@ -1,5 +1,6 @@
 #include "RestaurantTable.h"
 #include "Command.h"
+#include "Waiter.h"
 
 RestaurantTable::RestaurantTable(int i) : tableNumber(i) {
     this->currentState->setTable(this);
