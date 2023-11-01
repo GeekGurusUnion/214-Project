@@ -54,6 +54,8 @@ class RestaurantTable : public Table {
         Order* getOrder() const;
 
         bool isAvailable() const;
+
+        int getTableNumber() const;
 };
 
 #endif  // RESTAURANT_TABLE_H_

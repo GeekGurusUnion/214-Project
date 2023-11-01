@@ -60,3 +60,7 @@ Order* RestaurantTable::getOrder() const {
 bool RestaurantTable::isAvailable() const {
     return currentState->isOccupied();
 }
+
+int RestaurantTable::getTableNumber() const {
+    return this->tableNumber;
+}
