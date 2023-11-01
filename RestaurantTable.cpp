@@ -39,6 +39,9 @@ Waiter* RestaurantTable::getWaiter() const {
 }
 
 void RestaurantTable::setWaiter(Waiter* waiter) {
+    this->cO = new ConfirmOrder(waiter);
+    this->cT = new CleanTable(waiter);
+    this->tO = new TakeOrder(waiter);
     this->waiter = waiter;
 }
 

@@ -31,9 +31,9 @@ class RestaurantTable {
     private:
         State* currentState = new StateEmpty();
         Waiter* waiter = nullptr;
-        Command* cO = new ConfirmOrder(waiter);
-        Command* cT = new CleanTable(waiter); 
-        Command* tO = new TakeOrder(waiter);
+        Command* cO;
+        Command* cT;
+        Command* tO;
         int tableNumber;
         Order* order;
         
