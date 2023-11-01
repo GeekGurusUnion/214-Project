@@ -21,6 +21,6 @@ class Table {
         Waiter* waiter;
         Observer* observer;
         Order* order;
-        int tableId;
+        // int tableId;
 };
 #endif // TABLE_H
