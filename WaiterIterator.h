@@ -11,15 +11,13 @@
 class WaiterIterator : public Iterator {
     private:
         std::vector<Waiter*> waiters;
-        int position;
+        int position = 0;
     public:
         WaiterIterator(std::vector<Waiter*> waiters);
         void* first();
         Waiter* currentItem();
         bool hasNext();
         void* next();
-        bool isAvailable();
-        ~WaiterIterator();
         bool isAvailable(Waiter* waiter);
 };
 

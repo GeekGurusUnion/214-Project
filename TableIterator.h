@@ -10,11 +10,9 @@
 class TableIterator : public Iterator {
     private:
         std::vector<RestaurantTable*> tables;
-        int position;
+        int position = 0;
     public:
         TableIterator(std::vector<RestaurantTable*> tables);
-        ~TableIterator();
-
         void* first();
         RestaurantTable* currentItem();
         bool hasNext();
