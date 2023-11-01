@@ -36,13 +36,17 @@ void Waiter::confirmOrder(RestaurantTable* rt) {
 }
 
 void Waiter::addOrder(RestaurantTable* rt) {
-    busyOrders++;
-    if (busyOrders > totalOrders) {
+    if (!isAvailable()) {
         std::cout << "Waiter: Sorry, I can't take any more orders.\n";
-        this->setWaiterState(new WaiterStateUnavailable());
         return;
     }
+    this->busyOrders++;
+    // std::cout << busyOrders << std::endl;
     tables.push_back(rt);
+    if (busyOrders == totalOrders) {
+        std::cout << "Waiter: This will be the last one.\n";
+        this->state->setUnavailable();
+    }
 }
 
 void Waiter::setWaiterState(WaiterState* state) {
@@ -60,12 +64,13 @@ Order* Waiter::getOrder(RestaurantTable* rt) {
 }
 
 bool Waiter::isAvailable() {
-    if (busyOrders < totalOrders) {
-        return true;
-    }
-    return false;
+    return this->state->isAvailable();
 }
 
 std::string Waiter::getName() const {
     return this->name;
+}
+
+int Waiter::getBusyOrders() const {
+    return this->busyOrders;
 }
