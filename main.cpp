@@ -8,5 +8,7 @@ int main() {
     facade->addToOrder(1, "Steak");
     facade->addToOrder(12, "Spinach");
     facade->addToOrder(12, "Steak");
+    std::cout << "done" << std::endl;
+    delete facade;
     return 0;
 }
