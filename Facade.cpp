@@ -1,5 +1,10 @@
 #include "Facade.h"
 
+#define error "\x1B[31m"
+#define success "\x1B[32m"
+#define warning "\x1B[33m"
+#define reset "\x1B[0m"
+
 Facade::Facade() {
     // Create waiters
     for (int i = 0; i < waiterSize; i++) {
@@ -8,7 +13,7 @@ Facade::Facade() {
 
     // Create tables
     for (int i = 0; i < totalTables; i++) {
-        tables.push_back(new RestaurantTable(i));
+        tables.push_back(new RestaurantTable(i+1));
     }
 
     waiterIterator = createWaiterIterator();
@@ -43,10 +48,10 @@ Iterator* Facade::getTableIterator() {
 }
 
 RestaurantTable* Facade::getTable(int index) {
-    if (index < 0 || index >= tables.size()) {
+    if (index-1 < 0 || index-1 >= tables.size()) {
         return nullptr;
     }
-    return tables[index];
+    return tables[index-1];
 }
 
 int Facade::getWaiterSize() const { 
@@ -83,58 +88,60 @@ void Facade::getSeated() {
     tableIterator = createTableIterator();
     RestaurantTable* table = (RestaurantTable*) tableIterator->first();
     while (tableIterator->hasNext() && !tableIterator->isAvailable(table)) {
-        // std::cout << tableIterator->isAvailable(table) << std::endl;
-        // std::cout << "searching for a table" << std::endl;
+        // std::cout << tableIterator->isAvailable(table) << reset << std::endl;
+        // std::cout << "searching for a table" << reset << std::endl;
         table = (RestaurantTable*) tableIterator->next();
     }
-    // std::cout << "Found a table" << std::endl;
-    if (table != nullptr) {
+    // std::cout << "Found a table" << reset << std::endl;
+    if (table != nullptr && table->isAvailable()) {
         table->occupy();
         getWaiter(table);
+        std::cout << success << "Table " << table->getTableNumber() << " is now served by waiter " << table->getWaiter()->getName() << reset << std::endl;
+    } 
+    else {
+        std::cout << error << "Sorry, there are no available tables at the moment." << reset << std::endl;
     }
-    std::cout << "Table " << table->getTableNumber() << " is now served by waiter " << table->getWaiter()->getName() << std::endl;
 }
 
 void Facade::getWaiter(RestaurantTable* table) {
     waiterIterator = createWaiterIterator();
     Waiter* waiter = (Waiter*) waiterIterator->first();
-    // std::cout << waiter->getName() << std::endl;
+    // std::cout << waiter->getName() << reset << std::endl;
     Waiter* tempWaiter = waiter;
     while (waiterIterator->hasNext()) {
-        // std::cout << "Waiter " + waiter->getName() << std::endl;
-        waiter = (Waiter*) waiterIterator->next();
         if (waiter != nullptr && waiter->getBusyOrders() < tempWaiter->getBusyOrders() && waiterIterator->isAvailable(waiter)) {
             tempWaiter = waiter;
         }
+        waiter = (Waiter*) waiterIterator->next();
     }
-    // std::cout << tempWaiter->getName() << std::endl;
-    if (tempWaiter != nullptr) {
+    // std::cout << tempWaiter->getName() << reset << std::endl;
+    if (tempWaiter != nullptr && tempWaiter->isAvailable()) {
         tempWaiter->addOrder(table);
         table->setWaiter(tempWaiter);
     } else {
-        std::cout << "Sorry, there are no available waiters at the moment." << std::endl;
+        std::cout << error << "Sorry, there are no available waiters at the moment." << reset << std::endl;
     }
 }
 
 void Facade::addToOrder(int tableNumber, std::string itemName) {
     MenuItem* item = getMenuItem(itemName);
     if (item == nullptr) {
-        std::cout << "Sorry, we don't have that item on the menu!" << std::endl;
+        std::cout << error << "Sorry, we don't have that item on the menu!" << reset << std::endl;
         return;
     }
     RestaurantTable* table = getTable(tableNumber);
     if (!table || table->isAvailable()) {
-        std::cout << "Sorry, that table is not occupied!" << std::endl;
+        std::cout << error << "Sorry, that table is not occupied!" << reset << std::endl;
         return;
     }
     table->addToOrder(item);
-    std::cout << itemName << " added to your order!" << std::endl;
+    std::cout << success << itemName << " added to your order!" << reset << std::endl;
 }
 
 void Facade::confirmOrder(int tableNumber) {
     RestaurantTable* table = getTable(tableNumber);
     if (!table || table->isAvailable()) {
-        std::cout << "Sorry, that table is not occupied!" << std::endl;
+        std::cout << error << "Sorry, that table is not occupied!" << reset << std::endl;
         return;
     }
     table->confirmOrder();
