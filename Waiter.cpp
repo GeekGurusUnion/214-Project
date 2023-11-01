@@ -9,7 +9,7 @@ Waiter::Waiter(std::string name, int totalOrders, FloorColleague *fc) {
     this->floorColleague = fc;
 
     menu.push_back(new MenuItem("Chicken", 10.99));
-    menu.push_back(new MenuItem("Beef", 12.99));
+    menu.push_back(new MenuItem("Burger", 12.99));
     menu.push_back(new MenuItem("Pork", 11.99));
     menu.push_back(new MenuItem("Fish", 13.99));
     menu.push_back(new MenuItem("Lamb", 14.99));
