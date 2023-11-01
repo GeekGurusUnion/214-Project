@@ -7,6 +7,8 @@
 #include <iostream>
 
 #include "WaiterState.h"
+#include "WaiterStateAvailable.h"
+#include "WaiterStateUnavailable.h"
 #include "WaiterIterator.h"
 #include "Order.h"
 #include "FloorColleague.h"
@@ -14,7 +16,7 @@
 class Waiter {
     private:
         std::string name;
-        WaiterState* state;
+        WaiterState* state = new WaiterStateAvailable();
         std::vector<RestaurantTable*> tables = std::vector<RestaurantTable*>();
         int busyOrders = 0;
         int totalOrders;
@@ -29,6 +31,7 @@ class Waiter {
         Order* getOrder(RestaurantTable* rt);
         bool isAvailable();
         std::string getName() const;
+        int getBusyOrders() const;
 };
 
 #endif // WAITER_H
