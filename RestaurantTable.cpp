@@ -4,6 +4,7 @@
 RestaurantTable::RestaurantTable(int i) : tableNumber(i) {
     this->currentState->setTable(this);
     this->order = new Order(this);
+    this->observer = new TableObserver(this);
 }
 
 RestaurantTable::~RestaurantTable() {
@@ -26,12 +27,12 @@ State* RestaurantTable::getState() {
 }
 
 void RestaurantTable::occupy() {
-    // std::cout << "Changing state" << std::endl;
     currentState->occupy();
 }
 
 void RestaurantTable::empty() {
     currentState->empty();
+    observer->update("empty", false);
 }
 
 Waiter* RestaurantTable::getWaiter() const {
@@ -39,22 +40,28 @@ Waiter* RestaurantTable::getWaiter() const {
 }
 
 void RestaurantTable::setWaiter(Waiter* waiter) {
-    this->cO = new ConfirmOrder(waiter);
-    this->cT = new CleanTable(waiter);
-    this->tO = new TakeOrder(waiter);
     this->waiter = waiter;
+    this->observer = new TableObserver(this);
+}
+
+void RestaurantTable::notifyWaiter(std::string action, bool isItem) {
+    observer->update(action, isItem);
 }
 
 void RestaurantTable::confirmOrder() {
-    this->cO->execute(this, nullptr);
+    notifyWaiter("confirm", false);
+}
+
+void RestaurantTable::welcomeWaiter() {
+    notifyWaiter("welcome", false);
 }
 
 void RestaurantTable::cleanTable() {
-    this->cT->execute(this, nullptr);
+    notifyWaiter("clean", false);
 }
 
-void RestaurantTable::addToOrder(MenuItem* item) {
-    this->tO->execute(this, item);
+void RestaurantTable::addToOrder(std::string item) {
+    notifyWaiter(item, true);
 }
 
 Order* RestaurantTable::getOrder() const {

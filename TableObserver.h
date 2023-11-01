@@ -3,18 +3,20 @@
 
 // ConcreteObserver (Observer)
 
-#include "Observer.h"
 #include "RestaurantTable.h"
 #include "State.h"
 
-class TableObserver: public Observer {
+class TableObserver {
     private:
         RestaurantTable* table;
         // observer state
         // get observer state through table.
         State* observerState;
+        Command* cO;
+        Command* cT;
+        Command* tO;
     public:
         TableObserver(RestaurantTable* t);
-        void update();
+        void update(std::string item, bool isItem);
 };
 #endif // TABLEOBSERVER_H
