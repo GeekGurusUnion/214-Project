@@ -21,6 +21,7 @@ class Waiter {
         int busyOrders = 0;
         int totalOrders;
         FloorColleague* floorColleague;
+        std::vector<MenuItem*> menu = std::vector<MenuItem*>();
     public:
         Waiter(std::string name, int totalOrders, FloorColleague *fc);
         void setWaiterState(WaiterState* state);
@@ -31,6 +32,7 @@ class Waiter {
         Order* getOrder(RestaurantTable* rt);
         bool isAvailable();
         std::string getName() const;
+        MenuItem *getMenuItem(std::string name);
         int getBusyOrders() const;
 };
 

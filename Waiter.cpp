@@ -7,6 +7,17 @@ Waiter::Waiter(std::string name, int totalOrders, FloorColleague *fc) {
     this->totalOrders = totalOrders;
     this->setWaiterState(new WaiterStateAvailable(this));
     this->floorColleague = fc;
+
+    menu.push_back(new MenuItem("Chicken", 10.99));
+    menu.push_back(new MenuItem("Beef", 12.99));
+    menu.push_back(new MenuItem("Pork", 11.99));
+    menu.push_back(new MenuItem("Fish", 13.99));
+    menu.push_back(new MenuItem("Lamb", 14.99));
+    menu.push_back(new MenuItem("Pasta", 15.99));
+    menu.push_back(new MenuItem("Pizza", 16.99));
+    menu.push_back(new MenuItem("Salad", 17.99));
+    menu.push_back(new MenuItem("Soup", 18.99));
+    menu.push_back(new MenuItem("Steak", 19.99));
 }
 
 // TODO: Figure out a way to add to the Order obj stack (build the order)
@@ -72,4 +83,13 @@ std::string Waiter::getName() const {
 
 int Waiter::getBusyOrders() const {
     return this->busyOrders;
+}
+
+MenuItem* Waiter::getMenuItem(std::string name) {
+    for (int i = 0; i < menu.size(); i++) {
+        if (menu[i]->getName() == name) {
+            return menu[i];
+        }
+    }
+    return nullptr;
 }
