@@ -11,8 +11,8 @@ Facade::Facade() {
         tables.push_back(new RestaurantTable(i));
     }
 
-    waiterIterator = new WaiterIterator(waiters);
-    tableIterator = new TableIterator(tables);
+    waiterIterator = createWaiterIterator();
+    tableIterator = createTableIterator();
 
     menu.push_back(new MenuItem("Chicken", 10.99));
     menu.push_back(new MenuItem("Beef", 12.99));
@@ -43,6 +43,9 @@ Iterator* Facade::getTableIterator() {
 }
 
 RestaurantTable* Facade::getTable(int index) {
+    if (index < 0 || index >= tables.size()) {
+        return nullptr;
+    }
     return tables[index];
 }
 
@@ -58,7 +61,16 @@ int Facade::getTotalTables() const {
     return totalTables;
 }
 
-MenuItem *Facade::getMenuItem(std::string name) {
+TableIterator *Facade::createTableIterator() {
+    return new TableIterator(tables);
+}
+
+WaiterIterator* Facade::createWaiterIterator() {
+    return new WaiterIterator(waiters);
+}
+
+MenuItem *Facade::getMenuItem(std::string name)
+{
     for (int i = 0; i < menu.size(); i++) {
         if (menu[i]->getName() == name) {
             return menu[i];
@@ -68,6 +80,7 @@ MenuItem *Facade::getMenuItem(std::string name) {
 }
 
 void Facade::getSeated() {
+    tableIterator = createTableIterator();
     RestaurantTable* table = (RestaurantTable*) tableIterator->first();
     while (tableIterator->hasNext() && !tableIterator->isAvailable(table)) {
         // std::cout << tableIterator->isAvailable(table) << std::endl;
@@ -83,13 +96,23 @@ void Facade::getSeated() {
 }
 
 void Facade::getWaiter(RestaurantTable* table) {
+    waiterIterator = createWaiterIterator();
     Waiter* waiter = (Waiter*) waiterIterator->first();
-    while (waiterIterator->hasNext() && !waiterIterator->isAvailable(waiter)) {
+    // std::cout << waiter->getName() << std::endl;
+    Waiter* tempWaiter = waiter;
+    while (waiterIterator->hasNext()) {
+        // std::cout << "Waiter " + waiter->getName() << std::endl;
         waiter = (Waiter*) waiterIterator->next();
+        if (waiter != nullptr && waiter->getBusyOrders() < tempWaiter->getBusyOrders() && waiterIterator->isAvailable(waiter)) {
+            tempWaiter = waiter;
+        }
     }
-    if (waiter != nullptr) {
-        waiter->addOrder(table);
-        table->setWaiter(waiter);
+    // std::cout << tempWaiter->getName() << std::endl;
+    if (tempWaiter != nullptr) {
+        tempWaiter->addOrder(table);
+        table->setWaiter(tempWaiter);
+    } else {
+        std::cout << "Sorry, there are no available waiters at the moment." << std::endl;
     }
 }
 
@@ -99,8 +122,8 @@ void Facade::addToOrder(int tableNumber, std::string itemName) {
         std::cout << "Sorry, we don't have that item on the menu!" << std::endl;
         return;
     }
-    RestaurantTable* table = (RestaurantTable*) tables[tableNumber];
-    if (table->isAvailable()) {
+    RestaurantTable* table = getTable(tableNumber);
+    if (!table || table->isAvailable()) {
         std::cout << "Sorry, that table is not occupied!" << std::endl;
         return;
     }
@@ -109,7 +132,13 @@ void Facade::addToOrder(int tableNumber, std::string itemName) {
 }
 
 void Facade::confirmOrder(int tableNumber) {
-    RestaurantTable* table = (RestaurantTable*) tables[tableNumber];
+    RestaurantTable* table = getTable(tableNumber);
+    if (!table || table->isAvailable()) {
+        std::cout << "Sorry, that table is not occupied!" << std::endl;
+        return;
+    }
     table->confirmOrder();
 }
+
+
 

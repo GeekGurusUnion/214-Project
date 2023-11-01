@@ -62,7 +62,8 @@ class Facade {
         int getTablesPerWaiter() const;
         int getTotalTables() const;
 
-        TableIterator* createIterator();
+        TableIterator* createTableIterator();
+        WaiterIterator* createWaiterIterator();
 
         MenuItem* getMenuItem(std::string name);
 };
