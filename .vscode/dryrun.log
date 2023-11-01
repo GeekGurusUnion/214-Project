@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/iwandejong/Documents/Universiteit/Y1S2/COS110/Assignments/Assignment 1/asgmt1'
+g++ -g main.cpp Chromosome.cpp FitnessFunction.cpp GA.cpp RandomGenerator.cpp -o main
+make: Leaving directory `/Users/iwandejong/Documents/Universiteit/Y1S2/COS110/Assignments/Assignment 1/asgmt1'
+ 

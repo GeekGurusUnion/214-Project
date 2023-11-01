@@ -1,9 +1,9 @@
 compile:
-	g++ --std=c++11 *.cpp -o main.o 
+	g++ -g --std=c++11 *.cpp -o main
 errorCount:
 	g++ --std=c++11 -w main.cpp 2>&1 | grep -c "error:"
 run:
-	./main.o
+	./main
 leaks:
 	leaks -atExit -- ./main.o
 
