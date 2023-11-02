@@ -21,10 +21,18 @@ Waiter::Waiter(std::string name, int totalOrders, FloorColleague *fc) {
 }
 
 Waiter::~Waiter() {
-    for (int i = 0; i < menu.size(); i++) {
-        delete menu[i];
+    for (MenuItem* item : menu) {
+        delete item;
     }
+    menu.clear();
+
+    // for (RestaurantTable* rt : tables) {
+    //     delete rt;
+    // }
+    // tables.clear();
+
     delete state;
+
     // delete floorColleague;
 }
 

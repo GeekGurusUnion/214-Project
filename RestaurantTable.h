@@ -43,7 +43,6 @@ class RestaurantTable {
     public:
         RestaurantTable(int i);
         ~RestaurantTable();
-        void TransitionTo(State *state);
         
         void setState(State* state);
         State* getState();

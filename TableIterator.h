@@ -13,6 +13,7 @@ class TableIterator : public Iterator {
         int position = 0;
     public:
         TableIterator(std::vector<RestaurantTable*> tables);
+        ~TableIterator();
         void* first();
         RestaurantTable* currentItem();
         bool hasNext();

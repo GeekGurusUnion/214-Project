@@ -8,6 +8,7 @@ StateEmpty::StateEmpty(RestaurantTable* table) : State(table) {
 void StateEmpty::occupy() {
     std::cout << "Table is now occupied." << std::endl;
     table->setState(new StateOccupied(table));
+    // delete this;
 }
 
 void StateEmpty::empty() {

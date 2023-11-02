@@ -5,6 +5,8 @@ TableIterator::TableIterator(std::vector<RestaurantTable*> tables) {
     this->position = 0;
 }
 
+TableIterator::~TableIterator() {}
+
 void* TableIterator::first() {
     return tables[0];
 }

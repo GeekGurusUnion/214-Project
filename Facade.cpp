@@ -21,17 +21,23 @@ Facade::Facade() {
 }
 
 Facade::~Facade() {
-    for (int i = 0; i < waiters.size(); i++) {
-        delete waiters[i];
+    for (RestaurantTable* table : tables) {
+        delete table;
     }
-    for (int i = 0; i < tables.size(); i++) {
-        delete tables[i];
+
+    tables.clear();
+
+    for (Waiter* waiter : waiters) {
+        delete waiter;
     }
+    waiters.clear();
+
     delete waiterIterator;
     delete tableIterator;
+
+    delete mediator;
     delete floorColleague;
     delete kitchenColleague;
-    delete mediator;
 }
 
 void Facade::addTable(RestaurantTable* table) {
@@ -145,6 +151,3 @@ void Facade::confirmOrder(int tableNumber) {
     }
     table->confirmOrder();
 }
-
-
-

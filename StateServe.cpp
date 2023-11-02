@@ -12,6 +12,7 @@ void StateServe::occupy() {
 void StateServe::empty() {
     std::cout << "Table is now empty." << std::endl;
     table->setState(new StateEmpty(table));
+    // delete this;
 }
 
 void StateServe::serve() {

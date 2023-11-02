@@ -10,22 +10,18 @@ RestaurantTable::RestaurantTable(int i) : tableNumber(i) {
 
 RestaurantTable::~RestaurantTable() {
     // delete currentState;
-    // delete order;
-    // delete waiter;
+    delete order;
+    // if (waiter != nullptr) {
+    //     delete waiter; 
+    // }
     delete observer;
-
-}
-
-void RestaurantTable::TransitionTo(State *state) {
-    std::cout << "Context: Transition to " << typeid(*state).name() << ".\n";
-    // if (this->currentState != nullptr)
-        // delete this->currentState;
-    this->currentState = state;
 }
 
 void RestaurantTable::setState(State* state) {
-    // delete this->currentState;
-    currentState = state;
+    std::cout << "Context: Transition to " << typeid(*state).name() << ".\n";
+    if (this->currentState != nullptr)
+        delete this->currentState;
+    this->currentState = state;
 }
 
 State* RestaurantTable::getState() {

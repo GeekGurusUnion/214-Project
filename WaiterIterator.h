@@ -14,6 +14,7 @@ class WaiterIterator : public Iterator {
         int position = 0;
     public:
         WaiterIterator(std::vector<Waiter*> waiters);
+        ~WaiterIterator();
         void* first();
         Waiter* currentItem();
         bool hasNext();

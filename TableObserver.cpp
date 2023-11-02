@@ -13,7 +13,7 @@ TableObserver::~TableObserver() {
     delete cO;
     delete cT;
     delete tO;
-    delete table;
+    // delete table;
     delete observerState;
 }
 

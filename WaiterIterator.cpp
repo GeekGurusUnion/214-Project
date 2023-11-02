@@ -5,6 +5,8 @@ WaiterIterator::WaiterIterator(std::vector<Waiter*> waiters){
     this->position = 0;
 };
 
+WaiterIterator::~WaiterIterator() {};
+
 void* WaiterIterator::first(){
     return this->waiters[0];
 };

@@ -11,6 +11,7 @@ class RestaurantTable;
 class StateOccupied : public State {
     public:
         StateOccupied(RestaurantTable* table);
+        ~StateOccupied() {};
         void serve();
         void occupy();
         void empty();

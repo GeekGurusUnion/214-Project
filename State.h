@@ -13,12 +13,12 @@ class State {
         std::string stateName;
     public:
         State(RestaurantTable* table);
+        virtual ~State();
         void setTable(RestaurantTable* table);
         virtual void serve() = 0;
         virtual void occupy() = 0;
         virtual void empty() = 0;
         virtual std::string getStateName() = 0;
-        virtual ~State();
         virtual bool isOccupied() = 0;
 };
 

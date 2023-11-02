@@ -9,6 +9,7 @@
 class StateEmpty : public State {
     public:
         StateEmpty(RestaurantTable* table);
+        ~StateEmpty() {};
         void serve();
         void occupy();
         void empty();
