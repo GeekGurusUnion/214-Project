@@ -5,7 +5,10 @@ WaiterIterator::WaiterIterator(std::vector<Waiter*> waiters){
     this->position = 0;
 };
 
-WaiterIterator::~WaiterIterator() {};
+WaiterIterator::~WaiterIterator() {
+    std::cout << "Destructor" << std::endl;
+    this->waiters.clear();
+};
 
 void* WaiterIterator::first(){
     return this->waiters[0];
@@ -25,7 +28,9 @@ bool WaiterIterator::hasNext(){
 void* WaiterIterator::next(){
     if(this->hasNext()){
         this->position++;
-        return this->waiters[this->position];
+        if (this->waiters[this->position] != nullptr) {
+            return this->waiters[this->position];
+        }
     }
     return nullptr;
 };

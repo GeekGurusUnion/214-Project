@@ -4,7 +4,9 @@ Order::Order(RestaurantTable* table) {
     this->table = table;
 }
 
-Order::~Order() {}
+Order::~Order() {
+    items.clear();
+}
 
 void Order::addItem(MenuItem* item) {
     if (inMenu(item)) {

@@ -5,7 +5,10 @@ TableIterator::TableIterator(std::vector<RestaurantTable*> tables) {
     this->position = 0;
 }
 
-TableIterator::~TableIterator() {}
+TableIterator::~TableIterator() {
+    std::cout << "Destructor" << std::endl;
+    tables.clear();
+}
 
 void* TableIterator::first() {
     return tables[0];
