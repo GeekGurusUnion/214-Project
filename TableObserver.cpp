@@ -20,15 +20,15 @@ TableObserver::~TableObserver() {
 void TableObserver::update(std::string item, bool isItem) {
     observerState = table->getState();
     if (observerState->getStateName() == "Empty") {
-        std::cout << "Table is empty." << std::endl;
+        std::cout << "This table is empty." << std::endl;
     }
     else if (observerState->getStateName() == "Serving") {
-        std::cout << "Serving food." << std::endl;
+        std::cout << "This table is being served food." << std::endl;
     }
     else if (observerState->getStateName() == "Occupied") {
-        std::cout << "Table is occupied." << std::endl;
+        std::cout << "This table is occupied." << std::endl;
         MenuItem* menuItem = table->getWaiter()->getMenuItem(item);
-        if (isItem) {
+        if (isItem) {                                                             
             std::cout << "Adding item to order." << std::endl;
             tO->execute(table, menuItem);
         }

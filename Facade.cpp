@@ -130,7 +130,7 @@ void Facade::getWaiter(RestaurantTable* table) {
 
 void Facade::addToOrder(int tableNumber, std::string itemName) {
     RestaurantTable* table = getTable(tableNumber);
-    if (!table || table->isAvailable()) {
+    if (!table || table->isAvailable()) {                                          //isAvailable() always returns false?
         std::cout << error << "Sorry, that table is not occupied!" << reset << std::endl;
         return;
     }
@@ -139,7 +139,7 @@ void Facade::addToOrder(int tableNumber, std::string itemName) {
 
 void Facade::confirmOrder(int tableNumber) {
     RestaurantTable* table = getTable(tableNumber);
-    if (!table || table->isAvailable()) {
+    if (!table || table->isAvailable()) {                                           //isAvailable() always returns false?
         std::cout << error << "Sorry, that table is not occupied!" << reset << std::endl;
         return;
     }

@@ -51,7 +51,7 @@ void RestaurantTable::setWaiter(Waiter* waiter) {
 }
 
 void RestaurantTable::notifyWaiter(std::string action, bool isItem) {
-    observer->update(action, isItem);
+    this->observer->update(action, isItem);
 }
 
 void RestaurantTable::confirmOrder() {
@@ -67,7 +67,7 @@ void RestaurantTable::cleanTable() {
 }
 
 void RestaurantTable::addToOrder(std::string item) {
-    notifyWaiter(item, true);
+    notifyWaiter(item, true);       //Always passing in true
 }
 
 Order* RestaurantTable::getOrder() const {
