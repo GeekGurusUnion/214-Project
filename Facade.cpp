@@ -21,15 +21,20 @@ Facade::Facade() {
 }
 
 Facade::~Facade() {
-    for (RestaurantTable* table : tables) {
+    while (!tables.empty()) {
+        RestaurantTable* table = tables.back();
         delete table;
+        tables.pop_back();
     }
 
     tables.clear();
 
-    for (Waiter* waiter : waiters) {
+    while (!waiters.empty()) {
+        Waiter* waiter = waiters.back();
         delete waiter;
+        waiters.pop_back();
     }
+
     waiters.clear();
 
     delete waiterIterator;

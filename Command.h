@@ -5,8 +5,11 @@
 
 class RestaurantTable;
 class MenuItem;
+class Waiter;
 
 class Command {
+    protected:
+        Waiter* waiter;
     public: 
         virtual void execute(RestaurantTable*, MenuItem*) = 0;
         virtual ~Command() {};

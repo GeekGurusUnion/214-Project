@@ -14,7 +14,8 @@ TableObserver::~TableObserver() {
     delete cT;
     delete tO;
     // delete table;
-    delete observerState;
+    if (observerState != NULL)
+        delete observerState;
 }
 
 void TableObserver::update(std::string item, bool isItem) {

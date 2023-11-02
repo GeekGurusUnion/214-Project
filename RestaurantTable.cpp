@@ -9,12 +9,16 @@ RestaurantTable::RestaurantTable(int i) : tableNumber(i) {
 }
 
 RestaurantTable::~RestaurantTable() {
-    // delete currentState;
-    delete order;
-    // if (waiter != nullptr) {
+    // if (currentState != NULL) {
+    //     delete currentState;
+    // }
+    if (order != NULL)
+        delete order;
+    // if (waiter != NULL) {
     //     delete waiter; 
     // }
-    delete observer;
+    if (observer != NULL)
+        delete observer;
 }
 
 void RestaurantTable::setState(State* state) {
