@@ -1,13 +1,25 @@
-#include "adapter.h"
-#include "headChef.h"
+// main.cpp
+#include "ad_OrderAdapter.h"
+#include "si_headChef.h"
 #include <iostream>
 
 int main() {
-    FloorOrder floorOrder({"Burger", "NoOnion", "ExtraCheese"});
-    KitchenOrder kitchenOrder = adapter::adapt(floorOrder);
-    headChef headChef;
-    dish* finalDish = headChef.prepareDish(kitchenOrder);
-    std::cout << finalDish->getDescription() << std::endl;
-    delete finalDish;
+
+    ad_OrderAdapter floorOrder({"Burger", "NoOnion", "ExtraCheese"});
+    fa_dish *finalDish = floorOrder.PlaceOrder();
+
+    ad_OrderAdapter otherOrder({"BBQChickenPizza", "ExtraCheese", "noCheese"});
+    fa_dish *otherdish = otherOrder.PlaceOrder();
+
+
+    if (finalDish) {
+        std::cout << finalDish->getDescription() << std::endl;
+        std::cout << otherdish->getDescription() << std::endl;
+        delete finalDish;
+        delete otherdish;
+    } else {
+        std::cout << "Order could not be prepared." << std::endl;
+    }
+
     return 0;
 }
