@@ -1,0 +1,32 @@
+digraph "Kitchen/si_headChef.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="Kitchen/si_headChef.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Defines the singleton class si_headChef representing the head chef managing the kitchen."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="fa_dishFactory.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fa__dishFactory_8h.html",tooltip="Defines factories for creating different types of dishes in a restaurant system."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="fa_dish.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fa__dish_8h.html",tooltip="Defines the abstract class representing a dish in a restaurant system."];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="vector",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="algorithm",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="ad_RestaurantOrder.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ad__RestaurantOrder_8h.html",tooltip="Defines the class representing a restaurant order."];
+  Node7 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="ca_handler.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ca__handler_8h.html",tooltip="Defines the interface for a handler in the Chain of Responsibility pattern."];
+  Node8 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="ca_ingredientHandler.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ca__ingredientHandler_8h.html",tooltip=" "];
+  Node9 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="fa_burger.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fa__burger_8h.html",tooltip="Defines the abstract product and concrete products for burgers in a restaurant system."];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="list",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node10 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+}

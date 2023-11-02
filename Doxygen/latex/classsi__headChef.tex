@@ -1,0 +1,148 @@
+\hypertarget{classsi__headChef}{}\doxysection{si\+\_\+head\+Chef Class Reference}
+\label{classsi__headChef}\index{si\_headChef@{si\_headChef}}
+
+
+Singleton class representing the head chef that manages the kitchen.  
+
+
+
+
+{\ttfamily \#include $<$si\+\_\+head\+Chef.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsi__headChef_a8e26cddd4110bc7d79b8226dcd5f96be}{$\sim$si\+\_\+head\+Chef}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classca__handler}{ca\+\_\+handler}} $\ast$ \mbox{\hyperlink{classsi__headChef_a1a488f3f5b3afea60d5604727ac127f4}{create\+Handler\+Chain}} ()
+\begin{DoxyCompactList}\small\item\em Creates and initializes the handler chain for customizations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}} $\ast$ \mbox{\hyperlink{classsi__headChef_ae81fdf0aecb0ebfc7bd0c470abd94145}{prepare\+Dish}} (const \mbox{\hyperlink{classad__RestaurantOrder}{ad\+\_\+\+Restaurant\+Order}} \&order)
+\begin{DoxyCompactList}\small\item\em Prepares a dish based on the given restaurant order. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfa__dishFactory}{fa\+\_\+dish\+Factory}} $\ast$ \mbox{\hyperlink{classsi__headChef_a6d4ebb0faf22bfd03566a016c3f2cda8}{select\+Burger\+Factory}} (const std\+::string \&item)
+\begin{DoxyCompactList}\small\item\em Selects the appropriate burger factory based on the given item. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfa__dishFactory}{fa\+\_\+dish\+Factory}} $\ast$ \mbox{\hyperlink{classsi__headChef_a040341df04be35c6c46d0d35a64d7538}{select\+Pizza\+Factory}} (const std\+::string \&item)
+\begin{DoxyCompactList}\small\item\em Selects the appropriate pizza factory based on the given item. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classsi__headChef_ab4e7ecb8ae90c9db3ff519648a8f64bd}{destroy\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Deletes the single instance of \mbox{\hyperlink{classsi__headChef}{si\+\_\+head\+Chef}}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classsi__headChef}{si\+\_\+head\+Chef}} $\ast$ \mbox{\hyperlink{classsi__headChef_ab2dab262b5b7864063999ec0eae09adb}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the single instance of \mbox{\hyperlink{classsi__headChef}{si\+\_\+head\+Chef}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Singleton class representing the head chef that manages the kitchen. 
+
+This class is responsible for handling restaurant orders, creating handler chains, and preparing dishes. It follows the singleton pattern ensuring there is only one instance of head chef. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsi__headChef_a8e26cddd4110bc7d79b8226dcd5f96be}\label{classsi__headChef_a8e26cddd4110bc7d79b8226dcd5f96be}} 
+\index{si\_headChef@{si\_headChef}!````~si\_headChef@{$\sim$si\_headChef}}
+\index{````~si\_headChef@{$\sim$si\_headChef}!si\_headChef@{si\_headChef}}
+\doxysubsubsection{\texorpdfstring{$\sim$si\_headChef()}{~si\_headChef()}}
+{\footnotesize\ttfamily si\+\_\+head\+Chef\+::$\sim$si\+\_\+head\+Chef (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsi__headChef_a1a488f3f5b3afea60d5604727ac127f4}\label{classsi__headChef_a1a488f3f5b3afea60d5604727ac127f4}} 
+\index{si\_headChef@{si\_headChef}!createHandlerChain@{createHandlerChain}}
+\index{createHandlerChain@{createHandlerChain}!si\_headChef@{si\_headChef}}
+\doxysubsubsection{\texorpdfstring{createHandlerChain()}{createHandlerChain()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classca__handler}{ca\+\_\+handler}} $\ast$ si\+\_\+head\+Chef\+::create\+Handler\+Chain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates and initializes the handler chain for customizations. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the start of the handler chain. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsi__headChef_ab4e7ecb8ae90c9db3ff519648a8f64bd}\label{classsi__headChef_ab4e7ecb8ae90c9db3ff519648a8f64bd}} 
+\index{si\_headChef@{si\_headChef}!destroyInstance@{destroyInstance}}
+\index{destroyInstance@{destroyInstance}!si\_headChef@{si\_headChef}}
+\doxysubsubsection{\texorpdfstring{destroyInstance()}{destroyInstance()}}
+{\footnotesize\ttfamily void si\+\_\+head\+Chef\+::destroy\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Deletes the single instance of \mbox{\hyperlink{classsi__headChef}{si\+\_\+head\+Chef}}. 
+
+\mbox{\Hypertarget{classsi__headChef_ab2dab262b5b7864063999ec0eae09adb}\label{classsi__headChef_ab2dab262b5b7864063999ec0eae09adb}} 
+\index{si\_headChef@{si\_headChef}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!si\_headChef@{si\_headChef}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsi__headChef}{si\+\_\+head\+Chef}} $\ast$ si\+\_\+head\+Chef\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the single instance of \mbox{\hyperlink{classsi__headChef}{si\+\_\+head\+Chef}}. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the single instance of \mbox{\hyperlink{classsi__headChef}{si\+\_\+head\+Chef}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsi__headChef_ae81fdf0aecb0ebfc7bd0c470abd94145}\label{classsi__headChef_ae81fdf0aecb0ebfc7bd0c470abd94145}} 
+\index{si\_headChef@{si\_headChef}!prepareDish@{prepareDish}}
+\index{prepareDish@{prepareDish}!si\_headChef@{si\_headChef}}
+\doxysubsubsection{\texorpdfstring{prepareDish()}{prepareDish()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}} $\ast$ si\+\_\+head\+Chef\+::prepare\+Dish (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classad__RestaurantOrder}{ad\+\_\+\+Restaurant\+Order}} \&}]{order }\end{DoxyParamCaption})}
+
+
+
+Prepares a dish based on the given restaurant order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & The restaurant order containing details of the dish to be prepared. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the prepared dish. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsi__headChef_a6d4ebb0faf22bfd03566a016c3f2cda8}\label{classsi__headChef_a6d4ebb0faf22bfd03566a016c3f2cda8}} 
+\index{si\_headChef@{si\_headChef}!selectBurgerFactory@{selectBurgerFactory}}
+\index{selectBurgerFactory@{selectBurgerFactory}!si\_headChef@{si\_headChef}}
+\doxysubsubsection{\texorpdfstring{selectBurgerFactory()}{selectBurgerFactory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfa__dishFactory}{fa\+\_\+dish\+Factory}}$\ast$ si\+\_\+head\+Chef\+::select\+Burger\+Factory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{item }\end{DoxyParamCaption})}
+
+
+
+Selects the appropriate burger factory based on the given item. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & The type of burger to be prepared. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the selected burger factory. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsi__headChef_a040341df04be35c6c46d0d35a64d7538}\label{classsi__headChef_a040341df04be35c6c46d0d35a64d7538}} 
+\index{si\_headChef@{si\_headChef}!selectPizzaFactory@{selectPizzaFactory}}
+\index{selectPizzaFactory@{selectPizzaFactory}!si\_headChef@{si\_headChef}}
+\doxysubsubsection{\texorpdfstring{selectPizzaFactory()}{selectPizzaFactory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfa__dishFactory}{fa\+\_\+dish\+Factory}}$\ast$ si\+\_\+head\+Chef\+::select\+Pizza\+Factory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{item }\end{DoxyParamCaption})}
+
+
+
+Selects the appropriate pizza factory based on the given item. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & The type of pizza to be prepared. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the selected pizza factory. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Kitchen/\mbox{\hyperlink{si__headChef_8h}{si\+\_\+head\+Chef.\+h}}\item 
+Kitchen/\mbox{\hyperlink{si__headChef_8cpp}{si\+\_\+head\+Chef.\+cpp}}\end{DoxyCompactItemize}

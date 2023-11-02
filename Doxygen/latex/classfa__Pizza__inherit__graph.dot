@@ -1,0 +1,15 @@
+digraph "fa_Pizza"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="fa_Pizza",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Abstract class representing a generic pizza dish."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="fa_dish",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfa__dish.html",tooltip="Abstract class representing a dish with customizable components."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="BBQChickenPizza",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBBQChickenPizza.html",tooltip="Concrete class representing a BBQ Chicken Pizza."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="HawaiianPizza",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classHawaiianPizza.html",tooltip="Concrete class representing a Hawaiian Pizza."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="PepperoniPizza",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPepperoniPizza.html",tooltip="Concrete class representing a Pepperoni Pizza."];
+}

@@ -1,0 +1,97 @@
+\hypertarget{classad__RestaurantOrder}{}\doxysection{ad\+\_\+\+Restaurant\+Order Class Reference}
+\label{classad__RestaurantOrder}\index{ad\_RestaurantOrder@{ad\_RestaurantOrder}}
+
+
+{\ttfamily \#include $<$ad\+\_\+\+Restaurant\+Order.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classad__RestaurantOrder_aa711291aa042ebc2738f685b01c576db}{ad\+\_\+\+Restaurant\+Order}} (const std\+::string \&item, const std\+::vector$<$ std\+::string $>$ \&customizations)
+\begin{DoxyCompactList}\small\item\em Constructs a Restaurant\+Order with the given item and customizations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classad__RestaurantOrder_a4cab3e22f1ff67cbd42d28cbc1399dda}{$\sim$ad\+\_\+\+Restaurant\+Order}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classad__RestaurantOrder}{ad\+\_\+\+Restaurant\+Order}}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classad__RestaurantOrder_a353d42b0f732ca8b02bc29a21ea0c0b5}{get\+Item}} () const
+\begin{DoxyCompactList}\small\item\em Fetches the item in the order. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classad__RestaurantOrder_ad776a398c8baf77746f9a4429e853ed4}{get\+Customizations}} () const
+\begin{DoxyCompactList}\small\item\em Fetches the customizations of the order. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}} $\ast$ \mbox{\hyperlink{classad__RestaurantOrder_adab4a71f84c1ce9d66d3fde02ef9af04}{prepare}} ()
+\begin{DoxyCompactList}\small\item\em Prepares the dish according to the order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classad__RestaurantOrder_aa711291aa042ebc2738f685b01c576db}\label{classad__RestaurantOrder_aa711291aa042ebc2738f685b01c576db}} 
+\index{ad\_RestaurantOrder@{ad\_RestaurantOrder}!ad\_RestaurantOrder@{ad\_RestaurantOrder}}
+\index{ad\_RestaurantOrder@{ad\_RestaurantOrder}!ad\_RestaurantOrder@{ad\_RestaurantOrder}}
+\doxysubsubsection{\texorpdfstring{ad\_RestaurantOrder()}{ad\_RestaurantOrder()}}
+{\footnotesize\ttfamily ad\+\_\+\+Restaurant\+Order\+::ad\+\_\+\+Restaurant\+Order (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{item,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{customizations }\end{DoxyParamCaption})}
+
+
+
+Constructs a Restaurant\+Order with the given item and customizations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & The main item of the order. \\
+\hline
+{\em customizations} & Vector of strings representing the customizations. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classad__RestaurantOrder_a4cab3e22f1ff67cbd42d28cbc1399dda}\label{classad__RestaurantOrder_a4cab3e22f1ff67cbd42d28cbc1399dda}} 
+\index{ad\_RestaurantOrder@{ad\_RestaurantOrder}!````~ad\_RestaurantOrder@{$\sim$ad\_RestaurantOrder}}
+\index{````~ad\_RestaurantOrder@{$\sim$ad\_RestaurantOrder}!ad\_RestaurantOrder@{ad\_RestaurantOrder}}
+\doxysubsubsection{\texorpdfstring{$\sim$ad\_RestaurantOrder()}{~ad\_RestaurantOrder()}}
+{\footnotesize\ttfamily ad\+\_\+\+Restaurant\+Order\+::$\sim$ad\+\_\+\+Restaurant\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor for \mbox{\hyperlink{classad__RestaurantOrder}{ad\+\_\+\+Restaurant\+Order}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classad__RestaurantOrder_ad776a398c8baf77746f9a4429e853ed4}\label{classad__RestaurantOrder_ad776a398c8baf77746f9a4429e853ed4}} 
+\index{ad\_RestaurantOrder@{ad\_RestaurantOrder}!getCustomizations@{getCustomizations}}
+\index{getCustomizations@{getCustomizations}!ad\_RestaurantOrder@{ad\_RestaurantOrder}}
+\doxysubsubsection{\texorpdfstring{getCustomizations()}{getCustomizations()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ ad\+\_\+\+Restaurant\+Order\+::get\+Customizations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Fetches the customizations of the order. 
+
+\begin{DoxyReturn}{Returns}
+A vector of strings representing the customizations. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classad__RestaurantOrder_a353d42b0f732ca8b02bc29a21ea0c0b5}\label{classad__RestaurantOrder_a353d42b0f732ca8b02bc29a21ea0c0b5}} 
+\index{ad\_RestaurantOrder@{ad\_RestaurantOrder}!getItem@{getItem}}
+\index{getItem@{getItem}!ad\_RestaurantOrder@{ad\_RestaurantOrder}}
+\doxysubsubsection{\texorpdfstring{getItem()}{getItem()}}
+{\footnotesize\ttfamily std\+::string ad\+\_\+\+Restaurant\+Order\+::get\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Fetches the item in the order. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the item in the order. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classad__RestaurantOrder_adab4a71f84c1ce9d66d3fde02ef9af04}\label{classad__RestaurantOrder_adab4a71f84c1ce9d66d3fde02ef9af04}} 
+\index{ad\_RestaurantOrder@{ad\_RestaurantOrder}!prepare@{prepare}}
+\index{prepare@{prepare}!ad\_RestaurantOrder@{ad\_RestaurantOrder}}
+\doxysubsubsection{\texorpdfstring{prepare()}{prepare()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}} $\ast$ ad\+\_\+\+Restaurant\+Order\+::prepare (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prepares the dish according to the order. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the prepared dish object. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Kitchen/\mbox{\hyperlink{ad__RestaurantOrder_8h}{ad\+\_\+\+Restaurant\+Order.\+h}}\item 
+Kitchen/\mbox{\hyperlink{ad__RestaurantOrder_8cpp}{ad\+\_\+\+Restaurant\+Order.\+cpp}}\end{DoxyCompactItemize}

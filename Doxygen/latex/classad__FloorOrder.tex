@@ -1,0 +1,106 @@
+\hypertarget{classad__FloorOrder}{}\doxysection{ad\+\_\+\+Floor\+Order Class Reference}
+\label{classad__FloorOrder}\index{ad\_FloorOrder@{ad\_FloorOrder}}
+
+
+{\ttfamily \#include $<$ad\+\_\+\+Floor\+Order.\+h$>$}
+
+
+
+Inheritance diagram for ad\+\_\+\+Floor\+Order\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classad__FloorOrder_af7cc710299c35dedd296456cfeba21cd}{$\sim$ad\+\_\+\+Floor\+Order}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classad__FloorOrder}{ad\+\_\+\+Floor\+Order}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classad__FloorOrder_a130baf0fea49fff3f112a159838fb6db}{ad\+\_\+\+Floor\+Order}} (const std\+::vector$<$ std\+::string $>$ \&details)
+\begin{DoxyCompactList}\small\item\em Constructs a floor order with the given details. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}} $\ast$ \mbox{\hyperlink{classad__FloorOrder_a8d8ca4c60bfdd3613d112bb0314e7eed}{Place\+Order}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to place an order. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classad__FloorOrder_a597abe90e4ec5ed784eeb9ed8755c375}{get\+Details}} () const
+\begin{DoxyCompactList}\small\item\em Fetches the order details. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classad__FloorOrder_a81151102b8db3fd6c77ac8d1ec503942}{order\+Details}}
+\begin{DoxyCompactList}\small\item\em Stores the details of the floor order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classad__FloorOrder_af7cc710299c35dedd296456cfeba21cd}\label{classad__FloorOrder_af7cc710299c35dedd296456cfeba21cd}} 
+\index{ad\_FloorOrder@{ad\_FloorOrder}!````~ad\_FloorOrder@{$\sim$ad\_FloorOrder}}
+\index{````~ad\_FloorOrder@{$\sim$ad\_FloorOrder}!ad\_FloorOrder@{ad\_FloorOrder}}
+\doxysubsubsection{\texorpdfstring{$\sim$ad\_FloorOrder()}{~ad\_FloorOrder()}}
+{\footnotesize\ttfamily ad\+\_\+\+Floor\+Order\+::$\sim$ad\+\_\+\+Floor\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destructor for \mbox{\hyperlink{classad__FloorOrder}{ad\+\_\+\+Floor\+Order}}. 
+
+\mbox{\Hypertarget{classad__FloorOrder_a130baf0fea49fff3f112a159838fb6db}\label{classad__FloorOrder_a130baf0fea49fff3f112a159838fb6db}} 
+\index{ad\_FloorOrder@{ad\_FloorOrder}!ad\_FloorOrder@{ad\_FloorOrder}}
+\index{ad\_FloorOrder@{ad\_FloorOrder}!ad\_FloorOrder@{ad\_FloorOrder}}
+\doxysubsubsection{\texorpdfstring{ad\_FloorOrder()}{ad\_FloorOrder()}}
+{\footnotesize\ttfamily ad\+\_\+\+Floor\+Order\+::ad\+\_\+\+Floor\+Order (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{details }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a floor order with the given details. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em details} & Vector of strings containing order details. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classad__FloorOrder_a597abe90e4ec5ed784eeb9ed8755c375}\label{classad__FloorOrder_a597abe90e4ec5ed784eeb9ed8755c375}} 
+\index{ad\_FloorOrder@{ad\_FloorOrder}!getDetails@{getDetails}}
+\index{getDetails@{getDetails}!ad\_FloorOrder@{ad\_FloorOrder}}
+\doxysubsubsection{\texorpdfstring{getDetails()}{getDetails()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ ad\+\_\+\+Floor\+Order\+::get\+Details (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Fetches the order details. 
+
+\begin{DoxyReturn}{Returns}
+A vector of strings representing the order details. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classad__FloorOrder_a8d8ca4c60bfdd3613d112bb0314e7eed}\label{classad__FloorOrder_a8d8ca4c60bfdd3613d112bb0314e7eed}} 
+\index{ad\_FloorOrder@{ad\_FloorOrder}!PlaceOrder@{PlaceOrder}}
+\index{PlaceOrder@{PlaceOrder}!ad\_FloorOrder@{ad\_FloorOrder}}
+\doxysubsubsection{\texorpdfstring{PlaceOrder()}{PlaceOrder()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}}$\ast$ ad\+\_\+\+Floor\+Order\+::\+Place\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to place an order. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to a dish object. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classad__OrderAdapter_af0d3d0ec4558eae046a3c8e1e40bcab9}{ad\+\_\+\+Order\+Adapter}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classad__FloorOrder_a81151102b8db3fd6c77ac8d1ec503942}\label{classad__FloorOrder_a81151102b8db3fd6c77ac8d1ec503942}} 
+\index{ad\_FloorOrder@{ad\_FloorOrder}!orderDetails@{orderDetails}}
+\index{orderDetails@{orderDetails}!ad\_FloorOrder@{ad\_FloorOrder}}
+\doxysubsubsection{\texorpdfstring{orderDetails}{orderDetails}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ ad\+\_\+\+Floor\+Order\+::order\+Details\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stores the details of the floor order. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Kitchen/\mbox{\hyperlink{ad__FloorOrder_8h}{ad\+\_\+\+Floor\+Order.\+h}}\item 
+Kitchen/\mbox{\hyperlink{ad__FloorOrder_8cpp}{ad\+\_\+\+Floor\+Order.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,103 @@
+\hypertarget{classRemoveingredientHandler}{}\doxysection{Removeingredient\+Handler Class Reference}
+\label{classRemoveingredientHandler}\index{RemoveingredientHandler@{RemoveingredientHandler}}
+
+
+Handler class for removing ingredients.  
+
+
+
+
+{\ttfamily \#include $<$ca\+\_\+ingredient\+Handler.\+h$>$}
+
+
+
+Inheritance diagram for Removeingredient\+Handler\+:
+% FIG 0
+
+
+Collaboration diagram for Removeingredient\+Handler\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRemoveingredientHandler_a425079099f7c8148075b53f7c5672c69}{Removeingredient\+Handler}} (const std\+::string \&\mbox{\hyperlink{classingredientHandler_a23164e138a057f2bfd83cf9dc81c6177}{ingredient}})
+\begin{DoxyCompactList}\small\item\em Constructor that initializes the ingredient to be removed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRemoveingredientHandler_aa784ac573bbae77d75df371a80b6483a}{can\+Handle}} (const std\+::string \&customization) override
+\begin{DoxyCompactList}\small\item\em Checks if the handler can handle the given customization. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRemoveingredientHandler_aa992fed0a2c1758d99ab25a45458bb04}{handle}} (\mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}} $\ast$d, const std\+::string \&customization) override
+\begin{DoxyCompactList}\small\item\em Handles the request to remove the ingredient. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Handler class for removing ingredients. 
+
+This class is responsible for handling requests to remove certain ingredients from a dish. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRemoveingredientHandler_a425079099f7c8148075b53f7c5672c69}\label{classRemoveingredientHandler_a425079099f7c8148075b53f7c5672c69}} 
+\index{RemoveingredientHandler@{RemoveingredientHandler}!RemoveingredientHandler@{RemoveingredientHandler}}
+\index{RemoveingredientHandler@{RemoveingredientHandler}!RemoveingredientHandler@{RemoveingredientHandler}}
+\doxysubsubsection{\texorpdfstring{RemoveingredientHandler()}{RemoveingredientHandler()}}
+{\footnotesize\ttfamily Removeingredient\+Handler\+::\+Removeingredient\+Handler (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ingredient }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor that initializes the ingredient to be removed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ingredient} & The ingredient to be removed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRemoveingredientHandler_aa784ac573bbae77d75df371a80b6483a}\label{classRemoveingredientHandler_aa784ac573bbae77d75df371a80b6483a}} 
+\index{RemoveingredientHandler@{RemoveingredientHandler}!canHandle@{canHandle}}
+\index{canHandle@{canHandle}!RemoveingredientHandler@{RemoveingredientHandler}}
+\doxysubsubsection{\texorpdfstring{canHandle()}{canHandle()}}
+{\footnotesize\ttfamily bool Removeingredient\+Handler\+::can\+Handle (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{customization }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the handler can handle the given customization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em customization} & The customization to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the customization is to remove the ingredient, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classingredientHandler_a05f5a6779424a2832ee8b1efeb233104}{ingredient\+Handler}}.
+
+\mbox{\Hypertarget{classRemoveingredientHandler_aa992fed0a2c1758d99ab25a45458bb04}\label{classRemoveingredientHandler_aa992fed0a2c1758d99ab25a45458bb04}} 
+\index{RemoveingredientHandler@{RemoveingredientHandler}!handle@{handle}}
+\index{handle@{handle}!RemoveingredientHandler@{RemoveingredientHandler}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Removeingredient\+Handler\+::handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}} $\ast$}]{d,  }\item[{const std\+::string \&}]{customization }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles the request to remove the ingredient. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & Pointer to the dish being customized. \\
+\hline
+{\em customization} & The customization to be handled. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classingredientHandler_a7d15d83fbe8e9b1c51ae38e9eb5f5bee}{ingredient\+Handler}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Kitchen/\mbox{\hyperlink{ca__ingredientHandler_8h}{ca\+\_\+ingredient\+Handler.\+h}}\end{DoxyCompactItemize}
