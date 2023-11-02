@@ -5,6 +5,7 @@
 
 class Iterator {
     public:
+        Iterator() {};
         virtual ~Iterator() {};
         virtual bool hasNext() = 0;
         virtual void* next() = 0;

@@ -1,32 +1,35 @@
 #include "TableObserver.h"
 #include "Waiter.h"
 
-TableObserver::TableObserver(RestaurantTable* t) {
-    table = t;
-    observerState = table->getState();
-    this->cO = new ConfirmOrder(t->getWaiter());
-    this->cT = new CleanTable(t->getWaiter());
-    this->tO = new TakeOrder(t->getWaiter());
+TableObserver::TableObserver(RestaurantTable* t) : table(t) {
 }
 
 TableObserver::~TableObserver() {
+    std::cout << "Destructor Table: " << table->getTableNumber() << std::endl;
     delete cO;
     delete cT;
     delete tO;
     // delete table;
-    if (observerState != NULL)
-        delete observerState;
 }
 
 void TableObserver::update(std::string item, bool isItem) {
-    observerState = table->getState();
-    if (observerState->getStateName() == "Empty") {
+    std::string observerState = table->getState()->getStateName();
+    if (observerState == "Empty") {
         std::cout << "This table is empty." << std::endl;
     }
-    else if (observerState->getStateName() == "Serving") {
+    if (table->getWaiter() != nullptr) {
+        cO = new ConfirmOrder(table->getWaiter());
+        cT = new CleanTable(table->getWaiter());
+        tO = new TakeOrder(table->getWaiter());
+    } else {
+        std::cout << "TableObserver: No waiter found for table " << table << ".\n";
+        return;
+    }
+    
+    if (observerState == "Serving") {
         std::cout << "This table is being served food." << std::endl;
     }
-    else if (observerState->getStateName() == "Occupied") {
+    else if (observerState == "Occupied") {
         std::cout << "This table is occupied." << std::endl;
         MenuItem* menuItem = table->getWaiter()->getMenuItem(item);
         if (isItem) {                                                             

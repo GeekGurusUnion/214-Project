@@ -5,6 +5,9 @@ Order::Order(RestaurantTable* table) {
 }
 
 Order::~Order() {
+    // for (auto& i : items) {
+    //     delete i;
+    // }
     items.clear();
 }
 

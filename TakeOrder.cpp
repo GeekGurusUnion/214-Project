@@ -2,13 +2,10 @@
 #include "Order.h"
 #include "Waiter.h"
 
-TakeOrder::TakeOrder(Waiter* waiter) {
-    this->waiter = waiter;
-}
+TakeOrder::TakeOrder(Waiter* waiter) : Command(waiter) {}
 
 void TakeOrder::execute(RestaurantTable* rt, MenuItem* m) {
-    Order* o = this->waiter->getOrder(rt);
-    if (o == nullptr) {
+    if (this->waiter->getOrder(rt) == nullptr) {
         std::cout << "TakeOrder: No order found for table " << rt << ".\n";
         return;
     }

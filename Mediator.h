@@ -10,6 +10,7 @@ class Mediator {
     private:
         std::vector<Colleague*> colleagues;
     public:
+        Mediator() {};
         virtual ~Mediator() {
             colleagues.clear();
         };

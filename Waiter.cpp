@@ -37,7 +37,7 @@ Waiter::~Waiter() {
 }
 
 // TODO: Figure out a way to add to the Order obj stack (build the order)
-void Waiter::addItem(RestaurantTable* rt, MenuItem* m) {
+void Waiter::addItem(RestaurantTable* rt, MenuItem* m) { 
     Order* o = getOrder(rt);
     if (o == nullptr) {
         std::cout << "Waiter: No order found for table " << rt << ".\n";
@@ -53,12 +53,11 @@ void Waiter::cleanUp(RestaurantTable* rt) {
 // TODO: Needs to be send to Mediator (Concrete Colleague)
 void Waiter::confirmOrder(RestaurantTable* rt) {
     // pass order to mediator
-    Order* o = getOrder(rt);
-    if (o == nullptr) {
+    if (getOrder(rt) == nullptr) {
         std::cout << "Waiter: No order found for table " << rt << ".\n";
         return;
     }
-    floorColleague->setOrder(o);
+    floorColleague->setOrder(getOrder(rt));
     floorColleague->changed();
 }
 
