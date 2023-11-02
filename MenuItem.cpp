@@ -5,8 +5,9 @@ MenuItem::MenuItem(std::string name, double price) {
     this->price = price;
 }
 
-std::string MenuItem::getName()
-{
+MenuItem::~MenuItem() {}
+
+std::string MenuItem::getName() {
     return name;
 }
 

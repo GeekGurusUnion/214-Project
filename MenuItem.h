@@ -10,9 +10,9 @@ class MenuItem {
         int quantity = 0;
     public:
         MenuItem(std::string name, double price);
+        ~MenuItem();
         std::string getName();
         double getPrice();
-        bool isVegetarian();
         void operator++(int);
 };
 

@@ -88,7 +88,7 @@ void Facade::leaveTable(int tableNumber) {
 }
 
 void Facade::getSeated() {
-    delete this->tableIterator;
+    // delete this->tableIterator;
     tableIterator = createTableIterator();
     RestaurantTable* table = (RestaurantTable*) tableIterator->first();
     while (tableIterator->hasNext() && !tableIterator->isAvailable(table)) {
@@ -108,7 +108,7 @@ void Facade::getSeated() {
 }
 
 void Facade::getWaiter(RestaurantTable* table) {
-    delete this->waiterIterator;
+    // delete this->waiterIterator;
     waiterIterator = createWaiterIterator();
     Waiter* waiter = (Waiter*) waiterIterator->first();
     // std::cout << waiter->getName() << reset << std::endl;

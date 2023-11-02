@@ -5,9 +5,7 @@ State::State(RestaurantTable *table) {
     this->table = table;
 }
 
-State::~State() {
-    delete table;
-}
+State::~State() {}
 
 void State::setTable(RestaurantTable *table)
 {

@@ -25,7 +25,7 @@ Waiter::~Waiter() {
         delete menu[i];
     }
     delete state;
-    delete floorColleague;
+    // delete floorColleague;
 }
 
 // TODO: Figure out a way to add to the Order obj stack (build the order)

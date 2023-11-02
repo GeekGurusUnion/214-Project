@@ -12,6 +12,7 @@ class Order {
         bool status = false;
     public:
         Order(RestaurantTable* table);
+        ~Order();
         void addItem(MenuItem* item);
         bool inMenu(MenuItem* item);
         void setStatus(bool status);
