@@ -1,34 +1,25 @@
-#include "OrderAdapter.h"
-#include "headChef.h"
+// main.cpp
+#include "ad_OrderAdapter.h"
+#include "si_headChef.h"
 #include <iostream>
 
 int main() {
-    
-    OrderAdapter* floorOrder = new OrderAdapter({"chickenBurger", "NoMushrooms", "ExtraCheese"});
-    RestaurantOrder* restaurantOrder = floorOrder->PlaceOrder();
 
-    headChef* Chef = new headChef();
+    ad_OrderAdapter floorOrder({"Burger", "NoOnion", "ExtraCheese"});
+    fa_dish *finalDish = floorOrder.PlaceOrder();
 
-    Chef->setOrder(restaurantOrder->getItem(), restaurantOrder->getCustomizations());
-
-    MenuItem* menuItem = Chef->prepareItem();
-    
-    std::cout << menuItem->getDescription() << std::endl;
-
-    // floorOrder = new OrderAdapter({"hawaiianPizza", "ExtraGarlic"});
-    // restaurantOrder = floorOrder->PlaceOrder();
-
-    
-    // Chef->setOrder(restaurantOrder->getItem(), restaurantOrder->getCustomizations());
-
-    // menuItem = Chef->prepareItem();
-    
-    // std::cout << menuItem->getDescription() << std::endl;
+    ad_OrderAdapter otherOrder({"BBQChickenPizza", "ExtraCheese", "noCheese"});
+    fa_dish *otherdish = otherOrder.PlaceOrder();
 
 
-    delete Chef;
-    delete floorOrder;
-    delete menuItem;
+    if (finalDish) {
+        std::cout << finalDish->getDescription() << std::endl;
+        std::cout << otherdish->getDescription() << std::endl;
+        delete finalDish;
+        delete otherdish;
+    } else {
+        std::cout << "Order could not be prepared." << std::endl;
+    }
 
     return 0;
 }
