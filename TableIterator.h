@@ -19,6 +19,7 @@ class TableIterator : public Iterator {
         bool hasNext();
         void* next();
         bool isAvailable(RestaurantTable* table);
+        void reset();
 };
 
 #endif // TABLE_ITERATOR_H

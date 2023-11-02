@@ -1,6 +1,7 @@
 #include "WaiterIterator.h"
 
-WaiterIterator::WaiterIterator(std::vector<Waiter*> waiters){
+WaiterIterator::WaiterIterator(std::vector<Waiter*> waiters) {
+    std::cout << "Constructor" << std::endl;
     this->waiters = waiters;
     this->position = 0;
 };
@@ -37,4 +38,8 @@ void* WaiterIterator::next(){
 
 bool WaiterIterator::isAvailable(Waiter *waiter) {
     return waiter->isAvailable();
+}
+
+void WaiterIterator::reset() {
+    this->position = 0;
 }

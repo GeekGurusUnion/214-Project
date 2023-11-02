@@ -20,6 +20,7 @@ class WaiterIterator : public Iterator {
         bool hasNext();
         void* next();
         bool isAvailable(Waiter* waiter);
+        void reset();
 };
 
 #endif // WAITER_ITERATOR_H
