@@ -31,21 +31,16 @@ void TableObserver::update(std::string item, bool isItem) {
     }
     else if (observerState == "Occupied") {
         std::cout << "This table is occupied." << std::endl;
-        MenuItem* menuItem = table->getWaiter()->getMenuItem(item);
+        // MenuItem* menuItem = table->getWaiter()->getMenuItem(item);
         if (isItem) {                                                             
             std::cout << "Adding item to order." << std::endl;
             // tO->execute(table, menuItem);
-            table->getWaiter()->addItem(table, menuItem);
+            table->getWaiter()->addItem(table, item);
         }
         else if (item == "confirm") {
             std::cout << "Confirming order." << std::endl;
             // cO->execute(table, nullptr);
             table->getWaiter()->confirmOrder(table);
-        }
-        else if (item == "clean") {
-            std::cout << "Cleaning table." << std::endl;
-            // cT->execute(table, nullptr);
-            table->getWaiter()->cleanUp(table);
         }
         else if (item == "welcome") {
             std::cout << "Welcoming waiter." << std::endl;

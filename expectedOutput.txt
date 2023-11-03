@@ -1,0 +1,73 @@
+Constructor
+Constructor
+Table is now occupied.
+Context: Transition to 13StateOccupied.
+Table 1 is now served by waiter John
+Table is now occupied.
+Context: Transition to 13StateOccupied.
+Table 2 is now served by waiter Jane
+Table is now occupied.
+Context: Transition to 13StateOccupied.
+Table 3 is now served by waiter Jack
+Table is now occupied.
+Context: Transition to 13StateOccupied.
+Table 4 is now served by waiter Jill
+Table is now occupied.
+Context: Transition to 13StateOccupied.
+Table 5 is now served by waiter John
+Table is now occupied.
+Context: Transition to 13StateOccupied.
+Table 6 is now served by waiter Jane
+Table is now occupied.
+Context: Transition to 13StateOccupied.
+Table 7 is now served by waiter Jack
+Table is now occupied.
+Context: Transition to 13StateOccupied.
+Table 8 is now served by waiter Jill
+Table is now occupied.
+Context: Transition to 13StateOccupied.
+Waiter: This will be the last one.
+Table 9 is now served by waiter John
+Table is now occupied.
+Context: Transition to 13StateOccupied.
+Waiter: This will be the last one.
+Table 10 is now served by waiter Jane
+Table is now occupied.
+Context: Transition to 13StateOccupied.
+Waiter: This will be the last one.
+Table 11 is now served by waiter Jack
+Table is now occupied.
+Context: Transition to 13StateOccupied.
+Waiter: This will be the last one.
+Table 12 is now served by waiter Jill
+Sorry, there are no available tables at the moment.
+This table is occupied.
+Adding item to order.
+This table is occupied.
+Adding item to order.
+This table is occupied.
+Adding item to order.
+This table is occupied.
+Adding item to order.
+This table is occupied.
+Adding item to order.
+This table is occupied.
+Confirming order.
+Table is now empty.
+Context: Transition to 10StateEmpty.
+This table is empty.
+Table 12 is now empty.
+Destructor Table: 12
+Destructor Table: 11
+Destructor Table: 10
+Destructor Table: 9
+Destructor Table: 8
+Destructor Table: 7
+Destructor Table: 6
+Destructor Table: 5
+Destructor Table: 4
+Destructor Table: 3
+Destructor Table: 2
+Destructor Table: 1
+Destructor
+Destructor

@@ -61,10 +61,6 @@ void RestaurantTable::welcomeWaiter() {
     notifyWaiter("welcome", false);
 }
 
-void RestaurantTable::cleanTable() {
-    notifyWaiter("clean", false);
-}
-
 void RestaurantTable::addToOrder(std::string item) {
     notifyWaiter(item, true);       //Always passing in true
 }

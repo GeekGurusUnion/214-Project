@@ -23,7 +23,6 @@ class TableObserver;
 class Order;
 
 #include "ConfirmOrder.h"
-#include "CleanTable.h"
 #include "TakeOrder.h"
 
 #include "TableObserver.h"
@@ -57,7 +56,6 @@ class RestaurantTable {
 
         void confirmOrder();
         void welcomeWaiter();
-        void cleanTable();
         void addToOrder(std::string item);
 
         Order* getOrder() const;
