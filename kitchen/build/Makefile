@@ -57,13 +57,23 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/dawie/OneDrive/Documents/GitHub/214-PA5/kitchen/UnitTests
+CMAKE_SOURCE_DIR = /mnt/c/Users/dawie/OneDrive/Documents/GitHub/214-PA5/kitchen
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/dawie/OneDrive/Documents/GitHub/214-PA5/kitchen/UnitTests/build
+CMAKE_BINARY_DIR = /mnt/c/Users/dawie/OneDrive/Documents/GitHub/214-PA5/kitchen/build
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -87,9 +97,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/dawie/OneDrive/Documents/GitHub/214-PA5/kitchen/UnitTests/build/CMakeFiles /mnt/c/Users/dawie/OneDrive/Documents/GitHub/214-PA5/kitchen/UnitTests/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/dawie/OneDrive/Documents/GitHub/214-PA5/kitchen/build/CMakeFiles /mnt/c/Users/dawie/OneDrive/Documents/GitHub/214-PA5/kitchen/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/dawie/OneDrive/Documents/GitHub/214-PA5/kitchen/UnitTests/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/dawie/OneDrive/Documents/GitHub/214-PA5/kitchen/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,149 +139,125 @@ runTests/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/build
 .PHONY : runTests/fast
 
-FactoryCode/ad_FloorOrder.o: FactoryCode/ad_FloorOrder.cpp.o
-.PHONY : FactoryCode/ad_FloorOrder.o
+ad_FloorOrder.o: ad_FloorOrder.cpp.o
+.PHONY : ad_FloorOrder.o
 
 # target to build an object file
-FactoryCode/ad_FloorOrder.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/FactoryCode/ad_FloorOrder.cpp.o
-.PHONY : FactoryCode/ad_FloorOrder.cpp.o
+ad_FloorOrder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/ad_FloorOrder.cpp.o
+.PHONY : ad_FloorOrder.cpp.o
 
-FactoryCode/ad_FloorOrder.i: FactoryCode/ad_FloorOrder.cpp.i
-.PHONY : FactoryCode/ad_FloorOrder.i
+ad_FloorOrder.i: ad_FloorOrder.cpp.i
+.PHONY : ad_FloorOrder.i
 
 # target to preprocess a source file
-FactoryCode/ad_FloorOrder.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/FactoryCode/ad_FloorOrder.cpp.i
-.PHONY : FactoryCode/ad_FloorOrder.cpp.i
+ad_FloorOrder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/ad_FloorOrder.cpp.i
+.PHONY : ad_FloorOrder.cpp.i
 
-FactoryCode/ad_FloorOrder.s: FactoryCode/ad_FloorOrder.cpp.s
-.PHONY : FactoryCode/ad_FloorOrder.s
+ad_FloorOrder.s: ad_FloorOrder.cpp.s
+.PHONY : ad_FloorOrder.s
 
 # target to generate assembly for a file
-FactoryCode/ad_FloorOrder.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/FactoryCode/ad_FloorOrder.cpp.s
-.PHONY : FactoryCode/ad_FloorOrder.cpp.s
+ad_FloorOrder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/ad_FloorOrder.cpp.s
+.PHONY : ad_FloorOrder.cpp.s
 
-FactoryCode/ad_OrderAdapter.o: FactoryCode/ad_OrderAdapter.cpp.o
-.PHONY : FactoryCode/ad_OrderAdapter.o
+ad_OrderAdapter.o: ad_OrderAdapter.cpp.o
+.PHONY : ad_OrderAdapter.o
 
 # target to build an object file
-FactoryCode/ad_OrderAdapter.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/FactoryCode/ad_OrderAdapter.cpp.o
-.PHONY : FactoryCode/ad_OrderAdapter.cpp.o
+ad_OrderAdapter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/ad_OrderAdapter.cpp.o
+.PHONY : ad_OrderAdapter.cpp.o
 
-FactoryCode/ad_OrderAdapter.i: FactoryCode/ad_OrderAdapter.cpp.i
-.PHONY : FactoryCode/ad_OrderAdapter.i
+ad_OrderAdapter.i: ad_OrderAdapter.cpp.i
+.PHONY : ad_OrderAdapter.i
 
 # target to preprocess a source file
-FactoryCode/ad_OrderAdapter.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/FactoryCode/ad_OrderAdapter.cpp.i
-.PHONY : FactoryCode/ad_OrderAdapter.cpp.i
+ad_OrderAdapter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/ad_OrderAdapter.cpp.i
+.PHONY : ad_OrderAdapter.cpp.i
 
-FactoryCode/ad_OrderAdapter.s: FactoryCode/ad_OrderAdapter.cpp.s
-.PHONY : FactoryCode/ad_OrderAdapter.s
+ad_OrderAdapter.s: ad_OrderAdapter.cpp.s
+.PHONY : ad_OrderAdapter.s
 
 # target to generate assembly for a file
-FactoryCode/ad_OrderAdapter.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/FactoryCode/ad_OrderAdapter.cpp.s
-.PHONY : FactoryCode/ad_OrderAdapter.cpp.s
+ad_OrderAdapter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/ad_OrderAdapter.cpp.s
+.PHONY : ad_OrderAdapter.cpp.s
 
-FactoryCode/ad_RestaurantOrder.o: FactoryCode/ad_RestaurantOrder.cpp.o
-.PHONY : FactoryCode/ad_RestaurantOrder.o
+ad_RestaurantOrder.o: ad_RestaurantOrder.cpp.o
+.PHONY : ad_RestaurantOrder.o
 
 # target to build an object file
-FactoryCode/ad_RestaurantOrder.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/FactoryCode/ad_RestaurantOrder.cpp.o
-.PHONY : FactoryCode/ad_RestaurantOrder.cpp.o
+ad_RestaurantOrder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/ad_RestaurantOrder.cpp.o
+.PHONY : ad_RestaurantOrder.cpp.o
 
-FactoryCode/ad_RestaurantOrder.i: FactoryCode/ad_RestaurantOrder.cpp.i
-.PHONY : FactoryCode/ad_RestaurantOrder.i
+ad_RestaurantOrder.i: ad_RestaurantOrder.cpp.i
+.PHONY : ad_RestaurantOrder.i
 
 # target to preprocess a source file
-FactoryCode/ad_RestaurantOrder.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/FactoryCode/ad_RestaurantOrder.cpp.i
-.PHONY : FactoryCode/ad_RestaurantOrder.cpp.i
+ad_RestaurantOrder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/ad_RestaurantOrder.cpp.i
+.PHONY : ad_RestaurantOrder.cpp.i
 
-FactoryCode/ad_RestaurantOrder.s: FactoryCode/ad_RestaurantOrder.cpp.s
-.PHONY : FactoryCode/ad_RestaurantOrder.s
+ad_RestaurantOrder.s: ad_RestaurantOrder.cpp.s
+.PHONY : ad_RestaurantOrder.s
 
 # target to generate assembly for a file
-FactoryCode/ad_RestaurantOrder.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/FactoryCode/ad_RestaurantOrder.cpp.s
-.PHONY : FactoryCode/ad_RestaurantOrder.cpp.s
+ad_RestaurantOrder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/ad_RestaurantOrder.cpp.s
+.PHONY : ad_RestaurantOrder.cpp.s
 
-FactoryCode/fa_dish.o: FactoryCode/fa_dish.cpp.o
-.PHONY : FactoryCode/fa_dish.o
+fa_dish.o: fa_dish.cpp.o
+.PHONY : fa_dish.o
 
 # target to build an object file
-FactoryCode/fa_dish.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/FactoryCode/fa_dish.cpp.o
-.PHONY : FactoryCode/fa_dish.cpp.o
+fa_dish.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/fa_dish.cpp.o
+.PHONY : fa_dish.cpp.o
 
-FactoryCode/fa_dish.i: FactoryCode/fa_dish.cpp.i
-.PHONY : FactoryCode/fa_dish.i
+fa_dish.i: fa_dish.cpp.i
+.PHONY : fa_dish.i
 
 # target to preprocess a source file
-FactoryCode/fa_dish.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/FactoryCode/fa_dish.cpp.i
-.PHONY : FactoryCode/fa_dish.cpp.i
+fa_dish.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/fa_dish.cpp.i
+.PHONY : fa_dish.cpp.i
 
-FactoryCode/fa_dish.s: FactoryCode/fa_dish.cpp.s
-.PHONY : FactoryCode/fa_dish.s
+fa_dish.s: fa_dish.cpp.s
+.PHONY : fa_dish.s
 
 # target to generate assembly for a file
-FactoryCode/fa_dish.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/FactoryCode/fa_dish.cpp.s
-.PHONY : FactoryCode/fa_dish.cpp.s
+fa_dish.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/fa_dish.cpp.s
+.PHONY : fa_dish.cpp.s
 
-FactoryCode/fa_dishFactory.o: FactoryCode/fa_dishFactory.cpp.o
-.PHONY : FactoryCode/fa_dishFactory.o
+fa_dishFactory.o: fa_dishFactory.cpp.o
+.PHONY : fa_dishFactory.o
 
 # target to build an object file
-FactoryCode/fa_dishFactory.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/FactoryCode/fa_dishFactory.cpp.o
-.PHONY : FactoryCode/fa_dishFactory.cpp.o
+fa_dishFactory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/fa_dishFactory.cpp.o
+.PHONY : fa_dishFactory.cpp.o
 
-FactoryCode/fa_dishFactory.i: FactoryCode/fa_dishFactory.cpp.i
-.PHONY : FactoryCode/fa_dishFactory.i
-
-# target to preprocess a source file
-FactoryCode/fa_dishFactory.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/FactoryCode/fa_dishFactory.cpp.i
-.PHONY : FactoryCode/fa_dishFactory.cpp.i
-
-FactoryCode/fa_dishFactory.s: FactoryCode/fa_dishFactory.cpp.s
-.PHONY : FactoryCode/fa_dishFactory.s
-
-# target to generate assembly for a file
-FactoryCode/fa_dishFactory.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/FactoryCode/fa_dishFactory.cpp.s
-.PHONY : FactoryCode/fa_dishFactory.cpp.s
-
-FactoryCode/si_headChef.o: FactoryCode/si_headChef.cpp.o
-.PHONY : FactoryCode/si_headChef.o
-
-# target to build an object file
-FactoryCode/si_headChef.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/FactoryCode/si_headChef.cpp.o
-.PHONY : FactoryCode/si_headChef.cpp.o
-
-FactoryCode/si_headChef.i: FactoryCode/si_headChef.cpp.i
-.PHONY : FactoryCode/si_headChef.i
+fa_dishFactory.i: fa_dishFactory.cpp.i
+.PHONY : fa_dishFactory.i
 
 # target to preprocess a source file
-FactoryCode/si_headChef.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/FactoryCode/si_headChef.cpp.i
-.PHONY : FactoryCode/si_headChef.cpp.i
+fa_dishFactory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/fa_dishFactory.cpp.i
+.PHONY : fa_dishFactory.cpp.i
 
-FactoryCode/si_headChef.s: FactoryCode/si_headChef.cpp.s
-.PHONY : FactoryCode/si_headChef.s
+fa_dishFactory.s: fa_dishFactory.cpp.s
+.PHONY : fa_dishFactory.s
 
 # target to generate assembly for a file
-FactoryCode/si_headChef.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/FactoryCode/si_headChef.cpp.s
-.PHONY : FactoryCode/si_headChef.cpp.s
+fa_dishFactory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/fa_dishFactory.cpp.s
+.PHONY : fa_dishFactory.cpp.s
 
 factoryTest.o: factoryTest.cpp.o
 .PHONY : factoryTest.o
@@ -321,6 +307,54 @@ factory_unittest.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/factory_unittest.cpp.s
 .PHONY : factory_unittest.cpp.s
 
+headChefTest.o: headChefTest.cpp.o
+.PHONY : headChefTest.o
+
+# target to build an object file
+headChefTest.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/headChefTest.cpp.o
+.PHONY : headChefTest.cpp.o
+
+headChefTest.i: headChefTest.cpp.i
+.PHONY : headChefTest.i
+
+# target to preprocess a source file
+headChefTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/headChefTest.cpp.i
+.PHONY : headChefTest.cpp.i
+
+headChefTest.s: headChefTest.cpp.s
+.PHONY : headChefTest.s
+
+# target to generate assembly for a file
+headChefTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/headChefTest.cpp.s
+.PHONY : headChefTest.cpp.s
+
+headChef_unittest.o: headChef_unittest.cpp.o
+.PHONY : headChef_unittest.o
+
+# target to build an object file
+headChef_unittest.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/headChef_unittest.cpp.o
+.PHONY : headChef_unittest.cpp.o
+
+headChef_unittest.i: headChef_unittest.cpp.i
+.PHONY : headChef_unittest.i
+
+# target to preprocess a source file
+headChef_unittest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/headChef_unittest.cpp.i
+.PHONY : headChef_unittest.cpp.i
+
+headChef_unittest.s: headChef_unittest.cpp.s
+.PHONY : headChef_unittest.s
+
+# target to generate assembly for a file
+headChef_unittest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/headChef_unittest.cpp.s
+.PHONY : headChef_unittest.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -345,6 +379,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+si_headChef.o: si_headChef.cpp.o
+.PHONY : si_headChef.o
+
+# target to build an object file
+si_headChef.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/si_headChef.cpp.o
+.PHONY : si_headChef.cpp.o
+
+si_headChef.i: si_headChef.cpp.i
+.PHONY : si_headChef.i
+
+# target to preprocess a source file
+si_headChef.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/si_headChef.cpp.i
+.PHONY : si_headChef.cpp.i
+
+si_headChef.s: si_headChef.cpp.s
+.PHONY : si_headChef.s
+
+# target to generate assembly for a file
+si_headChef.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/si_headChef.cpp.s
+.PHONY : si_headChef.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -353,34 +411,41 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... runTests"
-	@echo "... FactoryCode/ad_FloorOrder.o"
-	@echo "... FactoryCode/ad_FloorOrder.i"
-	@echo "... FactoryCode/ad_FloorOrder.s"
-	@echo "... FactoryCode/ad_OrderAdapter.o"
-	@echo "... FactoryCode/ad_OrderAdapter.i"
-	@echo "... FactoryCode/ad_OrderAdapter.s"
-	@echo "... FactoryCode/ad_RestaurantOrder.o"
-	@echo "... FactoryCode/ad_RestaurantOrder.i"
-	@echo "... FactoryCode/ad_RestaurantOrder.s"
-	@echo "... FactoryCode/fa_dish.o"
-	@echo "... FactoryCode/fa_dish.i"
-	@echo "... FactoryCode/fa_dish.s"
-	@echo "... FactoryCode/fa_dishFactory.o"
-	@echo "... FactoryCode/fa_dishFactory.i"
-	@echo "... FactoryCode/fa_dishFactory.s"
-	@echo "... FactoryCode/si_headChef.o"
-	@echo "... FactoryCode/si_headChef.i"
-	@echo "... FactoryCode/si_headChef.s"
+	@echo "... ad_FloorOrder.o"
+	@echo "... ad_FloorOrder.i"
+	@echo "... ad_FloorOrder.s"
+	@echo "... ad_OrderAdapter.o"
+	@echo "... ad_OrderAdapter.i"
+	@echo "... ad_OrderAdapter.s"
+	@echo "... ad_RestaurantOrder.o"
+	@echo "... ad_RestaurantOrder.i"
+	@echo "... ad_RestaurantOrder.s"
+	@echo "... fa_dish.o"
+	@echo "... fa_dish.i"
+	@echo "... fa_dish.s"
+	@echo "... fa_dishFactory.o"
+	@echo "... fa_dishFactory.i"
+	@echo "... fa_dishFactory.s"
 	@echo "... factoryTest.o"
 	@echo "... factoryTest.i"
 	@echo "... factoryTest.s"
 	@echo "... factory_unittest.o"
 	@echo "... factory_unittest.i"
 	@echo "... factory_unittest.s"
+	@echo "... headChefTest.o"
+	@echo "... headChefTest.i"
+	@echo "... headChefTest.s"
+	@echo "... headChef_unittest.o"
+	@echo "... headChef_unittest.i"
+	@echo "... headChef_unittest.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... si_headChef.o"
+	@echo "... si_headChef.i"
+	@echo "... si_headChef.s"
 .PHONY : help
 
 
