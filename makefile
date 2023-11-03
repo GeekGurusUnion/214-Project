@@ -7,6 +7,11 @@ run:
 leaks:
 	leaks -atExit -- ./main.o
 
+test: 
+	# example commit : make test FILES="unitTests_Iwan.cpp <extra files to be tested>" OUT="unitTests_Iwan"
+	g++ -g --std=c++14 $(FILES) -o $(OUT).o -lgtest -lgtest_main -lpthread
+	./$(OUT).o
+
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall
 EXECUTABLE = myprogram
