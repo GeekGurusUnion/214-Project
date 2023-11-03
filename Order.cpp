@@ -12,23 +12,19 @@ Order::~Order() {
 }
 
 void Order::addItem(MenuItem* item) {
-    if (inMenu(item)) {
-        item++;
-        return;
-    }
     items.push_back(item);
 }
 
-bool Order::inMenu(MenuItem* item) {
-    bool found = false;
-    for (auto& i : items) {
-        if (i->getName() == item->getName()) {
-            found = true;
-            break;
-        }
-    }
-    return found;
-}
+// bool Order::inMenu(MenuItem* item) {
+//     bool found = false;
+//     for (int i = 0; i < items.size(); i++) {
+//         if (items[i]->getName() == item->getName()) {
+//             found = true;
+//             break;
+//         }
+//     }
+//     return found;
+// }
 
 void Order::setStatus(bool status) {
     this->status = status;

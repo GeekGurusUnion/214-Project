@@ -14,7 +14,3 @@ std::string MenuItem::getName() {
 double MenuItem::getPrice() {
     return price;
 }
-
-void MenuItem::operator++(int) {
-    quantity++;
-}
