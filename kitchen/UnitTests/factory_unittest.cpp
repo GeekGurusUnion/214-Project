@@ -5,7 +5,8 @@
 
 namespace
 {
-    TEST(IsFactoryTest, PositiveTesting)
+    //Pizza Testing positive
+    TEST(IsPizzaFactoryTest, PositiveTesting)
     {
         std::string item = "BBQChickenPizza";
         std::vector<std::string> customizations = {""};
@@ -20,10 +21,35 @@ namespace
         EXPECT_EQ("Pizza with: Base, Tomato Sauce, Mozzarella, Pepperoni, Garlic", testPizza(item, customizations));
     }
 
-    TEST(IsFactoryTest, TestPreconditionOneNegative)
+    //Pizza testing pizza not available
+    TEST(IsPizzaFactoryTest, TestPreconditionOneNegative)
     {
         std::string item = "VeganPizza";
         std::vector<std::string> customizations = {""};
         EXPECT_EQ("Pizza with: Base, Tomato Sauce, Mozzarella", testPizza(item, customizations));
+    }
+
+    //Burger testing positive
+    TEST(IsBurgerFactoryTest, PositiveTesting)
+    {
+        std::string item = "DoubleBurger";
+        std::vector<std::string> customizations = {""};
+        EXPECT_EQ("Burger with: buns, lettuce, mayo, cheese, bacon, Beef Patty, Beef Patty", testBurger(item, customizations));
+
+        item = "ChickenBurger";
+        customizations = {""};
+        EXPECT_EQ("Burger with: buns, lettuce, mayo, cheese, bacon, Chicken Breast, Pickle", testBurger(item, customizations));
+
+        item = "BeefBurger";
+        customizations = {""};
+        EXPECT_EQ("Burger with: buns, lettuce, mayo, cheese, bacon, Beef Patty", testBurger(item, customizations));
+    }
+
+    // Burger testing burger not available
+    TEST(IsBurgerFactoryTest, TestPreconditionOneNegative)
+    {
+        std::string item = "ribBurger";
+        std::vector<std::string> customizations = {""};
+        EXPECT_EQ("Burger with: buns, lettuce, mayo, cheese, bacon", testBurger(item, customizations));
     }
 }
