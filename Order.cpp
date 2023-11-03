@@ -5,29 +5,11 @@ Order::Order(RestaurantTable* table) {
 }
 
 Order::~Order() {
-    // for (auto& i : items) {
-    //     delete i;
-    // }
     items.clear();
 }
 
 void Order::addItem(MenuItem* item) {
-    if (inMenu(item)) {
-        item++;
-        return;
-    }
     items.push_back(item);
-}
-
-bool Order::inMenu(MenuItem* item) {
-    bool found = false;
-    for (auto& i : items) {
-        if (i->getName() == item->getName()) {
-            found = true;
-            break;
-        }
-    }
-    return found;
 }
 
 void Order::setStatus(bool status) {

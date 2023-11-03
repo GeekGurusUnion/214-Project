@@ -5,8 +5,6 @@
 Waiter::Waiter(std::string name, int totalOrders, FloorColleague *fc) {
     this->name = name;
     this->totalOrders = totalOrders;
-    this->setWaiterState(new WaiterStateAvailable(this));
-    this->floorColleague = fc;
 
     menu.push_back(new MenuItem("Chicken", 10.99));
     menu.push_back(new MenuItem("Burger", 12.99));
@@ -18,6 +16,10 @@ Waiter::Waiter(std::string name, int totalOrders, FloorColleague *fc) {
     menu.push_back(new MenuItem("Salad", 17.99));
     menu.push_back(new MenuItem("Soup", 18.99));
     menu.push_back(new MenuItem("Steak", 19.99));
+
+    this->state = new WaiterStateAvailable(this);
+    this->cO = new ConfirmOrder(this, fc);
+    this->tO = new TakeOrder(this);
 }
 
 Waiter::~Waiter() {
@@ -26,39 +28,23 @@ Waiter::~Waiter() {
     }
     menu.clear();
 
-    // for (RestaurantTable* rt : tables) {
-    //     delete rt;
-    // }
-    // tables.clear();
+    delete cO;
+    delete tO;
+
+    tables.clear();
 
     delete state;
-
-    // delete floorColleague;
 }
 
-// TODO: Figure out a way to add to the Order obj stack (build the order)
-void Waiter::addItem(RestaurantTable* rt, MenuItem* m) { 
-    Order* o = getOrder(rt);
-    if (o == nullptr) {
-        std::cout << "Waiter: No order found for table " << rt << ".\n";
-        return;
+void Waiter::addItem(RestaurantTable* rt, std::string m) { 
+    MenuItem* menuItem = this->getMenuItem(m);
+    if (menuItem != nullptr) {
+        tO->execute(rt, menuItem);
     }
-    o->addItem(m);
 }
 
-void Waiter::cleanUp(RestaurantTable* rt) {
-    rt->cleanTable();
-}
-
-// TODO: Needs to be send to Mediator (Concrete Colleague)
 void Waiter::confirmOrder(RestaurantTable* rt) {
-    // pass order to mediator
-    if (getOrder(rt) == nullptr) {
-        std::cout << "Waiter: No order found for table " << rt << ".\n";
-        return;
-    }
-    floorColleague->setOrder(getOrder(rt));
-    floorColleague->changed();
+    cO->execute(rt, nullptr);
 }
 
 void Waiter::addOrder(RestaurantTable* rt) {
@@ -67,7 +53,6 @@ void Waiter::addOrder(RestaurantTable* rt) {
         return;
     }
     this->busyOrders++;
-    // std::cout << busyOrders << std::endl;
     tables.push_back(rt);
     if (busyOrders == totalOrders) {
         std::cout << "Waiter: This will be the last one.\n";
@@ -76,6 +61,7 @@ void Waiter::addOrder(RestaurantTable* rt) {
 }
 
 void Waiter::setWaiterState(WaiterState* state) {
+    delete this->state;
     this->state = state;
 }
 

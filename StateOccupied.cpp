@@ -12,13 +12,11 @@ void StateOccupied::occupy() {
 void StateOccupied::empty() {
     std::cout << "Table is now empty." << std::endl;
     table->setState(new StateEmpty(table));
-    // delete this;
 }
 
 void StateOccupied::serve() {
     std::cout << "Table is occupied, serving food." << std::endl;
     table->setState(new StateServe(table));
-    // delete this;
 }
 
 std::string StateOccupied::getStateName() {

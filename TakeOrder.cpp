@@ -5,11 +5,10 @@
 TakeOrder::TakeOrder(Waiter* waiter) : Command(waiter) {}
 
 void TakeOrder::execute(RestaurantTable* rt, MenuItem* m) {
-    if (this->waiter->getOrder(rt) == nullptr) {
-        std::cout << "TakeOrder: No order found for table " << rt << ".\n";
+    Order* o = rt->getOrder();
+    if (o == nullptr) {
+        std::cout << "Waiter: No order found for table " << rt << ".\n";
         return;
     }
-    if (m != nullptr) {
-        this->waiter->addItem(rt, m);
-    }
+    o->addItem(m);
 }

@@ -1,23 +1,14 @@
-#ifndef TABLEOBSERVER_H
-#define TABLEOBSERVER_H
+#ifndef TABLE_OBSERVER_H
+#define TABLE_OBSERVER_H
 
 // ConcreteObserver (Observer)
 
-#include "RestaurantTable.h"
 #include "State.h"
 
+class RestaurantTable;
+
 class TableObserver {
-    private:
-        RestaurantTable* table;
-        // observer state
-        // get observer state through table.
-        // State* observerState;
-        Command* cO = nullptr;
-        Command* cT = nullptr;
-        Command* tO = nullptr;
     public:
-        TableObserver(RestaurantTable* t);
-        ~TableObserver();
-        void update(std::string item, bool isItem);
+        void update(RestaurantTable* t, std::string item, bool isItem);
 };
-#endif // TABLEOBSERVER_H
+#endif // TABLE_OBSERVER_H
