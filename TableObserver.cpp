@@ -1,17 +1,7 @@
 #include "TableObserver.h"
 #include "Waiter.h"
 
-TableObserver::TableObserver(RestaurantTable* t) : table(t) {}
-
-TableObserver::~TableObserver() {
-    // std::cout << "Destructor Table: " << table->getTableNumber() << std::endl;
-    // delete cO;
-    // delete cT;
-    // delete tO;
-    // delete table;
-}
-
-void TableObserver::update(std::string item, bool isItem) {
+void TableObserver::update(RestaurantTable* table, std::string item, bool isItem) {
     std::string observerState = table->getState()->getStateName();
     if (observerState == "Empty") {
         std::cout << "This table is empty." << std::endl;

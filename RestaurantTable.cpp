@@ -5,7 +5,7 @@
 RestaurantTable::RestaurantTable(int i) : tableNumber(i) {
     this->currentState = new StateEmpty(this); 
     this->order = new Order(this);
-    this->observer = new TableObserver(this);
+    // this->observer = new TableObserver(this);
 }
 
 RestaurantTable::~RestaurantTable() {
@@ -16,7 +16,7 @@ RestaurantTable::~RestaurantTable() {
     // if (waiter != nullptr) {
     //     delete waiter; 
     // }
-    delete this->observer;
+    // delete this->observer;
 }
 
 void RestaurantTable::setState(State* state) {
@@ -34,10 +34,10 @@ void RestaurantTable::occupy() {
     currentState->occupy();
 }
 
-void RestaurantTable::empty() {
-    currentState->empty();
-    observer->update("empty", false);
-}
+// void RestaurantTable::empty() {
+//     currentState->empty();
+//     observer->update("empty", false);
+// }
 
 Waiter* RestaurantTable::getWaiter() const {
     return waiter;
@@ -46,24 +46,24 @@ Waiter* RestaurantTable::getWaiter() const {
 void RestaurantTable::setWaiter(Waiter* waiter) {
     this->waiter = waiter;
     // delete this->observer;
-    this->observer = new TableObserver(this);
+    // this->observer = new TableObserver(this);
 }
 
-void RestaurantTable::notifyWaiter(std::string action, bool isItem) {
-    this->observer->update(action, isItem);
-}
+// void RestaurantTable::notifyWaiter(std::string action, bool isItem) {
+//     this->observer->update(action, isItem);
+// }
 
-void RestaurantTable::confirmOrder() {
-    notifyWaiter("confirm", false);
-}
+// void RestaurantTable::confirmOrder() {
+//     notifyWaiter("confirm", false);
+// }
 
-void RestaurantTable::welcomeWaiter() {
-    notifyWaiter("welcome", false);
-}
+// void RestaurantTable::welcomeWaiter() {
+//     notifyWaiter("welcome", false);
+// }
 
-void RestaurantTable::addToOrder(std::string item) {
-    notifyWaiter(item, true);       //Always passing in true
-}
+// void RestaurantTable::addToOrder(std::string item) {
+//     notifyWaiter(item, true);       //Always passing in true
+// }
 
 Order* RestaurantTable::getOrder() const {
     if (this->order != nullptr) {

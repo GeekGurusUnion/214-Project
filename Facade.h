@@ -15,6 +15,8 @@
 #include "FloorColleague.h"
 #include "KitchenColleague.h"
 
+#include "TableObserver.h"
+
 #include <vector>
 
 class WaiterIterator;
@@ -35,6 +37,8 @@ class Facade {
         const int waiterSize = 4;
         const int tablesPerWaiter = 3;
         const int totalTables = 12;
+
+        TableObserver* observer;
 
         std::string waiterNames[4] = {"John", "Jane", "Jack", "Jill"};
 

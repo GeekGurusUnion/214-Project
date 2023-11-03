@@ -18,6 +18,8 @@ Facade::Facade() {
 
     waiterIterator = createWaiterIterator();
     tableIterator = createTableIterator();
+
+    observer = new TableObserver();
 }
 
 Facade::~Facade() {
@@ -39,6 +41,8 @@ Facade::~Facade() {
 
     delete waiterIterator;
     delete tableIterator;
+
+    delete observer;
 
     delete mediator;
     delete floorColleague;
@@ -94,7 +98,7 @@ void Facade::leaveTable(int tableNumber) {
         std::cout << error << "Sorry, that table is not occupied!" << resetPrint << std::endl;
         return;
     }
-    table->empty();
+    // table->empty();
     std::cout << success << "Table " << table->getTableNumber() << " is now empty." << resetPrint << std::endl;
 }
 
@@ -147,7 +151,8 @@ void Facade::addToOrder(int tableNumber, std::string itemName) {
         std::cout << error << "Sorry, that table is not occupied!" << resetPrint << std::endl;
         return;
     }
-    table->addToOrder(itemName);
+    // table->addToOrder(itemName);
+    observer->update(table, itemName, true);
 }
 
 void Facade::confirmOrder(int tableNumber) {
@@ -156,5 +161,6 @@ void Facade::confirmOrder(int tableNumber) {
         std::cout << error << "Sorry, that table is not occupied!" << resetPrint << std::endl;
         return;
     }
-    table->confirmOrder();
+    // table->confirmOrder();
+    observer->update(table, "confirm", false);
 }

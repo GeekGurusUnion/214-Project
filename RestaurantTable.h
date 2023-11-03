@@ -37,7 +37,7 @@ class RestaurantTable {
         
         int tableNumber;
         Order* order;
-        TableObserver* observer;
+        // TableObserver* observer;
         
     public:
         RestaurantTable(int i);
