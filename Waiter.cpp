@@ -6,7 +6,11 @@ Waiter::Waiter(std::string name, int totalOrders, FloorColleague *fc) {
     this->name = name;
     this->totalOrders = totalOrders;
     this->setWaiterState(new WaiterStateAvailable(this));
-    this->floorColleague = fc;
+    // this->floorColleague = fc;
+
+    this->cO = new ConfirmOrder(this, fc);
+    this->cT = new CleanTable(this);
+    this->tO = new TakeOrder(this);
 
     menu.push_back(new MenuItem("Chicken", 10.99));
     menu.push_back(new MenuItem("Burger", 12.99));
@@ -38,27 +42,30 @@ Waiter::~Waiter() {
 
 // TODO: Figure out a way to add to the Order obj stack (build the order)
 void Waiter::addItem(RestaurantTable* rt, MenuItem* m) { 
-    Order* o = getOrder(rt);
-    if (o == nullptr) {
-        std::cout << "Waiter: No order found for table " << rt << ".\n";
-        return;
-    }
-    o->addItem(m);
+    // Order* o = getOrder(rt);
+    // if (o == nullptr) {
+    //     std::cout << "Waiter: No order found for table " << rt << ".\n";
+    //     return;
+    // }
+    // o->addItem(m);
+    tO->execute(rt, m);
 }
 
 void Waiter::cleanUp(RestaurantTable* rt) {
-    rt->cleanTable();
+    // rt->cleanTable();
+    cT->execute(rt, nullptr);
 }
 
 // TODO: Needs to be send to Mediator (Concrete Colleague)
 void Waiter::confirmOrder(RestaurantTable* rt) {
-    // pass order to mediator
-    if (getOrder(rt) == nullptr) {
-        std::cout << "Waiter: No order found for table " << rt << ".\n";
-        return;
-    }
-    floorColleague->setOrder(getOrder(rt));
-    floorColleague->changed();
+    // // pass order to mediator
+    // if (getOrder(rt) == nullptr) {
+    //     std::cout << "Waiter: No order found for table " << rt << ".\n";
+    //     return;
+    // }
+    cO->execute(rt, nullptr);
+    // floorColleague->setOrder(getOrder(rt));
+    // floorColleague->changed();
 }
 
 void Waiter::addOrder(RestaurantTable* rt) {

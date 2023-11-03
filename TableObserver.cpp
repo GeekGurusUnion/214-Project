@@ -6,9 +6,9 @@ TableObserver::TableObserver(RestaurantTable* t) : table(t) {
 
 TableObserver::~TableObserver() {
     std::cout << "Destructor Table: " << table->getTableNumber() << std::endl;
-    delete cO;
-    delete cT;
-    delete tO;
+    // delete cO;
+    // delete cT;
+    // delete tO;
     // delete table;
 }
 
@@ -17,14 +17,14 @@ void TableObserver::update(std::string item, bool isItem) {
     if (observerState == "Empty") {
         std::cout << "This table is empty." << std::endl;
     }
-    if (table->getWaiter() != nullptr) {
-        cO = new ConfirmOrder(table->getWaiter());
-        cT = new CleanTable(table->getWaiter());
-        tO = new TakeOrder(table->getWaiter());
-    } else {
-        std::cout << "TableObserver: No waiter found for table " << table << ".\n";
-        return;
-    }
+    // if (table->getWaiter() != nullptr) {
+    //     cO = new ConfirmOrder(table->getWaiter());
+    //     cT = new CleanTable(table->getWaiter());
+    //     tO = new TakeOrder(table->getWaiter());
+    // } else {
+    //     std::cout << "TableObserver: No waiter found for table " << table << ".\n";
+    //     return;
+    // }
     
     if (observerState == "Serving") {
         std::cout << "This table is being served food." << std::endl;
@@ -34,15 +34,18 @@ void TableObserver::update(std::string item, bool isItem) {
         MenuItem* menuItem = table->getWaiter()->getMenuItem(item);
         if (isItem) {                                                             
             std::cout << "Adding item to order." << std::endl;
-            tO->execute(table, menuItem);
+            // tO->execute(table, menuItem);
+            table->getWaiter()->addItem(table, menuItem);
         }
         else if (item == "confirm") {
             std::cout << "Confirming order." << std::endl;
-            cO->execute(table, nullptr);
+            // cO->execute(table, nullptr);
+            table->getWaiter()->confirmOrder(table);
         }
         else if (item == "clean") {
             std::cout << "Cleaning table." << std::endl;
-            cT->execute(table, nullptr);
+            // cT->execute(table, nullptr);
+            table->getWaiter()->cleanUp(table);
         }
         else if (item == "welcome") {
             std::cout << "Welcoming waiter." << std::endl;

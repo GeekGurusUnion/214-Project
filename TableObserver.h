@@ -12,9 +12,7 @@ class TableObserver {
         // observer state
         // get observer state through table.
         // State* observerState;
-        Command* cO = nullptr;
-        Command* cT = nullptr;
-        Command* tO = nullptr;
+        
     public:
         TableObserver(RestaurantTable* t);
         ~TableObserver();

@@ -4,5 +4,5 @@
 CleanTable::CleanTable(Waiter* waiter) : Command(waiter) {}
 
 void CleanTable::execute(RestaurantTable* rt, MenuItem* m = nullptr) {
-    this->waiter->cleanUp(rt);
+    rt->cleanTable();
 }
