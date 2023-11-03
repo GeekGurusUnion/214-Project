@@ -6,8 +6,6 @@ run:
 	./main.o
 leaks:
 	leaks -atExit -- ./main.o
-leaks2:
-	leaks -atExit -- ./main.o | grep LEAK:
 
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall
