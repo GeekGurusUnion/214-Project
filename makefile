@@ -1,13 +1,13 @@
 compile:
-	g++ -g --std=c++11 *.cpp -o main
+	g++ -g --std=c++14 *.cpp -o main.o
 errorCount:
-	g++ --std=c++11 -w main.cpp 2>&1 | grep -c "error:"
+	g++ --std=c++14 -w main.cpp 2>&1 | grep -c "error:"
 run:
-	./main
+	./main.o
 leaks:
-	leaks -atExit -- ./main
+	leaks -atExit -- ./main.o
 leaks2:
-	leaks -atExit -- ./main | grep LEAK:
+	leaks -atExit -- ./main.o | grep LEAK:
 
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall
