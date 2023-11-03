@@ -40,4 +40,13 @@ namespace
         std::vector<std::string> customizations = {""};
         EXPECT_EQ("Dish unavailable.", testHeadChef(item, customizations));
     }
+
+    TEST(IsHeadChefSingletonTest, TestPreconditionOneNegative)
+    {
+        si_headChef* chef = si_headChef::getInstance();
+        EXPECT_EQ(chef, testSingleton());
+
+        chef = si_headChef::getInstance();
+        EXPECT_EQ(chef, testSingleton());
+    }
 }

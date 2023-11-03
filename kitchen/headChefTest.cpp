@@ -21,3 +21,7 @@ std::string testHeadChef(const std::string &item, const std::vector<std::string>
 
     return result;
 }
+
+si_headChef* testSingleton(){
+    return si_headChef::getInstance();
+}
