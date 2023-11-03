@@ -98,21 +98,16 @@ void Facade::leaveTable(int tableNumber) {
         std::cout << error << "Sorry, that table is not occupied!" << resetPrint << std::endl;
         return;
     }
-    // table->empty();
     std::cout << success << "Table " << table->getTableNumber() << " is now empty." << resetPrint << std::endl;
 }
 
 void Facade::getSeated() {
-    // delete this->tableIterator;
-    // tableIterator = createTableIterator();
     tableIterator->reset();
     RestaurantTable* table = (RestaurantTable*) tableIterator->first();
     while (tableIterator->hasNext() && !tableIterator->isAvailable(table)) {
-        // std::cout << tableIterator->isAvailable(table) << resetPrint << std::endl;
-        // std::cout << "searching for a table" << resetPrint << std::endl;
         table = (RestaurantTable*) tableIterator->next();
     }
-    // std::cout << "Found a table" << resetPrint << std::endl;
+
     if (table != nullptr && table->isAvailable()) {
         table->occupy();
         getWaiter(table);
@@ -124,11 +119,8 @@ void Facade::getSeated() {
 }
 
 void Facade::getWaiter(RestaurantTable* table) {
-    // delete this->waiterIterator;
-    // waiterIterator = createWaiterIterator();
     waiterIterator->reset();
     Waiter* waiter = (Waiter*) waiterIterator->first();
-    // std::cout << waiter->getName() << resetPrint << std::endl;
     Waiter* tempWaiter = waiter;
     while (waiterIterator->hasNext()) {
         if (waiter != nullptr && waiter->getBusyOrders() < tempWaiter->getBusyOrders() && waiterIterator->isAvailable(waiter)) {
@@ -136,7 +128,7 @@ void Facade::getWaiter(RestaurantTable* table) {
         }
         waiter = (Waiter*) waiterIterator->next();
     }
-    // std::cout << tempWaiter->getName() << resetPrint << std::endl;
+
     if (tempWaiter != nullptr && tempWaiter->isAvailable()) {
         tempWaiter->addOrder(table);
         table->setWaiter(tempWaiter);
@@ -151,7 +143,6 @@ void Facade::addToOrder(int tableNumber, std::string itemName) {
         std::cout << error << "Sorry, that table is not occupied!" << resetPrint << std::endl;
         return;
     }
-    // table->addToOrder(itemName);
     observer->update(table, itemName, true);
 }
 
@@ -161,6 +152,5 @@ void Facade::confirmOrder(int tableNumber) {
         std::cout << error << "Sorry, that table is not occupied!" << resetPrint << std::endl;
         return;
     }
-    // table->confirmOrder();
     observer->update(table, "confirm", false);
 }

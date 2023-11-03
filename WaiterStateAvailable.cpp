@@ -17,6 +17,5 @@ void WaiterStateAvailable::setAvailable() {
 }
 
 void WaiterStateAvailable::setUnavailable() {
-    // std::cout << "Waiter is now unavailable." << std::endl;
     waiter->setWaiterState(new WaiterStateUnavailable(waiter));
 }

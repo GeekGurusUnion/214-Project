@@ -11,13 +11,7 @@
 // #include "Table.h"
 
 class Waiter;
-
 class TableObserver;
-
-// class Command;
-// class ConfirmOrder;
-// class CleanTable;
-// class TakeOrder;
 
 #include "Order.h"
 class Order;
@@ -37,7 +31,6 @@ class RestaurantTable {
         
         int tableNumber;
         Order* order;
-        // TableObserver* observer;
         
     public:
         RestaurantTable(int i);
