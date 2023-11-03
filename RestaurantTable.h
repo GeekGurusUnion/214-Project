@@ -11,19 +11,12 @@
 // #include "Table.h"
 
 class Waiter;
-
 class TableObserver;
-
-// class Command;
-// class ConfirmOrder;
-// class CleanTable;
-// class TakeOrder;
 
 #include "Order.h"
 class Order;
 
 #include "ConfirmOrder.h"
-#include "CleanTable.h"
 #include "TakeOrder.h"
 
 #include "TableObserver.h"
@@ -33,12 +26,11 @@ class Order;
 
 class RestaurantTable {
     private:
-        State* currentState = new StateEmpty(this);
+        State* currentState;
         Waiter* waiter = nullptr;
         
         int tableNumber;
         Order* order;
-        TableObserver* observer;
         
     public:
         RestaurantTable(int i);
@@ -57,7 +49,6 @@ class RestaurantTable {
 
         void confirmOrder();
         void welcomeWaiter();
-        void cleanTable();
         void addToOrder(std::string item);
 
         Order* getOrder() const;

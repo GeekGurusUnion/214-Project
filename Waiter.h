@@ -20,14 +20,14 @@ class Waiter {
         std::vector<RestaurantTable*> tables = std::vector<RestaurantTable*>();
         int busyOrders = 0;
         int totalOrders;
-        FloorColleague* floorColleague;
         std::vector<MenuItem*> menu = std::vector<MenuItem*>();
+        Command* cO = nullptr;
+        Command* tO = nullptr;
     public:
         Waiter(std::string name, int totalOrders, FloorColleague *fc);
         ~Waiter();
         void setWaiterState(WaiterState* state);
-        void addItem(RestaurantTable* rt, MenuItem* m);
-        void cleanUp(RestaurantTable* rt);
+        void addItem(RestaurantTable* rt, std::string m);
         void confirmOrder(RestaurantTable* rt);
         void addOrder(RestaurantTable* rt);
         Order* getOrder(RestaurantTable* rt);
