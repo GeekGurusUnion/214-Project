@@ -5,7 +5,7 @@
 
 int main() {
 
-    ad_OrderAdapter floorOrder({"Burger", "NoOnion", "ExtraCheese"});
+    ad_OrderAdapter floorOrder({"Burger", "NoBacon", "ExtraCheese"});
     fa_dish *finalDish = floorOrder.PlaceOrder();
 
     ad_OrderAdapter otherOrder({"BBQChickenPizza", "ExtraCheese", "noCheese"});
