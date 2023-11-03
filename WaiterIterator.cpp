@@ -29,8 +29,8 @@ bool WaiterIterator::hasNext(){
 void* WaiterIterator::next(){
     if(this->hasNext()){
         this->position++;
-        // if (this->position >= waiters.size())
-        //     std::cout << "This is true\n";
+        if (this->position >= waiters.size())
+            return nullptr;
         return this->waiters[this->position];
     }
     return nullptr;
