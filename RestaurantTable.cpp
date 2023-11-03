@@ -3,15 +3,15 @@
 #include "Waiter.h"
 
 RestaurantTable::RestaurantTable(int i) : tableNumber(i) {
-    this->currentState->setTable(this);
+    this->currentState = new StateEmpty(this); 
     this->order = new Order(this);
     this->observer = new TableObserver(this);
 }
 
 RestaurantTable::~RestaurantTable() {
-    // if (currentState != NULL) {
-    delete currentState;
-    // }
+    if (currentState != nullptr) {
+        delete this->currentState;
+    }
     delete this->order;
     // if (waiter != NULL) {
     //     delete waiter; 

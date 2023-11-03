@@ -5,7 +5,6 @@
 Waiter::Waiter(std::string name, int totalOrders, FloorColleague *fc) {
     this->name = name;
     this->totalOrders = totalOrders;
-    this->setWaiterState(new WaiterStateAvailable(this));
     // this->floorColleague = fc;
     menu.push_back(new MenuItem("Chicken", 10.99));
     menu.push_back(new MenuItem("Burger", 12.99));
@@ -18,6 +17,7 @@ Waiter::Waiter(std::string name, int totalOrders, FloorColleague *fc) {
     menu.push_back(new MenuItem("Soup", 18.99));
     menu.push_back(new MenuItem("Steak", 19.99));
 
+    this->setWaiterState(new WaiterStateAvailable(this));
     this->cO = new ConfirmOrder(this, fc);
     this->tO = new TakeOrder(this);
 }
@@ -82,6 +82,7 @@ void Waiter::addOrder(RestaurantTable* rt) {
 }
 
 void Waiter::setWaiterState(WaiterState* state) {
+    delete this->state;
     this->state = state;
 }
 
