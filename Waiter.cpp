@@ -17,7 +17,7 @@ Waiter::Waiter(std::string name, int totalOrders, FloorColleague *fc) {
     menu.push_back(new MenuItem("Soup", 18.99));
     menu.push_back(new MenuItem("Steak", 19.99));
 
-    this->setWaiterState(new WaiterStateAvailable(this));
+    this->state = new WaiterStateAvailable(this);
     this->cO = new ConfirmOrder(this, fc);
     this->tO = new TakeOrder(this);
 }
