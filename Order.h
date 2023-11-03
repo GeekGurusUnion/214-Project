@@ -14,7 +14,6 @@ class Order {
         Order(RestaurantTable* table);
         ~Order();
         void addItem(MenuItem* item);
-        // bool inMenu(MenuItem* item);
         void setStatus(bool status);
         void removeItem(std::string name);
         RestaurantTable* getTable();

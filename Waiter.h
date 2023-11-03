@@ -20,7 +20,6 @@ class Waiter {
         std::vector<RestaurantTable*> tables = std::vector<RestaurantTable*>();
         int busyOrders = 0;
         int totalOrders;
-        // FloorColleague* floorColleague;
         std::vector<MenuItem*> menu = std::vector<MenuItem*>();
         Command* cO = nullptr;
         Command* tO = nullptr;
