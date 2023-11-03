@@ -43,10 +43,6 @@ fa_dish *si_headChef::prepareDish(const ad_RestaurantOrder &order) {
     } else if (order.getItem().find("Pizza") != std::string::npos) {
         factory = new fa_pizzaFactory();
     }
-    // else{
-    //     createdDish = new fa_emptyDish({""});
-    //     return createdDish;
-    // }
 
     if (factory) {
         createdDish = factory->createDish(order);
