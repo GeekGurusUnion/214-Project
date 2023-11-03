@@ -34,7 +34,7 @@ Waiter::~Waiter() {
     // for (RestaurantTable* rt : tables) {
     //     delete rt;
     // }
-    // tables.clear();
+    tables.clear();
 
     delete state;
 

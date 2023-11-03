@@ -13,7 +13,7 @@ RestaurantTable::~RestaurantTable() {
         delete this->currentState;
     }
     delete this->order;
-    // if (waiter != NULL) {
+    // if (waiter != nullptr) {
     //     delete waiter; 
     // }
     delete this->observer;

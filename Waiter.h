@@ -23,7 +23,6 @@ class Waiter {
         // FloorColleague* floorColleague;
         std::vector<MenuItem*> menu = std::vector<MenuItem*>();
         Command* cO = nullptr;
-        Command* cT = nullptr;
         Command* tO = nullptr;
     public:
         Waiter(std::string name, int totalOrders, FloorColleague *fc);

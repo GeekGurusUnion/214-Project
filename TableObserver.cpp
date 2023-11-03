@@ -1,11 +1,10 @@
 #include "TableObserver.h"
 #include "Waiter.h"
 
-TableObserver::TableObserver(RestaurantTable* t) : table(t) {
-}
+TableObserver::TableObserver(RestaurantTable* t) : table(t) {}
 
 TableObserver::~TableObserver() {
-    std::cout << "Destructor Table: " << table->getTableNumber() << std::endl;
+    // std::cout << "Destructor Table: " << table->getTableNumber() << std::endl;
     // delete cO;
     // delete cT;
     // delete tO;
