@@ -16,6 +16,7 @@ class MenuItem {
         std::string getName();
         double getPrice();
         void addCustomization(std::string customization);
+        bool containsCustomization(std::string customization);
 };
 
 #endif // MENUITEM_H

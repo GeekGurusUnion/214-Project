@@ -19,3 +19,12 @@ void MenuItem::addCustomization(std::string customization) {
     customizations.push_back(customization);
     std::cout << "Added customizations" << std::endl;
 }
+
+bool MenuItem::containsCustomization(std::string customization) {
+    for (auto& i : customizations) {
+        if (i == customization) {
+            return true;
+        }
+    }
+    return false;
+}
