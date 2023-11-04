@@ -12,6 +12,22 @@ test:
 	g++ -g --std=c++14 $(FILES) -o $(OUT).o -lgtest -lgtest_main -lpthread
 	./$(OUT).o
 
+testIwan:
+	g++ -g --std=c++14 $(filter-out main.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp))))) -o main.o -lgtest -lgtest_main -lpthread
+	./main.o
+
+testStephan:
+	g++ -g --std=c++14 $(filter-out main.cpp, $(filter-out unitTests_Iwan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp))))) -o main.o -lgtest -lgtest_main -lpthread
+	./main.o
+
+testXavier:
+	g++ -g --std=c++14 $(filter-out main.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Iwan.cpp, $(wildcard *.cpp))))) -o main.o -lgtest -lgtest_main -lpthread
+	./main.o
+
+testTiaan:
+	g++ -g --std=c++14 $(filter-out main.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Iwan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp))))) -o main.o -lgtest -lgtest_main -lpthread
+	./main.o
+
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall
 EXECUTABLE = myprogram
