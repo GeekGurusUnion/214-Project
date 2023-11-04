@@ -7,24 +7,20 @@
 // #include class to best tested
 #include "Waiter.h"
 
-#ifndef 
-#error You need to include math.h 
-#endif
-
-// make a MOCK class to replace the class that is being tested
-class MockWaiter : public Waiter {
-    public:
-        MockWaiter(std::string name, int totalOrders, FloorColleague *fc) : Waiter(name, totalOrders, fc) {}
-        MOCK_METHOD(void, setWaiterState, (WaiterState* state), (override));
-        MOCK_METHOD(void, addItem, (RestaurantTable* rt, std::string m), (override));
-        MOCK_METHOD(void, confirmOrder, (RestaurantTable* rt), (override));
-        MOCK_METHOD(void, addOrder, (RestaurantTable* rt), (override));
-        MOCK_METHOD(Order*, getOrder, (RestaurantTable* rt), (override));
-        MOCK_METHOD(bool, isAvailable, (), (override));
-        MOCK_METHOD(std::string, getName, (), (override));
-        MOCK_METHOD(MenuItem*, getMenuItem, (std::string name), (override));
-        MOCK_METHOD(int, getBusyOrders, (), (override));
-};
+// // make a MOCK class to replace the class that is being tested
+// class MockWaiter : public Waiter {
+//     public:
+//         MockWaiter(std::string name, int totalOrders, FloorColleague *fc) : Waiter(name, totalOrders, fc) {}
+//         MOCK_METHOD(void, setWaiterState, (WaiterState* state), (override));
+//         MOCK_METHOD(void, addItem, (RestaurantTable* rt, std::string m), (override));
+//         MOCK_METHOD(void, confirmOrder, (RestaurantTable* rt), (override));
+//         MOCK_METHOD(void, addOrder, (RestaurantTable* rt), (override));
+//         MOCK_METHOD(Order*, getOrder, (RestaurantTable* rt), (override));
+//         MOCK_METHOD(bool, isAvailable, (), (override));
+//         MOCK_METHOD(std::string, getName, (), (override));
+//         MOCK_METHOD(MenuItem*, getMenuItem, (std::string name), (override));
+//         MOCK_METHOD(int, getBusyOrders, (), (override));
+// };
 
 // #include all relative classes needed for successful testing
 
