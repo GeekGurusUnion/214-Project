@@ -25,14 +25,14 @@ class Waiter {
         Command* tO = nullptr;
     public:
         Waiter(std::string name, int totalOrders, FloorColleague *fc);
-        ~Waiter();
+        virtual ~Waiter(); // * testing
         void setWaiterState(WaiterState* state);
         void addItem(RestaurantTable* rt, std::string m);
         void confirmOrder(RestaurantTable* rt);
         void addOrder(RestaurantTable* rt);
         Order* getOrder(RestaurantTable* rt);
         bool isAvailable();
-        std::string getName() const;
+        virtual std::string getName() const; // * testing
         MenuItem *getMenuItem(std::string name);
         int getBusyOrders() const;
 };

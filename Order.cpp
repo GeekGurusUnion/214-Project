@@ -29,3 +29,8 @@ void Order::removeItem(std::string name) {
 RestaurantTable* Order::getTable() {
     return table;
 }
+
+// * testing
+int Order::getOrderSize() {
+    return this->items.size();
+}

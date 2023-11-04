@@ -17,6 +17,7 @@ class Order {
         void setStatus(bool status);
         void removeItem(std::string name);
         RestaurantTable* getTable();
+        int getOrderSize(); // * testing
 };
 
 #endif // ORDER_H

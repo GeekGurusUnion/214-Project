@@ -5,7 +5,7 @@
 			"name": "clang++ - Compiler",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/main",
+			"program": "${workspaceFolder}/main_testIwan.o",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",

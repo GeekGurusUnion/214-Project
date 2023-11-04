@@ -1,0 +1,1 @@
+# target_include_directories(${PROJECT_NAME} PUBLIC ${GTEST_INCLUDE_DIRS} ${GMOCK_INCLUDE_DIRS})
