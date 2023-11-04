@@ -2,7 +2,7 @@
 #include "Command.h"
 #include "Waiter.h"
 
-RestaurantTable::RestaurantTable(int i) : tableNumber(i) {
+RestaurantTable::RestaurantTable(int i, int t) : tableNumber(i), tableSize(t) {
     this->currentState = new StateEmpty(this); 
     this->order = new Order(this);
 }
@@ -53,4 +53,8 @@ bool RestaurantTable::isAvailable() const {
 
 int RestaurantTable::getTableNumber() const {
     return this->tableNumber;
+}
+
+int RestaurantTable::getTableSize() {
+    return this->tableSize;
 }

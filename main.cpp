@@ -3,7 +3,12 @@
 int main() {
     Facade* facade = new Facade();
     for (int i = 1; i <= 13; i++) {
-        facade->getSeated();
+        if (i <= 4)
+            facade->getSeated(5);
+        if (i > 4 && i <= 8)
+            facade->getSeated(4);
+        if (i > 8 && i <= 12)
+            facade->getSeated(2);
     }
     facade->addToOrder(1, "Steak");
     facade->addToOrder(12, "Spinach");

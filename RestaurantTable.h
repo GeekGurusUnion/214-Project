@@ -29,10 +29,11 @@ class RestaurantTable {
         State* currentState;
         Waiter* waiter = nullptr;
         int tableNumber;
+        int tableSize;
         Order* order;
         
     public:
-        RestaurantTable(int i);
+        RestaurantTable(int i, int t);
         ~RestaurantTable();
         void setState(State* state);
         State* getState();
@@ -47,6 +48,7 @@ class RestaurantTable {
         Order* getOrder() const;
         bool isAvailable() const;
         int getTableNumber() const;
+        int getTableSize();
 };
 
 #endif  // RESTAURANT_TABLE_H_
