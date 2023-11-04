@@ -113,6 +113,8 @@ TEST(WaiterIteratorTest, AllWaitersAvailable) {
 }
 //* ------------- WaiterIterator tests end -------------
 
+//* Test split
+
 //* ------------- TableIterator tests -------------
 TEST(TableIteratorTest, first) {
   std::vector<RestaurantTable*> tables;
