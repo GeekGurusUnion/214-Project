@@ -1,32 +1,91 @@
 #include <iostream>
+#include <vector>
 
 //include the google test dependencies
 #include <gtest/gtest.h>
+#include <gmock/gmock.h>
 
-//declare the function(s) that you are testing
-double summer(double[], int);
+#include "WaiterIterator.h"
+#include "Waiter.h"
 
-//our first unit test
-TEST(IntegerInputsSuite, simpleSum)
-{
-  //first, set up any inputs to your 
-  const int SIZE = 3;
-  double arr[SIZE]  = {1, 2, 3};
-  //then, make an assertion to test
-  EXPECT_EQ(summer(arr, SIZE), 6) << "The sum is not correct";
+class MockWaiterIterator: public WaiterIterator {
+public:
+  MockWaiterIterator(std::vector<Waiter*> waiters) : WaiterIterator(waiters) {};
+  MOCK_METHOD0(first, void*());
+  MOCK_METHOD0(currentItem, Waiter*());
+  MOCK_METHOD0(hasNext, bool());
+  MOCK_METHOD0(next, void*());
+  MOCK_METHOD1(isAvailable, bool(Waiter* waiter));
+  MOCK_METHOD0(reset, void());
+  MOCK_METHOD1(getWaiter, bool (std::string name));
+};
+
+TEST(WaiterIteratorTest, first) {
+  std::vector<Waiter*> waiters;
+  Waiter* waiter = new Waiter("John", 5, nullptr);
+  waiters.push_back(waiter);
+  MockWaiterIterator waiterIterator(waiters);
+  EXPECT_CALL(waiterIterator, first()).Times(1).WillOnce(testing::Return(waiter));
+  waiterIterator.first();
+  delete waiter;
 }
-TEST(IntegerInputsSuite, oneElement)
-{
-  const int SIZE = 1;
-  double arr[SIZE]  = {33};
-  EXPECT_EQ(summer(arr, SIZE), 33) << "The sum is not correct for array of size 1";
+
+TEST(WaiterIteratorTest, currentItem) {
+  std::vector<Waiter*> waiters;
+  Waiter* waiter = new Waiter("John", 5, nullptr);
+  waiters.push_back(waiter);
+  MockWaiterIterator waiterIterator(waiters);
+  EXPECT_CALL(waiterIterator, currentItem()).Times(1);
+  waiterIterator.currentItem();
 }
-TEST(DoubleInputsSuite, simpleSum)
-{
-  const int SIZE = 3;
-  double arr[SIZE]  = {1.1, 1.1, 1};
-  EXPECT_EQ(summer(arr, SIZE), 3.2) << "The sum is not correct using     double inputs";
+
+TEST(WaiterIteratorTest, hasNext) {
+  std::vector<Waiter*> waiters;
+  Waiter* waiter = new Waiter("John", 5, nullptr);
+  waiters.push_back(waiter);
+  MockWaiterIterator waiterIterator(waiters);
+  EXPECT_CALL(waiterIterator, hasNext()).Times(1);
+  waiterIterator.hasNext();
 }
+
+// write more tests here
+TEST(WaiterIteratorTest, next) {
+  std::vector<Waiter*> waiters;
+  Waiter* waiter = new Waiter("John", 5, nullptr);
+  waiters.push_back(waiter);
+  MockWaiterIterator waiterIterator(waiters);
+  EXPECT_CALL(waiterIterator, next()).Times(1);
+  waiterIterator.next();
+}
+
+TEST(WaiterIteratorTest, isAvailable) {
+  std::vector<Waiter*> waiters;
+  Waiter* waiter = new Waiter("John", 5, nullptr);
+  waiters.push_back(waiter);
+  MockWaiterIterator waiterIterator(waiters);
+  EXPECT_CALL(waiterIterator, isAvailable(waiter)).Times(1).WillOnce(testing::Return(true));
+  waiterIterator.isAvailable(waiter);
+}
+
+TEST(WaiterIteratorTest, reset) {
+  std::vector<Waiter*> waiters;
+  Waiter* waiter = new Waiter("John", 5, nullptr);
+  waiters.push_back(waiter);
+  MockWaiterIterator waiterIterator(waiters);
+  EXPECT_CALL(waiterIterator, reset()).Times(1);
+  waiterIterator.reset();
+}
+// write a test for getWaiter
+// it should return true if the waiter is found in the iterator
+TEST(WaiterIteratorTest, getWaiter) {
+  std::vector<Waiter*> waiters;
+  Waiter* waiter = new Waiter("John", 5, nullptr);
+  waiters.push_back(waiter);
+  MockWaiterIterator waiterIterator(waiters);
+  EXPECT_CALL(waiterIterator, getWaiter("John")).Times(1).WillOnce(testing::Return(true));
+  waiterIterator.getWaiter("John");
+}
+
 int main(int argc, char **argv) {
   testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();

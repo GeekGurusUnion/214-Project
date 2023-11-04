@@ -43,3 +43,15 @@ bool WaiterIterator::isAvailable(Waiter *waiter) {
 void WaiterIterator::reset() {
     this->position = 0;
 }
+
+// * Testing purposes
+
+bool WaiterIterator::getWaiter(std::string name) {
+    for (int i = 0; i < this->waiters.size(); i++) {
+        if (this->waiters[i]->getName() == name) {
+            this->position = i;
+            return true;
+        }
+    }
+    return false;
+}

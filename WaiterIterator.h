@@ -21,6 +21,9 @@ class WaiterIterator : public Iterator {
         void* next();
         bool isAvailable(Waiter* waiter);
         void reset();
+
+        // * Testing
+        bool getWaiter(std::string name);
 };
 
 #endif // WAITER_ITERATOR_H
