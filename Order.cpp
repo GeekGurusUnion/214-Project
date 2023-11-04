@@ -37,7 +37,9 @@ std::vector<MenuItem*> Order::getItems() {
 void Order::addCustomization(std::string name, std::string customization) {
     for (auto& i : items) {
         if (i->getName() == name) {
+            
             i->addCustomization(customization);
+            break;
             std::cout << "Customization successfully added." << std::endl;
         }
     }

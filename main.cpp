@@ -15,6 +15,7 @@ int main() {
     facade->addToOrder(12, "Steak");
     facade->addToOrder(12, "Steak");
     facade->addToOrder(12, "Burger");
+    facade->addCustomization(12, "Steak", "Medium");
     facade->confirmOrder(12);
     facade->generateBill(12);
     facade->leaveTable(12);
