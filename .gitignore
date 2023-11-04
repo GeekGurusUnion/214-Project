@@ -34,3 +34,5 @@
 main.dSYM/*
 
 unitTests_Iwan.o.dSYM/Contents/Info.plist
+
+build/*
