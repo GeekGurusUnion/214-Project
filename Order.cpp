@@ -5,11 +5,15 @@ Order::Order(RestaurantTable* table) {
 }
 
 Order::~Order() {
+    for (auto& i : items) {
+        delete i;
+    }
     items.clear();
 }
 
 void Order::addItem(MenuItem* item) {
-    items.push_back(item);
+    MenuItem* mi = new MenuItem(*item);
+    items.push_back(mi);
 }
 
 void Order::setStatus(bool status) {
@@ -40,8 +44,7 @@ void Order::addCustomization(std::string name, std::string customization) {
             if (i->containsCustomization(customization)) 
                 continue;
             i->addCustomization(customization);
-            break;
-            std::cout << "Customization successfully added." << std::endl;
+            return;
         }
     }
 }

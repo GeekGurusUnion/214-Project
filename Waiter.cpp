@@ -33,6 +33,7 @@ Waiter::~Waiter() {
     delete cO;
     delete tO;
     delete gB;
+    delete aC;
 
     tables.clear();
 
