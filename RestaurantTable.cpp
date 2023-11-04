@@ -2,7 +2,7 @@
 #include "Command.h"
 #include "Waiter.h"
 
-RestaurantTable::RestaurantTable(int i) : tableNumber(i) {
+RestaurantTable::RestaurantTable(int i, int t) : tableNumber(i), tableSize(t) {
     this->currentState = new StateEmpty(this); 
     this->order = new Order(this);
 }
@@ -66,4 +66,8 @@ float RestaurantTable::calculateBill() {
 
 void RestaurantTable::printBill() {
     std::cout << "Table " << tableNumber << " Bill: $" << calculateBill() << std::endl;
+}
+
+int RestaurantTable::getTableSize() {
+    return this->tableSize;
 }

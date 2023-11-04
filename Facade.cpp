@@ -13,7 +13,12 @@ Facade::Facade() {
 
     // Create tables
     for (int i = 0; i < totalTables; i++) {
-        tables.push_back(new RestaurantTable(i+1));
+        if (i < 4)
+            tables.push_back(new RestaurantTable(i+1, 2));
+        if (i >= 4 && i < 8)
+            tables.push_back(new RestaurantTable(i+1, 4));
+        if (i >= 8 && i < 12)
+            tables.push_back(new RestaurantTable(i+1, 6));
     }
 
     waiterIterator = createWaiterIterator();
@@ -101,17 +106,20 @@ void Facade::leaveTable(int tableNumber) {
     std::cout << success << "Table " << table->getTableNumber() << " is now empty." << resetPrint << std::endl;
 }
 
-void Facade::getSeated() {
+void Facade::getSeated(int customerCount) {
+    std::cout << warning << "A group of " << customerCount << " customers have arrived." << resetPrint << std::endl;
     tableIterator->reset();
     RestaurantTable* table = (RestaurantTable*) tableIterator->first();
-    while (tableIterator->hasNext() && !tableIterator->isAvailable(table)) {
+    while (tableIterator->hasNext()) {
+        if (table->getTableSize() >= customerCount && table->isAvailable())
+            break;
         table = (RestaurantTable*) tableIterator->next();
     }
 
     if (table != nullptr && table->isAvailable()) {
         table->occupy();
         getWaiter(table);
-        std::cout << success << "Table " << table->getTableNumber() << " is now served by waiter " << table->getWaiter()->getName() << resetPrint << std::endl;
+        std::cout << success << "Table " << table->getTableNumber() << " with size " << table->getTableSize() << " is now served by waiter " << table->getWaiter()->getName() << resetPrint << std::endl;
     } 
     else {
         std::cout << error << "Sorry, there are no available tables at the moment." << resetPrint << std::endl;

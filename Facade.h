@@ -44,7 +44,7 @@ class Facade {
         Facade();
         ~Facade();
 
-        void getSeated();
+        void getSeated(int customerCount);
         void addToOrder(int tableNumber, std::string itemName);
         void confirmOrder(int tableNumber);
         void generateBill(int tableNumber);

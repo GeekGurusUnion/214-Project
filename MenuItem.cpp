@@ -14,3 +14,7 @@ std::string MenuItem::getName() {
 double MenuItem::getPrice() {
     return price;
 }
+
+void MenuItem::addCustomization(std::string customization) {
+    customizations.push_back(customization);
+}
