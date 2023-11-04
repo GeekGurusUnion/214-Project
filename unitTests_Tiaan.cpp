@@ -2,31 +2,58 @@
 
 //include the google test dependencies
 #include <gtest/gtest.h>
+#include <gmock/gmock.h>
 
-//declare the function(s) that you are testing
-double summer(double[], int);
+// #include class to best tested
+#include "RestaurantTable.h"
+#include "StateEmpty.h"
 
-//our first unit test
-TEST(IntegerInputsSuite, simpleSum)
-{
-  //first, set up any inputs to your 
-  const int SIZE = 3;
-  double arr[SIZE]  = {1, 2, 3};
-  //then, make an assertion to test
-  EXPECT_EQ(summer(arr, SIZE), 6) << "The sum is not correct";
+// #include all relative classes needed for successful testing
+
+// make a MOCK class to replace the class that is being tested
+class MockRestaurantTable : public RestaurantTable {
+    public:
+        MockRestaurantTable(int i) : RestaurantTable(i) {}
+        MOCK_METHOD0(getState, State*());
+        MOCK_METHOD1(setState, void (State* state));
+        MOCK_METHOD0(occupy, void ());
+        MOCK_METHOD0(empty, void ());
+        MOCK_METHOD2(notifyWaiter, void (std::string action, bool isItem));
+        MOCK_METHOD0(getWaiter, Waiter* ());
+        MOCK_METHOD1(setWaiter, void (Waiter* waiter));
+        MOCK_METHOD0(confirmOrder, void ());
+        MOCK_METHOD0(welcomeWaiter, void ());
+        MOCK_METHOD1(addToOrder, void (std::string item));
+        MOCK_METHOD0(getOrder, Order* ());
+        MOCK_METHOD0(isAvailable, bool ());
+        MOCK_METHOD0(getTableNumber, int ());
+};
+
+// test getState
+TEST(RestaurantTableTest, getStateTest) {
+    MockRestaurantTable* rt = new MockRestaurantTable(1);
+    State* returned;
+    returned = rt->getState();
+    EXPECT_FALSE(returned->isOccupied()); 
+
+    // // RestaurantTable* rts = new RestaurantTable(1);
+    // // EXPECT_EQ(rt->getState()->isOccupied(), false) << "RestaurantTable state not set correctly";
+    // EXPECT_CALL(*rt, getState()).Times(1).WillOnce(testing::Return(new StateEmpty(rt)));
+    // rt->getState();
 }
-TEST(IntegerInputsSuite, oneElement)
-{
-  const int SIZE = 1;
-  double arr[SIZE]  = {33};
-  EXPECT_EQ(summer(arr, SIZE), 33) << "The sum is not correct for array of size 1";
-}
-TEST(DoubleInputsSuite, simpleSum)
-{
-  const int SIZE = 3;
-  double arr[SIZE]  = {1.1, 1.1, 1};
-  EXPECT_EQ(summer(arr, SIZE), 3.2) << "The sum is not correct using     double inputs";
-}
+
+
+
+// test setState
+// TEST(RestaurantTableTest, getStateTest) {
+//     MockRestaurantTable* rt;
+//     State* returned;
+//     RestaurantTable* rts = new RestaurantTable(1);
+//     returned = rts->getState();
+//     EXPECT_EQ(returned->isOccupied(), true) << "RestaurantTable state not set correctly";
+// }
+
+
 int main(int argc, char **argv) {
   testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();

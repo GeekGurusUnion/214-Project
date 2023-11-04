@@ -28,33 +28,24 @@ class RestaurantTable {
     private:
         State* currentState;
         Waiter* waiter = nullptr;
-        
         int tableNumber;
         Order* order;
         
     public:
         RestaurantTable(int i);
         ~RestaurantTable();
-        
         void setState(State* state);
         State* getState();
-
         void occupy();
         void empty();
-
         void notifyWaiter(std::string action, bool isItem); // assuming only one waiter helps a table
-        
         Waiter* getWaiter() const;
         void setWaiter(Waiter* waiter);
-
         void confirmOrder();
         void welcomeWaiter();
         void addToOrder(std::string item);
-
         Order* getOrder() const;
-
         bool isAvailable() const;
-
         int getTableNumber() const;
 };
 
