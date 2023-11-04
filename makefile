@@ -13,20 +13,20 @@ test:
 	./$(OUT).o
 
 testIwan:
-	g++ -g --std=c++14 $(filter-out main.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp))))) -o main.o -lgtest -lgtest_main -lpthread
-	./main.o
+	g++ -g --std=c++14 $(filter-out main.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp))))) -o main_testIwan.o -lgtest -lgmock -lgtest_main -lpthread
+	./main_testIwan.o
 
 testStephan:
-	g++ -g --std=c++14 $(filter-out main.cpp, $(filter-out unitTests_Iwan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp))))) -o main.o -lgtest -lgtest_main -lpthread
-	./main.o
+	g++ -g --std=c++14 $(filter-out main.cpp, $(filter-out unitTests_Iwan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp))))) -o main_testStephan.o -lgtest  -lgmock -lgtest_main -lpthread
+	./main_testStephan.o
 
 testXavier:
-	g++ -g --std=c++14 $(filter-out main.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Iwan.cpp, $(wildcard *.cpp))))) -o main.o -lgtest -lgtest_main -lpthread
-	./main.o
+	g++ -g --std=c++14 $(filter-out main.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Iwan.cpp, $(wildcard *.cpp))))) -o main_testXavier.o -lgtest  -lgmock -lgtest_main -lpthread
+	./main_testXavier.o
 
 testTiaan:
-	g++ -g --std=c++14 $(filter-out main.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Iwan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp))))) -o main.o -lgtest -lgtest_main -lpthread
-	./main.o
+	g++ -g --std=c++14 $(filter-out main.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Iwan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp))))) -o main_testTiaan.o -lgtest -lgmock -lgtest_main -lpthread
+	./main_testTiaan.o
 
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall
