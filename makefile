@@ -8,24 +8,23 @@ leaks:
 	leaks -atExit -- ./main.o
 
 test: 
-	# example commit : make test FILES="unitTests_Iwan.cpp <extra files to be tested>" OUT="unitTests_Iwan"
-	g++ -g --std=c++14 $(FILES) -o $(OUT).o -lgtest -lgtest_main -lpthread
-	./$(OUT).o
+	g++ -g --std=c++14 $(filter-out main.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Iwan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp)))))) -o main_testFacade.o -lgtest -lgmock -lgtest_main -lpthread
+	./main_testFacade.o
 
 testIwan:
-	g++ -g --std=c++14 $(filter-out main.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp))))) -o main_testIwan.o -lgtest -lgmock -lgtest_main -lpthread
+	g++ -g --std=c++14 $(filter-out unitTest_Facade.cpp, $(filter-out main.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp)))))) -o main_testIwan.o -lgtest -lgmock -lgtest_main -lpthread
 	./main_testIwan.o
 
 testStephan:
-	g++ -g --std=c++14 $(filter-out main.cpp, $(filter-out unitTests_Iwan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp))))) -o main_testStephan.o -lgtest  -lgmock -lgtest_main -lpthread
+	g++ -g --std=c++14 $(filter-out unitTest_Facade.cpp, $(filter-out main.cpp, $(filter-out unitTests_Iwan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp)))))) -o main_testStephan.o -lgtest  -lgmock -lgtest_main -lpthread
 	./main_testStephan.o
 
 testXavier:
-	g++ -g --std=c++14 $(filter-out main.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Iwan.cpp, $(wildcard *.cpp))))) -o main_testXavier.o -lgtest  -lgmock -lgtest_main -lpthread
+	g++ -g --std=c++14 $(filter-out unitTest_Facade.cpp, $(filter-out main.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Iwan.cpp, $(wildcard *.cpp)))))) -o main_testXavier.o -lgtest  -lgmock -lgtest_main -lpthread
 	./main_testXavier.o
 
 testTiaan:
-	g++ -g --std=c++14 $(filter-out main.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Iwan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp))))) -o main_testTiaan.o -lgtest -lgmock -lgtest_main -lpthread
+	g++ -g --std=c++14 $(filter-out unitTest_Facade.cpp, $(filter-out main.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Iwan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp)))))) -o main_testTiaan.o -lgtest -lgmock -lgtest_main -lpthread
 	./main_testTiaan.o
 
 CXX = g++
