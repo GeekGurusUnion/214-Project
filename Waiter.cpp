@@ -20,6 +20,8 @@ Waiter::Waiter(std::string name, int totalOrders, FloorColleague *fc) {
     this->state = new WaiterStateAvailable(this);
     this->cO = new ConfirmOrder(this, fc);
     this->tO = new TakeOrder(this);
+    this->gB = new GenerateBill(this);
+    this->aC = new CustomizeOrder(this);
 }
 
 Waiter::~Waiter() {
@@ -30,6 +32,7 @@ Waiter::~Waiter() {
 
     delete cO;
     delete tO;
+    delete gB;
 
     tables.clear();
 
@@ -82,8 +85,16 @@ std::string Waiter::getName() const {
     return this->name;
 }
 
+void Waiter::generateBill(RestaurantTable *rt) {
+    gB->execute(rt, nullptr);
+}
+
 int Waiter::getBusyOrders() const {
     return this->busyOrders;
+}
+
+void Waiter::addCustomization(RestaurantTable *rt, std::string name, std::string customization) {
+    aC->execute(rt, name, customization);
 }
 
 MenuItem* Waiter::getMenuItem(std::string name) {

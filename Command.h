@@ -15,6 +15,7 @@ class Command {
     public: 
         Command(Waiter* waiter) : waiter(waiter) {};
         virtual void execute(RestaurantTable*, MenuItem*) = 0;
+        virtual void execute(RestaurantTable* rt, std::string menuItem, std::string customization) {};
         virtual ~Command() {};
 
         // * testing * //

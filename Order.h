@@ -17,6 +17,8 @@ class Order {
         void setStatus(bool status);
         void removeItem(std::string name);
         RestaurantTable* getTable();
+        std::vector<MenuItem*> getItems();
+        void addCustomization(std::string name, std::string customization);
         int getOrderSize(); // * testing
 };
 

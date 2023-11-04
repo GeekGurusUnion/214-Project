@@ -23,6 +23,8 @@ class Waiter {
         std::vector<MenuItem*> menu = std::vector<MenuItem*>();
         Command* cO = nullptr;
         Command* tO = nullptr;
+        Command* gB = nullptr;
+        Command* aC = nullptr;
     public:
         Waiter(std::string name, int totalOrders, FloorColleague *fc);
         ~Waiter();
@@ -30,6 +32,8 @@ class Waiter {
         void addItem(RestaurantTable* rt, std::string m);
         void confirmOrder(RestaurantTable* rt);
         void addOrder(RestaurantTable* rt);
+        void addCustomization(RestaurantTable* rt, std::string name, std::string customization);
+        void generateBill(RestaurantTable* rt);
         Order* getOrder(RestaurantTable* rt);
         bool isAvailable();
         std::string getName() const;

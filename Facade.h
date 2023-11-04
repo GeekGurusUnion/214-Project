@@ -32,9 +32,9 @@ class Facade {
         FloorColleague* floorColleague = new FloorColleague(mediator);
         KitchenColleague* kitchenColleague = new KitchenColleague(mediator);
 
-        const int waiterSize = 4;
-        const int tablesPerWaiter = 3;
-        const int totalTables = 12;
+        int waiterSize = 4;
+        int tablesPerWaiter = 3;
+        int totalTables = 12;
 
         TableObserver* observer;
 
@@ -47,6 +47,8 @@ class Facade {
         void getSeated();
         void addToOrder(int tableNumber, std::string itemName);
         void confirmOrder(int tableNumber);
+        void generateBill(int tableNumber);
+        void addCustomization(int tableNumber, std::string itemName, std::string customization);
 
         void getWaiter(RestaurantTable* table); // called by getSeated(); - should be called internally only
 
@@ -68,6 +70,9 @@ class Facade {
         MenuItem* getMenuItem(std::string name);
 
         void leaveTable(int tableNumber);
+
+        // * testing
+        std::string* getWaiterNames();
 };
 
 #endif // FACADE_H

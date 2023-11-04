@@ -18,6 +18,8 @@ class Order;
 
 #include "ConfirmOrder.h"
 #include "TakeOrder.h"
+#include "GenerateBill.h"
+#include "CustomizeOrder.h"
 
 #include "TableObserver.h"
 
@@ -47,6 +49,8 @@ class RestaurantTable {
         Order* getOrder() const;
         bool isAvailable() const;
         int getTableNumber() const;
+        float calculateBill();
+        void printBill();
 };
 
 #endif  // RESTAURANT_TABLE_H_

@@ -9,6 +9,6 @@ class RestaurantTable;
 
 class TableObserver {
     public:
-        void update(RestaurantTable* t, std::string item, bool isItem);
+        void update(RestaurantTable* t, std::string item, std::string customization, bool isItem);
 };
 #endif // TABLE_OBSERVER_H

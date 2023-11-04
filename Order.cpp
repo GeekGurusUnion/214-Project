@@ -30,6 +30,19 @@ RestaurantTable* Order::getTable() {
     return table;
 }
 
+std::vector<MenuItem*> Order::getItems() {
+    return items;
+}
+
+void Order::addCustomization(std::string name, std::string customization) {
+    for (auto& i : items) {
+        if (i->getName() == name) {
+            i->addCustomization(customization);
+            std::cout << "Customization successfully added." << std::endl;
+        }
+    }
+}
+
 // * testing
 int Order::getOrderSize() {
     return this->items.size();

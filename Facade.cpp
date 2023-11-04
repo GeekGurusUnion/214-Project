@@ -139,13 +139,31 @@ void Facade::getWaiter(RestaurantTable* table) {
     }
 }
 
+void Facade::generateBill(int tableNumber) {
+    RestaurantTable* table = getTable(tableNumber);
+    if (!table || table->isAvailable()) {                                          //isAvailable() always returns false?
+        std::cout << error << "Sorry, that table is not occupied!" << resetPrint << std::endl;
+        return;
+    }
+    observer->update(table, "bill", "", false);
+}
+
+void Facade::addCustomization(int tableNumber, std::string itemName, std::string customization) {
+    RestaurantTable* table = getTable(tableNumber);
+    if (!table || table->isAvailable()) {                                          //isAvailable() always returns false?
+        std::cout << error << "Sorry, that table is not occupied!" << resetPrint << std::endl;
+        return;
+    }
+    observer->update(table, itemName, customization, true);
+}
+
 void Facade::addToOrder(int tableNumber, std::string itemName) {
     RestaurantTable* table = getTable(tableNumber);
     if (!table || table->isAvailable()) {                                          //isAvailable() always returns false?
         std::cout << error << "Sorry, that table is not occupied!" << resetPrint << std::endl;
         return;
     }
-    observer->update(table, itemName, true);
+    observer->update(table, itemName, "", true);
 }
 
 void Facade::confirmOrder(int tableNumber) {
@@ -154,5 +172,10 @@ void Facade::confirmOrder(int tableNumber) {
         std::cout << error << "Sorry, that table is not occupied!" << resetPrint << std::endl;
         return;
     }
-    observer->update(table, "confirm", false);
+    observer->update(table, "confirm", "", false);
+}
+
+// * testing
+std::string* Facade::getWaiterNames() {
+    return waiterNames;
 }

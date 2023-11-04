@@ -11,6 +11,7 @@ int main() {
     facade->addToOrder(12, "Steak");
     facade->addToOrder(12, "Burger");
     facade->confirmOrder(12);
+    facade->generateBill(12);
     facade->leaveTable(12);
     delete facade;
     return 0;
