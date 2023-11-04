@@ -7,6 +7,12 @@ MenuItem::MenuItem(std::string name, double price) {
 
 MenuItem::~MenuItem() {}
 
+MenuItem::MenuItem(const MenuItem& other) {
+    this->name = other.name;
+    this->price = other.price;
+    this->customizations = other.customizations;
+}
+
 std::string MenuItem::getName() {
     return name;
 }

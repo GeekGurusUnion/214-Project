@@ -13,6 +13,7 @@ class MenuItem {
     public:
         MenuItem(std::string name, double price);
         ~MenuItem();
+        MenuItem(const MenuItem& other);
         std::string getName();
         double getPrice();
         void addCustomization(std::string customization);
