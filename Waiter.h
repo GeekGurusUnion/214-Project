@@ -25,16 +25,27 @@ class Waiter {
         Command* tO = nullptr;
     public:
         Waiter(std::string name, int totalOrders, FloorColleague *fc);
-        virtual ~Waiter(); // * testing
+        ~Waiter();
         void setWaiterState(WaiterState* state);
         void addItem(RestaurantTable* rt, std::string m);
         void confirmOrder(RestaurantTable* rt);
         void addOrder(RestaurantTable* rt);
         Order* getOrder(RestaurantTable* rt);
         bool isAvailable();
-        virtual std::string getName() const; // * testing
+        std::string getName() const;
         MenuItem *getMenuItem(std::string name);
+
         int getBusyOrders() const;
+
+        // * testing * //
+            int getTotalOrders() const;
+            WaiterState* getState() const;
+            std::vector<RestaurantTable*> getTables() const;
+            std::vector<MenuItem*> getMenu() const;
+            Command* getCO() const;
+            Command* getTO() const;
+            void setState(WaiterState* state);
+        // * end of testing * //
 };
 
 #endif // WAITER_H

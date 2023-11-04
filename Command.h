@@ -13,11 +13,14 @@ class Command {
     protected:
         Waiter* waiter;
     public: 
-        Command(Waiter* waiter) {
-            this->waiter = waiter;
-        }
+        Command(Waiter* waiter) : waiter(waiter) {};
         virtual void execute(RestaurantTable*, MenuItem*) = 0;
         virtual ~Command() {};
+
+        // * testing * //
+        virtual Waiter* getWaiter() const {
+            return waiter;
+        }
 };
 
 #endif // COMMAND_H

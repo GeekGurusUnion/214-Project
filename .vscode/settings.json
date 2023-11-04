@@ -80,6 +80,15 @@
         "*.tcc": "cpp",
         "__functional_03": "cpp",
         "__verbose_abort": "cpp",
-        "charconv": "cpp"
+        "charconv": "cpp",
+        "__tree": "cpp",
+        "any": "cpp",
+        "csignal": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "span": "cpp",
+        "unordered_set": "cpp"
     }
 }

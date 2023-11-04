@@ -19,3 +19,9 @@ void WaiterStateAvailable::setAvailable() {
 void WaiterStateAvailable::setUnavailable() {
     waiter->setWaiterState(new WaiterStateUnavailable(waiter));
 }
+
+// * testing * //
+WaiterState* WaiterStateAvailable::getThis() {
+    return this;
+}
+

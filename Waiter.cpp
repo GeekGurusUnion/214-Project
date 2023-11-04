@@ -94,3 +94,33 @@ MenuItem* Waiter::getMenuItem(std::string name) {
     }
     return nullptr;
 }
+
+// * testing * //
+int Waiter::getTotalOrders() const {
+    return this->totalOrders;
+}
+
+WaiterState* Waiter::getState() const {
+    return this->state;
+}
+
+std::vector<RestaurantTable*> Waiter::getTables() const {
+    return this->tables;
+}
+
+std::vector<MenuItem*> Waiter::getMenu() const {
+    return this->menu;
+}
+
+Command* Waiter::getCO() const {
+    return this->cO;
+}
+
+Command* Waiter::getTO() const {
+    return this->tO;
+}
+
+void Waiter::setState(WaiterState* state) {
+    this->state = state;
+}
+// * end of testing * //
