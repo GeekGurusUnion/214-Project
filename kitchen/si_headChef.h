@@ -32,12 +32,12 @@ private:
     /**
      * @brief Private copy constructor to prevent copy instantiation.
      */
-    si_headChef(const si_headChef&) = delete;
+    si_headChef(const si_headChef& hChef) = delete;
 
     /**
      * @brief Private copy assignment operator to prevent assignment.
      */
-    si_headChef& operator=(const si_headChef&) = delete;
+    si_headChef& operator=(const si_headChef& hChef) = delete;
 
 public:
     /**

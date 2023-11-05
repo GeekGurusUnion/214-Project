@@ -1,0 +1,134 @@
+\hypertarget{classca__handler}{}\doxysection{ca\+\_\+handler Class Reference}
+\label{classca__handler}\index{ca\_handler@{ca\_handler}}
+
+
+{\ttfamily \#include $<$ca\+\_\+handler.\+h$>$}
+
+
+
+Inheritance diagram for ca\+\_\+handler\+:
+% FIG 0
+
+
+Collaboration diagram for ca\+\_\+handler\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classca__handler_a997f4ee9690214b5b61ac25d5e876b6c}{ca\+\_\+handler}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a handler object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classca__handler_ab5ece78ecd50b9c22e12764ddb4c78e1}{$\sim$ca\+\_\+handler}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the handler object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classca__handler_aaf776f301189321d5a9b34f23ff086e7}{set\+Next\+Handler}} (\mbox{\hyperlink{classca__handler}{ca\+\_\+handler}} $\ast$next)
+\begin{DoxyCompactList}\small\item\em Sets the next handler in the chain. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classca__handler_a01eafa2536eb5d839a01109f6408d3a9}{can\+Handle}} (const std\+::string \&customization)=0
+\begin{DoxyCompactList}\small\item\em Checks if the handler can handle a specific customization. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classca__handler_a7d514eddede8845a2c566e499e2db3a2}{handle}} (\mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}} $\ast$dish, const std\+::string \&customization)=0
+\begin{DoxyCompactList}\small\item\em Handles the customization of a dish. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classca__handler}{ca\+\_\+handler}} $\ast$ \mbox{\hyperlink{classca__handler_aa501f6b6b1edce038f5d2e274bab2088}{next\+Handler}}
+\begin{DoxyCompactList}\small\item\em Pointer to the next handler in the chain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classca__handler_a997f4ee9690214b5b61ac25d5e876b6c}\label{classca__handler_a997f4ee9690214b5b61ac25d5e876b6c}} 
+\index{ca\_handler@{ca\_handler}!ca\_handler@{ca\_handler}}
+\index{ca\_handler@{ca\_handler}!ca\_handler@{ca\_handler}}
+\doxysubsubsection{\texorpdfstring{ca\_handler()}{ca\_handler()}}
+{\footnotesize\ttfamily ca\+\_\+handler\+::ca\+\_\+handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a handler object. 
+
+\mbox{\Hypertarget{classca__handler_ab5ece78ecd50b9c22e12764ddb4c78e1}\label{classca__handler_ab5ece78ecd50b9c22e12764ddb4c78e1}} 
+\index{ca\_handler@{ca\_handler}!````~ca\_handler@{$\sim$ca\_handler}}
+\index{````~ca\_handler@{$\sim$ca\_handler}!ca\_handler@{ca\_handler}}
+\doxysubsubsection{\texorpdfstring{$\sim$ca\_handler()}{~ca\_handler()}}
+{\footnotesize\ttfamily virtual ca\+\_\+handler\+::$\sim$ca\+\_\+handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor for the handler object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classca__handler_a01eafa2536eb5d839a01109f6408d3a9}\label{classca__handler_a01eafa2536eb5d839a01109f6408d3a9}} 
+\index{ca\_handler@{ca\_handler}!canHandle@{canHandle}}
+\index{canHandle@{canHandle}!ca\_handler@{ca\_handler}}
+\doxysubsubsection{\texorpdfstring{canHandle()}{canHandle()}}
+{\footnotesize\ttfamily virtual bool ca\+\_\+handler\+::can\+Handle (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{customization }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Checks if the handler can handle a specific customization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em customization} & The customization to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the handler can handle the customization, false otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classingredientHandler_a05f5a6779424a2832ee8b1efeb233104}{ingredient\+Handler}}, \mbox{\hyperlink{classRemoveingredientHandler_aa784ac573bbae77d75df371a80b6483a}{Removeingredient\+Handler}}, and \mbox{\hyperlink{classAddingredientHandler_a085384f412ecd04868b6216778a26c7d}{Addingredient\+Handler}}.
+
+\mbox{\Hypertarget{classca__handler_a7d514eddede8845a2c566e499e2db3a2}\label{classca__handler_a7d514eddede8845a2c566e499e2db3a2}} 
+\index{ca\_handler@{ca\_handler}!handle@{handle}}
+\index{handle@{handle}!ca\_handler@{ca\_handler}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily virtual void ca\+\_\+handler\+::handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}} $\ast$}]{dish,  }\item[{const std\+::string \&}]{customization }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Handles the customization of a dish. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dish} & Pointer to the dish to be customized. \\
+\hline
+{\em customization} & The customization to be applied. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classingredientHandler_a7d15d83fbe8e9b1c51ae38e9eb5f5bee}{ingredient\+Handler}}, \mbox{\hyperlink{classRemoveingredientHandler_aa992fed0a2c1758d99ab25a45458bb04}{Removeingredient\+Handler}}, and \mbox{\hyperlink{classAddingredientHandler_a09316646eba4526189d3bc6f6dd32c0b}{Addingredient\+Handler}}.
+
+\mbox{\Hypertarget{classca__handler_aaf776f301189321d5a9b34f23ff086e7}\label{classca__handler_aaf776f301189321d5a9b34f23ff086e7}} 
+\index{ca\_handler@{ca\_handler}!setNextHandler@{setNextHandler}}
+\index{setNextHandler@{setNextHandler}!ca\_handler@{ca\_handler}}
+\doxysubsubsection{\texorpdfstring{setNextHandler()}{setNextHandler()}}
+{\footnotesize\ttfamily void ca\+\_\+handler\+::set\+Next\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classca__handler}{ca\+\_\+handler}} $\ast$}]{next }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the next handler in the chain. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em next} & Pointer to the next handler object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classca__handler_aa501f6b6b1edce038f5d2e274bab2088}\label{classca__handler_aa501f6b6b1edce038f5d2e274bab2088}} 
+\index{ca\_handler@{ca\_handler}!nextHandler@{nextHandler}}
+\index{nextHandler@{nextHandler}!ca\_handler@{ca\_handler}}
+\doxysubsubsection{\texorpdfstring{nextHandler}{nextHandler}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classca__handler}{ca\+\_\+handler}}$\ast$ ca\+\_\+handler\+::next\+Handler}
+
+
+
+Pointer to the next handler in the chain. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Kitchen/\mbox{\hyperlink{ca__handler_8h}{ca\+\_\+handler.\+h}}\end{DoxyCompactItemize}

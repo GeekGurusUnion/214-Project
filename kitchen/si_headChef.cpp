@@ -49,9 +49,10 @@ fa_dish *si_headChef::prepareDish(const ad_RestaurantOrder &order) {
         for (const auto &customization: order.getCustomizations()) {
             startOfChain->handle(createdDish, customization);
         }
+
+        delete factory;
     }
 
-    delete factory;
     return createdDish;
 }
 
