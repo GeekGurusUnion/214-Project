@@ -107,7 +107,7 @@ void Facade::leaveTable(int tableNumber) {
 }
 
 void Facade::getSeated(int customerCount) {
-    std::cout << warning << "A group of " << customerCount << " customers have arrived." << resetPrint << std::endl;
+    // std::cout << warning << "A group of " << customerCount << " customers have arrived." << resetPrint << std::endl;
     tableIterator->reset();
     RestaurantTable* table = (RestaurantTable*) tableIterator->first();
     while (tableIterator->hasNext()) {
@@ -119,7 +119,7 @@ void Facade::getSeated(int customerCount) {
     if (table != nullptr && table->isAvailable()) {
         table->occupy();
         getWaiter(table);
-        std::cout << success << "Table " << table->getTableNumber() << " with size " << table->getTableSize() << " is now served by waiter " << table->getWaiter()->getName() << resetPrint << std::endl;
+        std::cout << success << "Table " << table->getTableNumber() << " with seating size " << table->getTableSize() << " is now served by waiter " << table->getWaiter()->getName() << resetPrint << std::endl;
     } 
     else {
         std::cout << error << "Sorry, there are no available tables at the moment." << resetPrint << std::endl;
