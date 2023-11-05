@@ -16,9 +16,9 @@ jobs:
       - name: Create build directory
         run: mkdir build
 
-      - name: Run CMake
+      - name: Run CMake with compile commands
         working-directory: build
-        run: cmake ..
+        run: cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
 
       - name: Run Clang-Tidy
         working-directory: build
