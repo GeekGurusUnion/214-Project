@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/dawie/OneDrive/Documents/GitHub/214-PA5/kitchen
+# Install script for directory: /mnt/c/Users/User-Pc/Documents/GitHub/214-Project
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/c/Users/dawie/OneDrive/Documents/GitHub/214-PA5/kitchen/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/c/Users/User-Pc/Documents/GitHub/214-Project/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

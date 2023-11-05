@@ -1,0 +1,36 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup CMake, Ninja, and GCC
+        uses: lukka/get-cmake@latest
+
+      - name: Install GTest
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgtest-dev
+
+      - name: Build GTest
+        run: |
+          cd /usr/src/gtest
+          sudo cmake .
+          sudo cmake --build . --config Release
+          sudo cp *.a /usr/lib
+
+      - name: Configure CMake
+        run: |
+          cmake -S . -B build
+
+      - name: Build Project & Run Tests
+        run: |
+          cmake --build build
+          cd build
+          ./runTests

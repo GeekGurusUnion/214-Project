@@ -1,4 +1,0 @@
-/mnt/c/Users/dawie/OneDrive/Documents/GitHub/214-PA5/kitchen/build/CMakeFiles/runTests.dir
-/mnt/c/Users/dawie/OneDrive/Documents/GitHub/214-PA5/kitchen/build/CMakeFiles/test.dir
-/mnt/c/Users/dawie/OneDrive/Documents/GitHub/214-PA5/kitchen/build/CMakeFiles/edit_cache.dir
-/mnt/c/Users/dawie/OneDrive/Documents/GitHub/214-PA5/kitchen/build/CMakeFiles/rebuild_cache.dir

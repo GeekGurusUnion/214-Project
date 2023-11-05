@@ -1,0 +1,5 @@
+/mnt/c/Users/User-Pc/Documents/GitHub/214-Project/build/CMakeFiles/FlyweightFighters_COS214_Project.dir
+/mnt/c/Users/User-Pc/Documents/GitHub/214-Project/build/CMakeFiles/runTests.dir
+/mnt/c/Users/User-Pc/Documents/GitHub/214-Project/build/CMakeFiles/test.dir
+/mnt/c/Users/User-Pc/Documents/GitHub/214-Project/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/User-Pc/Documents/GitHub/214-Project/build/CMakeFiles/rebuild_cache.dir
