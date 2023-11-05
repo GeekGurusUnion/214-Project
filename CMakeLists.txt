@@ -4,9 +4,13 @@ project(FlyweightFighters_COS214_Project)
 # Enable testing
 enable_testing()
 
-# Locate GTest
-find_package(GTest REQUIRED)
-include_directories(${GTEST_INCLUDE_DIRS})
+# Fetch GoogleTest
+include(FetchContent)
+FetchContent_Declare(
+        googletest
+        URL https://github.com/google/googletest/archive/refs/heads/master.zip
+)
+FetchContent_MakeAvailable(googletest)
 
 # Define sources for the main project
 set(PROJECT_SOURCES
@@ -58,11 +62,7 @@ set(CMAKE_CXX_CLANG_TIDY clang-tidy)
 
 # Define the test executable
 add_executable(runTests ${TEST_SOURCES})
-target_link_libraries(runTests ${GTEST_LIBRARIES} pthread)
-
-# Use the Threads package
-find_package(Threads)
-target_link_libraries(runTests ${GTEST_LIBRARIES} Threads::Threads)
+target_link_libraries(runTests gtest gtest_main pthread)
 
 # Define the Valgrind test
 add_test(

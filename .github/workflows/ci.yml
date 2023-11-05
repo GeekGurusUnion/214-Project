@@ -13,18 +13,6 @@ jobs:
       - name: Setup CMake, Ninja, and GCC
         uses: lukka/get-cmake@latest
 
-      - name: Install GTest
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libgtest-dev
-
-      - name: Build GTest
-        run: |
-          cd /usr/src/gtest
-          sudo cmake .
-          sudo cmake --build . --config Release
-          sudo cp *.a /usr/lib
-
       - name: Configure CMake
         run: |
           cmake -S . -B build
