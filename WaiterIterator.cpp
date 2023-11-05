@@ -1,7 +1,6 @@
 #include "WaiterIterator.h"
 
 WaiterIterator::WaiterIterator(std::vector<Waiter*> waiters) {
-    std::cout << "Constructor" << std::endl;
     this->waiters = waiters;
     this->position = 0;
 };
