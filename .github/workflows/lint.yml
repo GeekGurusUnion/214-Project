@@ -1,4 +1,4 @@
-name: lint
+name: Clang-Tidy Lint
 
 on: [push, pull_request]
 
@@ -22,4 +22,4 @@ jobs:
 
       - name: Run Clang-Tidy
         working-directory: build
-        run: cmake --build . --target clang-tidy
+        run: run-clang-tidy
