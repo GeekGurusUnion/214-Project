@@ -33,4 +33,5 @@ void KitchenColleague::handleOrder()
     }
 
     this->getOrder()->setDishes(dishes);
+    this->changed();
 }
