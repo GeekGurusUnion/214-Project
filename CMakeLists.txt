@@ -15,20 +15,20 @@ FetchContent_MakeAvailable(googletest)
 # Define sources for the main project
 set(PROJECT_SOURCES
         main.cpp
-        kitchen/fa_dish.h
-        kitchen/ca_handler.h
-        kitchen/si_headChef.h
-        kitchen/fa_dishFactory.h
-        kitchen/fa_dishFactory.cpp
-        kitchen/ad_OrderAdapter.h
-        kitchen/ca_ingredientHandler.h
-        kitchen/fa_burger.h
-        kitchen/ad_RestaurantOrder.cpp
-        kitchen/ad_FloorOrder.cpp
-        kitchen/ad_OrderAdapter.cpp
-        kitchen/si_headChef.cpp
-        kitchen/fa_dish.cpp
-        kitchen/fa_Pizza.h
+        fa_dish.h
+        ca_handler.h
+        si_headChef.h
+        fa_dishFactory.h
+        fa_dishFactory.cpp
+        ad_OrderAdapter.h
+        ca_ingredientHandler.h
+        fa_burger.h
+        ad_RestaurantOrder.cpp
+        ad_FloorOrder.cpp
+        ad_OrderAdapter.cpp
+        si_headChef.cpp
+        fa_dish.cpp
+        fa_Pizza.h
 )
 
 # Define sources for the tests
@@ -37,20 +37,20 @@ set(TEST_SOURCES
         kitchen/headChef_unittest.cpp
         kitchen/headChefTest.cpp
         kitchen/factoryTest.cpp
-        kitchen/fa_dish.h
-        kitchen/ca_handler.h
-        kitchen/si_headChef.h
-        kitchen/fa_dishFactory.h
-        kitchen/fa_dishFactory.cpp
-        kitchen/ad_OrderAdapter.h
-        kitchen/ca_ingredientHandler.h
-        kitchen/fa_burger.h
-        kitchen/ad_RestaurantOrder.cpp
-        kitchen/ad_FloorOrder.cpp
-        kitchen/ad_OrderAdapter.cpp
-        kitchen/si_headChef.cpp
-        kitchen/fa_dish.cpp
-        kitchen/fa_Pizza.h
+        fa_dish.h
+        ca_handler.h
+        si_headChef.h
+        fa_dishFactory.h
+        fa_dishFactory.cpp
+        ad_OrderAdapter.h
+        ca_ingredientHandler.h
+        fa_burger.h
+        ad_RestaurantOrder.cpp
+        ad_FloorOrder.cpp
+        ad_OrderAdapter.cpp
+        si_headChef.cpp
+        fa_dish.cpp
+        fa_Pizza.h
         test_main.cpp
 )
 

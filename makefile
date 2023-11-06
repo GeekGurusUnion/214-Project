@@ -7,7 +7,7 @@ run:
 leaks:
 	leaks -atExit -- ./main.o
 
-test: 
+test:
 	g++ -g --std=c++14 $(filter-out main.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Iwan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp)))))) -o main_testFacade.o -lgtest -lgmock -lgtest_main -lpthread
 	./main_testFacade.o
 

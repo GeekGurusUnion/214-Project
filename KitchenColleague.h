@@ -8,9 +8,8 @@
 
 #include "Colleague.h"
 #include "Order.h"
-// #include "kitchen/ad_FloorOrder.h"
-#include "kitchen/ad_OrderAdapter.h"
-// #include "kitchen/fa_dish.h"
+
+class ad_OrderAdapter;
 
 class Waiter;
 
@@ -27,11 +26,12 @@ public:
      * @brief Constructor for the KitchenColleague class.
      * @param mediator A pointer to the Mediator used for communication with other colleagues.
      */
-    KitchenColleague(Mediator* mediator);
+    KitchenColleague(Mediator *mediator);
+
     void handleOrder();
 
 private:
-    ad_OrderAdapter* orderAdapter;
+    ad_OrderAdapter *orderAdapter;
 };
 
 #endif // KITCHEN_COLLEAGUE_H
