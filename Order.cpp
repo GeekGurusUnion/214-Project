@@ -38,6 +38,10 @@ std::vector<MenuItem*> Order::getItems() {
     return items;
 }
 
+void Order::setDishes(std::vector<fa_dish*> dish) {
+    this->dishes = dish;
+}
+
 void Order::addCustomization(std::string name, std::string customization) {
     for (auto& i : items) {
         if (i->getName() == name) {

@@ -11,6 +11,8 @@ KitchenColleague::KitchenColleague(Mediator *mediator) : Colleague(mediator)
 
 void KitchenColleague::handleOrder()
 {
+    std::vector<fa_dish*> dishes = std::vector<fa_dish*>();
+
     for (auto &item : this->getOrder()->getItems())
     {
         std::vector<std::string> floorOrder = {item->getName()};
@@ -20,13 +22,15 @@ void KitchenColleague::handleOrder()
             floorOrder.push_back(cus);
         }
 
-        std::cout << "Handle order" << std::endl;
-
         std::cout << this->getOrder()->getTable()->getWaiter()->getName() << std::endl;
         ad_OrderAdapter floor(floorOrder);
 
         fa_dish *dish = floor.PlaceOrder();
 
-        std::cout << dish->getDescription() << std::endl;
+        dishes.push_back(dish);
+
+        //std::cout << dish->getDescription() << std::endl; // This gets the description of the dish. Contains all the Info of the dish. 
     }
+
+    this->getOrder()->setDishes(dishes);
 }

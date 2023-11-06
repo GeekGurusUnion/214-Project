@@ -5,7 +5,6 @@
  * @file FloorColleague.h
  * @brief Declaration of the FloorColleague class, a concrete implementation of the Colleague in the Mediator pattern.
  */
-
 #include "Colleague.h"
 
 /**
