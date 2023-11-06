@@ -3,9 +3,16 @@
 #include "Facade.h"
 
 void TableObserver::update(RestaurantTable* table, std::string item, std::string customization, bool isItem, Facade* facade, int count) {
+    if (table == nullptr) {
+        std::cout << "Table is null." << std::endl;
+    }
     std::string observerState = table->getState()->getStateName();
     if (observerState == "Empty") {
         std::cout << "This table is empty." << std::endl;
+        if (item == "merge") {
+            std::cout << "Merge table" << std::endl;
+            table->getWaiter()->mergeTables(facade, count);
+        }
     }
     
     if (observerState == "Serving") {
@@ -30,6 +37,8 @@ void TableObserver::update(RestaurantTable* table, std::string item, std::string
             table->getWaiter()->splitBill(table, count);
         }
         else if (item == "pay") {
+            std::cout << "Paying bill." << std::endl;
+            std::cout << "Payment of $" << table->getTableCost() << " has been made." << std::endl;
             table->setState(new StateEmpty(table));
         }
     }
@@ -47,10 +56,6 @@ void TableObserver::update(RestaurantTable* table, std::string item, std::string
         else if (item == "confirm") {
             std::cout << "Confirming order." << std::endl;
             table->getWaiter()->confirmOrder(table);
-        }
-        else if (item == "merge") {
-            std::cout << "Merge table" << std::endl;
-            table->getWaiter()->mergeTables(facade, count);
         }
     }
 }

@@ -71,6 +71,15 @@ void Facade::removeTable(RestaurantTable *table) {
     }
 }
 
+void Facade::nullifyTable(RestaurantTable *table) {
+    for (int i = 0; i < tables.size(); i++) {
+        if (tables[i] == table) {
+            tables[i]->setTableSize(0);
+            return;
+        }
+    }
+}
+
 Iterator* Facade::getWaiterIterator() {
     return waiterIterator;
 }
@@ -120,18 +129,21 @@ void Facade::getSeated(int customerCount) {
     tableIterator->reset();
     RestaurantTable* table = (RestaurantTable*) tableIterator->first();
     while (tableIterator->hasNext()) {
-        if (table->getTableSize() >= customerCount && table->isAvailable())
+        if ((table->getTableSize() >= customerCount) && table->isAvailable())
             break;
         table = (RestaurantTable*) tableIterator->next();
     }
 
-    if (table != nullptr && table->isAvailable()) {
+    if (table != nullptr && table->isAvailable() && table->getTableSize() >= customerCount) {
         table->occupy();
         getWaiter(table);
         std::cout << success << "Table " << table->getTableNumber() << " with seating size " << table->getTableSize() << " is now served by waiter " << table->getWaiter()->getName() << resetPrint << std::endl;
-    } 
+    }
     else {
-        std::cout << error << "Sorry, there are no available tables at the moment." << resetPrint << std::endl;
+        tableIterator->reset();
+        RestaurantTable* table = (RestaurantTable*) tableIterator->first();
+        getWaiter(table);
+        mergeTables(table, customerCount);
     }
 }
 
@@ -174,13 +186,8 @@ void Facade::addCustomization(int tableNumber, std::string itemName, std::string
     observer->update(table, itemName, customization, true, this, 0);
 }
 
-void Facade::mergeTables(int count) {
-    RestaurantTable* table = getTable(count);
-    if (!table || table->isAvailable()) {                                          //isAvailable() always returns false?
-        std::cout << error << "Sorry, that table is not occupied!" << resetPrint << std::endl;
-        return;
-    }
-    observer->update(table, "split", "", false, this, count);
+void Facade::mergeTables(RestaurantTable* rt, int count) {
+    observer->update(rt, "merge", "", false, this, count);
 }
 
 void Facade::tip(int tableNumber, double tip) {

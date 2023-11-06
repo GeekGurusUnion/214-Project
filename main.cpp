@@ -260,14 +260,15 @@ int main() {
 
 
     //* Old main
-    for (int i = 1; i <= 13; i++) {
-        if (i <= 4)
-            facade->getSeated(5);
-        if (i > 4 && i <= 8)
-            facade->getSeated(4);
-        if (i > 8 && i <= 12)
-            facade->getSeated(2);
-    }
+    // for (int i = 1; i <= 13; i++) {
+    //     if (i <= 4)
+    //         facade->getSeated(5);
+    //     if (i > 4 && i <= 8)
+    //         facade->getSeated(4);
+    //     if (i > 8 && i <= 12)
+    //         facade->getSeated(2);
+    // }
+    facade->getSeated(10);
     facade->addToOrder(12, "BeefBurger");
     facade->addCustomization(12, "BeefBurger", "Medium");
     facade->confirmOrder(12);
@@ -275,7 +276,7 @@ int main() {
     facade->tip(12, 5.00);
     facade->splitBill(12, 2);
     facade->complain(12, "The burger was too dry!");
-    // facade->mergeTables(12);
+    facade->payBill(12);
     delete facade;
     // delete facade;
     return 0;

@@ -67,7 +67,7 @@ public:
     void confirmOrder(int tableNumber);
     void generateBill(int tableNumber);
     void addCustomization(int tableNumber, std::string itemName, std::string customization);
-    void mergeTables(int count);
+    void mergeTables(RestaurantTable* rt, int count);
     void tip(int tableNumber, double tip);
     void splitBill(int tableNumber, int count);
     void complain(int tableNumber, std::string complaint);
@@ -81,6 +81,7 @@ public:
     void addWaiter(Waiter* waiter);
 
     void removeTable(RestaurantTable* table);
+    void nullifyTable(RestaurantTable* table);
 
     Iterator* getWaiterIterator();
     Iterator* getTableIterator();
