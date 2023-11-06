@@ -10,8 +10,7 @@
  * @class RestaurantTable
  * @brief Represents a restaurant table with various functionalities.
  *
- * This class represents a restaurant table that can change states, have an associated waiter,
- * manage orders, and notify the waiter of various actions.
+ * This class represents a restaurant table that can change states, have an associated waiter, and manage orders.
  */
 
 // ConcreteSubject (Observer)
@@ -105,13 +104,6 @@ public:
      * @brief Transition the table to the "Empty" state.
      */
     void empty();
-
-    /**
-     * @brief Notify the waiter of an action.
-     * @param action The action to notify the waiter about.
-     * @param isItem Indicates whether the action is related to a menu item.
-     */
-    void notifyWaiter(std::string action, bool isItem);     /// assuming only one waiter helps a table
 
     /**
      * @brief Get the waiter serving the table.
