@@ -1,31 +1,29 @@
-compile:
-	g++ -g --std=c++14 $(filter-out test_main.cpp, $(filter-out unitTest_Facade.cpp, $(filter-out unitTests_Iwan.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp))))))) -o main.o
-errorCount:
-	g++ --std=c++14 -w main.cpp 2>&1 | grep -c "error:"
+SRC_TEST_EXCLUDE = $(wildcard *test*.cpp *main*.cpp)
+
+ifdef INCLUDE_TEST
+SRC_TEST_EXCLUDE := $(filter-out $(INCLUDE_TEST),$(SRC_TEST_EXCLUDE))
+endif
+
+test_sources := $(filter-out $(SRC_TEST_EXCLUDE), $(wildcard *.cpp))
+
+build:
+	make compile INCLUDE_TEST=main.cpp
+
 run:
 	./main.o
+
 leaks:
 	leaks -atExit -- ./main.o
 
-test:
-	g++ -g --std=c++14 $(filter-out main.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Iwan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp)))))) -o main_testFacade.o -lgtest -lgmock -lgtest_main -lpthread
-	./main_testFacade.o
+valgrind:
+	valgrind --leak-check=full ./main.o
 
-testIwan:
-	g++ -g --std=c++14 $(filter-out unitTest_Facade.cpp, $(filter-out main.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp)))))) -o main_testIwan.o -lgtest -lgmock -lgtest_main -lpthread
-	./main_testIwan.o
+compile: $(test_sources)
+	g++ -g --std=c++14 $(test_sources) -o main.o
 
-testStephan:
-    g++ -g --std=c++14 $(filter-out main.cpp, $(filter-out main_basic.cpp, $(filter-out test_main.cpp, $(filter-out unitTest_Facade.cpp, $(filter-out main.cpp, $(filter-out unitTests_Iwan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp))))))))) -o main_testStephan.o -lgtest  -lgmock -lgtest_main -lpthread
-    ./main_testStephan.o
-
-testXavier:
-	g++ -g --std=c++14 $(filter-out unitTest_Facade.cpp, $(filter-out main.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Iwan.cpp, $(wildcard *.cpp)))))) -o main_testXavier.o -lgtest  -lgmock -lgtest_main -lpthread
-	./main_testXavier.o
-
-testTiaan:
-	g++ -g --std=c++14 $(filter-out unitTest_Facade.cpp, $(filter-out main.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Iwan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp)))))) -o main_testTiaan.o -lgtest -lgmock -lgtest_main -lpthread
-	./main_testTiaan.o
+test: $(test_sources)
+	g++ -g --std=c++14 $(test_sources) -o main_test.o -lgtest -lgmock -lgtest_main -lpthread
+	./main_test.o
 
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall
