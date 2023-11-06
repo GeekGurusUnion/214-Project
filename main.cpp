@@ -240,6 +240,7 @@ void printMenu(Facade* facade, int tableNumber) {
 void orderFood(Facade* facade) {
     int tableNumber = checkTableNumber(facade);
     printMenu(facade, tableNumber);
+    facade->generateBill(tableNumber);
 }
 
 int main() {
