@@ -64,6 +64,14 @@ int Order::getOrderSize() {
     return this->items.size();
 }
 
+double Order::calculateTotal() {
+    float total = 0;
+    for (auto& item : getItems()) {
+        total += item->getPrice();
+    }
+    return total;
+}
+
 void Order::printOrder() {
     // loop through dish
     std::cout << "Printing order" << std::endl;

@@ -55,17 +55,8 @@ int RestaurantTable::getTableNumber() const {
     return this->tableNumber;
 }
 
-float RestaurantTable::calculateBill() {
-    // iterate through order and add up prices
-    float total = 0;
-    for (auto& item : order->getItems()) {
-        total += item->getPrice();
-    }
-    return total;
-}
-
 void RestaurantTable::printBill() {
-    std::cout << "Table " << tableNumber << " Bill: $" << calculateBill() << std::endl;
+    std::cout << "Table " << tableNumber << " Bill: $" << order->calculateTotal() << std::endl;
 }
 
 int RestaurantTable::getTableSize() {

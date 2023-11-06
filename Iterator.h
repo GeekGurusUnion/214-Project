@@ -43,6 +43,11 @@ public:
      * @return A pointer to the first element in the collection.
      */
     virtual void* first() = 0;
+
+    /**
+     * @brief Reset the iterator to the end of the collection.
+    */
+    virtual void reset() = 0;
 };
 
 #endif // ITERATOR_H

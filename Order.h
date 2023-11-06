@@ -92,6 +92,11 @@ public:
     int getOrderSize(); // * testing
 
     /**
+     * @brief Calculate the total cost of the order.
+    */
+    double calculateTotal();
+    
+    /**
      * @brief Print the order.
      */
     void printOrder();

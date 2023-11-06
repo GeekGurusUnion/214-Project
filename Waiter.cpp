@@ -2,7 +2,7 @@
 #include "WaiterStateAvailable.h"
 #include "WaiterStateUnavailable.h"
 
-Waiter::Waiter(std::string name, int totalOrders, FloorColleague *fc) {
+Waiter::Waiter(std::string name, int totalOrders, Colleague *fc) {
     this->name = name;
     this->totalOrders = totalOrders;
 

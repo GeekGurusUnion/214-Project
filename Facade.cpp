@@ -132,7 +132,7 @@ void Facade::getWaiter(RestaurantTable* table) {
     Waiter* tempWaiter = waiter;
     while (waiterIterator->hasNext()) {
         if (waiter != nullptr && waiter->getBusyOrders() < tempWaiter->getBusyOrders()) {
-            if (waiterIterator->isAvailable(waiter)) {
+            if (waiter->isAvailable()) {
                 tempWaiter = waiter;
             }
         }

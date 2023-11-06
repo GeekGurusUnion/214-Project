@@ -37,10 +37,6 @@ void* TableIterator::next() {
     return table;
 }
 
-bool TableIterator::isAvailable(RestaurantTable* table) {
-    return table != nullptr && table->isAvailable();
-}
-
 void TableIterator::reset() {
     this->position = 0;
 }

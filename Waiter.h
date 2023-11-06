@@ -92,7 +92,7 @@ public:
      * @param totalOrders The total number of orders the Waiter is expected to handle.
      * @param fc A pointer to the FloorColleague associated with the Waiter.
      */
-    Waiter(std::string name, int totalOrders, FloorColleague *fc);
+    Waiter(std::string name, int totalOrders, Colleague *fc);
 
     /**
      * @brief Destructor for Waiter.
