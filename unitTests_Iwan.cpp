@@ -149,7 +149,7 @@ TEST(WaiterTests, waiterTotalOrders) {
 TEST(WaiterTests, waiterAddItem) {
     MockWaiter w("Bob", 5, nullptr);
     WaiterState *ws = new WaiterStateAvailable(&w);
-    RestaurantTable *rt = new RestaurantTable(1);
+    RestaurantTable *rt = new RestaurantTable(1,1);
     rt->setWaiter(&w);
     EXPECT_CALL(w, addItem(rt, "Burger")).Times(1);
     w.addItem(rt, "Burger");
@@ -167,7 +167,7 @@ TEST(WaiterTests, waiterStateSet) {
 TEST(WaiterTests, waiterConfirmOrder) {
     MockWaiter w("Bob", 5, nullptr);
     WaiterState *ws = new WaiterStateAvailable(&w);
-    RestaurantTable *rt = new RestaurantTable(1);
+    RestaurantTable *rt = new RestaurantTable(1,1);
     rt->setWaiter(&w);
     EXPECT_CALL(w, confirmOrder(rt)).Times(1);
     w.confirmOrder(rt);
@@ -177,7 +177,7 @@ TEST(WaiterTests, waiterConfirmOrder) {
 TEST(WaiterTests, waiterAddOrder) {
     MockWaiter w("Bob", 5, nullptr);
     WaiterState *ws = new WaiterStateAvailable(&w);
-    RestaurantTable *rt = new RestaurantTable(1);
+    RestaurantTable *rt = new RestaurantTable(1,1);
     rt->setWaiter(&w);
     EXPECT_CALL(w, addOrder(rt)).Times(1);
     w.addOrder(rt);
@@ -187,7 +187,7 @@ TEST(WaiterTests, waiterAddOrder) {
 TEST(WaiterTests, waiterGetOrder) {
     MockWaiter w("Bob", 5, nullptr);
     WaiterState *ws = new WaiterStateAvailable(&w);
-    RestaurantTable *rt = new RestaurantTable(1);
+    RestaurantTable *rt = new RestaurantTable(1,1);
     rt->setWaiter(&w);
     EXPECT_CALL(w, getOrder(rt)).Times(1);
     w.getOrder(rt);
