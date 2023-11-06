@@ -25,6 +25,11 @@ public:
     fa_burger(const std::vector<std::string> &initialComponents) { components = initialComponents; };
 
     /**
+     * @brief Destructor.
+     */
+    ~fa_burger() override = default;
+
+    /**
      * @brief Gets the description of the burger.
      * @return A string representing the description of the burger and its components.
      */

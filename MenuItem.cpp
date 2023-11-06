@@ -34,3 +34,7 @@ bool MenuItem::containsCustomization(std::string customization) {
     }
     return false;
 }
+
+std::vector<std::string> MenuItem::getCustomizations() {
+    return this->customizations;
+}

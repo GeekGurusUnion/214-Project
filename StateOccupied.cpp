@@ -15,7 +15,8 @@ void StateOccupied::empty() {
 }
 
 void StateOccupied::serve() {
-    std::cout << "Table is occupied, serving food." << std::endl;
+    std::cout << "Table is now being served." << std::endl;
+    table->getOrder()->printOrder();
     table->setState(new StateServe(table));
 }
 

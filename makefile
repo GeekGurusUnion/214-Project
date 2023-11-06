@@ -1,7 +1,5 @@
 compile:
-	g++ -g --std=c++14 $(filter-out main_basic.cpp, $(filter-out test_main.cpp, $(filter-out unitTest_Facade.cpp, $(filter-out unitTests_Iwan.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp)))))))) -o main.o
-compileBasic:
-	g++ -g --std=c++14 $(filter-out main.cpp, $(filter-out test_main.cpp, $(filter-out unitTest_Facade.cpp, $(filter-out unitTests_Iwan.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp)))))))) -o main.o
+	g++ -g --std=c++14 $(filter-out test_main.cpp, $(filter-out unitTest_Facade.cpp, $(filter-out unitTests_Iwan.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp))))))) -o main.o
 errorCount:
 	g++ --std=c++14 -w main.cpp 2>&1 | grep -c "error:"
 run:
@@ -9,7 +7,7 @@ run:
 leaks:
 	leaks -atExit -- ./main.o
 
-test: 
+test:
 	g++ -g --std=c++14 $(filter-out main.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Iwan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp)))))) -o main_testFacade.o -lgtest -lgmock -lgtest_main -lpthread
 	./main_testFacade.o
 
@@ -34,7 +32,9 @@ CXXFLAGS = -std=c++17 -Wall
 EXECUTABLE = myprogram
 VALGRIND = valgrind
 
-SRC_FILES = $(wildcard *.cpp)
+KITCHEN_DIR = kitchen
+
+SRC_FILES = $(wildcard *.cpp) $(wildcard $(KITCHEN_DIR)/*.cpp)
 OBJ_FILES = $(patsubst %.cpp, %.o, $(SRC_FILES))
 
 # all: $(EXECUTABLE)

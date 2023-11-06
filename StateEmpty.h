@@ -48,6 +48,11 @@ public:
     void empty();
 
     /**
+     * @brief Transition the table to the "Handle Order" state.
+     */
+    void handleOrder() {};
+
+    /**
      * @brief Get the name of the current state.
      * @return A string representing the state name.
      */

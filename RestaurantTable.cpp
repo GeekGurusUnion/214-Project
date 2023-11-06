@@ -71,3 +71,7 @@ void RestaurantTable::printBill() {
 int RestaurantTable::getTableSize() {
     return this->tableSize;
 }
+
+void RestaurantTable::serve() {
+    currentState->serve();
+}

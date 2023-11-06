@@ -28,6 +28,11 @@ public:
     };
 
     /**
+     * @brief Destructor.
+     */
+    ~fa_Pizza() override = default;
+
+    /**
      * @brief Gets a description of the pizza.
      *
      * @return A string representing the description of the pizza along with its components.

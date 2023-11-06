@@ -16,6 +16,7 @@ void StateServe::empty() {
 
 void StateServe::serve() {
     std::cout << "Table is already serving food." << std::endl;
+    
 }
 
 std::string StateServe::getStateName() {

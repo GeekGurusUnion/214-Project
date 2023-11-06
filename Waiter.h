@@ -218,6 +218,11 @@ public:
     void setState(WaiterState* state);
 
     // * end of testing * //
+
+    /**
+     * @brief Serve a RestaurantTable.
+    */
+    void serveOrder(RestaurantTable* rt);
 };
 
 #endif // WAITER_H

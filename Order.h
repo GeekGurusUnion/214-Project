@@ -8,6 +8,7 @@
 
 #include "MenuItem.h"
 #include "RestaurantTable.h"
+#include "fa_dish.h"
 #include <vector>
 
 /**
@@ -19,6 +20,7 @@
 class Order {
 private:
     std::vector<MenuItem*> items = std::vector<MenuItem*>(); ///< A list of menu items included in the order.
+    std::vector<fa_dish*> dishes = std::vector<fa_dish*>(); ///< A list dishes after they have been prepared.
     RestaurantTable* table; ///< A pointer to the restaurant table associated with the order.
     bool status = false; ///< The status of the order (e.g., confirmed or not).
 
@@ -65,6 +67,18 @@ public:
     std::vector<MenuItem*> getItems();
 
     /**
+     * @brief Get the list prepared dishes.
+     * @return A vector of pointers to prepared dishes.
+     */
+    void setDishes(std::vector<fa_dish*>);
+
+    /**
+     * @brief Add a dish to the list of prepared dishes.
+     * @param dish A pointer to the dish to add to the list.
+     */
+    void addDish(fa_dish* dish);
+
+    /**
      * @brief Add a customization to a specific menu item in the order.
      * @param name The name of the menu item to customize.
      * @param customization The customization to add to the menu item.
@@ -76,6 +90,11 @@ public:
      * @return The size of the order.
      */
     int getOrderSize(); // * testing
+
+    /**
+     * @brief Print the order.
+     */
+    void printOrder();
 };
 
 #endif // ORDER_H
