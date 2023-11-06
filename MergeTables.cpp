@@ -14,9 +14,22 @@ void MergeTables::execute(Facade *f, int count) {
     int sum = 0;
     // first get the max for one table that is available
     f->getTableIterator()->reset();
-    RestaurantTable* table = (RestaurantTable*) f->getTableIterator()->first();
+    RestaurantTable* table = (RestaurantTable*) f->getTableIterator()->next();
+    while (table != nullptr) {
+        if (!table->isAvailable()) {
+            table = (RestaurantTable*) f->getTableIterator()->next();
+        } else {
+            break;
+        }
+    }
+    if (table == nullptr) {
+        std::cout << "No tables can be merged." << std::endl;
+        return;
+    }
+
     while (table != nullptr) {
         if (table->isAvailable() && table->getTableSize() > max) {
+            table1 = table;
             max = table->getTableSize();
         }
         if (!f->getTableIterator()->hasNext() && max > 0) {
@@ -24,9 +37,8 @@ void MergeTables::execute(Facade *f, int count) {
         }
         table = (RestaurantTable*) f->getTableIterator()->next();
     }
-    if (table != nullptr) {
-        sum += table->getTableSize();
-        table1 = table;
+    if (table1 != nullptr) {
+        sum += table1->getTableSize();
     }
 
     // std::cout << "max: " << max << std::endl;
@@ -36,9 +48,16 @@ void MergeTables::execute(Facade *f, int count) {
     // now get the second that are available and have the sum of their table sizes be greater than or equal to the count
     if (table1 != nullptr) {
         f->getTableIterator()->reset();
-        table = (RestaurantTable*) f->getTableIterator()->first();
+        table = (RestaurantTable*) f->getTableIterator()->next();
         while (table != nullptr) {
-            if (table->isAvailable() && table->getTableSize() + max >= count) {
+            if (!table->isAvailable()) {
+                table = (RestaurantTable*) f->getTableIterator()->next();
+            } else {
+                break;
+            }
+        }
+        while (table != nullptr) {
+            if (table->isAvailable() && table->getTableSize() + max >= count && table != table1) {
                 table2 = table;
                 sum += table->getTableSize();
                 break;
@@ -51,6 +70,7 @@ void MergeTables::execute(Facade *f, int count) {
     if (table2 != nullptr) {
         table1->setTableSize(sum);
         table1->occupy();
+        table2->occupy();
         f->getWaiter(table1);
         f->nullifyTable(table2);
         std::cout << "Tables have been merged with new size " << table1->getTableSize() << std::endl;
@@ -58,9 +78,4 @@ void MergeTables::execute(Facade *f, int count) {
     } else {
         std::cout << "No tables can be merged." << std::endl;
     }
-
-
-
-
-
 }

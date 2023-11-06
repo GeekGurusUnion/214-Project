@@ -145,18 +145,13 @@ int Facade::getSeated(int customerCount) {
         RestaurantTable* table = (RestaurantTable*) tableIterator->first();
         getWaiter(table);
         mergeTables(table, customerCount);
-        if (table->isAvailable()) {
-            // release waiter from table
-            table->unsetWaiter();
-        } else {
-            return getTableNumber(customerCount);
-        }
+        return getTableNumber(customerCount);
     }
 }
 
 int Facade::getTableNumber(int customerCount) {
     for (int i = 0; i < totalTables; i++) {
-        if (tables[i]->getTableSize() >= customerCount && tables[i]->isAvailable()) {
+        if (tables[i]->getTableSize() >= customerCount && !tables[i]->isAvailable()) {
             return tables[i]->getTableNumber();
         }
     }
