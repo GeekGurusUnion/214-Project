@@ -56,7 +56,7 @@ int RestaurantTable::getTableNumber() const {
 }
 
 void RestaurantTable::printBill() {
-    std::cout << "Table " << tableNumber << " Bill: $" << order->calculateTotal() << std::endl;
+    std::cout << "Table " << tableNumber << " Bill: $" << order->getTotal() << std::endl;
 }
 
 int RestaurantTable::getTableSize() {
@@ -65,4 +65,20 @@ int RestaurantTable::getTableSize() {
 
 void RestaurantTable::serve() {
     currentState->serve();
+}
+
+float RestaurantTable::getTableCost() {
+    return order->getTotal();
+}
+
+float RestaurantTable::getCostPerPerson() {
+    return costPerPerson;
+}
+
+void RestaurantTable::setCostPerPerson(int count) {
+    this->costPerPerson = getTableCost() / count;
+}
+
+void RestaurantTable::setTableSize(int size) {
+    this->tableSize = size;
 }

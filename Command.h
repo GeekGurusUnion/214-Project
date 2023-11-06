@@ -12,6 +12,7 @@
 class RestaurantTable;
 class MenuItem;
 class Waiter;
+class Facade;
 
 /**
  * @class Command
@@ -40,7 +41,7 @@ public:
      * @param rt A pointer to the RestaurantTable on which the command is executed.
      * @param menuItem A pointer to the MenuItem associated with the command.
      */
-    virtual void execute(RestaurantTable* rt, MenuItem* menuItem) = 0;
+    virtual void execute(RestaurantTable* rt, MenuItem* menuItem) {};
 
     /**
      * @brief Execute the command with a RestaurantTable, a MenuItem name, and customization details.
@@ -53,6 +54,21 @@ public:
      * @param customization A string specifying any customizations for the MenuItem.
      */
     virtual void execute(RestaurantTable* rt, std::string menuItem, std::string customization) {};
+
+    /**
+     * @brief Execute the command with a RestaurantTable and a percentage tip.
+    */
+    virtual void execute(RestaurantTable* rt, double tip) {};
+
+    /**
+     * @brief Execute the command with a RestaurantTable and a complaint.
+     */
+    virtual void execute(RestaurantTable* rt, std::string complaint) {};
+
+    /**
+     * @brief Merge Tables
+     */
+    virtual void execute(Facade* f, int count) {};
 
     /**
      * @brief Virtual destructor for the Command class.

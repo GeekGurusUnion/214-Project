@@ -18,6 +18,7 @@
 
 #include "State.h"
 class RestaurantTable;
+class Facade;
 
 class TableObserver {
 public:
@@ -27,8 +28,10 @@ public:
      * @param item The name of the menu item added or removed.
      * @param customization The customization applied to the menu item (if any).
      * @param isItem Indicates whether an item was added (true) or removed (false).
+     * @param facade Pointer to the Facade object.
+     * @param count The number of tables to merge.
      */
-    void update(RestaurantTable* t, std::string item, std::string customization, bool isItem);
+    void update(RestaurantTable* table, std::string item, std::string customization, bool isItem, Facade* facade, int count);
 };
 
 #endif // TABLE_OBSERVER_H
