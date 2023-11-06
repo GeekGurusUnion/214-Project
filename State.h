@@ -1,6 +1,18 @@
 #ifndef STATE_H_
 #define STATE_H_
 
+/**
+ * @file State.h
+ * @brief Definition of the State class.
+ */
+
+/**
+ * @class State
+ * @brief Represents a state of a RestaurantTable.
+ *
+ * This class is an interface for representing the different states of a RestaurantTable,
+ * such as "Serve," "Occupied," or "Empty."
+ */
 // State (State) [interface]
 
 #include <iostream> 
@@ -8,18 +20,63 @@
 class RestaurantTable;
 
 class State {
-    protected:
-        RestaurantTable* table = nullptr;
-        std::string stateName;
-    public:
-        State(RestaurantTable* table);
-        virtual ~State();
-        void setTable(RestaurantTable* table);
-        virtual void serve() = 0;
-        virtual void occupy() = 0;
-        virtual void empty() = 0;
-        virtual std::string getStateName() = 0;
-        virtual bool isOccupied() = 0;
+protected:
+    /**
+     * @var table
+     * @brief Pointer to the associated RestaurantTable.
+     */
+    RestaurantTable* table = nullptr;
+
+    /**
+     * @var stateName
+     * @brief The name of the state.
+     */
+    std::string stateName;
+
+public:
+    /**
+     * @brief Constructor for State.
+     * @param table Pointer to the RestaurantTable associated with this state.
+     */
+    State(RestaurantTable* table);
+
+    /**
+     * @brief Destructor for State.
+     */
+    virtual ~State();
+
+    /**
+     * @brief Set the associated RestaurantTable.
+     * @param table Pointer to the RestaurantTable.
+     */
+    void setTable(RestaurantTable* table);
+
+    /**
+     * @brief Transition the table to the "Serve" state.
+     */
+    virtual void serve() = 0;
+
+    /**
+     * @brief Transition the table to the "Occupied" state.
+     */
+    virtual void occupy() = 0;
+
+    /**
+     * @brief Transition the table to the "Empty" state.
+     */
+    virtual void empty() = 0;
+
+    /**
+     * @brief Get the name of the current state.
+     * @return A string representing the state name.
+     */
+    virtual std::string getStateName() = 0;
+
+    /**
+     * @brief Check if the table is in the "Occupied" state.
+     * @return True if the table is occupied, false otherwise.
+     */
+    virtual bool isOccupied() = 0;
 };
 
 #include "StateEmpty.h"
