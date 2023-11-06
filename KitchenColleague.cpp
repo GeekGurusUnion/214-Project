@@ -9,6 +9,11 @@ KitchenColleague::KitchenColleague(Mediator *mediator) : Colleague(mediator)
     this->mediator->addColleague(this);
 }
 
+KitchenColleague::~KitchenColleague()
+{
+    delete this->orderAdapter;
+}
+
 void KitchenColleague::handleOrder()
 {
     std::vector<fa_dish*> dishes = std::vector<fa_dish*>();

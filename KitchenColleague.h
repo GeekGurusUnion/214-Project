@@ -27,7 +27,7 @@ public:
      * @param mediator A pointer to the Mediator used for communication with other colleagues.
      */
     KitchenColleague(Mediator *mediator);
-
+    ~KitchenColleague();
     void handleOrder();
 
 private:
