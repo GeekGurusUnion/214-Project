@@ -6,16 +6,12 @@ Waiter::Waiter(std::string name, int totalOrders, FloorColleague *fc) {
     this->name = name;
     this->totalOrders = totalOrders;
 
-    menu.push_back(new MenuItem("Chicken", 10.99));
-    menu.push_back(new MenuItem("Burger", 12.99));
-    menu.push_back(new MenuItem("Pork", 11.99));
-    menu.push_back(new MenuItem("Fish", 13.99));
-    menu.push_back(new MenuItem("Lamb", 14.99));
-    menu.push_back(new MenuItem("Pasta", 15.99));
-    menu.push_back(new MenuItem("Pizza", 16.99));
-    menu.push_back(new MenuItem("Salad", 17.99));
-    menu.push_back(new MenuItem("Soup", 18.99));
-    menu.push_back(new MenuItem("Steak", 19.99));
+    menu.push_back(new MenuItem("BeefBurger", 50.99));
+    menu.push_back(new MenuItem("ChickenBurger", 45.99));
+    menu.push_back(new MenuItem("DoubleBurger", 60.99));
+    menu.push_back(new MenuItem("BBQChickenPizza", 89.99));
+    menu.push_back(new MenuItem("PepperoniPizza", 95.99));
+    menu.push_back(new MenuItem("HawaiianPizza", 85.99));
 
     this->state = new WaiterStateAvailable(this);
     this->cO = new ConfirmOrder(this, fc);
