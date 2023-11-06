@@ -85,7 +85,10 @@ public:
      */
     int getOrderSize(); // * testing
 
-
+    /**
+     * @brief Print the order.
+     */
+    void printOrder();
 };
 
 #endif // ORDER_H

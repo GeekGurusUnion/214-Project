@@ -8,7 +8,7 @@
 
 // Forward declarations
 class Mediator;
-class Order;
+#include "Order.h"
 
 /**
  * @class Colleague
@@ -20,7 +20,7 @@ class Order;
 class Colleague {
 protected:
     Mediator* mediator; ///< A pointer to the Mediator that facilitates communication.
-    Order* order;       ///< A pointer to the Order associated with this Colleague.
+    Order* order = nullptr;       ///< A pointer to the Order associated with this Colleague.
 
 public:
     /**
@@ -28,6 +28,11 @@ public:
      * @param mediator A pointer to the Mediator used for communication with other colleagues.
      */
     Colleague(Mediator* mediator);
+
+    /**
+     * @brief Destructor for the Colleague class.
+     */
+    virtual ~Colleague() = default;
 
     /**
      * @brief Notify the Mediator that this colleague has changed state or data.
@@ -48,6 +53,12 @@ public:
      * @return A pointer to the Order associated with this colleague.
      */
     Order* getOrder();
+
+
+    /** 
+     * @brief Handle the order.
+    */
+    virtual void handleOrder() = 0;
 };
 
 #endif // COLLEAGUE_H

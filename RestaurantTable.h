@@ -175,6 +175,12 @@ public:
      * @return The table size.
      */
     int getTableSize();
+
+    /**
+     * @brief Serve the order associated with the table.
+     * @details This method is called when the order is ready to be served.
+    */
+    void serve();
 };
 
 #endif  // RESTAURANT_TABLE_H_

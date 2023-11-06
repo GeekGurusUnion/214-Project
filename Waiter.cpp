@@ -131,4 +131,8 @@ Command* Waiter::getTO() const {
 void Waiter::setState(WaiterState* state) {
     this->state = state;
 }
+
+void Waiter::serveOrder(RestaurantTable *rt) {
+    rt->serve();
+}
 // * end of testing * //

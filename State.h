@@ -66,6 +66,11 @@ public:
      */
     virtual void empty() = 0;
 
+    /** 
+     * @brief Handle the order.
+    */
+    virtual void handleOrder() = 0;
+
     /**
      * @brief Get the name of the current state.
      * @return A string representing the state name.

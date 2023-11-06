@@ -8,7 +8,11 @@ Order::~Order() {
     for (auto& i : items) {
         delete i;
     }
+    for (auto& d : dishes) {
+        delete d;
+    }
     items.clear();
+    dishes.clear();
 }
 
 void Order::addItem(MenuItem* item) {
@@ -56,4 +60,12 @@ void Order::addCustomization(std::string name, std::string customization) {
 // * testing
 int Order::getOrderSize() {
     return this->items.size();
+}
+
+void Order::printOrder() {
+    // loop through dish
+    std::cout << "Printing order" << std::endl;
+    for (auto& d : dishes) {
+        std::cout << d->getDescription() << std::endl;
+    }
 }
