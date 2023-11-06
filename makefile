@@ -1,4 +1,4 @@
-SRC_TEST_EXCLUDE = $(wildcard *test*.cpp *main*.cpp)
+SRC_TEST_EXCLUDE = $(wildcard *test*.cpp *Test*.cpp *main*.cpp)
 
 ifdef INCLUDE_TEST
 SRC_TEST_EXCLUDE := $(filter-out $(INCLUDE_TEST),$(SRC_TEST_EXCLUDE))
