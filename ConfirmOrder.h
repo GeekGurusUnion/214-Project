@@ -1,13 +1,15 @@
 #ifndef CONFIRMORDER_H
 #define CONFIRMORDER_H
 // ConcreteCommand (Command)
+
 /**
  * @file ConfirmOrder.h
  * @brief Declaration of the ConfirmOrder class, a concrete implementation of the Command pattern.
  */
 
 #include "Command.h"
-class Waiter;
+//Forward declarations
+class Waiter;       
 class RestaurantTable;
 class MenuItem;
 class FloorColleague;

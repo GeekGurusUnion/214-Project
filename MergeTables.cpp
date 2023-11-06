@@ -4,8 +4,6 @@
 
 MergeTables::MergeTables(Waiter* w) : Command(w) {}
 
-
-
 void MergeTables::execute(Facade *f, int count) {
     // get two tables of which the sum of the two getTableSize() will be greater than or equal to the count and both must be available.
     RestaurantTable* table1 = nullptr;

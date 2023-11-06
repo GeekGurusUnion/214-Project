@@ -1,6 +1,6 @@
 #ifndef CONCRETEMEDIATOR_H
 #define CONCRETEMEDIATOR_H
-//concrete mediator
+// ConcreteMediator (Mediator)
 /**
  * @file ConcreteMediator.h
  * @brief Declaration of the ConcreteMediator class, which is a concrete implementation of the Mediator.

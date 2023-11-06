@@ -1,10 +1,15 @@
 #ifndef WAITER_ITERATOR_H
 #define WAITER_ITERATOR_H
+// ConcreteIterator (Iterator)
 
 /**
  * @file WaiterIterator.h
  * @brief Definition of the WaiterIterator class.
  */
+
+#include <vector>
+#include "Iterator.h"
+#include "Waiter.h"
 
 /**
  * @class WaiterIterator
@@ -13,13 +18,6 @@
  * This class is a concrete implementation of the Iterator interface,
  * providing the ability to iterate over a collection of Waiters.
  */
-
-// ConcreteIterator (Iterator)
-
-#include <vector>
-#include "Iterator.h"
-#include "Waiter.h"
-
 class WaiterIterator : public Iterator {
 private:
     /**
@@ -75,10 +73,6 @@ public:
      */
     void reset();
 
-
-    /**
-     * @note The following functions are intended for testing purposes.
-     */
     // * Testing * //
 
     /**

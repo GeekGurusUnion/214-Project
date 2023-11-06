@@ -2,7 +2,7 @@
 #define FACADE_H
 // Facade (Facade) 
 // ConcreteAggregate (Iterator) 
-// Client (Main)
+
 /**
  * @file Facade.h
  * @brief Declaration of the Facade class, which acts as a facade for the restaurant management system.
@@ -12,14 +12,11 @@
 #include "Waiter.h"
 #include "StateOccupied.h"
 #include "ConcreteMediator.h"
-
 #include "FloorColleague.h"
 #include "KitchenColleague.h"
-
 #include "TableObserver.h"
-
 #include <vector>
-
+//Forward declarations
 class WaiterIterator;
 class TableIterator;
 
@@ -255,25 +252,56 @@ public:
      */
     void leaveTable(int tableNumber);
 
-    // * testing
+    // * testing * //
     /**
      * @brief Returns an array of waiter names.
      * 
      * @return std::string* An array of waiter names.
      */
     std::string* getWaiterNames();
-    void setWaiterSize(int size);
-    void setTablesPerWaiter(int size);
-    void setTotalTables(int size);
-    void setObserver(TableObserver* observer);
-    void setWaiterIterator(WaiterIterator* waiterIterator);
 
+    /**
+     * @brief Sets the number of waiters in the restaurant.
+     * 
+     * @param size The number of waiters in the restaurant.
+     */
+    void setWaiterSize(int size);
+
+    /**
+     * @brief Sets the number of tables each waiter is responsible for.
+     * 
+     * @param size The number of tables each waiter is responsible for.
+     */
+    void setTablesPerWaiter(int size);
+
+    /**
+     * @brief Sets the total number of tables in the restaurant.
+     * 
+     * @param size The total number of tables in the restaurant.
+     */
+    void setTotalTables(int size);
+
+    /**
+     * @brief Sets the observer for the restaurant.
+     * 
+     * @param observer The observer for the restaurant.
+     */
+    void setObserver(TableObserver* observer);
+
+    /**
+     * @brief Sets the waiter iterator for the restaurant.
+     * 
+     * @param waiterIterator The waiter iterator for the restaurant.
+     */
+    void setWaiterIterator(WaiterIterator* waiterIterator);
 
     /**
      * @brief gets the table number
      * @return int the table number
     */
     int getTableNumber(int customerCount);
+
+    // * end of testing * //
 };
 
 #endif // FACADE_H

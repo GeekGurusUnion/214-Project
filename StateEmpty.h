@@ -1,10 +1,14 @@
 #ifndef STATE_EMPTY_H_
 #define STATE_EMPTY_H_
+// ConcreteState (State)
 
 /**
  * @file StateEmpty.h
  * @brief Definition of the StateEmpty class.
  */
+
+#include "State.h"
+#include <iostream> 
 
 /**
  * @class StateEmpty
@@ -13,12 +17,6 @@
  * This class is a concrete implementation of the State interface,
  * representing the state where a RestaurantTable is empty and available.
  */
-
-// ConcreteState (State)
-
-#include "State.h"
-#include <iostream> 
-
 class StateEmpty : public State {
 public:
     /**

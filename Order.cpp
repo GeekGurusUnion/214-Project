@@ -61,7 +61,8 @@ void Order::addCustomization(std::string name, std::string customization) {
     }
 }
 
-// * testing
+// * testing * // 
+
 int Order::getOrderSize() {
     return this->items.size();
 }
@@ -85,3 +86,5 @@ void Order::printOrder() {
         std::cout << d->getDescription() << std::endl;
     }
 }
+
+// * end of testing * //

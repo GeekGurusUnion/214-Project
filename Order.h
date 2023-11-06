@@ -1,5 +1,6 @@
 #ifndef ORDER_H
 #define ORDER_H
+// Receiver (Command)
 
 /**
  * @file Order.h
@@ -86,11 +87,13 @@ public:
      */
     void addCustomization(std::string name, std::string customization);
 
+    // * testing * //
+    
     /**
      * @brief Get the size of the order (number of menu items).
      * @return The size of the order.
      */
-    int getOrderSize(); // * testing
+    int getOrderSize(); 
 
     /**
      * @brief Calculate the total cost of the order.
@@ -111,6 +114,8 @@ public:
      * @brief Print the order.
      */
     void printOrder();
+
+    // * end of testing * //
 };
 
 #endif // ORDER_H

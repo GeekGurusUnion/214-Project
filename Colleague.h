@@ -1,13 +1,14 @@
 #ifndef COLLEAGUE_H
 #define COLLEAGUE_H
 // Colleague (Mediator) [interface]
+
 /**
  * @file Colleague.h
  * @brief Declaration of the Colleague class, an interface for Mediator pattern.
  */
 
-// Forward declarations
-class Mediator;
+ // Forward declaration
+class Mediator;    
 #include "Order.h"
 
 /**
@@ -53,7 +54,6 @@ public:
      * @return A pointer to the Order associated with this colleague.
      */
     Order* getOrder();
-
 
     /** 
      * @brief Handle the order.

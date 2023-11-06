@@ -1,10 +1,15 @@
 #ifndef TABLE_ITERATOR_H
 #define TABLE_ITERATOR_H
+// ConcreteIterator (Iterator)
 
 /**
  * @file TableIterator.h
  * @brief Definition of the TableIterator class.
  */
+
+#include "Iterator.h"
+#include "RestaurantTable.h"
+#include <vector>
 
 /**
  * @class TableIterator
@@ -13,13 +18,6 @@
  * This class is a concrete implementation of the Iterator interface,
  * providing the ability to iterate over a collection of RestaurantTables.
  */
-
-// ConcreteIterator (Iterator)
-
-#include "Iterator.h"
-#include "RestaurantTable.h"
-#include <vector>
-
 class TableIterator : public Iterator {
 private:
     /**

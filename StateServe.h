@@ -1,10 +1,14 @@
 #ifndef STATE_RESERVED_H_
 #define STATE_RESERVED_H_
+// ConcreteState (State)
 
 /**
  * @file StateReserved.h
  * @brief Definition of the StateReserved class.
  */
+
+#include "State.h"
+#include <iostream> 
 
 /**
  * @class StateReserved
@@ -13,12 +17,6 @@
  * This class is a concrete implementation of the State interface,
  * representing the state where a RestaurantTable is reserved.
  */
-
-// ConcreteState (State)
-
-#include "State.h"
-#include <iostream> 
-
 class StateServe : public State {
 public:
     /**

@@ -1,10 +1,6 @@
 #ifndef TIP_ORDER_H
 #define TIP_ORDER_H
-
-/** 
- * @brief TipOrder class
- * @details TipOrder class is a concrete command that is used to tip a waiter for a table
-*/
+// ConcreteCommand (Command)
 
 /**
  * @file TipOrder.h
@@ -22,21 +18,21 @@
  * When executed, it calls the addTip method of the Waiter passed in the constructor with the given tip amount.
  */
 class TipOrder : public Command {
-    public:
-        /**
-         * @brief Constructs a TipOrder object with the given Waiter.
-         * 
-         * @param w A pointer to the Waiter who will receive the tip order.
-         */
-        TipOrder(Waiter* w);
+public:
+    /**
+     * @brief Constructs a TipOrder object with the given Waiter.
+     * 
+     * @param w A pointer to the Waiter who will receive the tip order.
+     */
+    TipOrder(Waiter* w);
 
-        /**
-         * @brief Executes the tip order by calling the addTip method of the Waiter with the given tip amount.
-         * 
-         * @param rt A pointer to the RestaurantTable associated with the tip order.
-         * @param tip The amount of the tip.
-         */
-        void execute(RestaurantTable* rt, double tip);
+    /**
+     * @brief Executes the tip order by calling the addTip method of the Waiter with the given tip amount.
+     * 
+     * @param rt A pointer to the RestaurantTable associated with the tip order.
+     * @param tip The amount of the tip.
+     */
+    void execute(RestaurantTable* rt, double tip);
 };
 
 #endif // TIP_ORDER_H

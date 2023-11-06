@@ -140,6 +140,8 @@ void Waiter::setState(WaiterState* state) {
     this->state = state;
 }
 
+// * end of testing * //
+
 void Waiter::serveOrder(RestaurantTable *rt) {
     rt->serve();
 }

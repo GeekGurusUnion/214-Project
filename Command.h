@@ -1,6 +1,7 @@
 #ifndef COMMAND_H
 #define COMMAND_H
 // Command (Command) [interface]
+
 /**
  * @file Command.h
  * @brief Declaration of the Command class, an interface for the Command pattern.

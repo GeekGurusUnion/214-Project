@@ -1,7 +1,9 @@
 #ifndef MERGE_TABLES_H
 #define MERGE_TABLES_H
+// ConcreteCommand (Command)
 
 #include "Command.h"
+//Forward declaration
 class Facade;
 
 /**

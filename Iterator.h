@@ -1,6 +1,7 @@
 #ifndef ITERATOR_H
 #define ITERATOR_H
 // Iterator (Iterator) [interface]
+
 /**
  * @file Iterator.h
  * @brief Declaration of the Iterator class, an interface for the Iterator pattern.

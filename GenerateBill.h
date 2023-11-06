@@ -1,12 +1,13 @@
 #ifndef GENERATE_BILL_H
 #define GENERATE_BILL_H
-//Concrete Command (Command)
+//ConcreteCommand (Command)
 /**
  * @file GenerateBill.h
  * @brief Declaration of the GenerateBill class, a concrete implementation of the Command pattern.
  */
 
 #include "Command.h"
+//Forward declaration
 class Waiter;
 
 /**

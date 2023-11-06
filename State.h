@@ -1,10 +1,15 @@
 #ifndef STATE_H_
 #define STATE_H_
+// State (State) [interface]
 
 /**
  * @file State.h
  * @brief Definition of the State class.
  */
+
+#include <iostream> 
+// Forward declaration
+class RestaurantTable;
 
 /**
  * @class State
@@ -13,12 +18,6 @@
  * This class is an interface for representing the different states of a RestaurantTable,
  * such as "Serve," "Occupied," or "Empty."
  */
-// State (State) [interface]
-
-#include <iostream> 
-
-class RestaurantTable;
-
 class State {
 protected:
     /**

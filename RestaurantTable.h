@@ -1,34 +1,17 @@
 #ifndef RESTAURANT_TABLE_H_
 #define RESTAURANT_TABLE_H_
+// ConcreteSubject (Observer)
+// Context (State)
+// Invoker (Command)
+// ConcreteAggregate (Iterator)
 
 /**
  * @file RestaurantTable.h
  * @brief Definition of the RestaurantTable class.
  */
 
-/**
- * @class RestaurantTable
- * @brief Represents a restaurant table with various functionalities.
- *
- * This class represents a restaurant table that can change states, have an associated waiter,
- * manage orders, and notify the waiter of various actions.
- */
-
-// ConcreteSubject (Observer)
-// Context (State)
-// Invoker (Command)
-// ConcreteAggregate (Iterator)
-
 #include "StateEmpty.h"
-
-// #include "Table.h"
-
-class Waiter;
-class TableObserver;
-
 #include "Order.h"
-class Order;
-
 #include "ConfirmOrder.h"
 #include "TakeOrder.h"
 #include "GenerateBill.h"
@@ -37,12 +20,21 @@ class Order;
 #include "TipOrder.h"
 #include "MergeTables.h"
 #include "Complaints.h"
-
 #include "TableObserver.h"
-
 #include "TableIterator.h"
 #include <iostream> 
+// Forward declarations
+class Waiter;
+class TableObserver;
+class Order;
 
+/**
+ * @class RestaurantTable
+ * @brief Represents a restaurant table with various functionalities.
+ *
+ * This class represents a restaurant table that can change states, have an associated waiter,
+ * manage orders, and notify the waiter of various actions.
+ */
 class RestaurantTable {
 private:
     /**
@@ -111,18 +103,6 @@ public:
     void occupy();
 
     /**
-     * @brief Transition the table to the "Empty" state.
-     */
-    void empty();
-
-    /**
-     * @brief Notify the waiter of an action.
-     * @param action The action to notify the waiter about.
-     * @param isItem Indicates whether the action is related to a menu item.
-     */
-    void notifyWaiter(std::string action, bool isItem);     /// assuming only one waiter helps a table
-
-    /**
      * @brief Get the waiter serving the table.
      * @return Pointer to the waiter serving the table.
      */
@@ -133,22 +113,6 @@ public:
      * @param waiter Pointer to the waiter.
      */
     void setWaiter(Waiter* waiter);
-
-    /**
-     * @brief Confirm the order associated with the table.
-     */
-    void confirmOrder();
-
-    /**
-     * @brief Welcome the waiter to the table.
-     */
-    void welcomeWaiter();
-
-    /**
-     * @brief Add an item to the order associated with the table.
-     * @param item The name of the menu item to add to the order.
-     */
-    void addToOrder(std::string item);
 
     /**
      * @brief Get the order associated with the table.
@@ -167,12 +131,6 @@ public:
      * @return The table number.
      */
     int getTableNumber() const;
-
-    /**
-     * @brief Calculate the bill for the table's order.
-     * @return The total bill amount.
-     */
-    float calculateBill();
 
     /**
      * @brief Print the bill for the table's order.

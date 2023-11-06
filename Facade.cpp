@@ -260,7 +260,7 @@ void Facade::confirmOrder(int tableNumber) {
     observer->update(table, "confirm", "", false, this, 0);
 }
 
-// * testing
+// * testing * //
 std::string* Facade::getWaiterNames() {
     return waiterNames;
 }
@@ -296,3 +296,4 @@ void Facade::setObserver(TableObserver* observer) {
 void Facade::setWaiterIterator(WaiterIterator* waiterIterator) {
     this->waiterIterator = waiterIterator;
 }
+// * end of testing * //

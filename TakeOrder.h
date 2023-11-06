@@ -1,10 +1,15 @@
 #ifndef TAKEORDER_H
 #define TAKEORDER_H
+// ConcreteCommand (Command)
 
 /**
  * @file TakeOrder.h
  * @brief Definition of the TakeOrder class.
  */
+
+#include "Command.h"
+// Forward declaration
+class Waiter;
 
 /**
  * @class TakeOrder
@@ -13,11 +18,6 @@
  * This class is a concrete implementation of the Command interface,
  * representing the action of taking an order from a customer by a Waiter.
  */
-
-// ConcreteCommand (Command)
-
-#include "Command.h"
-class Waiter;       /// Forward declaration of Waiter class
 
 class TakeOrder : public Command {
 public:

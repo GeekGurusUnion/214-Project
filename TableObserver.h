@@ -1,10 +1,16 @@
 #ifndef TABLE_OBSERVER_H
 #define TABLE_OBSERVER_H
+// ConcreteObserver (Observer)
 
 /**
  * @file TableObserver.h
  * @brief Definition of the TableObserver class.
  */
+
+#include "State.h"
+// Forward declaration
+class RestaurantTable;
+class Facade;
 
 /**
  * @class TableObserver
@@ -13,13 +19,6 @@
  * This class is a concrete implementation of the Observer interface,
  * responsible for receiving and processing updates related to a RestaurantTable.
  */
-
-// ConcreteObserver (Observer)
-
-#include "State.h"
-class RestaurantTable;
-class Facade;
-
 class TableObserver {
 public:
     /**

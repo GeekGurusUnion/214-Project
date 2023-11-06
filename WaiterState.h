@@ -1,10 +1,16 @@
 #ifndef WAITER_STATE_H
 #define WAITER_STATE_H
+// State (State) [interface]
 
 /**
  * @file WaiterState.h
  * @brief Definition of the WaiterState interface.
  */
+
+#include <iostream>
+// Forward declaration
+class Waiter;
+class Waiter;
 
 /**
  * @class WaiterState
@@ -12,14 +18,6 @@
  *
  * This is an abstract base class (interface) that defines the state of a Waiter.
  */
-
-// State (State) [interface]
-
-class Waiter;
-#include <iostream>
-
-class Waiter;
-
 class WaiterState {
 protected:
     /**
@@ -77,7 +75,7 @@ public:
      * @brief Get the associated Waiter object.
      * @return Pointer to the Waiter object.
      */
-    Waiter* getWaiter() const;
+    virtual Waiter* getWaiter() const;
 
     /**
      * @brief Get a pointer to the current WaiterState object (this) (pure virtual function).

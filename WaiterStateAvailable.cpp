@@ -21,7 +21,9 @@ void WaiterStateAvailable::setUnavailable() {
 }
 
 // * testing * //
+
 WaiterState* WaiterStateAvailable::getThis() {
     return this;
 }
 
+// * end of testing * //

@@ -1,20 +1,13 @@
 #ifndef WAITER_H
 #define WAITER_H
+// Receiver (Command)
+// Context (State)
 
 /**
  * @file Waiter.h
  * @brief Definition of the Waiter class.
  */
 
-/**
- * @class Waiter
- * @brief Represents a Waiter in a restaurant.
- *
- * This class represents a Waiter who takes orders, serves tables, and manages orders.
- */
-
-// Receiver (Command)
-// Context (State)
 #include <iostream>
 #include "WaiterState.h"
 #include "WaiterStateAvailable.h"
@@ -23,6 +16,12 @@
 #include "Order.h"
 #include "FloorColleague.h"
 
+/**
+ * @class Waiter
+ * @brief Represents a Waiter in a restaurant.
+ *
+ * This class represents a Waiter who takes orders, serves tables, and manages orders.
+ */
 class Waiter {
 private:
     /**

@@ -39,7 +39,7 @@ void WaiterIterator::reset() {
     this->position = 0;
 }
 
-// * Testing purposes
+// * Testing * //
 
 bool WaiterIterator::getWaiter(std::string name) {
     for (int i = 0; i < this->waiters.size(); i++) {
@@ -50,3 +50,5 @@ bool WaiterIterator::getWaiter(std::string name) {
     }
     return false;
 }
+
+// * end of testing * //

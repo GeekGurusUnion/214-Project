@@ -1,10 +1,16 @@
 #ifndef STATE_OCCUPIED_H_
 #define STATE_OCCUPIED_H_
+// ConcreteState (State)
 
 /**
  * @file StateOccupied.h
  * @brief Definition of the StateOccupied class.
  */
+
+#include "State.h"
+#include <iostream> 
+// Forward declaration
+class RestaurantTable;
 
 /**
  * @class StateOccupied
@@ -13,15 +19,6 @@
  * This class is a concrete implementation of the State interface,
  * representing the state where a RestaurantTable is occupied by customers.
  */
-
-
-// ConcreteState (State)
-
-#include "State.h"
-#include <iostream> 
-
-class RestaurantTable;
-
 class StateOccupied : public State {
 public:
     /**

@@ -1,12 +1,14 @@
 #ifndef CUSTOMIZE_ORDER_H
 #define CUSTOMIZE_ORDER_H
 // ConcreteCommand (Command)
+
 /**
  * @file CustomizeOrder.h
  * @brief Declaration of the CustomizeOrder class, a concrete implementation of the Command pattern.
  */
 
 #include "Command.h"
+//Forward declarations
 class Waiter;
 class RestaurantTable;
 class MenuItem;
