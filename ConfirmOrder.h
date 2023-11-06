@@ -11,6 +11,7 @@ class Waiter;
 class RestaurantTable;
 class MenuItem;
 class FloorColleague;
+class Colleague;
 
 /**
  * @class ConfirmOrder
@@ -22,7 +23,7 @@ class FloorColleague;
  */
 class ConfirmOrder : public Command {
 private:
-    FloorColleague* floorColleague; ///< A pointer to the FloorColleague responsible for confirming the order.
+    Colleague* floorColleague; ///< A pointer to the FloorColleague responsible for confirming the order.
 
 public:
     /**
@@ -30,7 +31,7 @@ public:
      * @param waiter A pointer to the Waiter issuing the confirmation command.
      * @param floorColleague A pointer to the FloorColleague responsible for confirming the order.
      */
-    ConfirmOrder(Waiter* waiter, FloorColleague* floorColleague);
+    ConfirmOrder(Waiter* waiter, Colleague* floorColleague);
 
     /**
      * @brief Execute the confirmation of an order.

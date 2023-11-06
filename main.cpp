@@ -272,7 +272,10 @@ int main() {
     facade->addCustomization(12, "BeefBurger", "Medium");
     facade->confirmOrder(12);
     facade->generateBill(12);
-    facade->leaveTable(12);
+    facade->tip(12, 5.00);
+    facade->splitBill(12, 2);
+    facade->complain(12, "The burger was too dry!");
+    // facade->mergeTables(12);
     delete facade;
     // delete facade;
     return 0;

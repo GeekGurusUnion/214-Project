@@ -71,13 +71,6 @@ public:
     void* next();
 
     /**
-     * @brief Check if a specific Waiter is available in the collection.
-     * @param waiter Pointer to the Waiter to check availability.
-     * @return True if the Waiter is available in the collection, false otherwise.
-     */
-    bool isAvailable(Waiter* waiter);
-
-    /**
      * @brief Reset the iterator to the beginning of the collection.
      */
     void reset();

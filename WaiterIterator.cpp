@@ -35,10 +35,6 @@ void* WaiterIterator::next(){
     return nullptr;
 };
 
-bool WaiterIterator::isAvailable(Waiter *waiter) {
-    return waiter->isAvailable();
-}
-
 void WaiterIterator::reset() {
     this->position = 0;
 }

@@ -1,7 +1,7 @@
 #include "ConfirmOrder.h"
 #include "Waiter.h"
 
-ConfirmOrder::ConfirmOrder(Waiter* waiter, FloorColleague* fc) : Command(waiter) {
+ConfirmOrder::ConfirmOrder(Waiter* waiter, Colleague* fc) : Command(waiter) {
     floorColleague = fc;
 }
 

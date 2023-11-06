@@ -23,6 +23,7 @@ private:
     std::vector<fa_dish*> dishes = std::vector<fa_dish*>(); ///< A list dishes after they have been prepared.
     RestaurantTable* table; ///< A pointer to the restaurant table associated with the order.
     bool status = false; ///< The status of the order (e.g., confirmed or not).
+    double total = 0.0; ///< The total cost of the order.
 
 public:
     /**
@@ -91,6 +92,21 @@ public:
      */
     int getOrderSize(); // * testing
 
+    /**
+     * @brief Calculate the total cost of the order.
+    */
+    double getTotal();
+
+    /**
+     * @brief Add a tip to the order.
+    */
+    void addTip(double tip);
+
+    /**
+     * @brief Split the bill.
+    */
+    void splitBill(int count);
+    
     /**
      * @brief Print the order.
      */

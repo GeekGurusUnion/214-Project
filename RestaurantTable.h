@@ -33,6 +33,10 @@ class Order;
 #include "TakeOrder.h"
 #include "GenerateBill.h"
 #include "CustomizeOrder.h"
+#include "SplitBill.h"
+#include "TipOrder.h"
+#include "MergeTables.h"
+#include "Complaints.h"
 
 #include "TableObserver.h"
 
@@ -70,6 +74,11 @@ private:
      * @brief The order associated with the table.
      */
     Order* order;
+
+    /**
+     * @var costPerPerson
+    */
+    float costPerPerson;
 
 public:
     /**
@@ -181,6 +190,29 @@ public:
      * @details This method is called when the order is ready to be served.
     */
     void serve();
+
+    /**
+     * @brief Get the cost per person.
+     * @return The cost per person.
+    */
+    float getCostPerPerson();
+
+    /**
+     * @brief Set the cost per person.
+     * @param cost The cost per person.
+    */
+    void setCostPerPerson(int cost);
+
+    /**
+     * @brief Get the total cost of the table.
+     * @return The total cost of the table.
+    */
+    float getTableCost();
+
+    /**
+     * @brief Set table size
+    */
+    void setTableSize(int size);
 };
 
 #endif  // RESTAURANT_TABLE_H_

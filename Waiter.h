@@ -85,6 +85,31 @@ private:
      */
     Command* aC = nullptr;
 
+    /**
+     * @var sB
+     * @brief A Command pointer for splitting bills.
+     */
+    Command* sB = nullptr;
+
+    /**
+     * @var tip
+     * @brief A Command pointer for tipping orders.
+     */
+    Command* tip = nullptr;
+
+    /**
+     * @var complaint
+     * @brief A Command pointer for handling complaints.
+     */
+    Command* c = nullptr;
+
+    /**
+     * @var mergeTables
+     * @brief A Command pointer for merging tables.
+    */
+    Command* mT = nullptr;
+
+
 public:
     /**
      * @brief Constructor for Waiter.
@@ -92,7 +117,7 @@ public:
      * @param totalOrders The total number of orders the Waiter is expected to handle.
      * @param fc A pointer to the FloorColleague associated with the Waiter.
      */
-    Waiter(std::string name, int totalOrders, FloorColleague *fc);
+    Waiter(std::string name, int totalOrders, Colleague *fc);
 
     /**
      * @brief Destructor for Waiter.
@@ -223,6 +248,26 @@ public:
      * @brief Serve a RestaurantTable.
     */
     void serveOrder(RestaurantTable* rt);
+
+    /**
+     * @brief Split Bill
+    */
+    void splitBill(RestaurantTable* rt, int numPeople);
+
+    /**
+     * @brief Tip
+    */
+    void tipOrder(RestaurantTable* rt, double tip);
+
+    /**
+     * @brief Complaint
+    */
+    void complaint(RestaurantTable* rt, std::string complaint);
+
+    /**
+     * @brief Merge Tables
+    */
+    void mergeTables(Facade* f, int count);
 };
 
 #endif // WAITER_H

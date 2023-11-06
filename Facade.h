@@ -35,13 +35,13 @@ class Facade {
 private:
     std::vector<RestaurantTable*> tables = std::vector<RestaurantTable*>();
     std::vector<Waiter*> waiters = std::vector<Waiter*>();
-    WaiterIterator* waiterIterator;
-    TableIterator* tableIterator;
+    Iterator* waiterIterator;
+    Iterator* tableIterator;
 
     Mediator* mediator = new ConcreteMediator();
 
-    FloorColleague* floorColleague = new FloorColleague(mediator);
-    KitchenColleague* kitchenColleague = new KitchenColleague(mediator);
+    Colleague* floorColleague = new FloorColleague(mediator);
+    Colleague* kitchenColleague = new KitchenColleague(mediator);
 
     int waiterSize = 4;
     int tablesPerWaiter = 3;
@@ -67,6 +67,11 @@ public:
     void confirmOrder(int tableNumber);
     void generateBill(int tableNumber);
     void addCustomization(int tableNumber, std::string itemName, std::string customization);
+    void mergeTables(int count);
+    void tip(int tableNumber, double tip);
+    void splitBill(int tableNumber, int count);
+    void complain(int tableNumber, std::string complaint);
+    void payBill(int tableNumber);
 
     void getWaiter(RestaurantTable* table); // called by getSeated(); - should be called internally only
 
@@ -74,6 +79,8 @@ public:
 
     void addTable(RestaurantTable* table);
     void addWaiter(Waiter* waiter);
+
+    void removeTable(RestaurantTable* table);
 
     Iterator* getWaiterIterator();
     Iterator* getTableIterator();
@@ -91,6 +98,8 @@ public:
 
     // * testing
     std::string* getWaiterNames();
+
+
 };
 
 #endif // FACADE_H

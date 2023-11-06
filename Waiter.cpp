@@ -2,7 +2,7 @@
 #include "WaiterStateAvailable.h"
 #include "WaiterStateUnavailable.h"
 
-Waiter::Waiter(std::string name, int totalOrders, FloorColleague *fc) {
+Waiter::Waiter(std::string name, int totalOrders, Colleague *fc) {
     this->name = name;
     this->totalOrders = totalOrders;
 
@@ -18,6 +18,10 @@ Waiter::Waiter(std::string name, int totalOrders, FloorColleague *fc) {
     this->tO = new TakeOrder(this);
     this->gB = new GenerateBill(this);
     this->aC = new CustomizeOrder(this);
+    this->sB = new SplitBill(this);
+    this->tip = new TipOrder(this);
+    this->mT = new MergeTables(this);
+    this->c = new Complaints(this);
 }
 
 Waiter::~Waiter() {
@@ -30,6 +34,10 @@ Waiter::~Waiter() {
     delete tO;
     delete gB;
     delete aC;
+    delete sB;
+    delete tip;
+    delete mT;
+    delete c;
 
     tables.clear();
 
@@ -135,4 +143,19 @@ void Waiter::setState(WaiterState* state) {
 void Waiter::serveOrder(RestaurantTable *rt) {
     rt->serve();
 }
-// * end of testing * //
+
+void Waiter::splitBill(RestaurantTable *rt, int numPeople) {
+    sB->execute(rt, numPeople);
+}
+
+void Waiter::tipOrder(RestaurantTable *rt, double tip) {
+    this->tip->execute(rt, tip);
+}
+
+void Waiter::complaint(RestaurantTable *rt, std::string complaint) {
+    c->execute(rt, complaint);
+}
+
+void Waiter::mergeTables(Facade *f, int count) {
+    mT->execute(f, count);
+}

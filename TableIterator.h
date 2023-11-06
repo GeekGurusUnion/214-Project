@@ -71,13 +71,6 @@ public:
     void* next();
 
     /**
-     * @brief Check if a specific RestaurantTable is available in the collection.
-     * @param table Pointer to the RestaurantTable to check availability.
-     * @return True if the RestaurantTable is available in the collection, false otherwise.
-     */
-    bool isAvailable(RestaurantTable* table);
-
-    /**
      * @brief Reset the iterator to the beginning of the collection.
      */
     void reset();

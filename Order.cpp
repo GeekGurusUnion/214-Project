@@ -19,6 +19,7 @@ Order::~Order() {
 
 void Order::addItem(MenuItem* item) {
     MenuItem* mi = new MenuItem(*item);
+    this->total += mi->getPrice();
     items.push_back(mi);
 }
 
@@ -30,6 +31,7 @@ void Order::removeItem(std::string name) {
     std::vector<MenuItem*> temp;
     for (auto& i : items) {
         if (i->getName() != name) {
+            this->total -= i->getPrice();
             temp.push_back(i);
         }
     }
@@ -62,6 +64,18 @@ void Order::addCustomization(std::string name, std::string customization) {
 // * testing
 int Order::getOrderSize() {
     return this->items.size();
+}
+
+double Order::getTotal() {
+    return this->total;
+}
+
+void Order::addTip(double tip) {
+    this->total *= (1.0 + tip/100);
+}
+
+void Order::splitBill(int count) {
+    table->setCostPerPerson(this->total / count);
 }
 
 void Order::printOrder() {
