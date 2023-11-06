@@ -23,7 +23,7 @@ public:
     /**
      * @brief Virtual destructor.
      */
-    virtual ~fa_dish() = default;
+    virtual ~fa_dish() {};
     /**
     * @brief Pure virtual function to get the description of the dish.
     *

@@ -73,6 +73,12 @@ public:
     void setDishes(std::vector<fa_dish*>);
 
     /**
+     * @brief Add a dish to the list of prepared dishes.
+     * @param dish A pointer to the dish to add to the list.
+     */
+    void addDish(fa_dish* dish);
+
+    /**
      * @brief Add a customization to a specific menu item in the order.
      * @param name The name of the menu item to customize.
      * @param customization The customization to add to the menu item.

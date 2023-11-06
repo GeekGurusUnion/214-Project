@@ -5,11 +5,13 @@ Order::Order(RestaurantTable* table) {
 }
 
 Order::~Order() {
-    for (auto& i : items) {
-        delete i;
+    while (!items.empty()) {
+        delete items.back();
+        items.pop_back();
     }
-    for (auto& d : dishes) {
-        delete d;
+    while (!dishes.empty()) {
+        delete dishes.back();
+        dishes.pop_back();
     }
     items.clear();
     dishes.clear();
@@ -42,8 +44,8 @@ std::vector<MenuItem*> Order::getItems() {
     return items;
 }
 
-void Order::setDishes(std::vector<fa_dish*> dish) {
-    this->dishes = dish;
+void Order::addDish(fa_dish* dish) {
+    dishes.push_back(dish);
 }
 
 void Order::addCustomization(std::string name, std::string customization) {
