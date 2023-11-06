@@ -213,6 +213,11 @@ public:
      * @brief Set table size
     */
     void setTableSize(int size);
+
+    /**
+     * @brief Unset the waiter serving the table.
+    */
+    void unsetWaiter();
 };
 
 #endif  // RESTAURANT_TABLE_H_

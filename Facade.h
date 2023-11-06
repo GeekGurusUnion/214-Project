@@ -74,7 +74,7 @@ public:
      * 
      * @param customerCount The number of customers in the group.
      */
-    void getSeated(int customerCount);
+    int getSeated(int customerCount);
 
     /**
      * @brief Adds an item to a table's order.
@@ -268,6 +268,12 @@ public:
     void setObserver(TableObserver* observer);
     void setWaiterIterator(WaiterIterator* waiterIterator);
 
+
+    /**
+     * @brief gets the table number
+     * @return int the table number
+    */
+    int getTableNumber(int customerCount);
 };
 
 #endif // FACADE_H

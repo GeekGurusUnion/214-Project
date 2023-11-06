@@ -82,3 +82,7 @@ void RestaurantTable::setCostPerPerson(int count) {
 void RestaurantTable::setTableSize(int size) {
     this->tableSize = size;
 }
+
+void RestaurantTable::unsetWaiter() {
+    this->waiter = nullptr;
+}

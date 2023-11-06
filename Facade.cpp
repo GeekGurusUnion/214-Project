@@ -124,7 +124,7 @@ void Facade::leaveTable(int tableNumber) {
     observer->update(table, "leave", "", false, this, 0);
 }
 
-void Facade::getSeated(int customerCount) {
+int Facade::getSeated(int customerCount) {
     // std::cout << warning << "A group of " << customerCount << " customers have arrived." << resetPrint << std::endl;
     tableIterator->reset();
     RestaurantTable* table = (RestaurantTable*) tableIterator->first();
@@ -138,13 +138,29 @@ void Facade::getSeated(int customerCount) {
         table->occupy();
         getWaiter(table);
         std::cout << success << "Table " << table->getTableNumber() << " with seating size " << table->getTableSize() << " is now served by waiter " << table->getWaiter()->getName() << resetPrint << std::endl;
+        return table->getTableNumber();
     }
     else {
         tableIterator->reset();
         RestaurantTable* table = (RestaurantTable*) tableIterator->first();
         getWaiter(table);
         mergeTables(table, customerCount);
+        if (table->isAvailable()) {
+            // release waiter from table
+            table->unsetWaiter();
+        } else {
+            return getTableNumber(customerCount);
+        }
     }
+}
+
+int Facade::getTableNumber(int customerCount) {
+    for (int i = 0; i < totalTables; i++) {
+        if (tables[i]->getTableSize() >= customerCount && tables[i]->isAvailable()) {
+            return tables[i]->getTableNumber();
+        }
+    }
+    return -1;
 }
 
 void Facade::getWaiter(RestaurantTable* table) {
