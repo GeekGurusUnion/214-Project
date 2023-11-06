@@ -1,0 +1,189 @@
+#include "Facade.h"
+
+#define error "\x1B[31m"
+#define success "\x1B[32m"
+#define warning "\x1B[33m"
+#define resetPrint "\x1B[0m"
+
+Facade::Facade() {
+    // Create waiters
+    for (int i = 0; i < waiterSize; i++) {
+        waiters.push_back(new Waiter(waiterNames[i], tablesPerWaiter, floorColleague));
+    }
+
+    // Create tables
+    for (int i = 0; i < totalTables; i++) {
+        if (i < 4)
+            tables.push_back(new RestaurantTable(i+1, 2));
+        if (i >= 4 && i < 8)
+            tables.push_back(new RestaurantTable(i+1, 4));
+        if (i >= 8 && i < 12)
+            tables.push_back(new RestaurantTable(i+1, 6));
+    }
+
+    waiterIterator = createWaiterIterator();
+    tableIterator = createTableIterator();
+
+    observer = new TableObserver();
+}
+
+Facade::~Facade() {
+    while (!tables.empty()) {
+        RestaurantTable* table = tables.back();
+        delete table;
+        tables.pop_back();
+    }
+
+    tables.clear();
+
+    while (!waiters.empty()) {
+        Waiter* waiter = waiters.back();
+        delete waiter;
+        waiters.pop_back();
+    }
+
+    waiters.clear();
+
+    delete waiterIterator;
+    delete tableIterator;
+
+    delete observer;
+
+    delete mediator;
+    delete floorColleague;
+    delete kitchenColleague;
+}
+
+void Facade::addTable(RestaurantTable* table) {
+    tables.push_back(table);
+}
+
+void Facade::addWaiter(Waiter* waiter) {
+    waiters.push_back(waiter);
+}
+
+Iterator* Facade::getWaiterIterator() {
+    return waiterIterator;
+}
+
+Iterator* Facade::getTableIterator() {
+    return tableIterator;
+}
+
+RestaurantTable* Facade::getTable(int index) {
+    if (index-1 < 0 || index-1 >= tables.size()) {
+        return nullptr;
+    }
+    return tables[index-1];
+}
+
+int Facade::getWaiterSize() const { 
+    return waiterSize;
+}
+
+int Facade::getTablesPerWaiter() const {
+    return tablesPerWaiter;
+}
+
+int Facade::getTotalTables() const {
+    return totalTables;
+}
+
+TableIterator *Facade::createTableIterator() {
+    return new TableIterator(tables);
+}
+
+WaiterIterator* Facade::createWaiterIterator() {
+    return new WaiterIterator(waiters);
+}
+
+void Facade::leaveTable(int tableNumber) {
+    RestaurantTable* table = getTable(tableNumber);
+    if (!table || table->isAvailable()) {
+        std::cout << error << "Sorry, that table is not occupied!" << resetPrint << std::endl;
+        return;
+    }
+    std::cout << success << "Table " << table->getTableNumber() << " is now empty." << resetPrint << std::endl;
+}
+
+void Facade::getSeated(int customerCount) {
+    // std::cout << warning << "A group of " << customerCount << " customers have arrived." << resetPrint << std::endl;
+    tableIterator->reset();
+    RestaurantTable* table = (RestaurantTable*) tableIterator->first();
+    while (tableIterator->hasNext()) {
+        if (table->getTableSize() >= customerCount && table->isAvailable())
+            break;
+        table = (RestaurantTable*) tableIterator->next();
+    }
+
+    if (table != nullptr && table->isAvailable()) {
+        table->occupy();
+        getWaiter(table);
+        std::cout << success << "Table " << table->getTableNumber() << " with seating size " << table->getTableSize() << " is now served by waiter " << table->getWaiter()->getName() << resetPrint << std::endl;
+    } 
+    else {
+        std::cout << error << "Sorry, there are no available tables at the moment." << resetPrint << std::endl;
+    }
+}
+
+void Facade::getWaiter(RestaurantTable* table) {
+    waiterIterator->reset();
+    Waiter* waiter = (Waiter*) waiterIterator->first();
+    Waiter* tempWaiter = waiter;
+    while (waiterIterator->hasNext()) {
+        if (waiter != nullptr && waiter->getBusyOrders() < tempWaiter->getBusyOrders()) {
+            if (waiterIterator->isAvailable(waiter)) {
+                tempWaiter = waiter;
+            }
+        }
+        waiter = (Waiter*) waiterIterator->next();
+    }
+
+    if (tempWaiter != nullptr && tempWaiter->isAvailable()) {
+        tempWaiter->addOrder(table);
+        table->setWaiter(tempWaiter);
+    } else {
+        std::cout << error << "Sorry, there are no available waiters at the moment." << resetPrint << std::endl;
+    }
+}
+
+void Facade::generateBill(int tableNumber) {
+    RestaurantTable* table = getTable(tableNumber);
+    if (!table || table->isAvailable()) {                                          //isAvailable() always returns false?
+        std::cout << error << "Sorry, that table is not occupied!" << resetPrint << std::endl;
+        return;
+    }
+    observer->update(table, "bill", "", false);
+}
+
+void Facade::addCustomization(int tableNumber, std::string itemName, std::string customization) {
+    RestaurantTable* table = getTable(tableNumber);
+    if (!table || table->isAvailable()) {                                          //isAvailable() always returns false?
+        std::cout << error << "Sorry, that table is not occupied!" << resetPrint << std::endl;
+        return;
+    }
+    observer->update(table, itemName, customization, true);
+}
+
+void Facade::addToOrder(int tableNumber, std::string itemName) {
+    RestaurantTable* table = getTable(tableNumber);
+    if (!table || table->isAvailable()) {                                          //isAvailable() always returns false?
+        std::cout << error << "Sorry, that table is not occupied!" << resetPrint << std::endl;
+        return;
+    }
+    observer->update(table, itemName, "", true);
+}
+
+void Facade::confirmOrder(int tableNumber) {
+    RestaurantTable* table = getTable(tableNumber);
+    if (!table || table->isAvailable()) {                                           //isAvailable() always returns false?
+        std::cout << error << "Sorry, that table is not occupied!" << resetPrint << std::endl;
+        return;
+    }
+    observer->update(table, "confirm", "", false);
+}
+
+// * testing
+std::string* Facade::getWaiterNames() {
+    return waiterNames;
+}

@@ -15,42 +15,42 @@ FetchContent_MakeAvailable(googletest)
 # Define sources for the main project
 set(PROJECT_SOURCES
         main.cpp
-        kitchen/fa_dish.h
-        kitchen/ca_handler.h
-        kitchen/si_headChef.h
-        kitchen/fa_dishFactory.h
-        kitchen/fa_dishFactory.cpp
-        kitchen/ad_OrderAdapter.h
-        kitchen/ca_ingredientHandler.h
-        kitchen/fa_burger.h
-        kitchen/ad_RestaurantOrder.cpp
-        kitchen/ad_FloorOrder.cpp
-        kitchen/ad_OrderAdapter.cpp
-        kitchen/si_headChef.cpp
-        kitchen/fa_dish.cpp
-        kitchen/fa_Pizza.h
+        # kitchen/fa_dish.h
+        # kitchen/ca_handler.h
+        # kitchen/si_headChef.h
+        # kitchen/fa_dishFactory.h
+        # kitchen/fa_dishFactory.cpp
+        # kitchen/ad_OrderAdapter.h
+        # kitchen/ca_ingredientHandler.h
+        # kitchen/fa_burger.h
+        # kitchen/ad_RestaurantOrder.cpp
+        # kitchen/ad_FloorOrder.cpp
+        # kitchen/ad_OrderAdapter.cpp
+        # kitchen/si_headChef.cpp
+        # kitchen/fa_dish.cpp
+        # kitchen/fa_Pizza.h
 )
 
 # Define sources for the tests
 set(TEST_SOURCES
-        kitchen/factory_unittest.cpp
-        kitchen/headChef_unittest.cpp
-        kitchen/headChefTest.cpp
-        kitchen/factoryTest.cpp
-        kitchen/fa_dish.h
-        kitchen/ca_handler.h
-        kitchen/si_headChef.h
-        kitchen/fa_dishFactory.h
-        kitchen/fa_dishFactory.cpp
-        kitchen/ad_OrderAdapter.h
-        kitchen/ca_ingredientHandler.h
-        kitchen/fa_burger.h
-        kitchen/ad_RestaurantOrder.cpp
-        kitchen/ad_FloorOrder.cpp
-        kitchen/ad_OrderAdapter.cpp
-        kitchen/si_headChef.cpp
-        kitchen/fa_dish.cpp
-        kitchen/fa_Pizza.h
+        # kitchen/factory_unittest.cpp
+        # kitchen/headChef_unittest.cpp
+        # kitchen/headChefTest.cpp
+        # kitchen/factoryTest.cpp
+        # kitchen/fa_dish.h
+        # kitchen/ca_handler.h
+        # kitchen/si_headChef.h
+        # kitchen/fa_dishFactory.h
+        # kitchen/fa_dishFactory.cpp
+        # kitchen/ad_OrderAdapter.h
+        # kitchen/ca_ingredientHandler.h
+        # kitchen/fa_burger.h
+        # kitchen/ad_RestaurantOrder.cpp
+        # kitchen/ad_FloorOrder.cpp
+        # kitchen/ad_OrderAdapter.cpp
+        # kitchen/si_headChef.cpp
+        # kitchen/fa_dish.cpp
+        # kitchen/fa_Pizza.h
         test_main.cpp
 )
 
