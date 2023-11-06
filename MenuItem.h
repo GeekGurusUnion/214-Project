@@ -65,6 +65,8 @@ public:
      * @return `true` if the menu item contains the specified customization, `false` otherwise.
      */
     bool containsCustomization(std::string customization);
+
+    std::vector<std::string> getCustomizations();
 };
 
 #endif // MENUITEM_H

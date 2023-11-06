@@ -32,7 +32,9 @@ CXXFLAGS = -std=c++17 -Wall
 EXECUTABLE = myprogram
 VALGRIND = valgrind
 
-SRC_FILES = $(wildcard *.cpp)
+KITCHEN_DIR = kitchen
+
+SRC_FILES = $(wildcard *.cpp) $(wildcard $(KITCHEN_DIR)/*.cpp)
 OBJ_FILES = $(patsubst %.cpp, %.o, $(SRC_FILES))
 
 # all: $(EXECUTABLE)
