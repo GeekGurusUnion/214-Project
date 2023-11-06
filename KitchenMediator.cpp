@@ -4,17 +4,19 @@
 #include "ad_OrderAdapter.h"
 #include "si_headChef.h"
 
-KitchenColleague::KitchenColleague(Mediator *mediator) : Colleague(mediator) {
+KitchenColleague::KitchenColleague(Mediator *mediator) : Colleague(mediator)
+{
     this->mediator->addColleague(this);
 }
 
-void KitchenColleague::handleOrder() {
-    for (auto &item: this->getOrder()->getItems()) {
-        std::vector<std::string> floorOrder = {""};
+void KitchenColleague::handleOrder()
+{
+    for (auto &item : this->getOrder()->getItems())
+    {
+        std::vector<std::string> floorOrder = {item->getName()};
 
-        floorOrder.push_back(item->getName());
-
-        for (auto &cus: item->getCustomizations()) {
+        for (auto &cus : item->getCustomizations())
+        {
             floorOrder.push_back(cus);
         }
 
