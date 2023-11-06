@@ -16,8 +16,8 @@ testIwan:
 	./main_testIwan.o
 
 testStephan:
-	g++ -g --std=c++14 $(filter-out unitTest_Facade.cpp, $(filter-out main.cpp, $(filter-out unitTests_Iwan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp)))))) -o main_testStephan.o -lgtest  -lgmock -lgtest_main -lpthread
-	./main_testStephan.o
+    g++ -g --std=c++14 $(filter-out main.cpp, $(filter-out main_basic.cpp, $(filter-out test_main.cpp, $(filter-out unitTest_Facade.cpp, $(filter-out main.cpp, $(filter-out unitTests_Iwan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Xavier.cpp, $(wildcard *.cpp))))))))) -o main_testStephan.o -lgtest  -lgmock -lgtest_main -lpthread
+    ./main_testStephan.o
 
 testXavier:
 	g++ -g --std=c++14 $(filter-out unitTest_Facade.cpp, $(filter-out main.cpp, $(filter-out unitTests_Stephan.cpp, $(filter-out unitTests_Tiaan.cpp, $(filter-out unitTests_Iwan.cpp, $(wildcard *.cpp)))))) -o main_testXavier.o -lgtest  -lgmock -lgtest_main -lpthread

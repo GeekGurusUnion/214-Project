@@ -248,3 +248,35 @@ void Facade::confirmOrder(int tableNumber) {
 std::string* Facade::getWaiterNames() {
     return waiterNames;
 }
+
+void Facade::setTablesPerWaiter(int size) {
+    tablesPerWaiter = size;
+    
+}
+
+void Facade::setWaiterSize(int size) {
+    waiterSize = size;
+    for (int i = 0; i < waiterSize; i++) {
+        waiters.push_back(new Waiter(waiterNames[i], tablesPerWaiter, floorColleague));
+    }
+}
+
+void Facade::setTotalTables(int size) {
+    totalTables = size;
+    for (int i = 0; i < totalTables; i++) {
+        if (i < 4)
+            tables.push_back(new RestaurantTable(i+1, 2));
+        if (i >= 4 && i < 8)
+            tables.push_back(new RestaurantTable(i+1, 4));
+        if (i >= 8 && i < 12)
+            tables.push_back(new RestaurantTable(i+1, 6));
+    }
+}
+
+void Facade::setObserver(TableObserver* observer) {
+    this->observer = observer;
+}
+
+void Facade::setWaiterIterator(WaiterIterator* waiterIterator) {
+    this->waiterIterator = waiterIterator;
+}

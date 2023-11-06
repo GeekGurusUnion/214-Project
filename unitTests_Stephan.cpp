@@ -1,152 +1,269 @@
 #include <iostream>
-#include<memory>
+#include <memory>
 
-//include the google test dependencies
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
-#include "ConcreteMediator.h"
-#include "FloorColleague.h"
-#include "KitchenColleague.h"
-#include "Order.h"
-class MockMediator : public Mediator {
-public:
-  MockMediator() : Mediator() {}
-  MOCK_METHOD1(addColleague, void(Colleague*));
-  MOCK_METHOD1(notify, void(Colleague*));
-};
-class MockOrder: public Order{
-  public:
-    MockOrder(RestaurantTable* table) : Order(table){}
-    MOCK_METHOD1(addItem, void(MenuItem*));
-    MOCK_METHOD1(setStatus, void(bool));
-    MOCK_METHOD1(removeItem, void(std::string));
-    MOCK_METHOD0(getTable, RestaurantTable*());
-    MOCK_METHOD0(getItems, std::vector<MenuItem*>());
-    MOCK_METHOD2(addCustomization, void(std::string, std::string));
-    MOCK_METHOD0(getOrderSize, int());
-};
-//mock colleague
-class MockFloor : public Colleague {
-  public:
-    //it should take in the mock mediator
-    MockFloor(MockMediator* mediator) : Colleague(mediator) {}
-    MOCK_METHOD0(changed, void());
-    MOCK_METHOD1(setOrder, void(Order*));
-    MOCK_METHOD0(getOrder, Order*());
-};
-class MockKitchen : public Colleague {
-  public:
-    //it should take in the mock mediator
-    MockKitchen(MockMediator* mediator) : Colleague(mediator) {}
-    MOCK_METHOD0(changed, void());
-    MOCK_METHOD1(setOrder, void(Order*));
-    MOCK_METHOD0(getOrder, Order*());
-};
-// ! Mediator Test Begin  ! //
 
-// * create mediator
-TEST(MockMediator, createMediator) {
-  MockMediator m;
+#include "Facade.h"
+
+class MockWaiterIterator: public WaiterIterator {
+    public:
+        MockWaiterIterator(std::vector<Waiter*> waiters) : WaiterIterator(waiters) {};
+        MOCK_METHOD0(hasNext, bool());
+        // MOCK_METHOD0(next, Waiter*());
+        // MOCK_METHOD1(isAvailable, bool(Waiter*));
+        MOCK_METHOD0(reset, void());
 };
 
-// * add colleagues to the mediator
-TEST(MockMediator, addColleague) {
-  MockMediator* m = new MockMediator();
-  Colleague *c1 = new MockFloor(m);
-  Colleague *c2 = new MockKitchen(m);
-  EXPECT_CALL(*m, addColleague(c1)).Times(1);
-  EXPECT_CALL(*m, addColleague(c2)).Times(1);
-  m->addColleague(c1);
-  m->addColleague(c2);
-  delete m;
-  delete c1;
-  delete c2;
+class MockWaiter: public Waiter{
+    public:
+        MockWaiter(std::string name, int capacity, FloorColleague* fc) : Waiter(name, capacity, fc) {};
 };
 
-// * notify from mediator
-TEST(MockMediator, notifyFromMediator) {
+class MockTable: public RestaurantTable{
+    public:
+        MockTable(int tableNumber, int capacity) : RestaurantTable(tableNumber, capacity) {}
+        MOCK_METHOD0(isAvailable, bool());
+};
 
-  MockMediator* mediator = new MockMediator();
-  MockFloor *colleague1 = new MockFloor(mediator);
-  MockKitchen *colleague2 = new MockKitchen(mediator);
+class MockObserver: public TableObserver {
+    public:
+    // observer->update(table, "split", "", false, this, count);
+    MOCK_METHOD6(update, void(RestaurantTable*, std::string, std::string, bool, Facade*, double));        
+};
 
-  // Add the mock colleagues to the mediator.
-  mediator->addColleague(colleague1);
-  mediator->addColleague(colleague2);
+class MockFacade : private Facade {
+    public:        
+        MockFacade() : Facade() {} // Facade();
+        MOCK_METHOD1(getSeated, void(int));  // void getSeated();
+        MOCK_CONST_METHOD2(addToOrder, void(int, std::string)); // void addToOrder(int tableNumber, std::string itemName);
+        MOCK_CONST_METHOD1(confirmOrder, void(int)); // void confirmOrder(int tableNumber);
+        MOCK_CONST_METHOD1(leaveTable, void(int)); // void leaveTable(int tableNumber);
+        MOCK_METHOD0(getWaiterIterator, Iterator*());  // WaiterIterator* createWaiterIterator();
+        MOCK_METHOD0(getTableIterator, Iterator*()); // TableIterator* createTableIterator();
+        MOCK_METHOD1(getTable, RestaurantTable*(int)); // RestaurantTable* getTable(int index);
+        MOCK_METHOD0(getWaiterSize, int()); // int getWaiterSize() const;
+        MOCK_METHOD0(getTablesPerWaiter, int()); // int getTablesPerWaiter() const;
+        MOCK_METHOD0(getTotalTables, int()); // int getTotalTables() const;
+        MOCK_METHOD0(createTableIterator, TableIterator*()); // Iterator* getWaiterIterator();
+        MOCK_METHOD0(createWaiterIterator, WaiterIterator*()); // Iterator* getTableIterator();
+        MOCK_METHOD1(getMenuItem, MenuItem*(std::string)); // MenuItem* getMenuItem(std::string name);
+        MOCK_METHOD1(getWaiter, void(RestaurantTable*)); // void getWaiter(RestaurantTable* table);
+        MOCK_METHOD1(addTable, void(RestaurantTable*)); // void addTable(RestaurantTable* table);
+        MOCK_METHOD1(addWaiter, void(Waiter*)); // void addWaiter(Waiter* waiter);
+        MOCK_METHOD1(setTablesPerWaiter, void(int)); // void setTablesPerWaiter(int tablesPerWaiter);
+        MOCK_METHOD1(setWaiterSize, void(int)); // void setWaiterSize(int waiterSize);
+        MOCK_METHOD1(setTotalTables, void(int)); // void setTotalTables(int totalTables);
+        MOCK_METHOD1(setObserver, void(TableObserver*)); // void setObserver(TableObserver* observer);
+        MOCK_METHOD1(setWaiterIterator, void(WaiterIterator*)); // void setWaiterIterator(WaiterIterator* waiterIterator);
+        MOCK_METHOD1(generateBill, void(int)); // void generateBill(int tableNumber);
+        MOCK_METHOD3(addCustomization, void(int, std::string, std::string)); // void addCustomization(int tableNumber, std::string itemName, std::string customization);
+        MOCK_METHOD2(mergeTables, void(RestaurantTable*, int)); // void mergeTables(int tableNumber1, int tableNumber2);
+        MOCK_METHOD2(tip, void(int, int)); // void tip(int tableNumber, int amount
+        MOCK_METHOD2(splitBill, void(int, int)); // void splitBill(int tableNumber, int amount);
+        MOCK_METHOD2(complain, void(int, std::string)); // void complain(int tableNumber, std::string complaint);
+        MOCK_METHOD1(payBill, void(int)); // void payBill(int tableNumber);
 
-  // Create an order.
-  Order* order = new Order(NULL);
+};
 
-  // Set the order of colleague1.
-  colleague1->setOrder(order);
+// TODO: Test extensively here (replaces main.cpp) such as control flows and exceptions
+// ! Facade tests ! //
+// * Test if all the members are properly initialized in the Facade class
+TEST(FacadeConstructor, Constructor) {
+    MockFacade* facade = new MockFacade();
+    EXPECT_EQ(facade->getWaiterSize(), 0);
+    EXPECT_EQ(facade->getTablesPerWaiter(), 0);
+    EXPECT_EQ(facade->getTotalTables(), 0);
 
-  // Notify the colleagues.
-  mediator->notify(colleague1);
-
-  // Create a new variable to store the order of colleague2.
-  Order* colleague2Order = colleague2->getOrder();
-
-  // Verify that the order of colleague2 is the same as the order that was set.
-  EXPECT_EQ(colleague2Order, order);
-
-  delete mediator;
-  delete colleague1;
-  delete colleague2;
+    // for (int i = 0; i < facade.getWaiterSize(); i++) { 
+    //     EXPECT_EQ(facade.getWaiter(i), nullptr);
+    // }
+    // for (int i = 0; i < facade.getTotalTables(); i++) {
+    //     EXPECT_EQ(facade.getTable(i), nullptr);
+    // }
+    
 }
 
-// * notfiy from Colleague
-TEST(MockMediator, notifyFromColleague) {
-  MockMediator* m = new MockMediator();
-  MockFloor *c1 = new MockFloor(m);
-  // m->addColleague(c1);
-
-  // Create an order.
-  Order* order = new Order(NULL);
-
-  // Set the order of the mock colleague.
-  c1->setOrder(order);
-
-  // Set an expectation that the setOrder() method of the mock colleague will be called once.
-  EXPECT_CALL(*c1, setOrder(order)).Times(1);
-
-  // Call the changed() method on the mock colleague.
-  c1->changed();
-
-  // Verify that the order of the mock colleague is the same as the order that was set.
-  EXPECT_EQ(c1->getOrder(), order);
-
-  delete m;
-  delete c1;
+//* test if getSeated works
+TEST(FacadeSeats, getSeated) {
+    MockFacade* facade = new MockFacade();
+    facade->setTablesPerWaiter(3);
+    facade->setWaiterSize(4);
+    facade->setTotalTables(12);
+    EXPECT_CALL(*facade, getSeated(1)).Times(1);
+    EXPECT_CALL(*facade, getWaiter(testing::_)).Times(1);
+    facade->getSeated(1);
 }
 
-// ! Mediator Test End ! //
+TEST(FacadeOrder, addToOrder) {
+    
+    MockFacade* facade = new MockFacade();
+    MockObserver* observer = new MockObserver();
+    
+    facade->setTablesPerWaiter(3);
+    facade->setWaiterSize(4);
+    facade->setTotalTables(12);
 
-int main(int argc, char **argv) {
-  testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
+    // Set expectations for the addToOrder method of the MockFacade
+    EXPECT_CALL(*facade, addToOrder(1, "test")).Times(1);
+    EXPECT_CALL(*observer, update(testing::_,testing::_,testing::_,testing::_,testing::_,testing::_)).Times(1);
+    // Call the method you want to test
+    facade->addToOrder(1, "test");
+
+    // delete facade;
 }
 
-//declare the function(s) that you are testing
-// double summer(double[], int);
+TEST(FacadeOrder, confirmOrder) {
+    MockFacade* facade = new MockFacade();
+    MockObserver* observer = new MockObserver();
+    
+    facade->setTablesPerWaiter(3);
+    facade->setWaiterSize(4);
+    facade->setTotalTables(12);
 
-// //our first unit test
-// TEST(IntegerInputsSuite, simpleSum)
-// {
-//   //first, set up any inputs to your 
-//   const int SIZE = 3;
-//   double arr[SIZE]  = {1, 2, 3};
-//   //then, make an assertion to test
-//   EXPECT_EQ(summer(arr, SIZE), 6) << "The sum is not correct";
-// }
-// TEST(IntegerInputsSuite, oneElement)
-// {
-//   const int SIZE = 1;
-//   double arr[SIZE]  = {33};
-//   EXPECT_EQ(summer(arr, SIZE), 33) << "The sum is not correct for array of size 1";
-// }
-// TEST(DoubleInputsSuite, simpleSum)
-// {
-//   const int SIZE = 3;
-//   double arr[SIZE]  = {1.1, 1.1, 1};
-//   EXPECT_EQ(summer(arr, SIZE), 3.2) << "The sum is not correct using     double inputs";
-// }
+    // Set expectations for the addToOrder method of the MockFacade
+    EXPECT_CALL(*facade, confirmOrder(1)).Times(1);
+    // observer->update(table, "confirm", "", false, this, 0);
+    EXPECT_CALL(*observer, update(testing::_,testing::_,testing::_,testing::_,testing::_,testing::_)).Times(1);
+    // Call the method you want to test
+    facade->confirmOrder(1);
+
+    
+    // delete facade;
+}
+
+TEST(FacadeLeave, leaveTable) {
+    MockFacade* facade = new MockFacade();
+    // MockObserver* observer = new MockObserver();
+    MockTable* table = new MockTable(1, 2);
+    facade->setTablesPerWaiter(3);
+    facade->setWaiterSize(4);
+    facade->setTotalTables(12);
+    facade->addTable(table);
+    // Set expectations for the addToOrder method of the MockFacade
+    EXPECT_CALL(*facade, leaveTable(2)).Times(1);
+    EXPECT_CALL(*table, isAvailable()).Times(1).WillOnce(testing::Return(false));
+    // Call the method you want to test
+    facade->leaveTable(2);
+    // delete table;
+    // delete facade;
+}
+//simple getters
+TEST(FacadeGetWaiter, getWaiter) {
+    MockFacade* facade = new MockFacade();
+    MockTable* table = new MockTable(1, 2);
+    MockWaiter* waiter = new MockWaiter("John", 3, nullptr);
+    std::vector<Waiter*> waitersin;
+    waitersin.push_back(waiter);
+    MockWaiterIterator* waiterIterator = new MockWaiterIterator(waitersin);
+    facade->setTablesPerWaiter(3);
+    facade->setWaiterSize(4);
+    facade->setTotalTables(12);
+    facade->addTable(table);
+    facade->setWaiterIterator(waiterIterator);
+    
+    EXPECT_CALL(*facade, getWaiter(table)).Times(1);
+    EXPECT_CALL(*waiterIterator, reset()).Times(1);
+    facade->getWaiter(table);
+    
+    
+}
+
+TEST(FacadeBill,generateBill){
+    MockFacade* facade = new MockFacade();
+    MockObserver* observer = new MockObserver();
+    facade->setTablesPerWaiter(3);
+    facade->setWaiterSize(4);
+    facade->setTotalTables(12);
+    EXPECT_CALL(*facade, generateBill(1)).Times(1);
+    EXPECT_CALL(*observer, update(testing::_,testing::_,testing::_,testing::_,testing::_,testing::_)).Times(1);
+    facade->generateBill(1);
+}
+
+TEST(FacadeCustomization,addCustomization){
+    MockFacade* facade = new MockFacade();
+    MockObserver* observer = new MockObserver();
+    facade->setTablesPerWaiter(3);
+    facade->setWaiterSize(4);
+    facade->setTotalTables(12);
+    EXPECT_CALL(*facade, addCustomization(1,"test","test")).Times(1);
+    EXPECT_CALL(*observer, update(testing::_,testing::_,testing::_,testing::_,testing::_,testing::_)).Times(1);
+    facade->addCustomization(1,"test","test");
+}
+
+TEST(FacadeMerge,mergeTables){
+    MockFacade* facade = new MockFacade();
+    MockObserver* observer = new MockObserver();
+    facade->setTablesPerWaiter(3);
+    facade->setWaiterSize(4);
+    facade->setTotalTables(12);
+    EXPECT_CALL(*facade, mergeTables(nullptr,2)).Times(1);
+    EXPECT_CALL(*observer, update(testing::_,testing::_,testing::_,testing::_,testing::_,testing::_)).Times(1);
+    facade->mergeTables(nullptr,2);
+}
+
+TEST(FacadeTip,tip){
+    MockFacade* facade = new MockFacade();
+    MockObserver* observer = new MockObserver();
+    facade->setTablesPerWaiter(3);
+    facade->setWaiterSize(4);
+    facade->setTotalTables(12);
+    EXPECT_CALL(*facade, tip(1,2)).Times(1);
+    EXPECT_CALL(*observer, update(testing::_,testing::_,testing::_,testing::_,testing::_,testing::_)).Times(1);
+    facade->tip(1,2);
+}
+
+
+TEST(FacadeSplitBill,splitBill){
+    MockFacade* facade = new MockFacade();
+    MockObserver* observer = new MockObserver();
+    facade->setTablesPerWaiter(3);
+    facade->setWaiterSize(4);
+    facade->setTotalTables(12);
+    EXPECT_CALL(*facade, splitBill(1,2)).Times(1);
+    EXPECT_CALL(*observer, update(testing::_,testing::_,testing::_,testing::_,testing::_,testing::_)).Times(1);
+    facade->splitBill(1,2);
+}
+
+TEST(FacadeComplain, complain){
+    MockFacade* facade = new MockFacade();
+    MockObserver* observer = new MockObserver();
+    facade->setTablesPerWaiter(3);
+    facade->setWaiterSize(4);
+    facade->setTotalTables(12);
+    EXPECT_CALL(*facade, complain(1,"test")).Times(1);
+    EXPECT_CALL(*observer, update(testing::_,testing::_,testing::_,testing::_,testing::_,testing::_)).Times(1);
+    facade->complain(1,"test");
+}
+
+TEST(FacadePayBill, payBill){
+    MockFacade* facade = new MockFacade();
+    MockObserver* observer = new MockObserver();
+    facade->setTablesPerWaiter(3);
+    facade->setWaiterSize(4);
+    facade->setTotalTables(12);
+    EXPECT_CALL(*facade, payBill(1)).Times(1);
+    EXPECT_CALL(*observer, update(testing::_,testing::_,testing::_,testing::_,testing::_,testing::_)).Times(1);
+    facade->payBill(1);
+}
+//get table iterator
+
+// add table
+
+// add waiter
+
+// get waiter iterator
+
+//get table iterator
+
+// get table
+
+//get waiter size
+
+// get tables per waiter
+
+// get total tables
+
+// create table iterator
+
+// create waiter iterator

@@ -262,6 +262,12 @@ public:
      * @return std::string* An array of waiter names.
      */
     std::string* getWaiterNames();
+    void setWaiterSize(int size);
+    void setTablesPerWaiter(int size);
+    void setTotalTables(int size);
+    void setObserver(TableObserver* observer);
+    void setWaiterIterator(WaiterIterator* waiterIterator);
+
 };
 
 #endif // FACADE_H
