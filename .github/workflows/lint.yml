@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name: Clang-Tidy Lint
 
 on: [push, pull_request]
@@ -23,3 +24,30 @@ jobs:
       - name: Run Clang-Tidy
         working-directory: build
         run: run-clang-tidy
+=======
+name: Clang-Tidy Lint
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out source code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: sudo apt-get install -y clang-tidy
+
+      - name: Create build directory
+        run: mkdir build
+
+      - name: Run CMake with compile commands
+        working-directory: build
+        run: cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
+
+      - name: Run Clang-Tidy
+        working-directory: build
+        run: run-clang-tidy
+>>>>>>> 7445f2bc56b97a1dd23166483edccaa3f44c8ce9

@@ -1,0 +1,78 @@
+\hypertarget{classad__OrderAdapter}{}\doxysection{ad\+\_\+\+Order\+Adapter Class Reference}
+\label{classad__OrderAdapter}\index{ad\_OrderAdapter@{ad\_OrderAdapter}}
+
+
+{\ttfamily \#include $<$ad\+\_\+\+Order\+Adapter.\+h$>$}
+
+
+
+Inheritance diagram for ad\+\_\+\+Order\+Adapter\+:
+% FIG 0
+
+
+Collaboration diagram for ad\+\_\+\+Order\+Adapter\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classad__OrderAdapter_ad652a3695a742f80d8e5fbf1ff9f28f1}{ad\+\_\+\+Order\+Adapter}} (const std\+::vector$<$ std\+::string $>$ \&details)
+\begin{DoxyCompactList}\small\item\em Constructs an Order\+Adapter instance with the given order details. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classad__OrderAdapter_a7c48a4225a6014d71cc81982b210289d}{$\sim$ad\+\_\+\+Order\+Adapter}} () override
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classad__OrderAdapter}{ad\+\_\+\+Order\+Adapter}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}} $\ast$ \mbox{\hyperlink{classad__OrderAdapter_af0d3d0ec4558eae046a3c8e1e40bcab9}{Place\+Order}} () override
+\begin{DoxyCompactList}\small\item\em Places an order and returns the prepared dish. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classad__OrderAdapter_ad652a3695a742f80d8e5fbf1ff9f28f1}\label{classad__OrderAdapter_ad652a3695a742f80d8e5fbf1ff9f28f1}} 
+\index{ad\_OrderAdapter@{ad\_OrderAdapter}!ad\_OrderAdapter@{ad\_OrderAdapter}}
+\index{ad\_OrderAdapter@{ad\_OrderAdapter}!ad\_OrderAdapter@{ad\_OrderAdapter}}
+\doxysubsubsection{\texorpdfstring{ad\_OrderAdapter()}{ad\_OrderAdapter()}}
+{\footnotesize\ttfamily ad\+\_\+\+Order\+Adapter\+::ad\+\_\+\+Order\+Adapter (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{details }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs an Order\+Adapter instance with the given order details. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em details} & Vector of strings containing order details. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classad__OrderAdapter_a7c48a4225a6014d71cc81982b210289d}\label{classad__OrderAdapter_a7c48a4225a6014d71cc81982b210289d}} 
+\index{ad\_OrderAdapter@{ad\_OrderAdapter}!````~ad\_OrderAdapter@{$\sim$ad\_OrderAdapter}}
+\index{````~ad\_OrderAdapter@{$\sim$ad\_OrderAdapter}!ad\_OrderAdapter@{ad\_OrderAdapter}}
+\doxysubsubsection{\texorpdfstring{$\sim$ad\_OrderAdapter()}{~ad\_OrderAdapter()}}
+{\footnotesize\ttfamily ad\+\_\+\+Order\+Adapter\+::$\sim$ad\+\_\+\+Order\+Adapter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Destructor for \mbox{\hyperlink{classad__OrderAdapter}{ad\+\_\+\+Order\+Adapter}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classad__OrderAdapter_af0d3d0ec4558eae046a3c8e1e40bcab9}\label{classad__OrderAdapter_af0d3d0ec4558eae046a3c8e1e40bcab9}} 
+\index{ad\_OrderAdapter@{ad\_OrderAdapter}!PlaceOrder@{PlaceOrder}}
+\index{PlaceOrder@{PlaceOrder}!ad\_OrderAdapter@{ad\_OrderAdapter}}
+\doxysubsubsection{\texorpdfstring{PlaceOrder()}{PlaceOrder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}} $\ast$ ad\+\_\+\+Order\+Adapter\+::\+Place\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Places an order and returns the prepared dish. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the prepared dish object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classad__FloorOrder_a8d8ca4c60bfdd3613d112bb0314e7eed}{ad\+\_\+\+Floor\+Order}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Kitchen/\mbox{\hyperlink{ad__OrderAdapter_8h}{ad\+\_\+\+Order\+Adapter.\+h}}\item 
+Kitchen/\mbox{\hyperlink{ad__OrderAdapter_8cpp}{ad\+\_\+\+Order\+Adapter.\+cpp}}\end{DoxyCompactItemize}
