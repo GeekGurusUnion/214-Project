@@ -118,7 +118,7 @@ TEST(WaiterIteratorTest, AllWaitersAvailable) {
 //* ------------- TableIterator tests -------------
 TEST(TableIteratorTest, first) {
   std::vector<RestaurantTable*> tables;
-  RestaurantTable* table = new RestaurantTable(1);
+  RestaurantTable* table = new RestaurantTable(1, 1);
   tables.push_back(table);
   MockTableIterator tableIterator(tables);
   EXPECT_CALL(tableIterator, first()).Times(1).WillOnce(testing::Return(table));
@@ -128,7 +128,7 @@ TEST(TableIteratorTest, first) {
 
 TEST(TableIteratorTest, currentItem) {
   std::vector<RestaurantTable*> tables;
-  RestaurantTable* table = new RestaurantTable(1);
+  RestaurantTable* table = new RestaurantTable(1, 1);
   tables.push_back(table);
   MockTableIterator tableIterator(tables);
   EXPECT_CALL(tableIterator, currentItem()).Times(1);
@@ -137,7 +137,7 @@ TEST(TableIteratorTest, currentItem) {
 
 TEST(TableIteratorTest, hasNext) {
   std::vector<RestaurantTable*> tables;
-  RestaurantTable* table = new RestaurantTable(1);
+  RestaurantTable* table = new RestaurantTable(1, 1);
   tables.push_back(table);
   MockTableIterator tableIterator(tables);
   EXPECT_CALL(tableIterator, hasNext()).Times(1);
@@ -146,7 +146,7 @@ TEST(TableIteratorTest, hasNext) {
 
 TEST(TableIteratorTest, next) {
   std::vector<RestaurantTable*> tables;
-  RestaurantTable* table = new RestaurantTable(1);
+  RestaurantTable* table = new RestaurantTable(1, 1);
   tables.push_back(table);
   MockTableIterator tableIterator(tables);
   EXPECT_CALL(tableIterator, next()).Times(1);
@@ -155,7 +155,7 @@ TEST(TableIteratorTest, next) {
 
 TEST(TableIteratorTest, isAvailable) {
   std::vector<RestaurantTable*> tables;
-  RestaurantTable* table = new RestaurantTable(1);
+  RestaurantTable* table = new RestaurantTable(1, 1);
   tables.push_back(table);
   MockTableIterator tableIterator(tables);
   EXPECT_CALL(tableIterator, isAvailable(table)).Times(1).WillOnce(testing::Return(true));
@@ -164,7 +164,7 @@ TEST(TableIteratorTest, isAvailable) {
 
 TEST(TableIteratorTest, reset) {
   std::vector<RestaurantTable*> tables;
-  RestaurantTable* table = new RestaurantTable(1);
+  RestaurantTable* table = new RestaurantTable(1, 1);
   tables.push_back(table);
   MockTableIterator tableIterator(tables);
   EXPECT_CALL(tableIterator, reset()).Times(1);
