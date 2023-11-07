@@ -50,6 +50,10 @@ void Order::addDish(fa_dish* dish) {
     dishes.push_back(dish);
 }
 
+std::vector<fa_dish*> Order::getDishes(){
+    return this->dishes;
+}
+
 void Order::addCustomization(std::string name, std::string customization) {
     for (auto& i : items) {
         if (i->getName() == name) {
@@ -83,7 +87,7 @@ void Order::printOrder() {
     // loop through dish
     // std::cout << "Printing order" << std::endl;
     for (auto& d : dishes) {
-        // std::cout << d->getDescription() << std::endl;
+        std::cout << d->getDescription() << std::endl;
     }
 }
 

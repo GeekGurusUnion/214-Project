@@ -3,7 +3,7 @@
 #include "fa_Pizza.h"
 
 fa_dish *fa_burgerFactory::createDish(const ad_RestaurantOrder &order) {
-    std::vector<std::string> basicComponents = {"buns", "lettuce", "mayo", "cheese", "bacon"};
+    std::vector<std::string> basicComponents = {"buns", "lettuce", "mayo", "Cheese", "Bacon"};
     if (order.getItem() == "DoubleBurger") {
         return new DoubleBurger(basicComponents);
     } else if (order.getItem() == "BeefBurger") {

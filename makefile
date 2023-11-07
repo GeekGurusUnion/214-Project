@@ -32,24 +32,12 @@ VALGRIND = valgrind
 
 KITCHEN_DIR = kitchen
 
-SRC_FILES = $(wildcard *.cpp) $(wildcard $(KITCHEN_DIR)/*.cpp)
-OBJ_FILES = $(patsubst %.cpp, %.o, $(SRC_FILES))
-
-# all: $(EXECUTABLE)
-
-# $(EXECUTABLE): $(OBJ_FILES)
-# 	$(CXX) $(CXXFLAGS) -o $@ $^
-
-# %.o: %.cpp
-# 	$(CXX) $(CXXFLAGS) -c -o $@ $<
-
-# run: $(EXECUTABLE)
-# 	./$(EXECUTABLE)
-
-# valgrind: $(EXECUTABLE)
-# 	$(VALGRIND) --leak-check=full ./$(EXECUTABLE)
+LINT_SRC_EXCLUDE = $(wildcard *test*.cpp *Test*.cpp *main*.cpp)
+LINT_FILES := $(filter-out $(LINT_SRC_EXCLUDE), $(wildcard *.cpp) $(wildcard $(KITCHEN_DIR)/*.cpp))
+lint:
+	clang-tidy $(LINT_FILES) -- -std=c++17
 
 clean:
-	rm -f $(EXECUTABLE) $(OBJ_FILES)
+	rm -f $(wildcard *.o)
 
-# .PHONY: all run valgrind clean
+

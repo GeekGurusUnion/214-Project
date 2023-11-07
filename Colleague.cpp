@@ -3,7 +3,7 @@
 
 Colleague::Colleague(Mediator* mediator) {
     this->mediator = mediator;
-    mediator->addColleague(this);
+    // mediator->addColleague(this);
 }
 
 void Colleague::changed() {
