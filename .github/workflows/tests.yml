@@ -24,5 +24,18 @@ jobs:
       #- name: Build and run Facade Test
       #  run: make test INCLUDE_TEST=unitTest_Facade.cpp
 
+      #- name: Build and run Stephan Tests
+      #  run: make test INCLUDE_TEST=unitTests_Stephan.cpp
+
       - name: Build and run Dawie Tests
         run: make test INCLUDE_TEST=unitTests_Dawie.cpp
+
+      - name: Build and run Iwan Tests
+        run: make test INCLUDE_TEST=unitTests_Iwan.cpp
+
+      - name: Build and run Xavier Tests
+        run: make test INCLUDE_TEST=unitTests_Tiaan.cpp
+
+      - name: Build and run Tiaan Tests
+        run: make test INCLUDE_TEST=unitTests_Xavier.cpp
+
