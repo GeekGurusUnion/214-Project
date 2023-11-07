@@ -1,0 +1,123 @@
+\doxysection{Customize\+Order Class Reference}
+\hypertarget{classCustomizeOrder}{}\label{classCustomizeOrder}\index{CustomizeOrder@{CustomizeOrder}}
+
+
+A concrete command for customizing an order with specific customization details.  
+
+
+
+
+{\ttfamily \#include $<$Customize\+Order.\+h$>$}
+
+Inheritance diagram for Customize\+Order\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCustomizeOrder}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCustomizeOrder_a8adae985566801155801a5e46cad73de}{Customize\+Order}} (\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classCommand_acbaaa545e1098e8b8b22371820b77319}{waiter}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classCustomizeOrder}{Customize\+Order} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCustomizeOrder_abbd2bd4421afe7e65fbbba95da08761f}{execute}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, std\+::string m, std\+::string customization)
+\begin{DoxyCompactList}\small\item\em Execute the customization of an order with specific customization details. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCustomizeOrder_aaf542b5c1b411e9d51e19baa0f20d90a}{execute}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, \mbox{\hyperlink{classMenuItem}{Menu\+Item}} \texorpdfstring{$\ast$}{*}m)
+\begin{DoxyCompactList}\small\item\em Dummy execution method for customization with \doxylink{classMenuItem}{Menu\+Item} (not used). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCommand}{Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCommand_a0821552854e07d10861f79d5d9853873}{Command}} (\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classCommand_acbaaa545e1098e8b8b22371820b77319}{waiter}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classCommand}{Command} class. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommand_ab28a19773850a1746502fccc47ff4d52}{execute}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, double tip)
+\begin{DoxyCompactList}\small\item\em Execute the command with a \doxylink{classRestaurantTable}{Restaurant\+Table} and a percentage tip. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommand_a08ea4a0a4d056f68882332562a6f40ec}{execute}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, std\+::string complaint)
+\begin{DoxyCompactList}\small\item\em Execute the command with a \doxylink{classRestaurantTable}{Restaurant\+Table} and a complaint. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommand_a7e6133e1454a1baefcb59319a1e4d4f2}{execute}} (\mbox{\hyperlink{classFacade}{Facade}} \texorpdfstring{$\ast$}{*}f, int count)
+\begin{DoxyCompactList}\small\item\em Merge Tables. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Command} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classCommand}{Command} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCommand_ac2eba399174da25577f10c0b2ee6da73}{get\+Waiter}} () const
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{classWaiter}{Waiter} who issued the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classCommand}{Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*} {\bfseries waiter}
+\begin{DoxyCompactList}\small\item\em A pointer to the \doxylink{classWaiter}{Waiter} who issues the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A concrete command for customizing an order with specific customization details. 
+
+\doxylink{classCustomizeOrder}{Customize\+Order} is a specific command that represents the action of customizing an order at a restaurant. It is associated with a particular \doxylink{classWaiter}{Waiter} and allows customization of a given \doxylink{classRestaurantTable}{Restaurant\+Table}\textquotesingle{}s order. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCustomizeOrder_a8adae985566801155801a5e46cad73de}\label{classCustomizeOrder_a8adae985566801155801a5e46cad73de} 
+\index{CustomizeOrder@{CustomizeOrder}!CustomizeOrder@{CustomizeOrder}}
+\index{CustomizeOrder@{CustomizeOrder}!CustomizeOrder@{CustomizeOrder}}
+\doxysubsubsection{\texorpdfstring{CustomizeOrder()}{CustomizeOrder()}}
+{\footnotesize\ttfamily Customize\+Order\+::\+Customize\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*}}]{waiter }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classCustomizeOrder}{Customize\+Order} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em waiter} & A pointer to the \doxylink{classWaiter}{Waiter} issuing the customization command. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCustomizeOrder_aaf542b5c1b411e9d51e19baa0f20d90a}\label{classCustomizeOrder_aaf542b5c1b411e9d51e19baa0f20d90a} 
+\index{CustomizeOrder@{CustomizeOrder}!execute@{execute}}
+\index{execute@{execute}!CustomizeOrder@{CustomizeOrder}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Customize\+Order\+::execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{rt,  }\item[{\mbox{\hyperlink{classMenuItem}{Menu\+Item}} \texorpdfstring{$\ast$}{*}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Dummy execution method for customization with \doxylink{classMenuItem}{Menu\+Item} (not used). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rt} & A pointer to the \doxylink{classRestaurantTable}{Restaurant\+Table} for which the order is being customized. \\
+\hline
+{\em m} & A pointer to the \doxylink{classMenuItem}{Menu\+Item} (not used in this method). \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classCommand_a3891f9919717d37ff5ef6f9b52afb2ac}{Command}}.
+
+\Hypertarget{classCustomizeOrder_abbd2bd4421afe7e65fbbba95da08761f}\label{classCustomizeOrder_abbd2bd4421afe7e65fbbba95da08761f} 
+\index{CustomizeOrder@{CustomizeOrder}!execute@{execute}}
+\index{execute@{execute}!CustomizeOrder@{CustomizeOrder}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Customize\+Order\+::execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{rt,  }\item[{std\+::string}]{m,  }\item[{std\+::string}]{customization }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Execute the customization of an order with specific customization details. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rt} & A pointer to the \doxylink{classRestaurantTable}{Restaurant\+Table} for which the order is being customized. \\
+\hline
+{\em m} & A string representing the name of the \doxylink{classMenuItem}{Menu\+Item} being customized. \\
+\hline
+{\em customization} & A string specifying the customization details. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classCommand_ab7037f5f46b0381541121503eb52a343}{Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{CustomizeOrder_8h}{Customize\+Order.\+h}}\item 
+Customize\+Order.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,90 @@
+\doxysection{fa\+\_\+burger Class Reference}
+\hypertarget{classfa__burger}{}\label{classfa__burger}\index{fa\_burger@{fa\_burger}}
+
+
+Abstract product class representing a generic burger dish.  
+
+
+
+
+{\ttfamily \#include $<$fa\+\_\+burger.\+h$>$}
+
+Inheritance diagram for fa\+\_\+burger\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classfa__burger}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfa__burger_aa590408f518f261ca4b7eeeed78e2865}{fa\+\_\+burger}} (const std\+::vector$<$ std\+::string $>$ \&initial\+Components)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes the burger with initial components. \end{DoxyCompactList}\item 
+\Hypertarget{classfa__burger_adbf49375736631bdc2fd5d7624b580fe}\label{classfa__burger_adbf49375736631bdc2fd5d7624b580fe} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}fa\+\_\+burger} () override=default
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfa__burger_a16569ff4576126d0fb7a51eb02142016}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the description of the burger. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}fa\+\_\+dish} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfa__dish_a6f011b05ec7232c15a9df2f2df2050f3}{add\+Component}} (const std\+::string \&component)
+\begin{DoxyCompactList}\small\item\em Adds a component to the dish. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfa__dish_a71400b890dc6558f780f8f1018517ff5}{remove\+Component}} (const std\+::string \&component)
+\begin{DoxyCompactList}\small\item\em Removes a component from the dish. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ {\bfseries components}
+\begin{DoxyCompactList}\small\item\em List of components in the dish. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract product class representing a generic burger dish. 
+
+This class provides a base implementation for different types of burgers. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfa__burger_aa590408f518f261ca4b7eeeed78e2865}\label{classfa__burger_aa590408f518f261ca4b7eeeed78e2865} 
+\index{fa\_burger@{fa\_burger}!fa\_burger@{fa\_burger}}
+\index{fa\_burger@{fa\_burger}!fa\_burger@{fa\_burger}}
+\doxysubsubsection{\texorpdfstring{fa\_burger()}{fa\_burger()}}
+{\footnotesize\ttfamily fa\+\_\+burger\+::fa\+\_\+burger (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{initial\+Components }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor that initializes the burger with initial components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em initial\+Components} & A vector of strings representing the initial components of the burger. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfa__burger_a16569ff4576126d0fb7a51eb02142016}\label{classfa__burger_a16569ff4576126d0fb7a51eb02142016} 
+\index{fa\_burger@{fa\_burger}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!fa\_burger@{fa\_burger}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily std\+::string fa\+\_\+burger\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the description of the burger. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the description of the burger and its components. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfa__dish_aec33189257b0c7a7dd673d6374cfb2f0}{fa\+\_\+dish}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fa__burger_8h}{fa\+\_\+burger.\+h}}\end{DoxyCompactItemize}

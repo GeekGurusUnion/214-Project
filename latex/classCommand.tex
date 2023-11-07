@@ -1,0 +1,177 @@
+\doxysection{Command Class Reference}
+\hypertarget{classCommand}{}\label{classCommand}\index{Command@{Command}}
+
+
+Abstract base class for commands in the \doxylink{classCommand}{Command} pattern.  
+
+
+
+
+{\ttfamily \#include $<$Command.\+h$>$}
+
+Inheritance diagram for Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=10.000000cm]{classCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCommand_a0821552854e07d10861f79d5d9853873}{Command}} (\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classCommand_acbaaa545e1098e8b8b22371820b77319}{waiter}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classCommand}{Command} class. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommand_a3891f9919717d37ff5ef6f9b52afb2ac}{execute}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, \mbox{\hyperlink{classMenuItem}{Menu\+Item}} \texorpdfstring{$\ast$}{*}menu\+Item)
+\begin{DoxyCompactList}\small\item\em Execute the command with a \doxylink{classRestaurantTable}{Restaurant\+Table} and a \doxylink{classMenuItem}{Menu\+Item}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommand_ab7037f5f46b0381541121503eb52a343}{execute}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, std\+::string menu\+Item, std\+::string customization)
+\begin{DoxyCompactList}\small\item\em Execute the command with a \doxylink{classRestaurantTable}{Restaurant\+Table}, a \doxylink{classMenuItem}{Menu\+Item} name, and customization details. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommand_ab28a19773850a1746502fccc47ff4d52}{execute}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, double tip)
+\begin{DoxyCompactList}\small\item\em Execute the command with a \doxylink{classRestaurantTable}{Restaurant\+Table} and a percentage tip. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommand_a08ea4a0a4d056f68882332562a6f40ec}{execute}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, std\+::string complaint)
+\begin{DoxyCompactList}\small\item\em Execute the command with a \doxylink{classRestaurantTable}{Restaurant\+Table} and a complaint. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommand_a7e6133e1454a1baefcb59319a1e4d4f2}{execute}} (\mbox{\hyperlink{classFacade}{Facade}} \texorpdfstring{$\ast$}{*}f, int count)
+\begin{DoxyCompactList}\small\item\em Merge Tables. \end{DoxyCompactList}\item 
+\Hypertarget{classCommand_a641c23ef533dd6f77d0a4ef0311598b2}\label{classCommand_a641c23ef533dd6f77d0a4ef0311598b2} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Command} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classCommand}{Command} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCommand_ac2eba399174da25577f10c0b2ee6da73}{get\+Waiter}} () const
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{classWaiter}{Waiter} who issued the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCommand_acbaaa545e1098e8b8b22371820b77319}\label{classCommand_acbaaa545e1098e8b8b22371820b77319} 
+\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*} {\bfseries waiter}
+\begin{DoxyCompactList}\small\item\em A pointer to the \doxylink{classWaiter}{Waiter} who issues the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for commands in the \doxylink{classCommand}{Command} pattern. 
+
+\doxylink{classCommand}{Command} represents a command to be executed, typically associated with a specific action, and it decouples the sender (\doxylink{classWaiter}{Waiter}) from the receiver (\doxylink{classRestaurantTable}{Restaurant\+Table} and \doxylink{classMenuItem}{Menu\+Item}). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCommand_a0821552854e07d10861f79d5d9853873}\label{classCommand_a0821552854e07d10861f79d5d9853873} 
+\index{Command@{Command}!Command@{Command}}
+\index{Command@{Command}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{Command()}{Command()}}
+{\footnotesize\ttfamily Command\+::\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*}}]{waiter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \doxylink{classCommand}{Command} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em waiter} & A pointer to the \doxylink{classWaiter}{Waiter} issuing the command. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCommand_a7e6133e1454a1baefcb59319a1e4d4f2}\label{classCommand_a7e6133e1454a1baefcb59319a1e4d4f2} 
+\index{Command@{Command}!execute@{execute}}
+\index{execute@{execute}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily virtual void Command\+::execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFacade}{Facade}} \texorpdfstring{$\ast$}{*}}]{f,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Merge Tables. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classMergeTables_a42b72ca41a10c5706124c168f5092e6c}{Merge\+Tables}}.
+
+\Hypertarget{classCommand_ab28a19773850a1746502fccc47ff4d52}\label{classCommand_ab28a19773850a1746502fccc47ff4d52} 
+\index{Command@{Command}!execute@{execute}}
+\index{execute@{execute}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily virtual void Command\+::execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{rt,  }\item[{double}]{tip }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Execute the command with a \doxylink{classRestaurantTable}{Restaurant\+Table} and a percentage tip. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classSplitBill_ad4cc3fff7bb8381666683943420996c7}{Split\+Bill}}, and \mbox{\hyperlink{classTipOrder_af51dc2dab067928027a9cfbf82b07a9a}{Tip\+Order}}.
+
+\Hypertarget{classCommand_a3891f9919717d37ff5ef6f9b52afb2ac}\label{classCommand_a3891f9919717d37ff5ef6f9b52afb2ac} 
+\index{Command@{Command}!execute@{execute}}
+\index{execute@{execute}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily virtual void Command\+::execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{rt,  }\item[{\mbox{\hyperlink{classMenuItem}{Menu\+Item}} \texorpdfstring{$\ast$}{*}}]{menu\+Item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Execute the command with a \doxylink{classRestaurantTable}{Restaurant\+Table} and a \doxylink{classMenuItem}{Menu\+Item}. 
+
+This pure virtual function is used to execute the command with a given \doxylink{classRestaurantTable}{Restaurant\+Table} and \doxylink{classMenuItem}{Menu\+Item}, and it must be implemented by concrete command classes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rt} & A pointer to the \doxylink{classRestaurantTable}{Restaurant\+Table} on which the command is executed. \\
+\hline
+{\em menu\+Item} & A pointer to the \doxylink{classMenuItem}{Menu\+Item} associated with the command. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classConfirmOrder_a439ae3a9dc36af30841b9f1d65e43ad4}{Confirm\+Order}}, \mbox{\hyperlink{classCustomizeOrder_aaf542b5c1b411e9d51e19baa0f20d90a}{Customize\+Order}}, \mbox{\hyperlink{classGenerateBill_ad3f193c890836559514d1c2402e25a8e}{Generate\+Bill}}, \mbox{\hyperlink{classTakeOrder_ac9145f4e904f17d54d736ca906588c89}{Take\+Order}}, and \mbox{\hyperlink{classServeOrder_af332b3f3a86a6ccfaf2c7ea1befdf500}{Serve\+Order}}.
+
+\Hypertarget{classCommand_a08ea4a0a4d056f68882332562a6f40ec}\label{classCommand_a08ea4a0a4d056f68882332562a6f40ec} 
+\index{Command@{Command}!execute@{execute}}
+\index{execute@{execute}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily virtual void Command\+::execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{rt,  }\item[{std\+::string}]{complaint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Execute the command with a \doxylink{classRestaurantTable}{Restaurant\+Table} and a complaint. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classComplaints_ab803a6f67f2b8f06f982aea9e21d1974}{Complaints}}.
+
+\Hypertarget{classCommand_ab7037f5f46b0381541121503eb52a343}\label{classCommand_ab7037f5f46b0381541121503eb52a343} 
+\index{Command@{Command}!execute@{execute}}
+\index{execute@{execute}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily virtual void Command\+::execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{rt,  }\item[{std\+::string}]{menu\+Item,  }\item[{std\+::string}]{customization }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Execute the command with a \doxylink{classRestaurantTable}{Restaurant\+Table}, a \doxylink{classMenuItem}{Menu\+Item} name, and customization details. 
+
+This virtual function allows executing the command with a \doxylink{classRestaurantTable}{Restaurant\+Table} and specifying the \doxylink{classMenuItem}{Menu\+Item} by its name and providing customization details.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rt} & A pointer to the \doxylink{classRestaurantTable}{Restaurant\+Table} on which the command is executed. \\
+\hline
+{\em menu\+Item} & A string representing the name of the \doxylink{classMenuItem}{Menu\+Item}. \\
+\hline
+{\em customization} & A string specifying any customizations for the \doxylink{classMenuItem}{Menu\+Item}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classCustomizeOrder_abbd2bd4421afe7e65fbbba95da08761f}{Customize\+Order}}.
+
+\Hypertarget{classCommand_ac2eba399174da25577f10c0b2ee6da73}\label{classCommand_ac2eba399174da25577f10c0b2ee6da73} 
+\index{Command@{Command}!getWaiter@{getWaiter}}
+\index{getWaiter@{getWaiter}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{getWaiter()}{getWaiter()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*} Command\+::get\+Waiter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the \doxylink{classWaiter}{Waiter} who issued the command. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the \doxylink{classWaiter}{Waiter} who issued the command. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Command_8h}{Command.\+h}}\end{DoxyCompactItemize}

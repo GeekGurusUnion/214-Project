@@ -1,0 +1,248 @@
+\doxysection{Restaurant\+Table Class Reference}
+\hypertarget{classRestaurantTable}{}\label{classRestaurantTable}\index{RestaurantTable@{RestaurantTable}}
+
+
+Represents a restaurant table with various functionalities.  
+
+
+
+
+{\ttfamily \#include $<$Restaurant\+Table.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRestaurantTable_a45363e30d3dadfcf6c4a0035e0f66832}{Restaurant\+Table}} (int i, int t)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classRestaurantTable}{Restaurant\+Table}. \end{DoxyCompactList}\item 
+\Hypertarget{classRestaurantTable_a65fe8a2798572ea32b17aa82a09337d9}\label{classRestaurantTable_a65fe8a2798572ea32b17aa82a09337d9} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Restaurant\+Table} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classRestaurantTable}{Restaurant\+Table}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRestaurantTable_af11d0d951276286223cc8a06d778e3b4}{set\+State}} (\mbox{\hyperlink{classState}{State}} \texorpdfstring{$\ast$}{*}state)
+\begin{DoxyCompactList}\small\item\em Set the current state of the table. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classState}{State}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classRestaurantTable_a5040685d535708eee08dcf710098a10b}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Get the current state of the table. \end{DoxyCompactList}\item 
+\Hypertarget{classRestaurantTable_a385e5ac605152f50b869d8f06029765b}\label{classRestaurantTable_a385e5ac605152f50b869d8f06029765b} 
+void {\bfseries occupy} ()
+\begin{DoxyCompactList}\small\item\em Transition the table to the "{}\+Occupied"{} state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classRestaurantTable_aeb2f3491b0fbdaf03a38981f449edf12}{get\+Waiter}} () const
+\begin{DoxyCompactList}\small\item\em Get the waiter serving the table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRestaurantTable_afb274dfe86692db7c3726d853a7859a9}{set\+Waiter}} (\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*}waiter)
+\begin{DoxyCompactList}\small\item\em Set the waiter serving the table. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOrder}{Order}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classRestaurantTable_acdbd7dc53f36cd4bfb9ead8e96b79660}{get\+Order}} () const
+\begin{DoxyCompactList}\small\item\em Get the order associated with the table. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRestaurantTable_a616e55ca36b3bae7ad2824a304fd850f}{is\+Available}} () const
+\begin{DoxyCompactList}\small\item\em Check if the table is available (not occupied). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classRestaurantTable_ad782199282d53209188eea46dbbb8c8b}{get\+Table\+Number}} () const
+\begin{DoxyCompactList}\small\item\em Get the table number or identifier. \end{DoxyCompactList}\item 
+\Hypertarget{classRestaurantTable_a16a963720878f38de5c84c1d9504877c}\label{classRestaurantTable_a16a963720878f38de5c84c1d9504877c} 
+void {\bfseries print\+Bill} ()
+\begin{DoxyCompactList}\small\item\em Print the bill for the table\textquotesingle{}s order. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classRestaurantTable_a6bc7d8e0bee3b5e1d07f020602b33fad}{get\+Table\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the size or capacity of the table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRestaurantTable_acc690e180959008249e89d8da2acf7fd}{serve}} ()
+\begin{DoxyCompactList}\small\item\em Serve the order associated with the table. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classRestaurantTable_a746f51b82ad0a4cbf5225e44db09219c}{get\+Cost\+Per\+Person}} ()
+\begin{DoxyCompactList}\small\item\em Get the cost per person. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRestaurantTable_a7ad3b88bebe68e504a6d3971b5677e93}{set\+Cost\+Per\+Person}} (int cost)
+\begin{DoxyCompactList}\small\item\em Set the cost per person. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classRestaurantTable_a7bd063cc1a3878547a98873bb45e5f3a}{get\+Table\+Cost}} ()
+\begin{DoxyCompactList}\small\item\em Get the total cost of the table. \end{DoxyCompactList}\item 
+\Hypertarget{classRestaurantTable_a6ae2bcdbe9890d1e80bb63d89d1c1075}\label{classRestaurantTable_a6ae2bcdbe9890d1e80bb63d89d1c1075} 
+void {\bfseries set\+Table\+Size} (int size)
+\begin{DoxyCompactList}\small\item\em Set table size. \end{DoxyCompactList}\item 
+\Hypertarget{classRestaurantTable_a312b3a44bfe0f75aa3c5907879d641f6}\label{classRestaurantTable_a312b3a44bfe0f75aa3c5907879d641f6} 
+void {\bfseries unset\+Waiter} ()
+\begin{DoxyCompactList}\small\item\em Unset the waiter serving the table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a restaurant table with various functionalities. 
+
+This class represents a restaurant table that can change states, have an associated waiter, manage orders, and notify the waiter of various actions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classRestaurantTable_a45363e30d3dadfcf6c4a0035e0f66832}\label{classRestaurantTable_a45363e30d3dadfcf6c4a0035e0f66832} 
+\index{RestaurantTable@{RestaurantTable}!RestaurantTable@{RestaurantTable}}
+\index{RestaurantTable@{RestaurantTable}!RestaurantTable@{RestaurantTable}}
+\doxysubsubsection{\texorpdfstring{RestaurantTable()}{RestaurantTable()}}
+{\footnotesize\ttfamily Restaurant\+Table\+::\+Restaurant\+Table (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{t }\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{classRestaurantTable}{Restaurant\+Table}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The table number or identifier. \\
+\hline
+{\em t} & The size or capacity of the table. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRestaurantTable_a746f51b82ad0a4cbf5225e44db09219c}\label{classRestaurantTable_a746f51b82ad0a4cbf5225e44db09219c} 
+\index{RestaurantTable@{RestaurantTable}!getCostPerPerson@{getCostPerPerson}}
+\index{getCostPerPerson@{getCostPerPerson}!RestaurantTable@{RestaurantTable}}
+\doxysubsubsection{\texorpdfstring{getCostPerPerson()}{getCostPerPerson()}}
+{\footnotesize\ttfamily float Restaurant\+Table\+::get\+Cost\+Per\+Person (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the cost per person. 
+
+\begin{DoxyReturn}{Returns}
+The cost per person. 
+\end{DoxyReturn}
+\Hypertarget{classRestaurantTable_acdbd7dc53f36cd4bfb9ead8e96b79660}\label{classRestaurantTable_acdbd7dc53f36cd4bfb9ead8e96b79660} 
+\index{RestaurantTable@{RestaurantTable}!getOrder@{getOrder}}
+\index{getOrder@{getOrder}!RestaurantTable@{RestaurantTable}}
+\doxysubsubsection{\texorpdfstring{getOrder()}{getOrder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classOrder}{Order}} \texorpdfstring{$\ast$}{*} Restaurant\+Table\+::get\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the order associated with the table. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the order. 
+\end{DoxyReturn}
+\Hypertarget{classRestaurantTable_a5040685d535708eee08dcf710098a10b}\label{classRestaurantTable_a5040685d535708eee08dcf710098a10b} 
+\index{RestaurantTable@{RestaurantTable}!getState@{getState}}
+\index{getState@{getState}!RestaurantTable@{RestaurantTable}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classState}{State}} \texorpdfstring{$\ast$}{*} Restaurant\+Table\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the current state of the table. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the current state. 
+\end{DoxyReturn}
+\Hypertarget{classRestaurantTable_a7bd063cc1a3878547a98873bb45e5f3a}\label{classRestaurantTable_a7bd063cc1a3878547a98873bb45e5f3a} 
+\index{RestaurantTable@{RestaurantTable}!getTableCost@{getTableCost}}
+\index{getTableCost@{getTableCost}!RestaurantTable@{RestaurantTable}}
+\doxysubsubsection{\texorpdfstring{getTableCost()}{getTableCost()}}
+{\footnotesize\ttfamily float Restaurant\+Table\+::get\+Table\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the total cost of the table. 
+
+\begin{DoxyReturn}{Returns}
+The total cost of the table. 
+\end{DoxyReturn}
+\Hypertarget{classRestaurantTable_ad782199282d53209188eea46dbbb8c8b}\label{classRestaurantTable_ad782199282d53209188eea46dbbb8c8b} 
+\index{RestaurantTable@{RestaurantTable}!getTableNumber@{getTableNumber}}
+\index{getTableNumber@{getTableNumber}!RestaurantTable@{RestaurantTable}}
+\doxysubsubsection{\texorpdfstring{getTableNumber()}{getTableNumber()}}
+{\footnotesize\ttfamily int Restaurant\+Table\+::get\+Table\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the table number or identifier. 
+
+\begin{DoxyReturn}{Returns}
+The table number. 
+\end{DoxyReturn}
+\Hypertarget{classRestaurantTable_a6bc7d8e0bee3b5e1d07f020602b33fad}\label{classRestaurantTable_a6bc7d8e0bee3b5e1d07f020602b33fad} 
+\index{RestaurantTable@{RestaurantTable}!getTableSize@{getTableSize}}
+\index{getTableSize@{getTableSize}!RestaurantTable@{RestaurantTable}}
+\doxysubsubsection{\texorpdfstring{getTableSize()}{getTableSize()}}
+{\footnotesize\ttfamily int Restaurant\+Table\+::get\+Table\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the size or capacity of the table. 
+
+\begin{DoxyReturn}{Returns}
+The table size. 
+\end{DoxyReturn}
+\Hypertarget{classRestaurantTable_aeb2f3491b0fbdaf03a38981f449edf12}\label{classRestaurantTable_aeb2f3491b0fbdaf03a38981f449edf12} 
+\index{RestaurantTable@{RestaurantTable}!getWaiter@{getWaiter}}
+\index{getWaiter@{getWaiter}!RestaurantTable@{RestaurantTable}}
+\doxysubsubsection{\texorpdfstring{getWaiter()}{getWaiter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*} Restaurant\+Table\+::get\+Waiter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the waiter serving the table. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the waiter serving the table. 
+\end{DoxyReturn}
+\Hypertarget{classRestaurantTable_a616e55ca36b3bae7ad2824a304fd850f}\label{classRestaurantTable_a616e55ca36b3bae7ad2824a304fd850f} 
+\index{RestaurantTable@{RestaurantTable}!isAvailable@{isAvailable}}
+\index{isAvailable@{isAvailable}!RestaurantTable@{RestaurantTable}}
+\doxysubsubsection{\texorpdfstring{isAvailable()}{isAvailable()}}
+{\footnotesize\ttfamily bool Restaurant\+Table\+::is\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if the table is available (not occupied). 
+
+\begin{DoxyReturn}{Returns}
+True if the table is available, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classRestaurantTable_acc690e180959008249e89d8da2acf7fd}\label{classRestaurantTable_acc690e180959008249e89d8da2acf7fd} 
+\index{RestaurantTable@{RestaurantTable}!serve@{serve}}
+\index{serve@{serve}!RestaurantTable@{RestaurantTable}}
+\doxysubsubsection{\texorpdfstring{serve()}{serve()}}
+{\footnotesize\ttfamily void Restaurant\+Table\+::serve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Serve the order associated with the table. 
+
+This method is called when the order is ready to be served. \Hypertarget{classRestaurantTable_a7ad3b88bebe68e504a6d3971b5677e93}\label{classRestaurantTable_a7ad3b88bebe68e504a6d3971b5677e93} 
+\index{RestaurantTable@{RestaurantTable}!setCostPerPerson@{setCostPerPerson}}
+\index{setCostPerPerson@{setCostPerPerson}!RestaurantTable@{RestaurantTable}}
+\doxysubsubsection{\texorpdfstring{setCostPerPerson()}{setCostPerPerson()}}
+{\footnotesize\ttfamily void Restaurant\+Table\+::set\+Cost\+Per\+Person (\begin{DoxyParamCaption}\item[{int}]{cost }\end{DoxyParamCaption})}
+
+
+
+Set the cost per person. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cost} & The cost per person. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classRestaurantTable_af11d0d951276286223cc8a06d778e3b4}\label{classRestaurantTable_af11d0d951276286223cc8a06d778e3b4} 
+\index{RestaurantTable@{RestaurantTable}!setState@{setState}}
+\index{setState@{setState}!RestaurantTable@{RestaurantTable}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Restaurant\+Table\+::set\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classState}{State}} \texorpdfstring{$\ast$}{*}}]{state }\end{DoxyParamCaption})}
+
+
+
+Set the current state of the table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Pointer to the new state. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classRestaurantTable_afb274dfe86692db7c3726d853a7859a9}\label{classRestaurantTable_afb274dfe86692db7c3726d853a7859a9} 
+\index{RestaurantTable@{RestaurantTable}!setWaiter@{setWaiter}}
+\index{setWaiter@{setWaiter}!RestaurantTable@{RestaurantTable}}
+\doxysubsubsection{\texorpdfstring{setWaiter()}{setWaiter()}}
+{\footnotesize\ttfamily void Restaurant\+Table\+::set\+Waiter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*}}]{waiter }\end{DoxyParamCaption})}
+
+
+
+Set the waiter serving the table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em waiter} & Pointer to the waiter. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{RestaurantTable_8h}{Restaurant\+Table.\+h}}\item 
+Restaurant\+Table.\+cpp\end{DoxyCompactItemize}

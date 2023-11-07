@@ -1,0 +1,62 @@
+\doxysection{fa\+\_\+dish\+Factory Class Reference}
+\hypertarget{classfa__dishFactory}{}\label{classfa__dishFactory}\index{fa\_dishFactory@{fa\_dishFactory}}
+
+
+Abstract class representing a generic factory for creating dishes.  
+
+
+
+
+{\ttfamily \#include $<$fa\+\_\+dish\+Factory.\+h$>$}
+
+Inheritance diagram for fa\+\_\+dish\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classfa__dishFactory}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfa__dishFactory_af6e039660082eb4cb9b8d64337c1aaf4}\label{classfa__dishFactory_af6e039660082eb4cb9b8d64337c1aaf4} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}fa\+\_\+dish\+Factory} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfa__dishFactory_a894a687faa696eedf43a5767f57e90da}{create\+Dish}} (const \mbox{\hyperlink{classad__RestaurantOrder}{ad\+\_\+\+Restaurant\+Order}} \&order)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to create a dish based on a given order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class representing a generic factory for creating dishes. 
+
+This class defines the interface for creating different types of dishes based on a given order. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfa__dishFactory_a894a687faa696eedf43a5767f57e90da}\label{classfa__dishFactory_a894a687faa696eedf43a5767f57e90da} 
+\index{fa\_dishFactory@{fa\_dishFactory}!createDish@{createDish}}
+\index{createDish@{createDish}!fa\_dishFactory@{fa\_dishFactory}}
+\doxysubsubsection{\texorpdfstring{createDish()}{createDish()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}} \texorpdfstring{$\ast$}{*} fa\+\_\+dish\+Factory\+::create\+Dish (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classad__RestaurantOrder}{ad\+\_\+\+Restaurant\+Order}} \&}]{order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to create a dish based on a given order. 
+
+This function is intended to be overridden by derived classes to instantiate the appropriate type of dish as per the given order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & An instance of \doxylink{classad__RestaurantOrder}{ad\+\_\+\+Restaurant\+Order} containing details of the order. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to an instance of \doxylink{classfa__dish}{fa\+\_\+dish} representing the created dish. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classfa__burgerFactory_a54aca35bc733763c9dc2f71d07cc3abe}{fa\+\_\+burger\+Factory}}, and \mbox{\hyperlink{classfa__pizzaFactory_ab1cb0d351ebd310e86105d806fed6c86}{fa\+\_\+pizza\+Factory}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fa__dishFactory_8h}{fa\+\_\+dish\+Factory.\+h}}\end{DoxyCompactItemize}

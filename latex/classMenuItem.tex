@@ -1,0 +1,140 @@
+\doxysection{Menu\+Item Class Reference}
+\hypertarget{classMenuItem}{}\label{classMenuItem}\index{MenuItem@{MenuItem}}
+
+
+A class representing a menu item in a restaurant.  
+
+
+
+
+{\ttfamily \#include $<$Menu\+Item.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMenuItem_a38619cca675e6e1a2ec1bbd342baa867}{Menu\+Item}} (std\+::string name, double price)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classMenuItem}{Menu\+Item} class. \end{DoxyCompactList}\item 
+\Hypertarget{classMenuItem_a41c6086a4d066256ecb7bfa715059ea2}\label{classMenuItem_a41c6086a4d066256ecb7bfa715059ea2} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Menu\+Item} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classMenuItem}{Menu\+Item} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMenuItem_af4e7a4a1cb5bbf3e54d2dafe3d7d1506}{Menu\+Item}} (const \mbox{\hyperlink{classMenuItem}{Menu\+Item}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor for the \doxylink{classMenuItem}{Menu\+Item} class. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMenuItem_a1500747998ce2503d0b576e4c3e60101}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the name of the menu item. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classMenuItem_a5b9bbfe9c37ff669a5e3b21c171e28a0}{get\+Price}} ()
+\begin{DoxyCompactList}\small\item\em Get the price of the menu item. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMenuItem_acd77a4e9441eb873b55fc660a8b75af9}{add\+Customization}} (std\+::string customization)
+\begin{DoxyCompactList}\small\item\em Add a customization option to the menu item. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMenuItem_a132817f45a9b5499eee0931188fa4a87}{contains\+Customization}} (std\+::string customization)
+\begin{DoxyCompactList}\small\item\em Check if the menu item contains a specific customization. \end{DoxyCompactList}\item 
+\Hypertarget{classMenuItem_a7aee475f1104c45578c23d4e050d185b}\label{classMenuItem_a7aee475f1104c45578c23d4e050d185b} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+Customizations} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class representing a menu item in a restaurant. 
+
+\doxylink{classMenuItem}{Menu\+Item} defines the characteristics of a menu item, including its name, price, and available customizations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMenuItem_a38619cca675e6e1a2ec1bbd342baa867}\label{classMenuItem_a38619cca675e6e1a2ec1bbd342baa867} 
+\index{MenuItem@{MenuItem}!MenuItem@{MenuItem}}
+\index{MenuItem@{MenuItem}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{MenuItem()}{MenuItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Menu\+Item\+::\+Menu\+Item (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{double}]{price }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classMenuItem}{Menu\+Item} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the menu item. \\
+\hline
+{\em price} & The price of the menu item. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classMenuItem_af4e7a4a1cb5bbf3e54d2dafe3d7d1506}\label{classMenuItem_af4e7a4a1cb5bbf3e54d2dafe3d7d1506} 
+\index{MenuItem@{MenuItem}!MenuItem@{MenuItem}}
+\index{MenuItem@{MenuItem}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{MenuItem()}{MenuItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Menu\+Item\+::\+Menu\+Item (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMenuItem}{Menu\+Item}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor for the \doxylink{classMenuItem}{Menu\+Item} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another \doxylink{classMenuItem}{Menu\+Item} object to copy from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMenuItem_acd77a4e9441eb873b55fc660a8b75af9}\label{classMenuItem_acd77a4e9441eb873b55fc660a8b75af9} 
+\index{MenuItem@{MenuItem}!addCustomization@{addCustomization}}
+\index{addCustomization@{addCustomization}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{addCustomization()}{addCustomization()}}
+{\footnotesize\ttfamily void Menu\+Item\+::add\+Customization (\begin{DoxyParamCaption}\item[{std\+::string}]{customization }\end{DoxyParamCaption})}
+
+
+
+Add a customization option to the menu item. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em customization} & The customization option to add. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classMenuItem_a132817f45a9b5499eee0931188fa4a87}\label{classMenuItem_a132817f45a9b5499eee0931188fa4a87} 
+\index{MenuItem@{MenuItem}!containsCustomization@{containsCustomization}}
+\index{containsCustomization@{containsCustomization}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{containsCustomization()}{containsCustomization()}}
+{\footnotesize\ttfamily bool Menu\+Item\+::contains\+Customization (\begin{DoxyParamCaption}\item[{std\+::string}]{customization }\end{DoxyParamCaption})}
+
+
+
+Check if the menu item contains a specific customization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em customization} & The customization to check for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the menu item contains the specified customization, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classMenuItem_a1500747998ce2503d0b576e4c3e60101}\label{classMenuItem_a1500747998ce2503d0b576e4c3e60101} 
+\index{MenuItem@{MenuItem}!getName@{getName}}
+\index{getName@{getName}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Menu\+Item\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the name of the menu item. 
+
+\begin{DoxyReturn}{Returns}
+The name of the menu item. 
+\end{DoxyReturn}
+\Hypertarget{classMenuItem_a5b9bbfe9c37ff669a5e3b21c171e28a0}\label{classMenuItem_a5b9bbfe9c37ff669a5e3b21c171e28a0} 
+\index{MenuItem@{MenuItem}!getPrice@{getPrice}}
+\index{getPrice@{getPrice}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{getPrice()}{getPrice()}}
+{\footnotesize\ttfamily double Menu\+Item\+::get\+Price (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the price of the menu item. 
+
+\begin{DoxyReturn}{Returns}
+The price of the menu item. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{MenuItem_8h}{Menu\+Item.\+h}}\item 
+Menu\+Item.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,102 @@
+\doxysection{Confirm\+Order Class Reference}
+\hypertarget{classConfirmOrder}{}\label{classConfirmOrder}\index{ConfirmOrder@{ConfirmOrder}}
+
+
+A concrete command for confirming an order with a specific \doxylink{classFloorColleague}{Floor\+Colleague}.  
+
+
+
+
+{\ttfamily \#include $<$Confirm\+Order.\+h$>$}
+
+Inheritance diagram for Confirm\+Order\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classConfirmOrder}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classConfirmOrder_a15d1c04d31e2d6eaae498993649ce29b}{Confirm\+Order}} (\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classCommand_acbaaa545e1098e8b8b22371820b77319}{waiter}}, \mbox{\hyperlink{classColleague}{Colleague}} \texorpdfstring{$\ast$}{*}floor\+Colleague)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classConfirmOrder}{Confirm\+Order} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConfirmOrder_a439ae3a9dc36af30841b9f1d65e43ad4}{execute}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, \mbox{\hyperlink{classMenuItem}{Menu\+Item}} \texorpdfstring{$\ast$}{*}m)
+\begin{DoxyCompactList}\small\item\em Execute the confirmation of an order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCommand}{Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCommand_a0821552854e07d10861f79d5d9853873}{Command}} (\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classCommand_acbaaa545e1098e8b8b22371820b77319}{waiter}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classCommand}{Command} class. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommand_ab7037f5f46b0381541121503eb52a343}{execute}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, std\+::string menu\+Item, std\+::string customization)
+\begin{DoxyCompactList}\small\item\em Execute the command with a \doxylink{classRestaurantTable}{Restaurant\+Table}, a \doxylink{classMenuItem}{Menu\+Item} name, and customization details. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommand_ab28a19773850a1746502fccc47ff4d52}{execute}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, double tip)
+\begin{DoxyCompactList}\small\item\em Execute the command with a \doxylink{classRestaurantTable}{Restaurant\+Table} and a percentage tip. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommand_a08ea4a0a4d056f68882332562a6f40ec}{execute}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, std\+::string complaint)
+\begin{DoxyCompactList}\small\item\em Execute the command with a \doxylink{classRestaurantTable}{Restaurant\+Table} and a complaint. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommand_a7e6133e1454a1baefcb59319a1e4d4f2}{execute}} (\mbox{\hyperlink{classFacade}{Facade}} \texorpdfstring{$\ast$}{*}f, int count)
+\begin{DoxyCompactList}\small\item\em Merge Tables. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Command} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classCommand}{Command} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCommand_ac2eba399174da25577f10c0b2ee6da73}{get\+Waiter}} () const
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{classWaiter}{Waiter} who issued the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classCommand}{Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*} {\bfseries waiter}
+\begin{DoxyCompactList}\small\item\em A pointer to the \doxylink{classWaiter}{Waiter} who issues the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A concrete command for confirming an order with a specific \doxylink{classFloorColleague}{Floor\+Colleague}. 
+
+\doxylink{classConfirmOrder}{Confirm\+Order} is a specific command that represents the action of confirming an order at a restaurant. It is associated with a particular \doxylink{classWaiter}{Waiter} and a specific \doxylink{classFloorColleague}{Floor\+Colleague}, and it executes this action for a given \doxylink{classRestaurantTable}{Restaurant\+Table} and \doxylink{classMenuItem}{Menu\+Item}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classConfirmOrder_a15d1c04d31e2d6eaae498993649ce29b}\label{classConfirmOrder_a15d1c04d31e2d6eaae498993649ce29b} 
+\index{ConfirmOrder@{ConfirmOrder}!ConfirmOrder@{ConfirmOrder}}
+\index{ConfirmOrder@{ConfirmOrder}!ConfirmOrder@{ConfirmOrder}}
+\doxysubsubsection{\texorpdfstring{ConfirmOrder()}{ConfirmOrder()}}
+{\footnotesize\ttfamily Confirm\+Order\+::\+Confirm\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*}}]{waiter,  }\item[{\mbox{\hyperlink{classColleague}{Colleague}} \texorpdfstring{$\ast$}{*}}]{floor\+Colleague }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classConfirmOrder}{Confirm\+Order} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em waiter} & A pointer to the \doxylink{classWaiter}{Waiter} issuing the confirmation command. \\
+\hline
+{\em floor\+Colleague} & A pointer to the \doxylink{classFloorColleague}{Floor\+Colleague} responsible for confirming the order. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classConfirmOrder_a439ae3a9dc36af30841b9f1d65e43ad4}\label{classConfirmOrder_a439ae3a9dc36af30841b9f1d65e43ad4} 
+\index{ConfirmOrder@{ConfirmOrder}!execute@{execute}}
+\index{execute@{execute}!ConfirmOrder@{ConfirmOrder}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Confirm\+Order\+::execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{rt,  }\item[{\mbox{\hyperlink{classMenuItem}{Menu\+Item}} \texorpdfstring{$\ast$}{*}}]{m = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Execute the confirmation of an order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rt} & A pointer to the \doxylink{classRestaurantTable}{Restaurant\+Table} for which the order is being confirmed. \\
+\hline
+{\em m} & A pointer to the \doxylink{classMenuItem}{Menu\+Item} that is being confirmed. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classCommand_a3891f9919717d37ff5ef6f9b52afb2ac}{Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ConfirmOrder_8h}{Confirm\+Order.\+h}}\item 
+Confirm\+Order.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,152 @@
+\doxysection{Table\+Iterator Class Reference}
+\hypertarget{classTableIterator}{}\label{classTableIterator}\index{TableIterator@{TableIterator}}
+
+
+Represents an iterator for a collection of Restaurant\+Tables.  
+
+
+
+
+{\ttfamily \#include $<$Table\+Iterator.\+h$>$}
+
+Inheritance diagram for Table\+Iterator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTableIterator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTableIterator_a7e1fd746d14e06a6f325424ae7e27e26}{Table\+Iterator}} (std\+::vector$<$ \mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*} $>$ tables)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classTableIterator}{Table\+Iterator}. \end{DoxyCompactList}\item 
+\Hypertarget{classTableIterator_aaa5c6a0697e4edcd1355ec7df62e7f01}\label{classTableIterator_aaa5c6a0697e4edcd1355ec7df62e7f01} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Table\+Iterator} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classTableIterator}{Table\+Iterator}. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTableIterator_ae4d64b07017ce6d43b4a1f48b9e41633}{first}} ()
+\begin{DoxyCompactList}\small\item\em Move the iterator to the first element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTableIterator_a6c094a40f8258a005a8923bc256e0c96}{current\+Item}} ()
+\begin{DoxyCompactList}\small\item\em Get the current \doxylink{classRestaurantTable}{Restaurant\+Table} item in the iteration. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTableIterator_a1ae09bf6ee3087c4337ad8954b74d955}{has\+Next}} ()
+\begin{DoxyCompactList}\small\item\em Check if there is a next item in the collection. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTableIterator_a3859864528bb22807b7cbe48d806b61e}{next}} ()
+\begin{DoxyCompactList}\small\item\em Move the iterator to the next item in the collection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTableIterator_aec53369969e1a9e49d177c1b917cb290}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Reset the iterator to the beginning of the collection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classIterator}{Iterator}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Iterator} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{classIterator}{Iterator} class. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Iterator} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classIterator}{Iterator} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an iterator for a collection of Restaurant\+Tables. 
+
+This class is a concrete implementation of the \doxylink{classIterator}{Iterator} interface, providing the ability to iterate over a collection of Restaurant\+Tables. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTableIterator_a7e1fd746d14e06a6f325424ae7e27e26}\label{classTableIterator_a7e1fd746d14e06a6f325424ae7e27e26} 
+\index{TableIterator@{TableIterator}!TableIterator@{TableIterator}}
+\index{TableIterator@{TableIterator}!TableIterator@{TableIterator}}
+\doxysubsubsection{\texorpdfstring{TableIterator()}{TableIterator()}}
+{\footnotesize\ttfamily Table\+Iterator\+::\+Table\+Iterator (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*} $>$}]{tables }\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{classTableIterator}{Table\+Iterator}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tables} & A vector of \doxylink{classRestaurantTable}{Restaurant\+Table} pointers to iterate over. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTableIterator_a6c094a40f8258a005a8923bc256e0c96}\label{classTableIterator_a6c094a40f8258a005a8923bc256e0c96} 
+\index{TableIterator@{TableIterator}!currentItem@{currentItem}}
+\index{currentItem@{currentItem}!TableIterator@{TableIterator}}
+\doxysubsubsection{\texorpdfstring{currentItem()}{currentItem()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*} Table\+Iterator\+::current\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the current \doxylink{classRestaurantTable}{Restaurant\+Table} item in the iteration. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the current \doxylink{classRestaurantTable}{Restaurant\+Table}. 
+\end{DoxyReturn}
+\Hypertarget{classTableIterator_ae4d64b07017ce6d43b4a1f48b9e41633}\label{classTableIterator_ae4d64b07017ce6d43b4a1f48b9e41633} 
+\index{TableIterator@{TableIterator}!first@{first}}
+\index{first@{first}!TableIterator@{TableIterator}}
+\doxysubsubsection{\texorpdfstring{first()}{first()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} Table\+Iterator\+::first (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Move the iterator to the first element. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the first element in the collection. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIterator_a6ecd871a228073a03139b42d2a65d30e}{Iterator}}.
+
+\Hypertarget{classTableIterator_a1ae09bf6ee3087c4337ad8954b74d955}\label{classTableIterator_a1ae09bf6ee3087c4337ad8954b74d955} 
+\index{TableIterator@{TableIterator}!hasNext@{hasNext}}
+\index{hasNext@{hasNext}!TableIterator@{TableIterator}}
+\doxysubsubsection{\texorpdfstring{hasNext()}{hasNext()}}
+{\footnotesize\ttfamily bool Table\+Iterator\+::has\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if there is a next item in the collection. 
+
+\begin{DoxyReturn}{Returns}
+True if there is a next item, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIterator_ac3a1f5cb124b2b89e4cc41900ffd83f6}{Iterator}}.
+
+\Hypertarget{classTableIterator_a3859864528bb22807b7cbe48d806b61e}\label{classTableIterator_a3859864528bb22807b7cbe48d806b61e} 
+\index{TableIterator@{TableIterator}!next@{next}}
+\index{next@{next}!TableIterator@{TableIterator}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} Table\+Iterator\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Move the iterator to the next item in the collection. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the next element in the collection. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIterator_a88c13390f7f516c1518792368a17cb14}{Iterator}}.
+
+\Hypertarget{classTableIterator_aec53369969e1a9e49d177c1b917cb290}\label{classTableIterator_aec53369969e1a9e49d177c1b917cb290} 
+\index{TableIterator@{TableIterator}!reset@{reset}}
+\index{reset@{reset}!TableIterator@{TableIterator}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Table\+Iterator\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reset the iterator to the beginning of the collection. 
+
+
+
+Implements \mbox{\hyperlink{classIterator_a32850eb6f82277c063362f18ac36affe}{Iterator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TableIterator_8h}{Table\+Iterator.\+h}}\item 
+Table\+Iterator.\+cpp\end{DoxyCompactItemize}

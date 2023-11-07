@@ -1,0 +1,586 @@
+\doxysection{Facade Class Reference}
+\hypertarget{classFacade}{}\label{classFacade}\index{Facade@{Facade}}
+
+
+The \doxylink{classFacade}{Facade} class provides a simplified interface to the complex subsystems of the restaurant.  
+
+
+
+
+{\ttfamily \#include $<$Facade.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classFacade_a8e0f43c604499d9d603236929b3ac488}\label{classFacade_a8e0f43c604499d9d603236929b3ac488} 
+{\bfseries Facade} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classFacade}{Facade} class. \end{DoxyCompactList}\item 
+\Hypertarget{classFacade_a169c5f53bfcb40710dc621f464237c62}\label{classFacade_a169c5f53bfcb40710dc621f464237c62} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Facade} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classFacade}{Facade} class. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classFacade_afa87a2baa25b3819e5d6857f0964ab54}{get\+Seated}} (int customer\+Count)
+\begin{DoxyCompactList}\small\item\em Assigns a table to a group of customers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFacade_abd1f89ea4832923c46a99b14246384e3}{add\+To\+Order}} (int table\+Number, std\+::string item\+Name)
+\begin{DoxyCompactList}\small\item\em Adds an item to a table\textquotesingle{}s order. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFacade_ac3e34c727bf49c534ffa18c6a08b73ee}{confirm\+Order}} (int table\+Number)
+\begin{DoxyCompactList}\small\item\em Confirms the order for a table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFacade_a0a1caa99053242d4071ceb165e3eff23}{generate\+Bill}} (int table\+Number)
+\begin{DoxyCompactList}\small\item\em Generates a bill for a table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFacade_a175a72987576b69d5e27987a6ea976c2}{add\+Customization}} (int table\+Number, std\+::string item\+Name, std\+::string customization)
+\begin{DoxyCompactList}\small\item\em Adds a customization to an item on a table\textquotesingle{}s order. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFacade_a631a10c751e1e87eceaa52fdebdc4e0e}{merge\+Tables}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, int count)
+\begin{DoxyCompactList}\small\item\em Merges two tables together. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFacade_a7b3f42a1d1adea2f4915af0670300ffc}{tip}} (int table\+Number, double tip)
+\begin{DoxyCompactList}\small\item\em Adds a tip to a table\textquotesingle{}s bill. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFacade_a8cb8af0127ade53f2379cf3211760d4e}{split\+Bill}} (int table\+Number, int count)
+\begin{DoxyCompactList}\small\item\em Splits a table\textquotesingle{}s bill into multiple bills. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFacade_abb71ad176dfe200a894d19d5d3b23419}{complain}} (int table\+Number, std\+::string complaint)
+\begin{DoxyCompactList}\small\item\em Registers a complaint from a table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFacade_ab8e343b7904c563e1407d659834d39fe}{pay\+Bill}} (int table\+Number)
+\begin{DoxyCompactList}\small\item\em Pays the bill for a table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFacade_aa7216c6ebb21cb00408cd2ede5b26fdd}{get\+Waiter}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}table)
+\begin{DoxyCompactList}\small\item\em Assigns a waiter to a table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFacade_ae58a2b82fbf78b5f7bba47f07a47ed77}{add\+Table}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}table)
+\begin{DoxyCompactList}\small\item\em Adds a table to the restaurant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFacade_a3c990c29b97328b95872ebd77ce13aa2}{add\+Waiter}} (\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*}waiter)
+\begin{DoxyCompactList}\small\item\em Adds a waiter to the restaurant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFacade_a7d1e64af40d9d4e0d5af919a31854cfb}{remove\+Table}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}table)
+\begin{DoxyCompactList}\small\item\em Removes a table from the restaurant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFacade_a16f8b4d975aff1faf9b61435b0b5cf7d}{nullify\+Table}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}table)
+\begin{DoxyCompactList}\small\item\em Nullifies a table in the restaurant. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classIterator}{Iterator}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classFacade_afe9d1369ccc55a174920d1f0abc93814}{get\+Waiter\+Iterator}} ()
+\begin{DoxyCompactList}\small\item\em Returns an iterator for the waiters in the restaurant. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classIterator}{Iterator}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classFacade_a68423a8aa60fbbc7890ea23f1fd54eae}{get\+Table\+Iterator}} ()
+\begin{DoxyCompactList}\small\item\em Returns an iterator for the tables in the restaurant. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classFacade_a56068e283a7360ab398e36dda4381449}{get\+Table}} (int index)
+\begin{DoxyCompactList}\small\item\em Returns a table by index. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classFacade_a08eae2d787a96901a2fba5b49c105ca8}{get\+Waiter\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of waiters in the restaurant. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classFacade_a1a63327c49f91ff7b802e72c6be9626e}{get\+Tables\+Per\+Waiter}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of tables each waiter is responsible for. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classFacade_aea613f4570b8028c4db47e95d0f6894f}{get\+Total\+Tables}} () const
+\begin{DoxyCompactList}\small\item\em Returns the total number of tables in the restaurant. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTableIterator}{Table\+Iterator}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classFacade_a825011d77e454766f6458cd820b367e6}{create\+Table\+Iterator}} ()
+\begin{DoxyCompactList}\small\item\em Creates a new \doxylink{classTableIterator}{Table\+Iterator}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWaiterIterator}{Waiter\+Iterator}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classFacade_a6d7d96b78ff175602b3c04caf35ab9a8}{create\+Waiter\+Iterator}} ()
+\begin{DoxyCompactList}\small\item\em Creates a new \doxylink{classWaiterIterator}{Waiter\+Iterator}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMenuItem}{Menu\+Item}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classFacade_a387d705c51aadecbe7c42e556cbd0cf3}{get\+Menu\+Item}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Returns a \doxylink{classMenuItem}{Menu\+Item} by name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFacade_aa7b07e9e654ca72bf4e23db05c3d0bd4}{leave\+Table}} (int table\+Number)
+\begin{DoxyCompactList}\small\item\em Removes a table from a waiter\textquotesingle{}s list of tables. \end{DoxyCompactList}\item 
+std\+::string \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classFacade_aa0f0b489c88d3040c0f81f3784e6ddd4}{get\+Waiter\+Names}} ()
+\begin{DoxyCompactList}\small\item\em Returns an array of waiter names. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFacade_aec3a483121dd8dcb399e76be314186a8}{set\+Waiter\+Size}} (int size)
+\begin{DoxyCompactList}\small\item\em Sets the number of waiters in the restaurant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFacade_ac7f747673e79b1fafd9818c5e463c22a}{set\+Tables\+Per\+Waiter}} (int size)
+\begin{DoxyCompactList}\small\item\em Sets the number of tables each waiter is responsible for. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFacade_adda1d562ef206b2478d77c4038ca20f9}{set\+Total\+Tables}} (int size)
+\begin{DoxyCompactList}\small\item\em Sets the total number of tables in the restaurant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFacade_a3b7bf8d61cada43236ae2b6da8f4a654}{set\+Observer}} (\mbox{\hyperlink{classTableObserver}{Table\+Observer}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Sets the observer for the restaurant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFacade_a32d5a9e13a0029e77216246e9839b2a5}{set\+Waiter\+Iterator}} (\mbox{\hyperlink{classWaiterIterator}{Waiter\+Iterator}} \texorpdfstring{$\ast$}{*}waiter\+Iterator)
+\begin{DoxyCompactList}\small\item\em Sets the waiter iterator for the restaurant. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classFacade_a35d2eb43d3fbee30cbb05f24b676dad1}{get\+Table\+Number}} (int customer\+Count)
+\begin{DoxyCompactList}\small\item\em gets the table number \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classFacade}{Facade} class provides a simplified interface to the complex subsystems of the restaurant. 
+
+A facade for the restaurant management system, providing a simplified interface for clients.
+
+The \doxylink{classFacade}{Facade} class is responsible for managing the interactions between the \doxylink{classWaiter}{Waiter}, \doxylink{classRestaurantTable}{Restaurant\+Table}, and \doxylink{classMenuItem}{Menu\+Item} classes. It provides a simplified interface to the complex subsystems of the restaurant, allowing clients to interact with the restaurant without needing to understand the underlying complexity of the system.
+
+\doxylink{classFacade}{Facade} simplifies the complex interactions within the restaurant management system by offering a high-\/level interface for clients. It manages restaurant tables, waiters, and the communication between different colleagues. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classFacade_a175a72987576b69d5e27987a6ea976c2}\label{classFacade_a175a72987576b69d5e27987a6ea976c2} 
+\index{Facade@{Facade}!addCustomization@{addCustomization}}
+\index{addCustomization@{addCustomization}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{addCustomization()}{addCustomization()}}
+{\footnotesize\ttfamily void Facade\+::add\+Customization (\begin{DoxyParamCaption}\item[{int}]{table\+Number,  }\item[{std\+::string}]{item\+Name,  }\item[{std\+::string}]{customization }\end{DoxyParamCaption})}
+
+
+
+Adds a customization to an item on a table\textquotesingle{}s order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Number} & The number of the table. \\
+\hline
+{\em item\+Name} & The name of the item to customize. \\
+\hline
+{\em customization} & The customization to add to the item. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFacade_ae58a2b82fbf78b5f7bba47f07a47ed77}\label{classFacade_ae58a2b82fbf78b5f7bba47f07a47ed77} 
+\index{Facade@{Facade}!addTable@{addTable}}
+\index{addTable@{addTable}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{addTable()}{addTable()}}
+{\footnotesize\ttfamily void Facade\+::add\+Table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{table }\end{DoxyParamCaption})}
+
+
+
+Adds a table to the restaurant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & The table to add. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFacade_abd1f89ea4832923c46a99b14246384e3}\label{classFacade_abd1f89ea4832923c46a99b14246384e3} 
+\index{Facade@{Facade}!addToOrder@{addToOrder}}
+\index{addToOrder@{addToOrder}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{addToOrder()}{addToOrder()}}
+{\footnotesize\ttfamily void Facade\+::add\+To\+Order (\begin{DoxyParamCaption}\item[{int}]{table\+Number,  }\item[{std\+::string}]{item\+Name }\end{DoxyParamCaption})}
+
+
+
+Adds an item to a table\textquotesingle{}s order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Number} & The number of the table. \\
+\hline
+{\em item\+Name} & The name of the item to add to the order. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFacade_a3c990c29b97328b95872ebd77ce13aa2}\label{classFacade_a3c990c29b97328b95872ebd77ce13aa2} 
+\index{Facade@{Facade}!addWaiter@{addWaiter}}
+\index{addWaiter@{addWaiter}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{addWaiter()}{addWaiter()}}
+{\footnotesize\ttfamily void Facade\+::add\+Waiter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*}}]{waiter }\end{DoxyParamCaption})}
+
+
+
+Adds a waiter to the restaurant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em waiter} & The waiter to add. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFacade_abb71ad176dfe200a894d19d5d3b23419}\label{classFacade_abb71ad176dfe200a894d19d5d3b23419} 
+\index{Facade@{Facade}!complain@{complain}}
+\index{complain@{complain}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{complain()}{complain()}}
+{\footnotesize\ttfamily void Facade\+::complain (\begin{DoxyParamCaption}\item[{int}]{table\+Number,  }\item[{std\+::string}]{complaint }\end{DoxyParamCaption})}
+
+
+
+Registers a complaint from a table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Number} & The number of the table. \\
+\hline
+{\em complaint} & The complaint to register. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFacade_ac3e34c727bf49c534ffa18c6a08b73ee}\label{classFacade_ac3e34c727bf49c534ffa18c6a08b73ee} 
+\index{Facade@{Facade}!confirmOrder@{confirmOrder}}
+\index{confirmOrder@{confirmOrder}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{confirmOrder()}{confirmOrder()}}
+{\footnotesize\ttfamily void Facade\+::confirm\+Order (\begin{DoxyParamCaption}\item[{int}]{table\+Number }\end{DoxyParamCaption})}
+
+
+
+Confirms the order for a table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Number} & The number of the table. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFacade_a825011d77e454766f6458cd820b367e6}\label{classFacade_a825011d77e454766f6458cd820b367e6} 
+\index{Facade@{Facade}!createTableIterator@{createTableIterator}}
+\index{createTableIterator@{createTableIterator}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{createTableIterator()}{createTableIterator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTableIterator}{Table\+Iterator}} \texorpdfstring{$\ast$}{*} Facade\+::create\+Table\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a new \doxylink{classTableIterator}{Table\+Iterator}. 
+
+\begin{DoxyReturn}{Returns}
+Table\+Iterator\texorpdfstring{$\ast$}{*} A new \doxylink{classTableIterator}{Table\+Iterator}. 
+\end{DoxyReturn}
+\Hypertarget{classFacade_a6d7d96b78ff175602b3c04caf35ab9a8}\label{classFacade_a6d7d96b78ff175602b3c04caf35ab9a8} 
+\index{Facade@{Facade}!createWaiterIterator@{createWaiterIterator}}
+\index{createWaiterIterator@{createWaiterIterator}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{createWaiterIterator()}{createWaiterIterator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classWaiterIterator}{Waiter\+Iterator}} \texorpdfstring{$\ast$}{*} Facade\+::create\+Waiter\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a new \doxylink{classWaiterIterator}{Waiter\+Iterator}. 
+
+\begin{DoxyReturn}{Returns}
+Waiter\+Iterator\texorpdfstring{$\ast$}{*} A new \doxylink{classWaiterIterator}{Waiter\+Iterator}. 
+\end{DoxyReturn}
+\Hypertarget{classFacade_a0a1caa99053242d4071ceb165e3eff23}\label{classFacade_a0a1caa99053242d4071ceb165e3eff23} 
+\index{Facade@{Facade}!generateBill@{generateBill}}
+\index{generateBill@{generateBill}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{generateBill()}{generateBill()}}
+{\footnotesize\ttfamily void Facade\+::generate\+Bill (\begin{DoxyParamCaption}\item[{int}]{table\+Number }\end{DoxyParamCaption})}
+
+
+
+Generates a bill for a table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Number} & The number of the table. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFacade_a387d705c51aadecbe7c42e556cbd0cf3}\label{classFacade_a387d705c51aadecbe7c42e556cbd0cf3} 
+\index{Facade@{Facade}!getMenuItem@{getMenuItem}}
+\index{getMenuItem@{getMenuItem}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{getMenuItem()}{getMenuItem()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMenuItem}{Menu\+Item}} \texorpdfstring{$\ast$}{*} Facade\+::get\+Menu\+Item (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Returns a \doxylink{classMenuItem}{Menu\+Item} by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the \doxylink{classMenuItem}{Menu\+Item} to return. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Menu\+Item\texorpdfstring{$\ast$}{*} The \doxylink{classMenuItem}{Menu\+Item} with the specified name. 
+\end{DoxyReturn}
+\Hypertarget{classFacade_afa87a2baa25b3819e5d6857f0964ab54}\label{classFacade_afa87a2baa25b3819e5d6857f0964ab54} 
+\index{Facade@{Facade}!getSeated@{getSeated}}
+\index{getSeated@{getSeated}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{getSeated()}{getSeated()}}
+{\footnotesize\ttfamily int Facade\+::get\+Seated (\begin{DoxyParamCaption}\item[{int}]{customer\+Count }\end{DoxyParamCaption})}
+
+
+
+Assigns a table to a group of customers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em customer\+Count} & The number of customers in the group. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFacade_a56068e283a7360ab398e36dda4381449}\label{classFacade_a56068e283a7360ab398e36dda4381449} 
+\index{Facade@{Facade}!getTable@{getTable}}
+\index{getTable@{getTable}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{getTable()}{getTable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*} Facade\+::get\+Table (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Returns a table by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the table to return. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Restaurant\+Table\texorpdfstring{$\ast$}{*} The table at the specified index. 
+\end{DoxyReturn}
+\Hypertarget{classFacade_a68423a8aa60fbbc7890ea23f1fd54eae}\label{classFacade_a68423a8aa60fbbc7890ea23f1fd54eae} 
+\index{Facade@{Facade}!getTableIterator@{getTableIterator}}
+\index{getTableIterator@{getTableIterator}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{getTableIterator()}{getTableIterator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classIterator}{Iterator}} \texorpdfstring{$\ast$}{*} Facade\+::get\+Table\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns an iterator for the tables in the restaurant. 
+
+\begin{DoxyReturn}{Returns}
+Iterator\texorpdfstring{$\ast$}{*} An iterator for the tables in the restaurant. 
+\end{DoxyReturn}
+\Hypertarget{classFacade_a35d2eb43d3fbee30cbb05f24b676dad1}\label{classFacade_a35d2eb43d3fbee30cbb05f24b676dad1} 
+\index{Facade@{Facade}!getTableNumber@{getTableNumber}}
+\index{getTableNumber@{getTableNumber}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{getTableNumber()}{getTableNumber()}}
+{\footnotesize\ttfamily int Facade\+::get\+Table\+Number (\begin{DoxyParamCaption}\item[{int}]{customer\+Count }\end{DoxyParamCaption})}
+
+
+
+gets the table number 
+
+\begin{DoxyReturn}{Returns}
+int the table number 
+\end{DoxyReturn}
+\Hypertarget{classFacade_a1a63327c49f91ff7b802e72c6be9626e}\label{classFacade_a1a63327c49f91ff7b802e72c6be9626e} 
+\index{Facade@{Facade}!getTablesPerWaiter@{getTablesPerWaiter}}
+\index{getTablesPerWaiter@{getTablesPerWaiter}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{getTablesPerWaiter()}{getTablesPerWaiter()}}
+{\footnotesize\ttfamily int Facade\+::get\+Tables\+Per\+Waiter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of tables each waiter is responsible for. 
+
+\begin{DoxyReturn}{Returns}
+int The number of tables each waiter is responsible for. 
+\end{DoxyReturn}
+\Hypertarget{classFacade_aea613f4570b8028c4db47e95d0f6894f}\label{classFacade_aea613f4570b8028c4db47e95d0f6894f} 
+\index{Facade@{Facade}!getTotalTables@{getTotalTables}}
+\index{getTotalTables@{getTotalTables}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{getTotalTables()}{getTotalTables()}}
+{\footnotesize\ttfamily int Facade\+::get\+Total\+Tables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the total number of tables in the restaurant. 
+
+\begin{DoxyReturn}{Returns}
+int The total number of tables in the restaurant. 
+\end{DoxyReturn}
+\Hypertarget{classFacade_aa7216c6ebb21cb00408cd2ede5b26fdd}\label{classFacade_aa7216c6ebb21cb00408cd2ede5b26fdd} 
+\index{Facade@{Facade}!getWaiter@{getWaiter}}
+\index{getWaiter@{getWaiter}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{getWaiter()}{getWaiter()}}
+{\footnotesize\ttfamily void Facade\+::get\+Waiter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{table }\end{DoxyParamCaption})}
+
+
+
+Assigns a waiter to a table. 
+
+This function is called internally by \doxylink{classFacade_afa87a2baa25b3819e5d6857f0964ab54}{get\+Seated()} and should not be called directly by clients.
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & The table to assign a waiter to. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFacade_afe9d1369ccc55a174920d1f0abc93814}\label{classFacade_afe9d1369ccc55a174920d1f0abc93814} 
+\index{Facade@{Facade}!getWaiterIterator@{getWaiterIterator}}
+\index{getWaiterIterator@{getWaiterIterator}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{getWaiterIterator()}{getWaiterIterator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classIterator}{Iterator}} \texorpdfstring{$\ast$}{*} Facade\+::get\+Waiter\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns an iterator for the waiters in the restaurant. 
+
+\begin{DoxyReturn}{Returns}
+Iterator\texorpdfstring{$\ast$}{*} An iterator for the waiters in the restaurant. 
+\end{DoxyReturn}
+\Hypertarget{classFacade_aa0f0b489c88d3040c0f81f3784e6ddd4}\label{classFacade_aa0f0b489c88d3040c0f81f3784e6ddd4} 
+\index{Facade@{Facade}!getWaiterNames@{getWaiterNames}}
+\index{getWaiterNames@{getWaiterNames}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{getWaiterNames()}{getWaiterNames()}}
+{\footnotesize\ttfamily std\+::string \texorpdfstring{$\ast$}{*} Facade\+::get\+Waiter\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns an array of waiter names. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string\texorpdfstring{$\ast$}{*} An array of waiter names. 
+\end{DoxyReturn}
+\Hypertarget{classFacade_a08eae2d787a96901a2fba5b49c105ca8}\label{classFacade_a08eae2d787a96901a2fba5b49c105ca8} 
+\index{Facade@{Facade}!getWaiterSize@{getWaiterSize}}
+\index{getWaiterSize@{getWaiterSize}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{getWaiterSize()}{getWaiterSize()}}
+{\footnotesize\ttfamily int Facade\+::get\+Waiter\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of waiters in the restaurant. 
+
+\begin{DoxyReturn}{Returns}
+int The number of waiters in the restaurant. 
+\end{DoxyReturn}
+\Hypertarget{classFacade_aa7b07e9e654ca72bf4e23db05c3d0bd4}\label{classFacade_aa7b07e9e654ca72bf4e23db05c3d0bd4} 
+\index{Facade@{Facade}!leaveTable@{leaveTable}}
+\index{leaveTable@{leaveTable}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{leaveTable()}{leaveTable()}}
+{\footnotesize\ttfamily void Facade\+::leave\+Table (\begin{DoxyParamCaption}\item[{int}]{table\+Number }\end{DoxyParamCaption})}
+
+
+
+Removes a table from a waiter\textquotesingle{}s list of tables. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Number} & The number of the table to remove. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFacade_a631a10c751e1e87eceaa52fdebdc4e0e}\label{classFacade_a631a10c751e1e87eceaa52fdebdc4e0e} 
+\index{Facade@{Facade}!mergeTables@{mergeTables}}
+\index{mergeTables@{mergeTables}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{mergeTables()}{mergeTables()}}
+{\footnotesize\ttfamily void Facade\+::merge\+Tables (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{rt,  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+Merges two tables together. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rt} & The table to merge with. \\
+\hline
+{\em count} & The number of tables to merge. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFacade_a16f8b4d975aff1faf9b61435b0b5cf7d}\label{classFacade_a16f8b4d975aff1faf9b61435b0b5cf7d} 
+\index{Facade@{Facade}!nullifyTable@{nullifyTable}}
+\index{nullifyTable@{nullifyTable}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{nullifyTable()}{nullifyTable()}}
+{\footnotesize\ttfamily void Facade\+::nullify\+Table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{table }\end{DoxyParamCaption})}
+
+
+
+Nullifies a table in the restaurant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & The table to nullify. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFacade_ab8e343b7904c563e1407d659834d39fe}\label{classFacade_ab8e343b7904c563e1407d659834d39fe} 
+\index{Facade@{Facade}!payBill@{payBill}}
+\index{payBill@{payBill}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{payBill()}{payBill()}}
+{\footnotesize\ttfamily void Facade\+::pay\+Bill (\begin{DoxyParamCaption}\item[{int}]{table\+Number }\end{DoxyParamCaption})}
+
+
+
+Pays the bill for a table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Number} & The number of the table. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFacade_a7d1e64af40d9d4e0d5af919a31854cfb}\label{classFacade_a7d1e64af40d9d4e0d5af919a31854cfb} 
+\index{Facade@{Facade}!removeTable@{removeTable}}
+\index{removeTable@{removeTable}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{removeTable()}{removeTable()}}
+{\footnotesize\ttfamily void Facade\+::remove\+Table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{table }\end{DoxyParamCaption})}
+
+
+
+Removes a table from the restaurant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & The table to remove. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFacade_a3b7bf8d61cada43236ae2b6da8f4a654}\label{classFacade_a3b7bf8d61cada43236ae2b6da8f4a654} 
+\index{Facade@{Facade}!setObserver@{setObserver}}
+\index{setObserver@{setObserver}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{setObserver()}{setObserver()}}
+{\footnotesize\ttfamily void Facade\+::set\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTableObserver}{Table\+Observer}} \texorpdfstring{$\ast$}{*}}]{observer }\end{DoxyParamCaption})}
+
+
+
+Sets the observer for the restaurant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & The observer for the restaurant. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFacade_ac7f747673e79b1fafd9818c5e463c22a}\label{classFacade_ac7f747673e79b1fafd9818c5e463c22a} 
+\index{Facade@{Facade}!setTablesPerWaiter@{setTablesPerWaiter}}
+\index{setTablesPerWaiter@{setTablesPerWaiter}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{setTablesPerWaiter()}{setTablesPerWaiter()}}
+{\footnotesize\ttfamily void Facade\+::set\+Tables\+Per\+Waiter (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Sets the number of tables each waiter is responsible for. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The number of tables each waiter is responsible for. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFacade_adda1d562ef206b2478d77c4038ca20f9}\label{classFacade_adda1d562ef206b2478d77c4038ca20f9} 
+\index{Facade@{Facade}!setTotalTables@{setTotalTables}}
+\index{setTotalTables@{setTotalTables}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{setTotalTables()}{setTotalTables()}}
+{\footnotesize\ttfamily void Facade\+::set\+Total\+Tables (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Sets the total number of tables in the restaurant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The total number of tables in the restaurant. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFacade_a32d5a9e13a0029e77216246e9839b2a5}\label{classFacade_a32d5a9e13a0029e77216246e9839b2a5} 
+\index{Facade@{Facade}!setWaiterIterator@{setWaiterIterator}}
+\index{setWaiterIterator@{setWaiterIterator}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{setWaiterIterator()}{setWaiterIterator()}}
+{\footnotesize\ttfamily void Facade\+::set\+Waiter\+Iterator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWaiterIterator}{Waiter\+Iterator}} \texorpdfstring{$\ast$}{*}}]{waiter\+Iterator }\end{DoxyParamCaption})}
+
+
+
+Sets the waiter iterator for the restaurant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em waiter\+Iterator} & The waiter iterator for the restaurant. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFacade_aec3a483121dd8dcb399e76be314186a8}\label{classFacade_aec3a483121dd8dcb399e76be314186a8} 
+\index{Facade@{Facade}!setWaiterSize@{setWaiterSize}}
+\index{setWaiterSize@{setWaiterSize}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{setWaiterSize()}{setWaiterSize()}}
+{\footnotesize\ttfamily void Facade\+::set\+Waiter\+Size (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Sets the number of waiters in the restaurant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The number of waiters in the restaurant. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFacade_a8cb8af0127ade53f2379cf3211760d4e}\label{classFacade_a8cb8af0127ade53f2379cf3211760d4e} 
+\index{Facade@{Facade}!splitBill@{splitBill}}
+\index{splitBill@{splitBill}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{splitBill()}{splitBill()}}
+{\footnotesize\ttfamily void Facade\+::split\+Bill (\begin{DoxyParamCaption}\item[{int}]{table\+Number,  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+Splits a table\textquotesingle{}s bill into multiple bills. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Number} & The number of the table. \\
+\hline
+{\em count} & The number of bills to split the table\textquotesingle{}s bill into. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFacade_a7b3f42a1d1adea2f4915af0670300ffc}\label{classFacade_a7b3f42a1d1adea2f4915af0670300ffc} 
+\index{Facade@{Facade}!tip@{tip}}
+\index{tip@{tip}!Facade@{Facade}}
+\doxysubsubsection{\texorpdfstring{tip()}{tip()}}
+{\footnotesize\ttfamily void Facade\+::tip (\begin{DoxyParamCaption}\item[{int}]{table\+Number,  }\item[{double}]{tip }\end{DoxyParamCaption})}
+
+
+
+Adds a tip to a table\textquotesingle{}s bill. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Number} & The number of the table. \\
+\hline
+{\em tip} & The amount of the tip. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Facade_8h}{Facade.\+h}}\item 
+Facade.\+cpp\end{DoxyCompactItemize}

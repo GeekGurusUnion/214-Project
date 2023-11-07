@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+*.yml
+main.dSYM/*
+
+unitTests_Iwan.o.dSYM/Contents/Info.plist
+
+build/*

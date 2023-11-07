@@ -1,0 +1,132 @@
+\doxysection{ingredient\+Handler Class Reference}
+\hypertarget{classingredientHandler}{}\label{classingredientHandler}\index{ingredientHandler@{ingredientHandler}}
+
+
+Abstract base class for handling ingredient customizations.  
+
+
+
+
+{\ttfamily \#include $<$ca\+\_\+ingredient\+Handler.\+h$>$}
+
+Inheritance diagram for ingredient\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classingredientHandler}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classingredientHandler_a86ed4df5538286fec60378d2debefd99}{ingredient\+Handler}} (const std\+::string \&\mbox{\hyperlink{classingredientHandler_a23164e138a057f2bfd83cf9dc81c6177}{ingredient}})
+\begin{DoxyCompactList}\small\item\em Constructor that initializes the ingredient to be handled. \end{DoxyCompactList}\item 
+\Hypertarget{classingredientHandler_ace7ba57bbbed01eae01ae75f63d47fd9}\label{classingredientHandler_ace7ba57bbbed01eae01ae75f63d47fd9} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}ingredient\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classingredientHandler_a05f5a6779424a2832ee8b1efeb233104}{can\+Handle}} (const std\+::string \&customization)=0
+\begin{DoxyCompactList}\small\item\em Checks if the handler can handle the given customization. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classingredientHandler_a7d15d83fbe8e9b1c51ae38e9eb5f5bee}{handle}} (\mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}} \texorpdfstring{$\ast$}{*}d, const std\+::string \&customization)=0
+\begin{DoxyCompactList}\small\item\em Handles the given customization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classca__handler}{ca\+\_\+handler}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries ca\+\_\+handler} ()
+\begin{DoxyCompactList}\small\item\em Constructs a handler object. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}ca\+\_\+handler} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the handler object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classca__handler_aaf776f301189321d5a9b34f23ff086e7}{set\+Next\+Handler}} (\mbox{\hyperlink{classca__handler}{ca\+\_\+handler}} \texorpdfstring{$\ast$}{*}next)
+\begin{DoxyCompactList}\small\item\em Sets the next handler in the chain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classingredientHandler_a23164e138a057f2bfd83cf9dc81c6177}\label{classingredientHandler_a23164e138a057f2bfd83cf9dc81c6177} 
+std\+::string {\bfseries ingredient}
+\begin{DoxyCompactList}\small\item\em The ingredient to be handled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classca__handler}{ca\+\_\+handler}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classca__handler}{ca\+\_\+handler}} \texorpdfstring{$\ast$}{*} {\bfseries next\+Handler}
+\begin{DoxyCompactList}\small\item\em Pointer to the next handler in the chain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for handling ingredient customizations. 
+
+This class is part of the chain of command pattern which delegates the customization handling to the appropriate handler in the chain. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classingredientHandler_a86ed4df5538286fec60378d2debefd99}\label{classingredientHandler_a86ed4df5538286fec60378d2debefd99} 
+\index{ingredientHandler@{ingredientHandler}!ingredientHandler@{ingredientHandler}}
+\index{ingredientHandler@{ingredientHandler}!ingredientHandler@{ingredientHandler}}
+\doxysubsubsection{\texorpdfstring{ingredientHandler()}{ingredientHandler()}}
+{\footnotesize\ttfamily ingredient\+Handler\+::ingredient\+Handler (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ingredient }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor that initializes the ingredient to be handled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ingredient} & The ingredient to be handled. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classingredientHandler_a05f5a6779424a2832ee8b1efeb233104}\label{classingredientHandler_a05f5a6779424a2832ee8b1efeb233104} 
+\index{ingredientHandler@{ingredientHandler}!canHandle@{canHandle}}
+\index{canHandle@{canHandle}!ingredientHandler@{ingredientHandler}}
+\doxysubsubsection{\texorpdfstring{canHandle()}{canHandle()}}
+{\footnotesize\ttfamily virtual bool ingredient\+Handler\+::can\+Handle (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{customization }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Checks if the handler can handle the given customization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em customization} & The customization to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the handler can handle the customization, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classca__handler_a01eafa2536eb5d839a01109f6408d3a9}{ca\+\_\+handler}}.
+
+
+
+Implemented in \mbox{\hyperlink{classAddingredientHandler_a085384f412ecd04868b6216778a26c7d}{Addingredient\+Handler}}, and \mbox{\hyperlink{classRemoveingredientHandler_aa784ac573bbae77d75df371a80b6483a}{Removeingredient\+Handler}}.
+
+\Hypertarget{classingredientHandler_a7d15d83fbe8e9b1c51ae38e9eb5f5bee}\label{classingredientHandler_a7d15d83fbe8e9b1c51ae38e9eb5f5bee} 
+\index{ingredientHandler@{ingredientHandler}!handle@{handle}}
+\index{handle@{handle}!ingredientHandler@{ingredientHandler}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily virtual void ingredient\+Handler\+::handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}} \texorpdfstring{$\ast$}{*}}]{d,  }\item[{const std\+::string \&}]{customization }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Handles the given customization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & Pointer to the dish being customized. \\
+\hline
+{\em customization} & The customization to be handled. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classca__handler_a7d514eddede8845a2c566e499e2db3a2}{ca\+\_\+handler}}.
+
+
+
+Implemented in \mbox{\hyperlink{classAddingredientHandler_a09316646eba4526189d3bc6f6dd32c0b}{Addingredient\+Handler}}, and \mbox{\hyperlink{classRemoveingredientHandler_aa992fed0a2c1758d99ab25a45458bb04}{Removeingredient\+Handler}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ca\+\_\+ingredient\+Handler.\+h\end{DoxyCompactItemize}

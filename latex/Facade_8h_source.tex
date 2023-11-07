@@ -1,0 +1,116 @@
+\doxysection{Facade.\+h}
+\hypertarget{Facade_8h_source}{}\label{Facade_8h_source}\mbox{\hyperlink{Facade_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FACADE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FACADE\_H}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Facade\ (Facade)\ }}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ ConcreteAggregate\ (Iterator)\ }}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RestaurantTable_8h}{RestaurantTable.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Waiter_8h}{Waiter.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{StateOccupied_8h}{StateOccupied.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ConcreteMediator_8h}{ConcreteMediator.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{FloorColleague_8h}{FloorColleague.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{KitchenColleague_8h}{KitchenColleague.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TableObserver_8h}{TableObserver.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//Forward\ declarations}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classWaiterIterator}{WaiterIterator}};}
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTableIterator}{TableIterator}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFacade}{Facade}}\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ \ \ \ \ std::vector<RestaurantTable*>\ tables\ =\ std::vector<RestaurantTable*>();}
+\DoxyCodeLine{00041\ \ \ \ \ std::vector<Waiter*>\ waiters\ =\ std::vector<Waiter*>();}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classIterator}{Iterator}}*\ waiterIterator;}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classIterator}{Iterator}}*\ tableIterator;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classMediator}{Mediator}}*\ mediator\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classConcreteMediator}{ConcreteMediator}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{classColleague}{Colleague}}*\ floorColleague\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classFloorColleague}{FloorColleague}}(mediator);}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{classColleague}{Colleague}}*\ kitchenColleague\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classKitchenColleague}{KitchenColleague}}(mediator);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ waiterSize\ =\ 4;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{int}\ tablesPerWaiter\ =\ 3;}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ totalTables\ =\ 12;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classTableObserver}{TableObserver}}*\ observer;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ std::string\ waiterNames[4]\ =\ \{\textcolor{stringliteral}{"{}John"{}},\ \textcolor{stringliteral}{"{}Jane"{}},\ \textcolor{stringliteral}{"{}Jack"{}},\ \textcolor{stringliteral}{"{}Jill"{}}\};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{classFacade_a8e0f43c604499d9d603236929b3ac488}{Facade}}();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{classFacade_a169c5f53bfcb40710dc621f464237c62}{\string~Facade}}();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classFacade_afa87a2baa25b3819e5d6857f0964ab54}{getSeated}}(\textcolor{keywordtype}{int}\ customerCount);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFacade_abd1f89ea4832923c46a99b14246384e3}{addToOrder}}(\textcolor{keywordtype}{int}\ tableNumber,\ std::string\ itemName);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFacade_ac3e34c727bf49c534ffa18c6a08b73ee}{confirmOrder}}(\textcolor{keywordtype}{int}\ tableNumber);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFacade_a0a1caa99053242d4071ceb165e3eff23}{generateBill}}(\textcolor{keywordtype}{int}\ tableNumber);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFacade_a175a72987576b69d5e27987a6ea976c2}{addCustomization}}(\textcolor{keywordtype}{int}\ tableNumber,\ std::string\ itemName,\ std::string\ customization);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFacade_a631a10c751e1e87eceaa52fdebdc4e0e}{mergeTables}}(\mbox{\hyperlink{classRestaurantTable}{RestaurantTable}}*\ rt,\ \textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFacade_a7b3f42a1d1adea2f4915af0670300ffc}{tip}}(\textcolor{keywordtype}{int}\ tableNumber,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classFacade_a7b3f42a1d1adea2f4915af0670300ffc}{tip}});}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFacade_a8cb8af0127ade53f2379cf3211760d4e}{splitBill}}(\textcolor{keywordtype}{int}\ tableNumber,\ \textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFacade_abb71ad176dfe200a894d19d5d3b23419}{complain}}(\textcolor{keywordtype}{int}\ tableNumber,\ std::string\ complaint);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFacade_ab8e343b7904c563e1407d659834d39fe}{payBill}}(\textcolor{keywordtype}{int}\ tableNumber);}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFacade_aa7216c6ebb21cb00408cd2ede5b26fdd}{getWaiter}}(\mbox{\hyperlink{classRestaurantTable}{RestaurantTable}}*\ table);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFacade_ae58a2b82fbf78b5f7bba47f07a47ed77}{addTable}}(\mbox{\hyperlink{classRestaurantTable}{RestaurantTable}}*\ table);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFacade_a3c990c29b97328b95872ebd77ce13aa2}{addWaiter}}(\mbox{\hyperlink{classWaiter}{Waiter}}*\ waiter);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFacade_a7d1e64af40d9d4e0d5af919a31854cfb}{removeTable}}(\mbox{\hyperlink{classRestaurantTable}{RestaurantTable}}*\ table);}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFacade_a16f8b4d975aff1faf9b61435b0b5cf7d}{nullifyTable}}(\mbox{\hyperlink{classRestaurantTable}{RestaurantTable}}*\ table);}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00188\ \ \ \ \ \mbox{\hyperlink{classIterator}{Iterator}}*\ \mbox{\hyperlink{classFacade_afe9d1369ccc55a174920d1f0abc93814}{getWaiterIterator}}();}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00195\ \ \ \ \ \mbox{\hyperlink{classIterator}{Iterator}}*\ \mbox{\hyperlink{classFacade_a68423a8aa60fbbc7890ea23f1fd54eae}{getTableIterator}}();}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00203\ \ \ \ \ \mbox{\hyperlink{classRestaurantTable}{RestaurantTable}}*\ \mbox{\hyperlink{classFacade_a56068e283a7360ab398e36dda4381449}{getTable}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classFacade_a08eae2d787a96901a2fba5b49c105ca8}{getWaiterSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classFacade_a1a63327c49f91ff7b802e72c6be9626e}{getTablesPerWaiter}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classFacade_aea613f4570b8028c4db47e95d0f6894f}{getTotalTables}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00231\ \ \ \ \ \mbox{\hyperlink{classTableIterator}{TableIterator}}*\ \mbox{\hyperlink{classFacade_a825011d77e454766f6458cd820b367e6}{createTableIterator}}();}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00238\ \ \ \ \ \mbox{\hyperlink{classWaiterIterator}{WaiterIterator}}*\ \mbox{\hyperlink{classFacade_a6d7d96b78ff175602b3c04caf35ab9a8}{createWaiterIterator}}();}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00246\ \ \ \ \ \mbox{\hyperlink{classMenuItem}{MenuItem}}*\ \mbox{\hyperlink{classFacade_a387d705c51aadecbe7c42e556cbd0cf3}{getMenuItem}}(std::string\ name);}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFacade_aa7b07e9e654ca72bf4e23db05c3d0bd4}{leaveTable}}(\textcolor{keywordtype}{int}\ tableNumber);}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{comment}{//\ *\ testing\ *\ //}}
+\DoxyCodeLine{00261\ \ \ \ \ std::string*\ \mbox{\hyperlink{classFacade_aa0f0b489c88d3040c0f81f3784e6ddd4}{getWaiterNames}}();}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFacade_aec3a483121dd8dcb399e76be314186a8}{setWaiterSize}}(\textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFacade_ac7f747673e79b1fafd9818c5e463c22a}{setTablesPerWaiter}}(\textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFacade_adda1d562ef206b2478d77c4038ca20f9}{setTotalTables}}(\textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFacade_a3b7bf8d61cada43236ae2b6da8f4a654}{setObserver}}(\mbox{\hyperlink{classTableObserver}{TableObserver}}*\ observer);}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFacade_a32d5a9e13a0029e77216246e9839b2a5}{setWaiterIterator}}(\mbox{\hyperlink{classWaiterIterator}{WaiterIterator}}*\ waiterIterator);}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classFacade_a35d2eb43d3fbee30cbb05f24b676dad1}{getTableNumber}}(\textcolor{keywordtype}{int}\ customerCount);}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{comment}{//\ *\ end\ of\ testing\ *\ //}}
+\DoxyCodeLine{00305\ \};}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FACADE\_H}}
+
+\end{DoxyCode}

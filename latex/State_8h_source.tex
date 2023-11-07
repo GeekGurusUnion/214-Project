@@ -1,0 +1,44 @@
+\doxysection{State.\+h}
+\hypertarget{State_8h_source}{}\label{State_8h_source}\mbox{\hyperlink{State_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ STATE\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ STATE\_H\_}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ State\ (State)\ [interface]}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <iostream>}\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ Forward\ declaration}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRestaurantTable}{RestaurantTable}};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classState}{State}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{classRestaurantTable}{RestaurantTable}}*\ \mbox{\hyperlink{classState_a5cb8db60494c62dc37110d4caf342562}{table}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \ \ \ \ std::string\ \mbox{\hyperlink{classState_afd88ef793e9d04c6f46e7dbc34cb8106}{stateName}};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classState_a09e8d40a375dc6ff74019db7ec0aa170}{State}}(\mbox{\hyperlink{classRestaurantTable}{RestaurantTable}}*\ \mbox{\hyperlink{classState_a5cb8db60494c62dc37110d4caf342562}{table}});}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classState_afab438d92b90dc18d194dbd9c9c8bab3}{\string~State}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classState_ae0d7049f1e830ab5fb1744de6181c366}{setTable}}(\mbox{\hyperlink{classRestaurantTable}{RestaurantTable}}*\ \mbox{\hyperlink{classState_a5cb8db60494c62dc37110d4caf342562}{table}});}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classState_a19727806f698660a592a3848b4bd719a}{serve}}()\ =\ 0;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classState_a6cd42dcaf83a233b60085d9f89856aa1}{occupy}}()\ =\ 0;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classState_afc2cd25bc62c46a72a64207440a60057}{empty}}()\ =\ 0;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classState_afde052da15358f5c3bf4b6d73904e6fc}{handleOrder}}()\ =\ 0;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classState_a60e2bd2c8bc2ade13c63c3b39da9fa57}{getStateName}}()\ =\ 0;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classState_a4765cc7f1cecaad25a4a70f5a603cc20}{isOccupied}}()\ =\ 0;}
+\DoxyCodeLine{00084\ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{StateEmpty_8h}{StateEmpty.h}}"{}}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{StateOccupied_8h}{StateOccupied.h}}"{}}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{StateServe_8h}{StateServe.h}}"{}}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ STATE\_H\_}}
+
+\end{DoxyCode}

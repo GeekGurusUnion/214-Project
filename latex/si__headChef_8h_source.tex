@@ -1,0 +1,39 @@
+\doxysection{si\+\_\+head\+Chef.\+h}
+\hypertarget{si__headChef_8h_source}{}\label{si__headChef_8h_source}\mbox{\hyperlink{si__headChef_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{fa__dishFactory_8h}{fa\_dishFactory.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ca__handler_8h}{ca\_handler.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}ca\_ingredientHandler.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classad__RestaurantOrder}{ad\_RestaurantOrder}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classsi__headChef}{si\_headChef}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classca__handler}{ca\_handler}}*\ startOfChain;\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classsi__headChef}{si\_headChef}}*\ instance;\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classsi__headChef}{si\_headChef}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classsi__headChef}{si\_headChef}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classsi__headChef}{si\_headChef}}\&\ hChef)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classsi__headChef}{si\_headChef}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classsi__headChef}{si\_headChef}}\&\ hChef)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classsi__headChef_a8e26cddd4110bc7d79b8226dcd5f96be}{\string~si\_headChef}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classsi__headChef_ab4e7ecb8ae90c9db3ff519648a8f64bd}{destroyInstance}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classsi__headChef}{si\_headChef}}*\ \mbox{\hyperlink{classsi__headChef_ab2dab262b5b7864063999ec0eae09adb}{getInstance}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{classca__handler}{ca\_handler}}*\ \mbox{\hyperlink{classsi__headChef_a1a488f3f5b3afea60d5604727ac127f4}{createHandlerChain}}();}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{classfa__dish}{fa\_dish}}*\ \mbox{\hyperlink{classsi__headChef_ae81fdf0aecb0ebfc7bd0c470abd94145}{prepareDish}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classad__RestaurantOrder}{ad\_RestaurantOrder}}\&\ order);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{classfa__dishFactory}{fa\_dishFactory}}\ *\mbox{\hyperlink{classsi__headChef_a4b73215108446b310e86853797706cba}{selectBurgerFactory}}(\textcolor{keyword}{const}\ std::string\ \&item);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{classfa__dishFactory}{fa\_dishFactory}}\ *\mbox{\hyperlink{classsi__headChef_a6287c79145bba8b86354455a8177251f}{selectPizzaFactory}}(\textcolor{keyword}{const}\ std::string\ \&item);}
+\DoxyCodeLine{00090\ \};}
+
+\end{DoxyCode}

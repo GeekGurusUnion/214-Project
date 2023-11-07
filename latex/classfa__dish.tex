@@ -1,0 +1,102 @@
+\doxysection{fa\+\_\+dish Class Reference}
+\hypertarget{classfa__dish}{}\label{classfa__dish}\index{fa\_dish@{fa\_dish}}
+
+
+Abstract class representing a dish with customizable components.  
+
+
+
+
+{\ttfamily \#include $<$fa\+\_\+dish.\+h$>$}
+
+Inheritance diagram for fa\+\_\+dish\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.295082cm]{classfa__dish}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfa__dish_ad6ec402b9f9674c00d9993102719bf02}\label{classfa__dish_ad6ec402b9f9674c00d9993102719bf02} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}fa\+\_\+dish} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classfa__dish_aec33189257b0c7a7dd673d6374cfb2f0}{get\+Description}} () const =0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to get the description of the dish. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfa__dish_a6f011b05ec7232c15a9df2f2df2050f3}{add\+Component}} (const std\+::string \&component)
+\begin{DoxyCompactList}\small\item\em Adds a component to the dish. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfa__dish_a71400b890dc6558f780f8f1018517ff5}{remove\+Component}} (const std\+::string \&component)
+\begin{DoxyCompactList}\small\item\em Removes a component from the dish. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfa__dish_a12e2ee16f3f6f7430f4181c22f192090}\label{classfa__dish_a12e2ee16f3f6f7430f4181c22f192090} 
+std\+::vector$<$ std\+::string $>$ {\bfseries components}
+\begin{DoxyCompactList}\small\item\em List of components in the dish. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class representing a dish with customizable components. 
+
+This class defines the basic operations like adding and removing components for a dish. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfa__dish_a6f011b05ec7232c15a9df2f2df2050f3}\label{classfa__dish_a6f011b05ec7232c15a9df2f2df2050f3} 
+\index{fa\_dish@{fa\_dish}!addComponent@{addComponent}}
+\index{addComponent@{addComponent}!fa\_dish@{fa\_dish}}
+\doxysubsubsection{\texorpdfstring{addComponent()}{addComponent()}}
+{\footnotesize\ttfamily void fa\+\_\+dish\+::add\+Component (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{component }\end{DoxyParamCaption})}
+
+
+
+Adds a component to the dish. 
+
+This function adds a given component to the list of components for this dish.
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & A string representing the component to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfa__dish_aec33189257b0c7a7dd673d6374cfb2f0}\label{classfa__dish_aec33189257b0c7a7dd673d6374cfb2f0} 
+\index{fa\_dish@{fa\_dish}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!fa\_dish@{fa\_dish}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily virtual std\+::string fa\+\_\+dish\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to get the description of the dish. 
+
+This function is intended to be overridden by derived classes to provide a detailed description of the dish including its components.
+
+\begin{DoxyReturn}{Returns}
+A string representing the description of the dish. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classfa__burger_a16569ff4576126d0fb7a51eb02142016}{fa\+\_\+burger}}, and \mbox{\hyperlink{classfa__Pizza_a79fa263375050206bc119fdb6e66d9c6}{fa\+\_\+\+Pizza}}.
+
+\Hypertarget{classfa__dish_a71400b890dc6558f780f8f1018517ff5}\label{classfa__dish_a71400b890dc6558f780f8f1018517ff5} 
+\index{fa\_dish@{fa\_dish}!removeComponent@{removeComponent}}
+\index{removeComponent@{removeComponent}!fa\_dish@{fa\_dish}}
+\doxysubsubsection{\texorpdfstring{removeComponent()}{removeComponent()}}
+{\footnotesize\ttfamily void fa\+\_\+dish\+::remove\+Component (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{component }\end{DoxyParamCaption})}
+
+
+
+Removes a component from the dish. 
+
+This function removes a given component from the list of components for this dish.
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & A string representing the component to be removed. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fa__dish_8h}{fa\+\_\+dish.\+h}}\item 
+fa\+\_\+dish.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,56 @@
+\doxysection{ca\+\_\+ingredient\+Handler.\+h}
+\hypertarget{ca__ingredientHandler_8h_source}{}\label{ca__ingredientHandler_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ca__handler_8h}{ca\_handler.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{fa__burger_8h}{fa\_burger.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classingredientHandler}{ingredientHandler}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classca__handler}{ca\_handler}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00023\ \ \ \ \ std::string\ \mbox{\hyperlink{classingredientHandler_a23164e138a057f2bfd83cf9dc81c6177}{ingredient}};\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classingredientHandler_a86ed4df5538286fec60378d2debefd99}{ingredientHandler}}(\textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classingredientHandler_a23164e138a057f2bfd83cf9dc81c6177}{ingredient}})\ :\ \mbox{\hyperlink{classingredientHandler_a23164e138a057f2bfd83cf9dc81c6177}{ingredient}}(\mbox{\hyperlink{classingredientHandler_a23164e138a057f2bfd83cf9dc81c6177}{ingredient}})\ \{\}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classingredientHandler_ace7ba57bbbed01eae01ae75f63d47fd9}{\string~ingredientHandler}}()\ \{\}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classingredientHandler_a05f5a6779424a2832ee8b1efeb233104}{canHandle}}(\textcolor{keyword}{const}\ std::string\ \&customization)\ =\ 0;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classingredientHandler_a7d15d83fbe8e9b1c51ae38e9eb5f5bee}{handle}}(\mbox{\hyperlink{classfa__dish}{fa\_dish}}\ *d,\ \textcolor{keyword}{const}\ std::string\ \&customization)\ =\ 0;}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classAddingredientHandler}{AddingredientHandler}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classingredientHandler}{ingredientHandler}}\ \{}
+\DoxyCodeLine{00059\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{classAddingredientHandler_a441c5071b5a2646113318a46ba31c220}{AddingredientHandler}}(\textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classingredientHandler_a23164e138a057f2bfd83cf9dc81c6177}{ingredient}})\ :\ \mbox{\hyperlink{classingredientHandler}{ingredientHandler}}(\mbox{\hyperlink{classingredientHandler_a23164e138a057f2bfd83cf9dc81c6177}{ingredient}})\ \{\}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classAddingredientHandler_a085384f412ecd04868b6216778a26c7d}{canHandle}}(\textcolor{keyword}{const}\ std::string\ \&customization)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ customization\ ==\ \textcolor{stringliteral}{"{}Extra"{}}\ +\ \mbox{\hyperlink{classingredientHandler_a23164e138a057f2bfd83cf9dc81c6177}{ingredient}};}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAddingredientHandler_a09316646eba4526189d3bc6f6dd32c0b}{handle}}(\mbox{\hyperlink{classfa__dish}{fa\_dish}}\ *d,\ \textcolor{keyword}{const}\ std::string\ \&customization)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classAddingredientHandler_a085384f412ecd04868b6216778a26c7d}{canHandle}}(customization))\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ d-\/>\mbox{\hyperlink{classfa__dish_a6f011b05ec7232c15a9df2f2df2050f3}{addComponent}}(customization);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classca__handler_aa501f6b6b1edce038f5d2e274bab2088}{nextHandler}})\ \mbox{\hyperlink{classca__handler_aa501f6b6b1edce038f5d2e274bab2088}{nextHandler}}-\/>\mbox{\hyperlink{classca__handler_a7d514eddede8845a2c566e499e2db3a2}{handle}}(d,\ customization);}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRemoveingredientHandler}{RemoveingredientHandler}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classingredientHandler}{ingredientHandler}}\ \{}
+\DoxyCodeLine{00095\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{classRemoveingredientHandler_a425079099f7c8148075b53f7c5672c69}{RemoveingredientHandler}}(\textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classingredientHandler_a23164e138a057f2bfd83cf9dc81c6177}{ingredient}})\ :\ \mbox{\hyperlink{classingredientHandler}{ingredientHandler}}(\mbox{\hyperlink{classingredientHandler_a23164e138a057f2bfd83cf9dc81c6177}{ingredient}})\ \{\}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRemoveingredientHandler_aa784ac573bbae77d75df371a80b6483a}{canHandle}}(\textcolor{keyword}{const}\ std::string\ \&customization)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ customization\ ==\ \textcolor{stringliteral}{"{}No"{}}\ +\ \mbox{\hyperlink{classingredientHandler_a23164e138a057f2bfd83cf9dc81c6177}{ingredient}};}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRemoveingredientHandler_aa992fed0a2c1758d99ab25a45458bb04}{handle}}(\mbox{\hyperlink{classfa__dish}{fa\_dish}}\ *d,\ \textcolor{keyword}{const}\ std::string\ \&customization)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classRemoveingredientHandler_aa784ac573bbae77d75df371a80b6483a}{canHandle}}(customization))\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ d-\/>\mbox{\hyperlink{classfa__dish_a71400b890dc6558f780f8f1018517ff5}{removeComponent}}(customization);}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classca__handler_aa501f6b6b1edce038f5d2e274bab2088}{nextHandler}})\ \mbox{\hyperlink{classca__handler_aa501f6b6b1edce038f5d2e274bab2088}{nextHandler}}-\/>\mbox{\hyperlink{classca__handler_a7d514eddede8845a2c566e499e2db3a2}{handle}}(d,\ customization);}
+\DoxyCodeLine{00121\ \ \ \ \ \}}
+\DoxyCodeLine{00122\ \};}
+
+\end{DoxyCode}

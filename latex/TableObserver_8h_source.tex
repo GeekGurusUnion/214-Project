@@ -1,0 +1,20 @@
+\doxysection{Table\+Observer.\+h}
+\hypertarget{TableObserver_8h_source}{}\label{TableObserver_8h_source}\mbox{\hyperlink{TableObserver_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TABLE\_OBSERVER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TABLE\_OBSERVER\_H}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ ConcreteObserver\ (Observer)}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{State_8h}{State.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ Forward\ declaration}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRestaurantTable}{RestaurantTable}};}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFacade}{Facade}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTableObserver}{TableObserver}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTableObserver_a50f9ba2bd933c9fed6e49935fab7911e}{update}}(\mbox{\hyperlink{classRestaurantTable}{RestaurantTable}}*\ table,\ std::string\ item,\ std::string\ customization,\ \textcolor{keywordtype}{bool}\ isItem,\ \mbox{\hyperlink{classFacade}{Facade}}*\ facade,\ \textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TABLE\_OBSERVER\_H}}
+
+\end{DoxyCode}

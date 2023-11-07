@@ -1,0 +1,36 @@
+\doxysection{Table\+Iterator.\+h}
+\hypertarget{TableIterator_8h_source}{}\label{TableIterator_8h_source}\mbox{\hyperlink{TableIterator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TABLE\_ITERATOR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TABLE\_ITERATOR\_H}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ ConcreteIterator\ (Iterator)}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Iterator_8h}{Iterator.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RestaurantTable_8h}{RestaurantTable.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTableIterator}{TableIterator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classIterator}{Iterator}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \ std::vector<RestaurantTable*>\ tables;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ position\ =\ 0;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classTableIterator_a7e1fd746d14e06a6f325424ae7e27e26}{TableIterator}}(std::vector<RestaurantTable*>\ tables);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classTableIterator_aaa5c6a0697e4edcd1355ec7df62e7f01}{\string~TableIterator}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{classTableIterator_ae4d64b07017ce6d43b4a1f48b9e41633}{first}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classRestaurantTable}{RestaurantTable}}*\ \mbox{\hyperlink{classTableIterator_a6c094a40f8258a005a8923bc256e0c96}{currentItem}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTableIterator_a1ae09bf6ee3087c4337ad8954b74d955}{hasNext}}();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{classTableIterator_a3859864528bb22807b7cbe48d806b61e}{next}}();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTableIterator_aec53369969e1a9e49d177c1b917cb290}{reset}}();}
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TABLE\_ITERATOR\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,126 @@
+\doxysection{Colleague Class Reference}
+\hypertarget{classColleague}{}\label{classColleague}\index{Colleague@{Colleague}}
+
+
+Abstract base class for colleagues in the \doxylink{classMediator}{Mediator} pattern.  
+
+
+
+
+{\ttfamily \#include $<$Colleague.\+h$>$}
+
+Inheritance diagram for Colleague\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classColleague}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classColleague_ab52b173e5efaf1b838937c82a123dd3c}{Colleague}} (\mbox{\hyperlink{classMediator}{Mediator}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classColleague_a1f2794ce2658d64993f30b60fcad664e}{mediator}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classColleague}{Colleague} class. \end{DoxyCompactList}\item 
+\Hypertarget{classColleague_a9f60f1ec88562b8e7201897d6e8cef2f}\label{classColleague_a9f60f1ec88562b8e7201897d6e8cef2f} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Colleague} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classColleague}{Colleague} class. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classColleague_a909e54c54000f8f31211bc5bfd8db663}{changed}} ()
+\begin{DoxyCompactList}\small\item\em Notify the \doxylink{classMediator}{Mediator} that this colleague has changed state or data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classColleague_aeed17500dc670c078a6e68c13c4a8687}{set\+Order}} (\mbox{\hyperlink{classOrder}{Order}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classColleague_a3139f737e1c30b3560822d73a1b97301}{order}})
+\begin{DoxyCompactList}\small\item\em Set the \doxylink{classOrder}{Order} associated with this \doxylink{classColleague}{Colleague}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOrder}{Order}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classColleague_a95039d0a4b292373c8d3fd1a6e66e597}{get\+Order}} ()
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{classOrder}{Order} associated with this \doxylink{classColleague}{Colleague}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classColleague_aefc4d0971f764e525aff359ceba0db3a}{handle\+Order}} ()=0
+\begin{DoxyCompactList}\small\item\em Handle the order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classColleague_a1f2794ce2658d64993f30b60fcad664e}\label{classColleague_a1f2794ce2658d64993f30b60fcad664e} 
+\mbox{\hyperlink{classMediator}{Mediator}} \texorpdfstring{$\ast$}{*} {\bfseries mediator}
+\begin{DoxyCompactList}\small\item\em A pointer to the \doxylink{classMediator}{Mediator} that facilitates communication. \end{DoxyCompactList}\item 
+\Hypertarget{classColleague_a3139f737e1c30b3560822d73a1b97301}\label{classColleague_a3139f737e1c30b3560822d73a1b97301} 
+\mbox{\hyperlink{classOrder}{Order}} \texorpdfstring{$\ast$}{*} {\bfseries order} = nullptr
+\begin{DoxyCompactList}\small\item\em A pointer to the \doxylink{classOrder}{Order} associated with this \doxylink{classColleague}{Colleague}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for colleagues in the \doxylink{classMediator}{Mediator} pattern. 
+
+\doxylink{classColleague}{Colleague} represents a participant in the \doxylink{classMediator}{Mediator} pattern, which collaborates with other colleagues through a mediator to achieve a common goal. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classColleague_ab52b173e5efaf1b838937c82a123dd3c}\label{classColleague_ab52b173e5efaf1b838937c82a123dd3c} 
+\index{Colleague@{Colleague}!Colleague@{Colleague}}
+\index{Colleague@{Colleague}!Colleague@{Colleague}}
+\doxysubsubsection{\texorpdfstring{Colleague()}{Colleague()}}
+{\footnotesize\ttfamily Colleague\+::\+Colleague (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMediator}{Mediator}} \texorpdfstring{$\ast$}{*}}]{mediator }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classColleague}{Colleague} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mediator} & A pointer to the \doxylink{classMediator}{Mediator} used for communication with other colleagues. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classColleague_a909e54c54000f8f31211bc5bfd8db663}\label{classColleague_a909e54c54000f8f31211bc5bfd8db663} 
+\index{Colleague@{Colleague}!changed@{changed}}
+\index{changed@{changed}!Colleague@{Colleague}}
+\doxysubsubsection{\texorpdfstring{changed()}{changed()}}
+{\footnotesize\ttfamily void Colleague\+::changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notify the \doxylink{classMediator}{Mediator} that this colleague has changed state or data. 
+
+This method is called when the state or data of the colleague has changed and needs to inform the \doxylink{classMediator}{Mediator}. \Hypertarget{classColleague_a95039d0a4b292373c8d3fd1a6e66e597}\label{classColleague_a95039d0a4b292373c8d3fd1a6e66e597} 
+\index{Colleague@{Colleague}!getOrder@{getOrder}}
+\index{getOrder@{getOrder}!Colleague@{Colleague}}
+\doxysubsubsection{\texorpdfstring{getOrder()}{getOrder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classOrder}{Order}} \texorpdfstring{$\ast$}{*} Colleague\+::get\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the \doxylink{classOrder}{Order} associated with this \doxylink{classColleague}{Colleague}. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the \doxylink{classOrder}{Order} associated with this colleague. 
+\end{DoxyReturn}
+\Hypertarget{classColleague_aefc4d0971f764e525aff359ceba0db3a}\label{classColleague_aefc4d0971f764e525aff359ceba0db3a} 
+\index{Colleague@{Colleague}!handleOrder@{handleOrder}}
+\index{handleOrder@{handleOrder}!Colleague@{Colleague}}
+\doxysubsubsection{\texorpdfstring{handleOrder()}{handleOrder()}}
+{\footnotesize\ttfamily virtual void Colleague\+::handle\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Handle the order. 
+
+
+
+Implemented in \mbox{\hyperlink{classFloorColleague_a7436d5b5869224d9cfaa78ca9d2ef3b6}{Floor\+Colleague}}, and \mbox{\hyperlink{classKitchenColleague_a5ed74b2e8c579f16f44c08f5849ca99b}{Kitchen\+Colleague}}.
+
+\Hypertarget{classColleague_aeed17500dc670c078a6e68c13c4a8687}\label{classColleague_aeed17500dc670c078a6e68c13c4a8687} 
+\index{Colleague@{Colleague}!setOrder@{setOrder}}
+\index{setOrder@{setOrder}!Colleague@{Colleague}}
+\doxysubsubsection{\texorpdfstring{setOrder()}{setOrder()}}
+{\footnotesize\ttfamily void Colleague\+::set\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classOrder}{Order}} \texorpdfstring{$\ast$}{*}}]{order }\end{DoxyParamCaption})}
+
+
+
+Set the \doxylink{classOrder}{Order} associated with this \doxylink{classColleague}{Colleague}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & A pointer to the \doxylink{classOrder}{Order} to be associated with this colleague. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Colleague_8h}{Colleague.\+h}}\item 
+Colleague.\+cpp\end{DoxyCompactItemize}

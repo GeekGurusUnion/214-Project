@@ -1,0 +1,106 @@
+\doxysection{Waiter.\+h}
+\hypertarget{Waiter_8h_source}{}\label{Waiter_8h_source}\mbox{\hyperlink{Waiter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ WAITER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ WAITER\_H}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Receiver\ (Command)}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Context\ (State)}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{WaiterState_8h}{WaiterState.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{WaiterStateAvailable_8h}{WaiterStateAvailable.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{WaiterStateUnavailable_8h}{WaiterStateUnavailable.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{WaiterIterator_8h}{WaiterIterator.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Order_8h}{Order.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{FloorColleague_8h}{FloorColleague.h}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classWaiter}{Waiter}}\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classWaiterState}{WaiterState}}*\ state;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00043\ \ \ \ \ std::vector<RestaurantTable*>\ tables\ =\ std::vector<RestaurantTable*>();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ busyOrders\ =\ 0;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{int}\ totalOrders;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00061\ \ \ \ \ std::vector<MenuItem*>\ menu\ =\ std::vector<MenuItem*>();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{classCommand}{Command}}*\ cO\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{classCommand}{Command}}*\ tO\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{classCommand}{Command}}*\ gB\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{classCommand}{Command}}*\ aC\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{classCommand}{Command}}*\ sB\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{classCommand}{Command}}*\ tip\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{classCommand}{Command}}*\ c\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{classCommand}{Command}}*\ mT\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{classWaiter_a2cf5e38a0977d97bb093c7cb72c6106b}{Waiter}}(std::string\ name,\ \textcolor{keywordtype}{int}\ totalOrders,\ \mbox{\hyperlink{classColleague}{Colleague}}\ *fc);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{classWaiter_aa3eac8a78439feb99b0bb50380f8597d}{\string~Waiter}}();}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWaiter_a0cf823f619561cbfc8f51bb0e03ac65c}{setWaiterState}}(\mbox{\hyperlink{classWaiterState}{WaiterState}}*\ state);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWaiter_a2733f0fb953cacc86191755a51cd4835}{addItem}}(\mbox{\hyperlink{classRestaurantTable}{RestaurantTable}}*\ rt,\ std::string\ m);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWaiter_a6edff314ad32009e989e3c5a12d4c711}{confirmOrder}}(\mbox{\hyperlink{classRestaurantTable}{RestaurantTable}}*\ rt);}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWaiter_abf1b0a3215a2272a32b7e2f8168b29bf}{addOrder}}(\mbox{\hyperlink{classRestaurantTable}{RestaurantTable}}*\ rt);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWaiter_a659f2989fbdf165f74d9e55d1c02ae2c}{addCustomization}}(\mbox{\hyperlink{classRestaurantTable}{RestaurantTable}}*\ rt,\ std::string\ name,\ std::string\ customization);}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWaiter_a0bfb45ea2142e18a7aa2d7af994f207b}{generateBill}}(\mbox{\hyperlink{classRestaurantTable}{RestaurantTable}}*\ rt);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00170\ \ \ \ \ \mbox{\hyperlink{classOrder}{Order}}*\ \mbox{\hyperlink{classWaiter_a52a2c53e6c034451fd97340b96d90511}{getOrder}}(\mbox{\hyperlink{classRestaurantTable}{RestaurantTable}}*\ rt);}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classWaiter_a2930f10ae1e20551596b392b6d925b23}{isAvailable}}();}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00182\ \ \ \ \ std::string\ \mbox{\hyperlink{classWaiter_a22231365e695d80d9397eac63d9bd049}{getName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00189\ \ \ \ \ \mbox{\hyperlink{classMenuItem}{MenuItem}}\ *\mbox{\hyperlink{classWaiter_a419581bd2f11fdf1ff903670578db900}{getMenuItem}}(std::string\ name);}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classWaiter_a6af308bc0c24aaea588172930ffe2a6a}{getBusyOrders}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{comment}{//\ *\ testing\ *\ //}}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classWaiter_ac02aab2d7c1de5208bd5feeb2afc17b6}{getTotalOrders}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00212\ \ \ \ \ \mbox{\hyperlink{classWaiterState}{WaiterState}}*\ \mbox{\hyperlink{classWaiter_a84269c863671ab3632d3cf4153fedc43}{getState}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00218\ \ \ \ \ std::vector<RestaurantTable*>\ \mbox{\hyperlink{classWaiter_a4cddc41c50a2481e0323d0a270387709}{getTables}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00224\ \ \ \ \ std::vector<MenuItem*>\ \mbox{\hyperlink{classWaiter_a1edf730500d49f034bb96973f4240575}{getMenu}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00230\ \ \ \ \ \mbox{\hyperlink{classCommand}{Command}}*\ \mbox{\hyperlink{classWaiter_a6755587f395ceb9df2231d1ed3855a86}{getCO}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00236\ \ \ \ \ \mbox{\hyperlink{classCommand}{Command}}*\ \mbox{\hyperlink{classWaiter_a17bb2261089a4f784242726ed962e2b1}{getTO}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWaiter_a2def4848e9f00d6b22ea288239c8a458}{setState}}(\mbox{\hyperlink{classWaiterState}{WaiterState}}*\ state);}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{comment}{//\ *\ end\ of\ testing\ *\ //}}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWaiter_af2b83b39c340b2f0033a3c3ece20a8ad}{serveOrder}}(\mbox{\hyperlink{classRestaurantTable}{RestaurantTable}}*\ rt);}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWaiter_a165e1ba6e9a61f113fbbf31b4e5dccec}{splitBill}}(\mbox{\hyperlink{classRestaurantTable}{RestaurantTable}}*\ rt,\ \textcolor{keywordtype}{int}\ numPeople);}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWaiter_ab8d85ac0495d12345d8e973a6d271acd}{tipOrder}}(\mbox{\hyperlink{classRestaurantTable}{RestaurantTable}}*\ rt,\ \textcolor{keywordtype}{double}\ tip);}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWaiter_a0f57847f2404a3654fc0899dc5bf6004}{complaint}}(\mbox{\hyperlink{classRestaurantTable}{RestaurantTable}}*\ rt,\ std::string\ \mbox{\hyperlink{classWaiter_a0f57847f2404a3654fc0899dc5bf6004}{complaint}});}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWaiter_a0a6556ef9e60ad452423769a508d09b0}{mergeTables}}(\mbox{\hyperlink{classFacade}{Facade}}*\ f,\ \textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{00270\ \};}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WAITER\_H}}
+
+\end{DoxyCode}

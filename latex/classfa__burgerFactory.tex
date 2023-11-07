@@ -1,0 +1,63 @@
+\doxysection{fa\+\_\+burger\+Factory Class Reference}
+\hypertarget{classfa__burgerFactory}{}\label{classfa__burgerFactory}\index{fa\_burgerFactory@{fa\_burgerFactory}}
+
+
+Concrete class representing a factory for creating burger dishes.  
+
+
+
+
+{\ttfamily \#include $<$fa\+\_\+dish\+Factory.\+h$>$}
+
+Inheritance diagram for fa\+\_\+burger\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classfa__burgerFactory}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfa__burgerFactory_a54aca35bc733763c9dc2f71d07cc3abe}{create\+Dish}} (const \mbox{\hyperlink{classad__RestaurantOrder}{ad\+\_\+\+Restaurant\+Order}} \&order) override
+\begin{DoxyCompactList}\small\item\em Creates a burger dish based on a given order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfa__dishFactory}{fa\+\_\+dish\+Factory}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}fa\+\_\+dish\+Factory} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete class representing a factory for creating burger dishes. 
+
+This class implements the \doxylink{classfa__dishFactory}{fa\+\_\+dish\+Factory} interface to create instances of burger dishes. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfa__burgerFactory_a54aca35bc733763c9dc2f71d07cc3abe}\label{classfa__burgerFactory_a54aca35bc733763c9dc2f71d07cc3abe} 
+\index{fa\_burgerFactory@{fa\_burgerFactory}!createDish@{createDish}}
+\index{createDish@{createDish}!fa\_burgerFactory@{fa\_burgerFactory}}
+\doxysubsubsection{\texorpdfstring{createDish()}{createDish()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}} \texorpdfstring{$\ast$}{*} fa\+\_\+burger\+Factory\+::create\+Dish (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classad__RestaurantOrder}{ad\+\_\+\+Restaurant\+Order}} \&}]{order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates a burger dish based on a given order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & An instance of \doxylink{classad__RestaurantOrder}{ad\+\_\+\+Restaurant\+Order} containing details of the order. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to an instance of \doxylink{classfa__dish}{fa\+\_\+dish} representing the created burger dish. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfa__dishFactory_a894a687faa696eedf43a5767f57e90da}{fa\+\_\+dish\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fa__dishFactory_8h}{fa\+\_\+dish\+Factory.\+h}}\item 
+fa\+\_\+dish\+Factory.\+cpp\end{DoxyCompactItemize}

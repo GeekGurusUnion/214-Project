@@ -1,0 +1,57 @@
+\doxysection{fa\+\_\+\+Pizza.\+h}
+\hypertarget{fa__Pizza_8h_source}{}\label{fa__Pizza_8h_source}\mbox{\hyperlink{fa__Pizza_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{fa__dish_8h}{fa\_dish.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfa__Pizza}{fa\_Pizza}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfa__dish}{fa\_dish}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classfa__Pizza_a721538aa536e4a9b5ed2bd8a8d7bd441}{fa\_Pizza}}(\textcolor{keyword}{const}\ std::vector<std::string>\ \&initialComponents)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classfa__dish_a12e2ee16f3f6f7430f4181c22f192090}{components}}\ =\ initialComponents;}
+\DoxyCodeLine{00028\ \ \ \ \ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classfa__Pizza_a3ac832d179af07dcc21194da61cdf96a}{\string~fa\_Pizza}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00040\ \ \ \ \ std::string\ \mbox{\hyperlink{classfa__Pizza_a79fa263375050206bc119fdb6e66d9c6}{getDescription}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ std::string\ description\ =\ \textcolor{stringliteral}{"{}Pizza\ with:\ "{}};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&component:\ \mbox{\hyperlink{classfa__dish_a12e2ee16f3f6f7430f4181c22f192090}{components}})\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ description\ +=\ component\ +\ \textcolor{stringliteral}{"{},\ "{}};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ description.substr(0,\ description.length()\ -\/\ 2);}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPepperoniPizza}{PepperoniPizza}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfa__Pizza}{fa\_Pizza}}\ \{}
+\DoxyCodeLine{00056\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{classPepperoniPizza_a00ceaa7a71b2c7a0f6876b590ddd14fc}{PepperoniPizza}}(\textcolor{keyword}{const}\ std::vector<std::string>\ \&initialComponents)\ :\ \mbox{\hyperlink{classfa__Pizza}{fa\_Pizza}}(initialComponents)\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ std::list<std::string>\ ingredients\ =\ \{\textcolor{stringliteral}{"{}Pepperoni"{}},\ \textcolor{stringliteral}{"{}Garlic"{}}\};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::string\ a:\ ingredients)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classfa__dish_a6f011b05ec7232c15a9df2f2df2050f3}{addComponent}}(a);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBBQChickenPizza}{BBQChickenPizza}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfa__Pizza}{fa\_Pizza}}\ \{}
+\DoxyCodeLine{00077\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{classBBQChickenPizza_a898bd2ac3104be5b4d0e736f10171e5a}{BBQChickenPizza}}(\textcolor{keyword}{const}\ std::vector<std::string>\ \&initialComponents)\ :\ \mbox{\hyperlink{classfa__Pizza}{fa\_Pizza}}(initialComponents)\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ std::list<std::string>\ ingredients\ =\ \{\textcolor{stringliteral}{"{}BBQChicken"{}},\ \textcolor{stringliteral}{"{}Bacon"{}},\ \textcolor{stringliteral}{"{}Green\ Pepper"{}}\};}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::string\ a:\ ingredients)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classfa__dish_a6f011b05ec7232c15a9df2f2df2050f3}{addComponent}}(a);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00097\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classHawaiianPizza}{HawaiianPizza}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfa__Pizza}{fa\_Pizza}}\ \{}
+\DoxyCodeLine{00098\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{classHawaiianPizza_a7f1aa3ef538b80cb30257cab05bc1f77}{HawaiianPizza}}(\textcolor{keyword}{const}\ std::vector<std::string>\ \&initialComponents)\ :\ \mbox{\hyperlink{classfa__Pizza}{fa\_Pizza}}(initialComponents)\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ std::list<std::string>\ ingredients\ =\ \{\textcolor{stringliteral}{"{}Pineapple"{}},\ \textcolor{stringliteral}{"{}Ham"{}}\};}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::string\ a:\ ingredients)\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classfa__dish_a6f011b05ec7232c15a9df2f2df2050f3}{addComponent}}(a);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \};}
+
+\end{DoxyCode}

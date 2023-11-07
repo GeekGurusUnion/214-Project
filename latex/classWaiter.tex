@@ -1,0 +1,391 @@
+\doxysection{Waiter Class Reference}
+\hypertarget{classWaiter}{}\label{classWaiter}\index{Waiter@{Waiter}}
+
+
+Represents a \doxylink{classWaiter}{Waiter} in a restaurant.  
+
+
+
+
+{\ttfamily \#include $<$Waiter.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWaiter_a2cf5e38a0977d97bb093c7cb72c6106b}{Waiter}} (std\+::string name, int total\+Orders, \mbox{\hyperlink{classColleague}{Colleague}} \texorpdfstring{$\ast$}{*}fc)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classWaiter}{Waiter}. \end{DoxyCompactList}\item 
+\Hypertarget{classWaiter_aa3eac8a78439feb99b0bb50380f8597d}\label{classWaiter_aa3eac8a78439feb99b0bb50380f8597d} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Waiter} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classWaiter}{Waiter}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaiter_a0cf823f619561cbfc8f51bb0e03ac65c}{set\+Waiter\+State}} (\mbox{\hyperlink{classWaiterState}{Waiter\+State}} \texorpdfstring{$\ast$}{*}state)
+\begin{DoxyCompactList}\small\item\em Set the \doxylink{classWaiter}{Waiter}\textquotesingle{}s state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaiter_a2733f0fb953cacc86191755a51cd4835}{add\+Item}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, std\+::string m)
+\begin{DoxyCompactList}\small\item\em Add an item to the order for a \doxylink{classRestaurantTable}{Restaurant\+Table}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaiter_a6edff314ad32009e989e3c5a12d4c711}{confirm\+Order}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt)
+\begin{DoxyCompactList}\small\item\em Confirm the order for a \doxylink{classRestaurantTable}{Restaurant\+Table}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaiter_abf1b0a3215a2272a32b7e2f8168b29bf}{add\+Order}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt)
+\begin{DoxyCompactList}\small\item\em Add an order for a \doxylink{classRestaurantTable}{Restaurant\+Table}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaiter_a659f2989fbdf165f74d9e55d1c02ae2c}{add\+Customization}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, std\+::string name, std\+::string customization)
+\begin{DoxyCompactList}\small\item\em Add customization to an order for a \doxylink{classRestaurantTable}{Restaurant\+Table}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaiter_a0bfb45ea2142e18a7aa2d7af994f207b}{generate\+Bill}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt)
+\begin{DoxyCompactList}\small\item\em Generate a bill for a \doxylink{classRestaurantTable}{Restaurant\+Table}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOrder}{Order}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classWaiter_a52a2c53e6c034451fd97340b96d90511}{get\+Order}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt)
+\begin{DoxyCompactList}\small\item\em Get the order for a \doxylink{classRestaurantTable}{Restaurant\+Table}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWaiter_a2930f10ae1e20551596b392b6d925b23}{is\+Available}} ()
+\begin{DoxyCompactList}\small\item\em Check if the \doxylink{classWaiter}{Waiter} is available. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classWaiter_a22231365e695d80d9397eac63d9bd049}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Get the name of the \doxylink{classWaiter}{Waiter}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMenuItem}{Menu\+Item}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classWaiter_a419581bd2f11fdf1ff903670578db900}{get\+Menu\+Item}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Get the menu item by name. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classWaiter_a6af308bc0c24aaea588172930ffe2a6a}{get\+Busy\+Orders}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of currently busy orders. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classWaiter_ac02aab2d7c1de5208bd5feeb2afc17b6}{get\+Total\+Orders}} () const
+\begin{DoxyCompactList}\small\item\em Get the total number of orders the \doxylink{classWaiter}{Waiter} is expected to handle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWaiterState}{Waiter\+State}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classWaiter_a84269c863671ab3632d3cf4153fedc43}{get\+State}} () const
+\begin{DoxyCompactList}\small\item\em Get the current \doxylink{classWaiterState}{Waiter\+State}. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classWaiter_a4cddc41c50a2481e0323d0a270387709}{get\+Tables}} () const
+\begin{DoxyCompactList}\small\item\em Get the vector of \doxylink{classRestaurantTable}{Restaurant\+Table} pointers associated with the \doxylink{classWaiter}{Waiter}. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classMenuItem}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classWaiter_a1edf730500d49f034bb96973f4240575}{get\+Menu}} () const
+\begin{DoxyCompactList}\small\item\em Get the vector of \doxylink{classMenuItem}{Menu\+Item} pointers representing the menu items available. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCommand}{Command}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classWaiter_a6755587f395ceb9df2231d1ed3855a86}{get\+CO}} () const
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{classCommand}{Command} pointer for confirming orders. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCommand}{Command}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classWaiter_a17bb2261089a4f784242726ed962e2b1}{get\+TO}} () const
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{classCommand}{Command} pointer for taking orders. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaiter_a2def4848e9f00d6b22ea288239c8a458}{set\+State}} (\mbox{\hyperlink{classWaiterState}{Waiter\+State}} \texorpdfstring{$\ast$}{*}state)
+\begin{DoxyCompactList}\small\item\em Set the \doxylink{classWaiter}{Waiter}\textquotesingle{}s state (for testing purposes). \end{DoxyCompactList}\item 
+\Hypertarget{classWaiter_af2b83b39c340b2f0033a3c3ece20a8ad}\label{classWaiter_af2b83b39c340b2f0033a3c3ece20a8ad} 
+void {\bfseries serve\+Order} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt)
+\begin{DoxyCompactList}\small\item\em Serve a \doxylink{classRestaurantTable}{Restaurant\+Table}. \end{DoxyCompactList}\item 
+\Hypertarget{classWaiter_a165e1ba6e9a61f113fbbf31b4e5dccec}\label{classWaiter_a165e1ba6e9a61f113fbbf31b4e5dccec} 
+void {\bfseries split\+Bill} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, int num\+People)
+\begin{DoxyCompactList}\small\item\em Split Bill. \end{DoxyCompactList}\item 
+\Hypertarget{classWaiter_ab8d85ac0495d12345d8e973a6d271acd}\label{classWaiter_ab8d85ac0495d12345d8e973a6d271acd} 
+void {\bfseries tip\+Order} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, double tip)
+\begin{DoxyCompactList}\small\item\em Tip. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaiter_a0f57847f2404a3654fc0899dc5bf6004}{complaint}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, std\+::string complaint)
+\begin{DoxyCompactList}\small\item\em Complaint. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaiter_a0a6556ef9e60ad452423769a508d09b0}{merge\+Tables}} (\mbox{\hyperlink{classFacade}{Facade}} \texorpdfstring{$\ast$}{*}f, int count)
+\begin{DoxyCompactList}\small\item\em Merge Tables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a \doxylink{classWaiter}{Waiter} in a restaurant. 
+
+This class represents a \doxylink{classWaiter}{Waiter} who takes orders, serves tables, and manages orders. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classWaiter_a2cf5e38a0977d97bb093c7cb72c6106b}\label{classWaiter_a2cf5e38a0977d97bb093c7cb72c6106b} 
+\index{Waiter@{Waiter}!Waiter@{Waiter}}
+\index{Waiter@{Waiter}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{Waiter()}{Waiter()}}
+{\footnotesize\ttfamily Waiter\+::\+Waiter (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{int}]{total\+Orders,  }\item[{\mbox{\hyperlink{classColleague}{Colleague}} \texorpdfstring{$\ast$}{*}}]{fc }\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{classWaiter}{Waiter}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the \doxylink{classWaiter}{Waiter}. \\
+\hline
+{\em total\+Orders} & The total number of orders the \doxylink{classWaiter}{Waiter} is expected to handle. \\
+\hline
+{\em fc} & A pointer to the \doxylink{classFloorColleague}{Floor\+Colleague} associated with the \doxylink{classWaiter}{Waiter}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classWaiter_a659f2989fbdf165f74d9e55d1c02ae2c}\label{classWaiter_a659f2989fbdf165f74d9e55d1c02ae2c} 
+\index{Waiter@{Waiter}!addCustomization@{addCustomization}}
+\index{addCustomization@{addCustomization}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{addCustomization()}{addCustomization()}}
+{\footnotesize\ttfamily void Waiter\+::add\+Customization (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{rt,  }\item[{std\+::string}]{name,  }\item[{std\+::string}]{customization }\end{DoxyParamCaption})}
+
+
+
+Add customization to an order for a \doxylink{classRestaurantTable}{Restaurant\+Table}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rt} & Pointer to the \doxylink{classRestaurantTable}{Restaurant\+Table}. \\
+\hline
+{\em name} & Name of the menu item. \\
+\hline
+{\em customization} & Customization to add. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classWaiter_a2733f0fb953cacc86191755a51cd4835}\label{classWaiter_a2733f0fb953cacc86191755a51cd4835} 
+\index{Waiter@{Waiter}!addItem@{addItem}}
+\index{addItem@{addItem}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{addItem()}{addItem()}}
+{\footnotesize\ttfamily void Waiter\+::add\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{rt,  }\item[{std\+::string}]{m }\end{DoxyParamCaption})}
+
+
+
+Add an item to the order for a \doxylink{classRestaurantTable}{Restaurant\+Table}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rt} & Pointer to the \doxylink{classRestaurantTable}{Restaurant\+Table}. \\
+\hline
+{\em m} & Name of the menu item to add. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classWaiter_abf1b0a3215a2272a32b7e2f8168b29bf}\label{classWaiter_abf1b0a3215a2272a32b7e2f8168b29bf} 
+\index{Waiter@{Waiter}!addOrder@{addOrder}}
+\index{addOrder@{addOrder}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{addOrder()}{addOrder()}}
+{\footnotesize\ttfamily void Waiter\+::add\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{rt }\end{DoxyParamCaption})}
+
+
+
+Add an order for a \doxylink{classRestaurantTable}{Restaurant\+Table}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rt} & Pointer to the \doxylink{classRestaurantTable}{Restaurant\+Table}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classWaiter_a0f57847f2404a3654fc0899dc5bf6004}\label{classWaiter_a0f57847f2404a3654fc0899dc5bf6004} 
+\index{Waiter@{Waiter}!complaint@{complaint}}
+\index{complaint@{complaint}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{complaint()}{complaint()}}
+{\footnotesize\ttfamily Waiter\+::complaint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{rt,  }\item[{std\+::string}]{complaint }\end{DoxyParamCaption})}
+
+
+
+Complaint. 
+
+A \doxylink{classCommand}{Command} pointer for handling complaints. \Hypertarget{classWaiter_a6edff314ad32009e989e3c5a12d4c711}\label{classWaiter_a6edff314ad32009e989e3c5a12d4c711} 
+\index{Waiter@{Waiter}!confirmOrder@{confirmOrder}}
+\index{confirmOrder@{confirmOrder}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{confirmOrder()}{confirmOrder()}}
+{\footnotesize\ttfamily void Waiter\+::confirm\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{rt }\end{DoxyParamCaption})}
+
+
+
+Confirm the order for a \doxylink{classRestaurantTable}{Restaurant\+Table}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rt} & Pointer to the \doxylink{classRestaurantTable}{Restaurant\+Table}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classWaiter_a0bfb45ea2142e18a7aa2d7af994f207b}\label{classWaiter_a0bfb45ea2142e18a7aa2d7af994f207b} 
+\index{Waiter@{Waiter}!generateBill@{generateBill}}
+\index{generateBill@{generateBill}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{generateBill()}{generateBill()}}
+{\footnotesize\ttfamily void Waiter\+::generate\+Bill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{rt }\end{DoxyParamCaption})}
+
+
+
+Generate a bill for a \doxylink{classRestaurantTable}{Restaurant\+Table}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rt} & Pointer to the \doxylink{classRestaurantTable}{Restaurant\+Table}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classWaiter_a6af308bc0c24aaea588172930ffe2a6a}\label{classWaiter_a6af308bc0c24aaea588172930ffe2a6a} 
+\index{Waiter@{Waiter}!getBusyOrders@{getBusyOrders}}
+\index{getBusyOrders@{getBusyOrders}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{getBusyOrders()}{getBusyOrders()}}
+{\footnotesize\ttfamily int Waiter\+::get\+Busy\+Orders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the number of currently busy orders. 
+
+\begin{DoxyReturn}{Returns}
+The number of busy orders. 
+\end{DoxyReturn}
+\Hypertarget{classWaiter_a6755587f395ceb9df2231d1ed3855a86}\label{classWaiter_a6755587f395ceb9df2231d1ed3855a86} 
+\index{Waiter@{Waiter}!getCO@{getCO}}
+\index{getCO@{getCO}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{getCO()}{getCO()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCommand}{Command}} \texorpdfstring{$\ast$}{*} Waiter\+::get\+CO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the \doxylink{classCommand}{Command} pointer for confirming orders. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the \doxylink{classCommand}{Command} for confirming orders. 
+\end{DoxyReturn}
+\Hypertarget{classWaiter_a1edf730500d49f034bb96973f4240575}\label{classWaiter_a1edf730500d49f034bb96973f4240575} 
+\index{Waiter@{Waiter}!getMenu@{getMenu}}
+\index{getMenu@{getMenu}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{getMenu()}{getMenu()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classMenuItem}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ Waiter\+::get\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the vector of \doxylink{classMenuItem}{Menu\+Item} pointers representing the menu items available. 
+
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{classMenuItem}{Menu\+Item} pointers. 
+\end{DoxyReturn}
+\Hypertarget{classWaiter_a419581bd2f11fdf1ff903670578db900}\label{classWaiter_a419581bd2f11fdf1ff903670578db900} 
+\index{Waiter@{Waiter}!getMenuItem@{getMenuItem}}
+\index{getMenuItem@{getMenuItem}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{getMenuItem()}{getMenuItem()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMenuItem}{Menu\+Item}} \texorpdfstring{$\ast$}{*} Waiter\+::get\+Menu\+Item (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Get the menu item by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the menu item. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \doxylink{classMenuItem}{Menu\+Item}. 
+\end{DoxyReturn}
+\Hypertarget{classWaiter_a22231365e695d80d9397eac63d9bd049}\label{classWaiter_a22231365e695d80d9397eac63d9bd049} 
+\index{Waiter@{Waiter}!getName@{getName}}
+\index{getName@{getName}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Waiter\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the name of the \doxylink{classWaiter}{Waiter}. 
+
+\begin{DoxyReturn}{Returns}
+The name of the \doxylink{classWaiter}{Waiter}. 
+\end{DoxyReturn}
+\Hypertarget{classWaiter_a52a2c53e6c034451fd97340b96d90511}\label{classWaiter_a52a2c53e6c034451fd97340b96d90511} 
+\index{Waiter@{Waiter}!getOrder@{getOrder}}
+\index{getOrder@{getOrder}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{getOrder()}{getOrder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classOrder}{Order}} \texorpdfstring{$\ast$}{*} Waiter\+::get\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{rt }\end{DoxyParamCaption})}
+
+
+
+Get the order for a \doxylink{classRestaurantTable}{Restaurant\+Table}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rt} & Pointer to the \doxylink{classRestaurantTable}{Restaurant\+Table}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \doxylink{classOrder}{Order}. 
+\end{DoxyReturn}
+\Hypertarget{classWaiter_a84269c863671ab3632d3cf4153fedc43}\label{classWaiter_a84269c863671ab3632d3cf4153fedc43} 
+\index{Waiter@{Waiter}!getState@{getState}}
+\index{getState@{getState}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classWaiterState}{Waiter\+State}} \texorpdfstring{$\ast$}{*} Waiter\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the current \doxylink{classWaiterState}{Waiter\+State}. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the \doxylink{classWaiterState}{Waiter\+State}. 
+\end{DoxyReturn}
+\Hypertarget{classWaiter_a4cddc41c50a2481e0323d0a270387709}\label{classWaiter_a4cddc41c50a2481e0323d0a270387709} 
+\index{Waiter@{Waiter}!getTables@{getTables}}
+\index{getTables@{getTables}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{getTables()}{getTables()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*} $>$ Waiter\+::get\+Tables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the vector of \doxylink{classRestaurantTable}{Restaurant\+Table} pointers associated with the \doxylink{classWaiter}{Waiter}. 
+
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{classRestaurantTable}{Restaurant\+Table} pointers. 
+\end{DoxyReturn}
+\Hypertarget{classWaiter_a17bb2261089a4f784242726ed962e2b1}\label{classWaiter_a17bb2261089a4f784242726ed962e2b1} 
+\index{Waiter@{Waiter}!getTO@{getTO}}
+\index{getTO@{getTO}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{getTO()}{getTO()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCommand}{Command}} \texorpdfstring{$\ast$}{*} Waiter\+::get\+TO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the \doxylink{classCommand}{Command} pointer for taking orders. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the \doxylink{classCommand}{Command} for taking orders. 
+\end{DoxyReturn}
+\Hypertarget{classWaiter_ac02aab2d7c1de5208bd5feeb2afc17b6}\label{classWaiter_ac02aab2d7c1de5208bd5feeb2afc17b6} 
+\index{Waiter@{Waiter}!getTotalOrders@{getTotalOrders}}
+\index{getTotalOrders@{getTotalOrders}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{getTotalOrders()}{getTotalOrders()}}
+{\footnotesize\ttfamily int Waiter\+::get\+Total\+Orders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the total number of orders the \doxylink{classWaiter}{Waiter} is expected to handle. 
+
+\begin{DoxyNote}{Note}
+The following functions are intended for testing purposes. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The total number of orders. 
+\end{DoxyReturn}
+\Hypertarget{classWaiter_a2930f10ae1e20551596b392b6d925b23}\label{classWaiter_a2930f10ae1e20551596b392b6d925b23} 
+\index{Waiter@{Waiter}!isAvailable@{isAvailable}}
+\index{isAvailable@{isAvailable}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{isAvailable()}{isAvailable()}}
+{\footnotesize\ttfamily bool Waiter\+::is\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if the \doxylink{classWaiter}{Waiter} is available. 
+
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classWaiter}{Waiter} is available, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classWaiter_a0a6556ef9e60ad452423769a508d09b0}\label{classWaiter_a0a6556ef9e60ad452423769a508d09b0} 
+\index{Waiter@{Waiter}!mergeTables@{mergeTables}}
+\index{mergeTables@{mergeTables}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{mergeTables()}{mergeTables()}}
+{\footnotesize\ttfamily Waiter\+::merge\+Tables (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFacade}{Facade}} \texorpdfstring{$\ast$}{*}}]{f,  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+Merge Tables. 
+
+A \doxylink{classCommand}{Command} pointer for merging tables. \Hypertarget{classWaiter_a2def4848e9f00d6b22ea288239c8a458}\label{classWaiter_a2def4848e9f00d6b22ea288239c8a458} 
+\index{Waiter@{Waiter}!setState@{setState}}
+\index{setState@{setState}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Waiter\+::set\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWaiterState}{Waiter\+State}} \texorpdfstring{$\ast$}{*}}]{state }\end{DoxyParamCaption})}
+
+
+
+Set the \doxylink{classWaiter}{Waiter}\textquotesingle{}s state (for testing purposes). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Pointer to the \doxylink{classWaiterState}{Waiter\+State}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classWaiter_a0cf823f619561cbfc8f51bb0e03ac65c}\label{classWaiter_a0cf823f619561cbfc8f51bb0e03ac65c} 
+\index{Waiter@{Waiter}!setWaiterState@{setWaiterState}}
+\index{setWaiterState@{setWaiterState}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{setWaiterState()}{setWaiterState()}}
+{\footnotesize\ttfamily void Waiter\+::set\+Waiter\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWaiterState}{Waiter\+State}} \texorpdfstring{$\ast$}{*}}]{state }\end{DoxyParamCaption})}
+
+
+
+Set the \doxylink{classWaiter}{Waiter}\textquotesingle{}s state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Pointer to the new \doxylink{classWaiterState}{Waiter\+State}. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Waiter_8h}{Waiter.\+h}}\item 
+Waiter.\+cpp\end{DoxyCompactItemize}

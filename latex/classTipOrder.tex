@@ -1,0 +1,100 @@
+\doxysection{Tip\+Order Class Reference}
+\hypertarget{classTipOrder}{}\label{classTipOrder}\index{TipOrder@{TipOrder}}
+
+
+A concrete \doxylink{classCommand}{Command} that represents a tip order given by a customer to a waiter.  
+
+
+
+
+{\ttfamily \#include $<$Tip\+Order.\+h$>$}
+
+Inheritance diagram for Tip\+Order\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTipOrder}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTipOrder_a858503270b243b9744e76f31b72d6f61}{Tip\+Order}} (\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*}w)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classTipOrder}{Tip\+Order} object with the given \doxylink{classWaiter}{Waiter}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTipOrder_af51dc2dab067928027a9cfbf82b07a9a}{execute}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, double tip)
+\begin{DoxyCompactList}\small\item\em Executes the tip order by calling the add\+Tip method of the \doxylink{classWaiter}{Waiter} with the given tip amount. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCommand}{Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCommand_a0821552854e07d10861f79d5d9853873}{Command}} (\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classCommand_acbaaa545e1098e8b8b22371820b77319}{waiter}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classCommand}{Command} class. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommand_a3891f9919717d37ff5ef6f9b52afb2ac}{execute}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, \mbox{\hyperlink{classMenuItem}{Menu\+Item}} \texorpdfstring{$\ast$}{*}menu\+Item)
+\begin{DoxyCompactList}\small\item\em Execute the command with a \doxylink{classRestaurantTable}{Restaurant\+Table} and a \doxylink{classMenuItem}{Menu\+Item}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommand_ab7037f5f46b0381541121503eb52a343}{execute}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, std\+::string menu\+Item, std\+::string customization)
+\begin{DoxyCompactList}\small\item\em Execute the command with a \doxylink{classRestaurantTable}{Restaurant\+Table}, a \doxylink{classMenuItem}{Menu\+Item} name, and customization details. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommand_a08ea4a0a4d056f68882332562a6f40ec}{execute}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, std\+::string complaint)
+\begin{DoxyCompactList}\small\item\em Execute the command with a \doxylink{classRestaurantTable}{Restaurant\+Table} and a complaint. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommand_a7e6133e1454a1baefcb59319a1e4d4f2}{execute}} (\mbox{\hyperlink{classFacade}{Facade}} \texorpdfstring{$\ast$}{*}f, int count)
+\begin{DoxyCompactList}\small\item\em Merge Tables. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Command} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classCommand}{Command} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCommand_ac2eba399174da25577f10c0b2ee6da73}{get\+Waiter}} () const
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{classWaiter}{Waiter} who issued the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classCommand}{Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*} {\bfseries waiter}
+\begin{DoxyCompactList}\small\item\em A pointer to the \doxylink{classWaiter}{Waiter} who issues the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A concrete \doxylink{classCommand}{Command} that represents a tip order given by a customer to a waiter. 
+
+This class inherits from the \doxylink{classCommand}{Command} abstract class and implements the execute method. The execute method takes a \doxylink{classRestaurantTable}{Restaurant\+Table} and a double representing the tip amount as parameters. When executed, it calls the add\+Tip method of the \doxylink{classWaiter}{Waiter} passed in the constructor with the given tip amount. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTipOrder_a858503270b243b9744e76f31b72d6f61}\label{classTipOrder_a858503270b243b9744e76f31b72d6f61} 
+\index{TipOrder@{TipOrder}!TipOrder@{TipOrder}}
+\index{TipOrder@{TipOrder}!TipOrder@{TipOrder}}
+\doxysubsubsection{\texorpdfstring{TipOrder()}{TipOrder()}}
+{\footnotesize\ttfamily Tip\+Order\+::\+Tip\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*}}]{w }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classTipOrder}{Tip\+Order} object with the given \doxylink{classWaiter}{Waiter}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & A pointer to the \doxylink{classWaiter}{Waiter} who will receive the tip order. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTipOrder_af51dc2dab067928027a9cfbf82b07a9a}\label{classTipOrder_af51dc2dab067928027a9cfbf82b07a9a} 
+\index{TipOrder@{TipOrder}!execute@{execute}}
+\index{execute@{execute}!TipOrder@{TipOrder}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Tip\+Order\+::execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{rt,  }\item[{double}]{tip }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Executes the tip order by calling the add\+Tip method of the \doxylink{classWaiter}{Waiter} with the given tip amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rt} & A pointer to the \doxylink{classRestaurantTable}{Restaurant\+Table} associated with the tip order. \\
+\hline
+{\em tip} & The amount of the tip. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classCommand_ab28a19773850a1746502fccc47ff4d52}{Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TipOrder_8h}{Tip\+Order.\+h}}\item 
+Tip\+Order.\+cpp\end{DoxyCompactItemize}

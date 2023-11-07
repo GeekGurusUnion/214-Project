@@ -1,0 +1,176 @@
+\doxysection{State\+Serve Class Reference}
+\hypertarget{classStateServe}{}\label{classStateServe}\index{StateServe@{StateServe}}
+
+
+Represents the "{}\+Serve"{} state of a \doxylink{classRestaurantTable}{Restaurant\+Table}.  
+
+
+
+
+{\ttfamily \#include $<$State\+Serve.\+h$>$}
+
+Inheritance diagram for State\+Serve\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classStateServe}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classStateServe_a2ae91603ba8006cd0fe1602089587766}{State\+Serve}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classState_a5cb8db60494c62dc37110d4caf342562}{table}})
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classStateServe}{State\+Serve}. \end{DoxyCompactList}\item 
+\Hypertarget{classStateServe_a7ee56821266570cd4c17927be5f53c24}\label{classStateServe_a7ee56821266570cd4c17927be5f53c24} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+State\+Serve} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classStateServe}{State\+Serve}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStateServe_a0220d492d8590ed5d51a024d2729142e}{serve}} ()
+\begin{DoxyCompactList}\small\item\em Transition the table to the "{}\+Serve"{} state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStateServe_a36a34ae9e84d8da24912b4be1fe995b2}{occupy}} ()
+\begin{DoxyCompactList}\small\item\em Transition the table to the "{}\+Occupied"{} state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStateServe_ae87f702587bbaeaa055e0b0f214a8f4f}{empty}} ()
+\begin{DoxyCompactList}\small\item\em Transition the table to the "{}\+Empty"{} state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStateServe_adc61405d8850afeab496b5cd7e0a8181}{handle\+Order}} ()
+\begin{DoxyCompactList}\small\item\em Transition the table to the "{}\+Handle Order"{} state. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classStateServe_a92afe52da2b571b96bd8676be7c74b75}{get\+State\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the name of the current state. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStateServe_aaef7985581f1b2e62b4d283fb777a53c}{is\+Occupied}} ()
+\begin{DoxyCompactList}\small\item\em Check if the table is in the "{}\+Occupied"{} state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classState}{State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classState_a09e8d40a375dc6ff74019db7ec0aa170}{State}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classState_a5cb8db60494c62dc37110d4caf342562}{table}})
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classState}{State}. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+State} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classState}{State}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classState_ae0d7049f1e830ab5fb1744de6181c366}{set\+Table}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classState_a5cb8db60494c62dc37110d4caf342562}{table}})
+\begin{DoxyCompactList}\small\item\em Set the associated \doxylink{classRestaurantTable}{Restaurant\+Table}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classState}{State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*} {\bfseries table} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the associated \doxylink{classRestaurantTable}{Restaurant\+Table}. \end{DoxyCompactList}\item 
+std\+::string {\bfseries state\+Name}
+\begin{DoxyCompactList}\small\item\em The name of the state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the "{}\+Serve"{} state of a \doxylink{classRestaurantTable}{Restaurant\+Table}. 
+
+This class is a concrete implementation of the \doxylink{classState}{State} interface, representing the state where a \doxylink{classRestaurantTable}{Restaurant\+Table} is Served. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classStateServe_a2ae91603ba8006cd0fe1602089587766}\label{classStateServe_a2ae91603ba8006cd0fe1602089587766} 
+\index{StateServe@{StateServe}!StateServe@{StateServe}}
+\index{StateServe@{StateServe}!StateServe@{StateServe}}
+\doxysubsubsection{\texorpdfstring{StateServe()}{StateServe()}}
+{\footnotesize\ttfamily State\+Serve\+::\+State\+Serve (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{table }\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{classStateServe}{State\+Serve}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & Pointer to the \doxylink{classRestaurantTable}{Restaurant\+Table} associated with this state. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classStateServe_ae87f702587bbaeaa055e0b0f214a8f4f}\label{classStateServe_ae87f702587bbaeaa055e0b0f214a8f4f} 
+\index{StateServe@{StateServe}!empty@{empty}}
+\index{empty@{empty}!StateServe@{StateServe}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily void State\+Serve\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Transition the table to the "{}\+Empty"{} state. 
+
+
+
+Implements \mbox{\hyperlink{classState_afc2cd25bc62c46a72a64207440a60057}{State}}.
+
+\Hypertarget{classStateServe_a92afe52da2b571b96bd8676be7c74b75}\label{classStateServe_a92afe52da2b571b96bd8676be7c74b75} 
+\index{StateServe@{StateServe}!getStateName@{getStateName}}
+\index{getStateName@{getStateName}!StateServe@{StateServe}}
+\doxysubsubsection{\texorpdfstring{getStateName()}{getStateName()}}
+{\footnotesize\ttfamily std\+::string State\+Serve\+::get\+State\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the name of the current state. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the state name. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classState_a60e2bd2c8bc2ade13c63c3b39da9fa57}{State}}.
+
+\Hypertarget{classStateServe_adc61405d8850afeab496b5cd7e0a8181}\label{classStateServe_adc61405d8850afeab496b5cd7e0a8181} 
+\index{StateServe@{StateServe}!handleOrder@{handleOrder}}
+\index{handleOrder@{handleOrder}!StateServe@{StateServe}}
+\doxysubsubsection{\texorpdfstring{handleOrder()}{handleOrder()}}
+{\footnotesize\ttfamily void State\+Serve\+::handle\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Transition the table to the "{}\+Handle Order"{} state. 
+
+
+
+Implements \mbox{\hyperlink{classState_afde052da15358f5c3bf4b6d73904e6fc}{State}}.
+
+\Hypertarget{classStateServe_aaef7985581f1b2e62b4d283fb777a53c}\label{classStateServe_aaef7985581f1b2e62b4d283fb777a53c} 
+\index{StateServe@{StateServe}!isOccupied@{isOccupied}}
+\index{isOccupied@{isOccupied}!StateServe@{StateServe}}
+\doxysubsubsection{\texorpdfstring{isOccupied()}{isOccupied()}}
+{\footnotesize\ttfamily bool State\+Serve\+::is\+Occupied (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if the table is in the "{}\+Occupied"{} state. 
+
+\begin{DoxyReturn}{Returns}
+True if the table is occupied, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classState_a4765cc7f1cecaad25a4a70f5a603cc20}{State}}.
+
+\Hypertarget{classStateServe_a36a34ae9e84d8da24912b4be1fe995b2}\label{classStateServe_a36a34ae9e84d8da24912b4be1fe995b2} 
+\index{StateServe@{StateServe}!occupy@{occupy}}
+\index{occupy@{occupy}!StateServe@{StateServe}}
+\doxysubsubsection{\texorpdfstring{occupy()}{occupy()}}
+{\footnotesize\ttfamily void State\+Serve\+::occupy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Transition the table to the "{}\+Occupied"{} state. 
+
+
+
+Implements \mbox{\hyperlink{classState_a6cd42dcaf83a233b60085d9f89856aa1}{State}}.
+
+\Hypertarget{classStateServe_a0220d492d8590ed5d51a024d2729142e}\label{classStateServe_a0220d492d8590ed5d51a024d2729142e} 
+\index{StateServe@{StateServe}!serve@{serve}}
+\index{serve@{serve}!StateServe@{StateServe}}
+\doxysubsubsection{\texorpdfstring{serve()}{serve()}}
+{\footnotesize\ttfamily void State\+Serve\+::serve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Transition the table to the "{}\+Serve"{} state. 
+
+
+
+Implements \mbox{\hyperlink{classState_a19727806f698660a592a3848b4bd719a}{State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{StateServe_8h}{State\+Serve.\+h}}\item 
+State\+Serve.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,98 @@
+\doxysection{Split\+Bill Class Reference}
+\hypertarget{classSplitBill}{}\label{classSplitBill}\index{SplitBill@{SplitBill}}
+
+
+The \doxylink{classSplitBill}{Split\+Bill} class represents a command to split the bill of a restaurant table.  
+
+
+
+
+{\ttfamily \#include $<$Split\+Bill.\+h$>$}
+
+Inheritance diagram for Split\+Bill\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSplitBill}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSplitBill_add29067308e4203c8f9cba4bb33bd84a}{Split\+Bill}} (\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*}w)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classSplitBill}{Split\+Bill} object with the given waiter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSplitBill_ad4cc3fff7bb8381666683943420996c7}{execute}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, double count)
+\begin{DoxyCompactList}\small\item\em Executes the \doxylink{classSplitBill}{Split\+Bill} command on the given restaurant table with the given count. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCommand}{Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCommand_a0821552854e07d10861f79d5d9853873}{Command}} (\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classCommand_acbaaa545e1098e8b8b22371820b77319}{waiter}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classCommand}{Command} class. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommand_a3891f9919717d37ff5ef6f9b52afb2ac}{execute}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, \mbox{\hyperlink{classMenuItem}{Menu\+Item}} \texorpdfstring{$\ast$}{*}menu\+Item)
+\begin{DoxyCompactList}\small\item\em Execute the command with a \doxylink{classRestaurantTable}{Restaurant\+Table} and a \doxylink{classMenuItem}{Menu\+Item}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommand_ab7037f5f46b0381541121503eb52a343}{execute}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, std\+::string menu\+Item, std\+::string customization)
+\begin{DoxyCompactList}\small\item\em Execute the command with a \doxylink{classRestaurantTable}{Restaurant\+Table}, a \doxylink{classMenuItem}{Menu\+Item} name, and customization details. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommand_a08ea4a0a4d056f68882332562a6f40ec}{execute}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}rt, std\+::string complaint)
+\begin{DoxyCompactList}\small\item\em Execute the command with a \doxylink{classRestaurantTable}{Restaurant\+Table} and a complaint. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommand_a7e6133e1454a1baefcb59319a1e4d4f2}{execute}} (\mbox{\hyperlink{classFacade}{Facade}} \texorpdfstring{$\ast$}{*}f, int count)
+\begin{DoxyCompactList}\small\item\em Merge Tables. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Command} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classCommand}{Command} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCommand_ac2eba399174da25577f10c0b2ee6da73}{get\+Waiter}} () const
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{classWaiter}{Waiter} who issued the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classCommand}{Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*} {\bfseries waiter}
+\begin{DoxyCompactList}\small\item\em A pointer to the \doxylink{classWaiter}{Waiter} who issues the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classSplitBill}{Split\+Bill} class represents a command to split the bill of a restaurant table. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSplitBill_add29067308e4203c8f9cba4bb33bd84a}\label{classSplitBill_add29067308e4203c8f9cba4bb33bd84a} 
+\index{SplitBill@{SplitBill}!SplitBill@{SplitBill}}
+\index{SplitBill@{SplitBill}!SplitBill@{SplitBill}}
+\doxysubsubsection{\texorpdfstring{SplitBill()}{SplitBill()}}
+{\footnotesize\ttfamily Split\+Bill\+::\+Split\+Bill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*}}]{w }\end{DoxyParamCaption})}
+
+
+
+Constructs a new \doxylink{classSplitBill}{Split\+Bill} object with the given waiter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & The waiter responsible for splitting the bill. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSplitBill_ad4cc3fff7bb8381666683943420996c7}\label{classSplitBill_ad4cc3fff7bb8381666683943420996c7} 
+\index{SplitBill@{SplitBill}!execute@{execute}}
+\index{execute@{execute}!SplitBill@{SplitBill}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Split\+Bill\+::execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{rt,  }\item[{double}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Executes the \doxylink{classSplitBill}{Split\+Bill} command on the given restaurant table with the given count. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rt} & The restaurant table to split the bill for. \\
+\hline
+{\em count} & The number of ways to split the bill. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classCommand_ab28a19773850a1746502fccc47ff4d52}{Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SplitBill_8h}{Split\+Bill.\+h}}\item 
+Split\+Bill.\+cpp\end{DoxyCompactItemize}

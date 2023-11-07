@@ -1,0 +1,26 @@
+\doxysection{ca\+\_\+handler.\+h}
+\hypertarget{ca__handler_8h_source}{}\label{ca__handler_8h_source}\mbox{\hyperlink{ca__handler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ ca\_handler.h\ */}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{fa__dish_8h}{fa\_dish.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classca__handler}{ca\_handler}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classca__handler}{ca\_handler}}*\ \mbox{\hyperlink{classca__handler_aa501f6b6b1edce038f5d2e274bab2088}{nextHandler}};\ \ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classca__handler_a997f4ee9690214b5b61ac25d5e876b6c}{ca\_handler}}()\ :\ \mbox{\hyperlink{classca__handler_aa501f6b6b1edce038f5d2e274bab2088}{nextHandler}}(nullptr)\ \{\}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classca__handler_ab5ece78ecd50b9c22e12764ddb4c78e1}{\string~ca\_handler}}()\ \{\textcolor{keyword}{delete}\ \mbox{\hyperlink{classca__handler_aa501f6b6b1edce038f5d2e274bab2088}{nextHandler}};\}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classca__handler_aaf776f301189321d5a9b34f23ff086e7}{setNextHandler}}(\mbox{\hyperlink{classca__handler}{ca\_handler}}*\ next)\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classca__handler_aa501f6b6b1edce038f5d2e274bab2088}{nextHandler}}\ =\ next;}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classca__handler_a01eafa2536eb5d839a01109f6408d3a9}{canHandle}}(\textcolor{keyword}{const}\ std::string\&\ customization)\ =\ 0;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classca__handler_a7d514eddede8845a2c566e499e2db3a2}{handle}}(\mbox{\hyperlink{classfa__dish}{fa\_dish}}*\ dish,\ \textcolor{keyword}{const}\ std::string\&\ customization)\ =\ 0;}
+\DoxyCodeLine{00054\ \};}
+
+\end{DoxyCode}

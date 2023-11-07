@@ -1,0 +1,90 @@
+\doxysection{fa\+\_\+\+Pizza Class Reference}
+\hypertarget{classfa__Pizza}{}\label{classfa__Pizza}\index{fa\_Pizza@{fa\_Pizza}}
+
+
+Abstract class representing a generic pizza dish.  
+
+
+
+
+{\ttfamily \#include $<$fa\+\_\+\+Pizza.\+h$>$}
+
+Inheritance diagram for fa\+\_\+\+Pizza\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classfa__Pizza}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfa__Pizza_a721538aa536e4a9b5ed2bd8a8d7bd441}{fa\+\_\+\+Pizza}} (const std\+::vector$<$ std\+::string $>$ \&initial\+Components)
+\begin{DoxyCompactList}\small\item\em Constructor initializing the pizza with its initial components. \end{DoxyCompactList}\item 
+\Hypertarget{classfa__Pizza_a3ac832d179af07dcc21194da61cdf96a}\label{classfa__Pizza_a3ac832d179af07dcc21194da61cdf96a} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}fa\+\_\+\+Pizza} () override=default
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfa__Pizza_a79fa263375050206bc119fdb6e66d9c6}{get\+Description}} () const override
+\begin{DoxyCompactList}\small\item\em Gets a description of the pizza. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}fa\+\_\+dish} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfa__dish_a6f011b05ec7232c15a9df2f2df2050f3}{add\+Component}} (const std\+::string \&component)
+\begin{DoxyCompactList}\small\item\em Adds a component to the dish. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfa__dish_a71400b890dc6558f780f8f1018517ff5}{remove\+Component}} (const std\+::string \&component)
+\begin{DoxyCompactList}\small\item\em Removes a component from the dish. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ {\bfseries components}
+\begin{DoxyCompactList}\small\item\em List of components in the dish. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class representing a generic pizza dish. 
+
+This class defines the basic characteristics of a pizza and is derived from the \doxylink{classfa__dish}{fa\+\_\+dish} class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfa__Pizza_a721538aa536e4a9b5ed2bd8a8d7bd441}\label{classfa__Pizza_a721538aa536e4a9b5ed2bd8a8d7bd441} 
+\index{fa\_Pizza@{fa\_Pizza}!fa\_Pizza@{fa\_Pizza}}
+\index{fa\_Pizza@{fa\_Pizza}!fa\_Pizza@{fa\_Pizza}}
+\doxysubsubsection{\texorpdfstring{fa\_Pizza()}{fa\_Pizza()}}
+{\footnotesize\ttfamily fa\+\_\+\+Pizza\+::fa\+\_\+\+Pizza (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{initial\+Components }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor initializing the pizza with its initial components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em initial\+Components} & A vector of strings representing the initial components of the pizza. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfa__Pizza_a79fa263375050206bc119fdb6e66d9c6}\label{classfa__Pizza_a79fa263375050206bc119fdb6e66d9c6} 
+\index{fa\_Pizza@{fa\_Pizza}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!fa\_Pizza@{fa\_Pizza}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily std\+::string fa\+\_\+\+Pizza\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets a description of the pizza. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the description of the pizza along with its components. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classfa__dish_aec33189257b0c7a7dd673d6374cfb2f0}{fa\+\_\+dish}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fa__Pizza_8h}{fa\+\_\+\+Pizza.\+h}}\end{DoxyCompactItemize}

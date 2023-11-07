@@ -1,0 +1,292 @@
+\chapter{COS 214 Project}
+\hypertarget{md_README}{}\label{md_README}\index{COS 214 Project@{COS 214 Project}}
+\label{md_README_autotoc_md0}%
+\Hypertarget{md_README_autotoc_md0}%
+\href{https://github.com/GeekGurusUnion/214-Project/actions/workflows/lint.yml}{\texttt{ }}\hypertarget{md_README_autotoc_md1}{}\doxysection{\texorpdfstring{Group Organization}{Group Organization}}\label{md_README_autotoc_md1}
+\hypertarget{md_README_autotoc_md2}{}\doxysubsection{\texorpdfstring{Members}{Members}}\label{md_README_autotoc_md2}
+Tiaan Pouwels (\href{mailto:u21675229@tuks.co.za}{\texttt{ u21675229@tuks.\+co.\+za}}) \href{https://github.com/Tiaan2}{\texttt{ }}
+
+Dawie Reyneke (\href{mailto:u21438112@tuks.co.za}{\texttt{ u21438112@tuks.\+co.\+za}}) \href{https://github.com/ReynekeD}{\texttt{ }}
+
+Xavier Reynolds (\href{mailto:u20526254@tuks.co.za}{\texttt{ u20526254@tuks.\+co.\+za}}) \href{https://github.com/Xavier893}{\texttt{ }}
+
+Keith Homan (\href{mailto:u21473103@tuks.co.za}{\texttt{ u21473103@tuks.\+co.\+za}}) \href{https://github.com/d1scrd}{\texttt{ }}
+
+Jacobus Smit (\href{mailto:u21489476@tuks.co.za}{\texttt{ u21489476@tuks.\+co.\+za}}) \href{https://github.com/SW1F7YY}{\texttt{ }}
+
+Iwan de Jong (\href{mailto:u22498037@tuks.co.za}{\texttt{ u22498037@tuks.\+co.\+za}}) \href{https://github.com/iwandejong}{\texttt{ }}\hypertarget{md_README_autotoc_md3}{}\doxysection{\texorpdfstring{Coding Standards}{Coding Standards}}\label{md_README_autotoc_md3}
+
+
+{\bfseries{Details}}\begin{adjustwidth}{1em}{0em}
+
+
+\end{adjustwidth}
+\hypertarget{md_README_autotoc_md4}{}\doxysubsection{\texorpdfstring{1. Organizational}{1. Organizational}}\label{md_README_autotoc_md4}
+{\bfseries{1.\+1. Use a version control system}}
+
+
+\begin{DoxyItemize}
+\item Never keep files checked out for long periods (small incremental updates (see Git Standards 1.\+1. for more info)).
+\item Ensure that checked-\/in code doesn\textquotesingle{}t break the build (Github Actions doesn\textquotesingle{}t do everything).
+\end{DoxyItemize}
+
+{\bfseries{1.\+2. Code Reviews}}
+
+
+\begin{DoxyItemize}
+\item Peer-\/review other\textquotesingle{}s work so that you understand what is going on and ensure their code isn\textquotesingle{}t breaking your code.
+\item Make a Github issue to describe the problem and assign the responsible person to the issue.
+\end{DoxyItemize}
+
+{\bfseries{1.\+3. File Names}}
+
+Filenames should be all lowercase and can include underscores.
+
+Examples of acceptable file names\+:
+
+{\ttfamily my\+\_\+useful\+\_\+class.\+cpp} {\ttfamily myusefulclass.\+cpp}\hypertarget{md_README_autotoc_md5}{}\doxysubsection{\texorpdfstring{2. Design Style}{2. Design Style}}\label{md_README_autotoc_md5}
+{\bfseries{2.\+1. Give entity {\itshape one} cohesive responsibility}}
+
+
+\begin{DoxyItemize}
+\item For each entity, focus on one thing at a time.
+\item Give each entity (variable (member), class, function) one well-\/defined responsibility.
+\item As the entity grows, the scope increases, but it should not diverge.
+\end{DoxyItemize}
+
+{\bfseries{2.\+2. KISS (Keep It Simple Software)}}
+
+
+\begin{DoxyItemize}
+\item Correct is better than fast.
+\item Simple is better than complex.
+\item Clear is better than cute.
+\item Safe is better than insecure
+\end{DoxyItemize}
+
+{\bfseries{2.\+3. Minimize global and shared data}}
+
+Sharing causes contention. Avoid shared data, like global data. This increases coupling which reduces maintainability.
+
+{\bfseries{2.\+4. Ensure resources are owned by objects}}
+
+Never allocate more than one resource (pointer) in a single statement. This eases the process of memory deallocation.
+
+{\bfseries{2.\+5. Optimize for the reader, not the writer}}
+
+More time is spent reading code than writing it.\hypertarget{md_README_autotoc_md6}{}\doxysubsection{\texorpdfstring{3. Coding Style}{3. Coding Style}}\label{md_README_autotoc_md6}
+{\bfseries{3.\+1. Use {\ttfamily const}proactively}}
+
+{\ttfamily const} (immutable) variables are easier to understand and to track. It\textquotesingle{}s safe and checked at compile time.
+
+{\bfseries{3.\+2. Declare Variables as locally as possible}}
+
+Variables introduce state, and you should have to deal with as little state as possible, with lifetimes as short as possible.
+
+{\bfseries{3.\+3. Always initialize variables}}
+
+This is a common source of C++ hotfixs. Initialize variables upon definition.
+
+{\bfseries{3.\+4. Avoid long functions}}
+
+Excessively long functions and nested code blocks are often caused by failing to give one function one cohesive responsibility (As explained in {\bfseries{2.\+1}}).
+
+{\bfseries{3.\+5. Minimize Definitional Dependencies}}
+
+Don’t be over-\/dependent\+: Don’t \#include a definition when it is not needed (or included by its parent anyways).
+
+{\bfseries{3.\+6. Always write internal \#include guards}}
+
+Prevent unintended multiple inclusions by using \#include guards.
+
+{\bfseries{3.\+7. Don\textquotesingle{}t use {\ttfamily using namespace std;}}}
+
+Rather use a using-\/declaration which lets you use cout/cin/string without qualification 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{\textcolor{keyword}{using\ }std::cout;\ }
+\DoxyCodeLine{cout\ <<\ \textcolor{stringliteral}{"{}Values:"{}};}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md7}{}\doxysubsection{\texorpdfstring{4. Functions and Operators}{4. Functions and Operators}}\label{md_README_autotoc_md7}
+{\bfseries{4.\+1. \doxylink{classOrder}{Order} parameters according to their value, pointer or reference}}
+
+Distinguish among input, output, and input/output parameters, and between value and reference parameters.
+
+{\bfseries{4.\+2. Avoid overloaded operators as far as possible}}
+
+Overload operators only for good reasons. It\textquotesingle{}s easy to misuse operator overloading and cause confusion among fellow coders.\hypertarget{md_README_autotoc_md8}{}\doxysubsection{\texorpdfstring{5. Class Design and Inheritance}{5. Class Design and Inheritance}}\label{md_README_autotoc_md8}
+{\bfseries{5.\+1. Use design patterns!}}
+
+Because we should xD.
+
+{\bfseries{5.\+2. Each {\ttfamily new} should be coupled with an {\ttfamily delete}}}
+
+Basic thought for memory deallocation.
+
+{\bfseries{5.\+3. The {\ttfamily \#define} guard}}
+
+As an example, the file {\ttfamily foo/src/bar/baz.\+h} in project {\ttfamily foo} should have the following guard\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{\textcolor{preprocessor}{\#ifndef\ FOO\_BAR\_BAZ\_H\_}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ FOO\_BAR\_BAZ\_H\_}}
+\DoxyCodeLine{}
+\DoxyCodeLine{...}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#endif\ \ \textcolor{comment}{//\ FOO\_BAR\_BAZ\_H\_}}
+
+\end{DoxyCode}
+
+
+{\bfseries{5.\+4. Declaration \doxylink{classOrder}{Order}}}
+
+Within each section, prefer grouping similar kinds of declarations together, and prefer the following order\+:
+
+
+\begin{DoxyItemize}
+\item Types and type aliases (typedef, using, enum, nested structs and classes, and friend types)
+\item (Optionally, for structs only) non-\/static data members
+\item Static constants
+\item Factory functions
+\item Constructors and assignment operators
+\item Destructor
+\item All other functions (static and non-\/static member functions, and friend functions)
+\item All other data members (static and non-\/static)
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md9}{}\doxysubsection{\texorpdfstring{6. Construction, Destruction and Copying}{6. Construction, Destruction and Copying}}\label{md_README_autotoc_md9}
+{\bfseries{6.\+1. Define and initialize member variables in the same order}}
+
+Agree with your constructor\textquotesingle{}s parameters\+: member variables are initialized in the order they are declared.\hypertarget{md_README_autotoc_md10}{}\doxysubsection{\texorpdfstring{7. Error Handling and Exceptions}{7. Error Handling and Exceptions}}\label{md_README_autotoc_md10}
+Prefer using exceptions over {\ttfamily cout}. This keeps the output clean.\hypertarget{md_README_autotoc_md11}{}\doxysubsection{\texorpdfstring{Sources}{Sources}}\label{md_README_autotoc_md11}
+\href{http://micro-os-plus.github.io/develop/sutter-101/}{\texttt{ http\+://micro-\/os-\/plus.\+github.\+io/develop/sutter-\/101/}} ~\newline
+
+
+\href{https://google.github.io/styleguide/cppguide.html}{\texttt{ https\+://google.\+github.\+io/styleguide/cppguide.\+html}} ~\newline
+
+
+\href{https://stackoverflow.com/questions/1452721/why-is-using-namespace-std-considered-bad-practice}{\texttt{ https\+://stackoverflow.\+com/questions/1452721/why-\/is-\/using-\/namespace-\/std-\/considered-\/bad-\/practice}} \hypertarget{md_README_autotoc_md12}{}\doxysection{\texorpdfstring{Git Standards}{Git Standards}}\label{md_README_autotoc_md12}
+
+
+{\bfseries{Details}}\begin{adjustwidth}{1em}{0em}
+
+
+\end{adjustwidth}
+\hypertarget{md_README_autotoc_md13}{}\doxysubsection{\texorpdfstring{1. Repository Rules}{1. Repository Rules}}\label{md_README_autotoc_md13}
+
+\begin{DoxyItemize}
+\item Fork the Organization\textquotesingle{}s repo to work and test code locally -\/ {\bfseries{fork ONLY the {\ttfamily main} branches}}
+\item Reduce the frequency of pull requests unless the advancement is impeded by a required feature from a particular team member.
+\end{DoxyItemize}
+
+{\bfseries{1.\+1. Basic Workflow}}
+\begin{DoxyEnumerate}
+\item Make sure to fetch latest updates from the organization\textquotesingle{}s repo onto your forked repo by running 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ fetch\ upstream\ \&\&\ git\ merge\ upstream/dev}
+
+\end{DoxyCode}
+
+\item {\bfseries{Make sure you are working in {\ttfamily origin/main}}}
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Commit frequently to the respective branch, but also narrow-\/down commits to provide clarity
+\item After a night\textquotesingle{}s work, create a pull request to merge onto organization\textquotesingle{}s repo such that other members can sync with your latest changes.
+\item {\bfseries{Make sure your pull request directs to the correct branch\+:}} 
+\end{DoxyEnumerate}
+
+Example workflow\+: When working on the {\ttfamily dev} branch, use {\ttfamily git fetch upstream/dev}. You can make your own branches in your forked repo as needed. When creating a Pull Request, select the {\ttfamily dev} branch on the Organization side (see image above). This applies to all branches (e.\+g. working with {\ttfamily hotfix} branch causes a PR to be directed to the organization\textquotesingle{}s {\ttfamily hotfix}-\/branch)\hypertarget{md_README_autotoc_md14}{}\doxysubsection{\texorpdfstring{2. Committing Code}{2. Committing Code}}\label{md_README_autotoc_md14}
+
+\begin{DoxyItemize}
+\item Make atomic commits of changes, even across multiple files, in logical units. That is, as much as possible, each commit should be focused on one specific purpose.
+\item As much as possible, make sure a commit does not contain unnecessary whitespace changes. This can be checked as follows\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ git\ diff\ -\/-\/check}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md15}{}\doxysubsection{\texorpdfstring{3. Commit Messages}{3. Commit Messages}}\label{md_README_autotoc_md15}
+For consistency, try and use the imperative present tense when creating a message. Examples\+:
+
+
+\begin{DoxyItemize}
+\item Use "{}\+Add tests for"{} instead of "{}\+I added tests for"{}
+\item Use "{}\+Change x to y"{} instead of "{}\+Changed x to y"{}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md16}{}\doxysubsection{\texorpdfstring{4. Branching}{4. Branching}}\label{md_README_autotoc_md16}
+\hypertarget{md_README_autotoc_md17}{}\doxysubsection{\texorpdfstring{4.\+1. Main Branches}{4.1. Main Branches}}\label{md_README_autotoc_md17}
+Our main repository will have {\ttfamily main} as the evergreen branch.\hypertarget{md_README_autotoc_md18}{}\doxysubsection{\texorpdfstring{4.\+2. Supporting Branches}{4.2. Supporting Branches}}\label{md_README_autotoc_md18}
+To aid in ease of tracking new features, a few sub-\/branches have been added\+:
+\begin{DoxyItemize}
+\item Feature branches
+\item Dev branches
+\item Hotfix branches
+\end{DoxyItemize}
+
+These branches may have a limited lifetime and will be removed eventually.\hypertarget{md_README_autotoc_md19}{}\doxysubsection{\texorpdfstring{4.\+3. Feature Branches}{4.3. Feature Branches}}\label{md_README_autotoc_md19}
+{\bfseries{4.\+3.\+1. Naming Convention}}
+
+Feature Branches must be named {\ttfamily feature-\/\texorpdfstring{$<$}{<}feature\+Classification\texorpdfstring{$>$}{>}} (referred to as {\ttfamily feature-\/id}).
+
+{\bfseries{4.\+3.\+2. Merging Feature Branches}}
+
+These feature-\/branches must be merged onto the {\ttfamily dev}-\/branch.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ git\ checkout\ -\/b\ feature-\/id\ dev\ \ \ \ //\ creates\ a\ local\ branch\ for\ the\ new\ feature}
+\DoxyCodeLine{\$\ git\ push\ origin\ feature-\/id\ \ \ \ \ \ \ \ //\ makes\ the\ new\ feature\ remotely\ available\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+
+\end{DoxyCode}
+
+
+And for actually merging onto {\ttfamily dev}-\/branch\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ git\ merge\ dev}
+
+\end{DoxyCode}
+
+
+When development on the feature is complete, the lead (or engineer in charge) should merge changes into master and then make sure the remote branch is deleted. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ git\ checkout\ dev\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ change\ to\ the\ master\ branch\ \ }
+\DoxyCodeLine{\$\ git\ merge\ -\/-\/no-\/ff\ feature-\/id\ \ \ \ \ \ //\ makes\ sure\ to\ create\ a\ commit\ object\ during\ merge}
+\DoxyCodeLine{\$\ git\ push\ origin\ dev\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ push\ merge\ changes}
+\DoxyCodeLine{\$\ git\ push\ origin\ :feature-\/id\ \ \ \ \ \ \ //\ deletes\ the\ remote\ branch}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md20}{}\doxysubsection{\texorpdfstring{4.\+4. Hotfix Branches}{4.4. Hotfix Branches}}\label{md_README_autotoc_md20}
+{\bfseries{4.\+4.\+1. Naming Convention}}
+
+Feature Branches must be named {\ttfamily hotfix-\/\texorpdfstring{$<$}{<}hotfix\+Classification\texorpdfstring{$>$}{>}} (referred to as {\ttfamily hotfix-\/id}).
+
+{\bfseries{4.\+4.\+2. Merging Hotfix Branches}}
+
+These hotfix-\/branches must be merged onto the {\ttfamily main}-\/branch.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ git\ checkout\ -\/b\ hotfix-\/id\ master\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ creates\ a\ local\ branch\ for\ the\ new\ hotfix}
+\DoxyCodeLine{\$\ git\ push\ origin\ hotfix-\/id\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ makes\ the\ new\ hotfix\ remotely\ available}
+
+\end{DoxyCode}
+
+
+And for actually merging onto the {\ttfamily main}-\/branch\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ git\ merge\ master\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ merges\ changes\ from\ master\ into\ hotfix\ branch}
+
+\end{DoxyCode}
+
+
+When development on the hotfix is complete, \mbox{[}the Lead\mbox{]} should merge changes into master and then make sure the remote branch is deleted. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ git\ checkout\ master\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ change\ to\ the\ master\ branch\ \ }
+\DoxyCodeLine{\$\ git\ merge\ -\/-\/no-\/ff\ hotfix-\/id\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ makes\ sure\ to\ create\ a\ commit\ object\ during\ merge}
+\DoxyCodeLine{\$\ git\ push\ origin\ master\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ push\ merge\ changes}
+\DoxyCodeLine{\$\ git\ push\ origin\ :hotfix-\/id\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ deletes\ the\ remote\ branch}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md21}{}\doxysubsection{\texorpdfstring{Sources}{Sources}}\label{md_README_autotoc_md21}
+\href{https://gist.github.com/digitaljhelms/4287848}{\texttt{ https\+://gist.\+github.\+com/digitaljhelms/4287848}} ~\newline
+
+
+\href{https://gist.github.com/digitaljhelms/3761873}{\texttt{ https\+://gist.\+github.\+com/digitaljhelms/3761873}} ~\newline
