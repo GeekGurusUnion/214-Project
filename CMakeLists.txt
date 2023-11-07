@@ -12,47 +12,23 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 
-# Define sources for the main project
-set(PROJECT_SOURCES
-        main.cpp
-        fa_dish.h
-        ca_handler.h
-        si_headChef.h
-        fa_dishFactory.h
-        fa_dishFactory.cpp
-        ad_OrderAdapter.h
-        ca_ingredientHandler.h
-        fa_burger.h
-        ad_RestaurantOrder.cpp
-        ad_FloorOrder.cpp
-        ad_OrderAdapter.cpp
-        si_headChef.cpp
-        fa_dish.cpp
-        fa_Pizza.h
-)
+# Use file GLOB to find all source and header files, excluding unitTests*.cpp and main.cpp for the test sources
+file(GLOB_RECURSE ALL_SOURCES "*.cpp")
+file(GLOB_RECURSE ALL_HEADERS "*.h")
 
-# Define sources for the tests
-set(TEST_SOURCES
-        kitchen/factory_unittest.cpp
-        kitchen/headChef_unittest.cpp
-        kitchen/headChefTest.cpp
-        kitchen/factoryTest.cpp
-        fa_dish.h
-        ca_handler.h
-        si_headChef.h
-        fa_dishFactory.h
-        fa_dishFactory.cpp
-        ad_OrderAdapter.h
-        ca_ingredientHandler.h
-        fa_burger.h
-        ad_RestaurantOrder.cpp
-        ad_FloorOrder.cpp
-        ad_OrderAdapter.cpp
-        si_headChef.cpp
-        fa_dish.cpp
-        fa_Pizza.h
-        test_main.cpp
-)
+# Exclude files starting with unitTests and main.cpp for the PROJECT_SOURCES
+list(FILTER ALL_SOURCES EXCLUDE REGEX "unitTests.*\\.cpp$")
+list(FILTER ALL_SOURCES EXCLUDE REGEX "main\\.cpp$")
+
+# Set the PROJECT_SOURCES based on filtered results
+set(PROJECT_SOURCES ${ALL_HEADERS} ${ALL_SOURCES})
+
+# Exclude files starting with unitTests for the TEST_SOURCES
+file(GLOB_RECURSE TEST_SOURCES "*.cpp")
+file(GLOB_RECURSE TEST_HEADERS "*.h")
+
+# Exclude main.cpp from the TEST_SOURCES
+list(FILTER TEST_SOURCES EXCLUDE REGEX "main\\.cpp$")
 
 # Define the main executable
 add_executable(FlyweightFighters_COS214_Project ${PROJECT_SOURCES})
@@ -61,7 +37,7 @@ add_executable(FlyweightFighters_COS214_Project ${PROJECT_SOURCES})
 set(CMAKE_CXX_CLANG_TIDY clang-tidy)
 
 # Define the test executable
-add_executable(runTests ${TEST_SOURCES})
+add_executable(runTests ${TEST_SOURCES} ${TEST_HEADERS})
 target_link_libraries(runTests gtest gtest_main pthread)
 
 # Define the Valgrind test
