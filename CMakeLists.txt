@@ -10,10 +10,8 @@ FetchContent_Declare(
         googletest
         URL https://github.com/google/googletest/archive/refs/heads/master.zip
 )
+# This will fetch and populate content if not already done.
 FetchContent_MakeAvailable(googletest)
-
-# Now that we have fetched the content, add the subdirectories for GoogleTest and GoogleMock
-add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BINARY_DIR})
 
 # Use file GLOB to find all source and header files, excluding unitTest*.cpp and main.cpp for the test sources
 file(GLOB_RECURSE ALL_SOURCES "*.cpp")
