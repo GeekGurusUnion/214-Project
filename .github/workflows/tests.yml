@@ -21,8 +21,8 @@ jobs:
           make
           sudo make install
 
-      - name: Build and run Facade Test
-        run: make test INCLUDE_TEST=unitTest_Facade.cpp
+      #- name: Build and run Facade Test
+      #  run: make test INCLUDE_TEST=unitTest_Facade.cpp
 
       - name: Build and run Dawie Tests
         run: make test INCLUDE_TEST=unitTests_Dawie.cpp

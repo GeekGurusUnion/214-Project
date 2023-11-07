@@ -37,21 +37,7 @@ LINT_FILES := $(filter-out $(LINT_SRC_EXCLUDE), $(wildcard *.cpp) $(wildcard $(K
 lint:
 	clang-tidy $(LINT_FILES) -- -std=c++17
 
-# all: $(EXECUTABLE)
-
-# $(EXECUTABLE): $(OBJ_FILES)
-# 	$(CXX) $(CXXFLAGS) -o $@ $^
-
-# %.o: %.cpp
-# 	$(CXX) $(CXXFLAGS) -c -o $@ $<
-
-# run: $(EXECUTABLE)
-# 	./$(EXECUTABLE)
-
-# valgrind: $(EXECUTABLE)
-# 	$(VALGRIND) --leak-check=full ./$(EXECUTABLE)
-
 clean:
 	rm -f $(EXECUTABLE) $(OBJ_FILES)
 
-# .PHONY: all run valgrind clean
+
