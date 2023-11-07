@@ -56,7 +56,7 @@ int RestaurantTable::getTableNumber() const {
 }
 
 void RestaurantTable::printBill() {
-    // std::cout << "Table " << tableNumber << " Bill: $" << order->getTotal() << std::endl;
+    std::cout << "Table " << tableNumber << " Bill: $" << order->getTotal() << std::endl;
 }
 
 int RestaurantTable::getTableSize() {

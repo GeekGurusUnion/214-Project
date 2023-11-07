@@ -71,8 +71,8 @@ void MergeTables::execute(Facade *f, int count) {
         table2->occupy();
         f->getWaiter(table1);
         f->nullifyTable(table2);
-        // std::cout << "Tables have been merged with new size " << table1->getTableSize() << std::endl;
-        // std::cout << "Your table number is " << table1->getTableNumber() << std::endl;
+        std::cout << "Tables have been merged with new size " << table1->getTableSize() << std::endl;
+        std::cout << "Your table number is " << table1->getTableNumber() << std::endl;
     } else {
         // std::cout << "No tables can be merged." << std::endl;
     }
