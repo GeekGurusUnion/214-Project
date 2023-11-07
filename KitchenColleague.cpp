@@ -27,14 +27,14 @@ void KitchenColleague::handleOrder()
             floorOrder.push_back(cus);
         }
 
-        std::cout << this->getOrder()->getTable()->getWaiter()->getName() << std::endl;
+        // std::cout << this->getOrder()->getTable()->getWaiter()->getName() << std::endl;
         ad_OrderAdapter floor(floorOrder);
 
         // fa_dish *dish = floor.PlaceOrder();/
 
         order->addDish(floor.PlaceOrder());
 
-        //std::cout << dish->getDescription() << std::endl; // This gets the description of the dish. Contains all the Info of the dish. 
+        //// std::cout << dish->getDescription() << std::endl; // This gets the description of the dish. Contains all the Info of the dish. 
     }
 
     // this->getOrder()->setDishes(dishes);

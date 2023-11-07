@@ -6,7 +6,7 @@ WaiterIterator::WaiterIterator(std::vector<Waiter*> waiters) {
 };
 
 WaiterIterator::~WaiterIterator() {
-    std::cout << "Destructor" << std::endl;
+    // std::cout << "Destructor" << std::endl;
     this->waiters.clear();
 };
 

@@ -13,7 +13,7 @@ bool WaiterStateAvailable::isUnavailable() {
 }
 
 void WaiterStateAvailable::setAvailable() {
-    std::cout << "Waiter is already available." << std::endl;
+    // std::cout << "Waiter is already available." << std::endl;
 }
 
 void WaiterStateAvailable::setUnavailable() {

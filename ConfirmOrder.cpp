@@ -7,7 +7,7 @@ ConfirmOrder::ConfirmOrder(Waiter* waiter, Colleague* fc) : Command(waiter) {
 
 void ConfirmOrder::execute(RestaurantTable* rt, MenuItem* m = nullptr) {
     if (rt->getOrder() == nullptr) {
-        std::cout << "Waiter: No order found for table " << rt << ".\n";
+        // std::cout << "Waiter: No order found for table " << rt << ".\n";
         return;
     }
     floorColleague->setOrder(rt->getOrder());

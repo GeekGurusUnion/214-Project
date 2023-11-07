@@ -15,7 +15,7 @@ RestaurantTable::~RestaurantTable() {
 }
 
 void RestaurantTable::setState(State* state) {
-    std::cout << "Context: Transition to " << typeid(*state).name() << ".\n";
+    // std::cout << "Context: Transition to " << typeid(*state).name() << ".\n";
     if (this->currentState != nullptr)
         delete this->currentState;
     this->currentState = state;
@@ -42,7 +42,7 @@ Order* RestaurantTable::getOrder() const {
         return this->order;
     }
     else {
-        std::cout << "Error: Order is null." << std::endl;
+        // std::cout << "Error: Order is null." << std::endl;
         return nullptr;
     }
 }
@@ -56,7 +56,7 @@ int RestaurantTable::getTableNumber() const {
 }
 
 void RestaurantTable::printBill() {
-    std::cout << "Table " << tableNumber << " Bill: $" << order->getTotal() << std::endl;
+    // std::cout << "Table " << tableNumber << " Bill: $" << order->getTotal() << std::endl;
 }
 
 int RestaurantTable::getTableSize() {

@@ -6,16 +6,16 @@ StateOccupied::StateOccupied(RestaurantTable* table) : State(table) {
 }
 
 void StateOccupied::occupy() {
-    std::cout << "Table is already occupied." << std::endl;
+    // std::cout << "Table is already occupied." << std::endl;
 }
 
 void StateOccupied::empty() {
-    std::cout << "Table is now empty." << std::endl;
+    // std::cout << "Table is now empty." << std::endl;
     table->setState(new StateEmpty(table));
 }
 
 void StateOccupied::serve() {
-    std::cout << "Table is now being served." << std::endl;
+    // std::cout << "Table is now being served." << std::endl;
     table->getOrder()->printOrder();
     table->setState(new StateServe(table));
 }

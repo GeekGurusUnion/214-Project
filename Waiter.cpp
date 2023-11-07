@@ -57,13 +57,13 @@ void Waiter::confirmOrder(RestaurantTable* rt) {
 
 void Waiter::addOrder(RestaurantTable* rt) {
     if (!isAvailable()) {
-        std::cout << "Waiter: Sorry, I can't take any more orders.\n";
+        // std::cout << "Waiter: Sorry, I can't take any more orders.\n";
         return;
     }
     this->busyOrders++;
     tables.push_back(rt);
     if (busyOrders == totalOrders) {
-        std::cout << "Waiter: This will be the last one.\n";
+        // std::cout << "Waiter: This will be the last one.\n";
         this->state->setUnavailable();
     }
 }

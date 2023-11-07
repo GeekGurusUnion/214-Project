@@ -13,7 +13,7 @@ void Mediator::notify(Colleague* colleague) {
             } else if (FloorColleague* floor = dynamic_cast<FloorColleague*>(colleagues[i])) {
                 floor->handleOrder();
             } else {
-                std::cout << "Mediator: Unknown colleague type.\n";
+                // std::cout << "Mediator: Unknown colleague type.\n";
             }
         }
     }

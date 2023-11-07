@@ -17,7 +17,7 @@ void WaiterStateUnavailable::setAvailable() {
 }
 
 void WaiterStateUnavailable::setUnavailable() {
-    std::cout << "Waiter is already unavailable." << std::endl;
+    // std::cout << "Waiter is already unavailable." << std::endl;
 }
 
 // * testing * //

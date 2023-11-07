@@ -81,9 +81,9 @@ void Order::splitBill(int count) {
 
 void Order::printOrder() {
     // loop through dish
-    std::cout << "Printing order" << std::endl;
+    // std::cout << "Printing order" << std::endl;
     for (auto& d : dishes) {
-        std::cout << d->getDescription() << std::endl;
+        // std::cout << d->getDescription() << std::endl;
     }
 }
 

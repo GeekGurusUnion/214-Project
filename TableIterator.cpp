@@ -6,7 +6,7 @@ TableIterator::TableIterator(std::vector<RestaurantTable*> tables) {
 }
 
 TableIterator::~TableIterator() {
-    std::cout << "Destructor" << std::endl;
+    // std::cout << "Destructor" << std::endl;
     tables.clear();
 }
 
