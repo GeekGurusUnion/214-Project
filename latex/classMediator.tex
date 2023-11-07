@@ -1,0 +1,86 @@
+\doxysection{Mediator Class Reference}
+\hypertarget{classMediator}{}\label{classMediator}\index{Mediator@{Mediator}}
+
+
+An interface representing a mediator for communication among colleagues.  
+
+
+
+
+{\ttfamily \#include $<$Mediator.\+h$>$}
+
+Inheritance diagram for Mediator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMediator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classMediator_aa75ae071194f2da701d98de0f6ac0ba7}\label{classMediator_aa75ae071194f2da701d98de0f6ac0ba7} 
+{\bfseries Mediator} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{classMediator}{Mediator} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMediator_a445a0fa333ce54ec836e3c8a04276272}{\texorpdfstring{$\sim$}{\string~}\+Mediator}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classMediator}{Mediator} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMediator_aeb54fce3a9d3fbef5f6314c33ae81436}{notify}} (\mbox{\hyperlink{classColleague}{Colleague}} \texorpdfstring{$\ast$}{*}colleague)
+\begin{DoxyCompactList}\small\item\em Notify a colleague within the mediator. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMediator_ad4473a14489b44b3aba41fa8d1d1d34e}{add\+Colleague}} (\mbox{\hyperlink{classColleague}{Colleague}} \texorpdfstring{$\ast$}{*}colleague)
+\begin{DoxyCompactList}\small\item\em Add a colleague to the mediator\textquotesingle{}s list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An interface representing a mediator for communication among colleagues. 
+
+\doxylink{classMediator}{Mediator} defines a common interface for objects that facilitate communication and coordination among different colleagues (objects) in a system. It manages a list of colleagues and provides a way for them to notify each other. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMediator_a445a0fa333ce54ec836e3c8a04276272}\label{classMediator_a445a0fa333ce54ec836e3c8a04276272} 
+\index{Mediator@{Mediator}!````~Mediator@{\texorpdfstring{$\sim$}{\string~}Mediator}}
+\index{````~Mediator@{\texorpdfstring{$\sim$}{\string~}Mediator}!Mediator@{Mediator}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Mediator()}{\string~Mediator()}}
+{\footnotesize\ttfamily virtual Mediator\+::\texorpdfstring{$\sim$}{\string~}\+Mediator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor for the \doxylink{classMediator}{Mediator} class. 
+
+Clears the list of colleagues when the mediator is destroyed. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMediator_ad4473a14489b44b3aba41fa8d1d1d34e}\label{classMediator_ad4473a14489b44b3aba41fa8d1d1d34e} 
+\index{Mediator@{Mediator}!addColleague@{addColleague}}
+\index{addColleague@{addColleague}!Mediator@{Mediator}}
+\doxysubsubsection{\texorpdfstring{addColleague()}{addColleague()}}
+{\footnotesize\ttfamily void Mediator\+::add\+Colleague (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classColleague}{Colleague}} \texorpdfstring{$\ast$}{*}}]{colleague }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Add a colleague to the mediator\textquotesingle{}s list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em colleague} & A pointer to the colleague to be added to the mediator. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classMediator_aeb54fce3a9d3fbef5f6314c33ae81436}\label{classMediator_aeb54fce3a9d3fbef5f6314c33ae81436} 
+\index{Mediator@{Mediator}!notify@{notify}}
+\index{notify@{notify}!Mediator@{Mediator}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily void Mediator\+::notify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classColleague}{Colleague}} \texorpdfstring{$\ast$}{*}}]{colleague }\end{DoxyParamCaption})}
+
+
+
+Notify a colleague within the mediator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em colleague} & A pointer to the colleague that needs to be notified. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Mediator_8h}{Mediator.\+h}}\item 
+Mediator.\+cpp\end{DoxyCompactItemize}

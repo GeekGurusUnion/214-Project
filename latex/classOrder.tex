@@ -1,0 +1,210 @@
+\doxysection{Order Class Reference}
+\hypertarget{classOrder}{}\label{classOrder}\index{Order@{Order}}
+
+
+A class representing a customer\textquotesingle{}s order in a restaurant.  
+
+
+
+
+{\ttfamily \#include $<$Order.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classOrder_a1bb4ba37c82c1ae4646745f2a46ed8d4}{Order}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}table)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classOrder}{Order} class. \end{DoxyCompactList}\item 
+\Hypertarget{classOrder_a8fb25876ccbd534465f5f96ef9bb2212}\label{classOrder_a8fb25876ccbd534465f5f96ef9bb2212} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Order} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classOrder}{Order} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOrder_aaf5b17dbdfbcd8a38efcc68e9df88eb9}{add\+Item}} (\mbox{\hyperlink{classMenuItem}{Menu\+Item}} \texorpdfstring{$\ast$}{*}item)
+\begin{DoxyCompactList}\small\item\em Add a menu item to the order. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOrder_a40dfb4d8e05b8cf75609e39a90c3a1df}{set\+Status}} (bool status)
+\begin{DoxyCompactList}\small\item\em Set the status of the order (e.\+g., confirmed or not). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOrder_a07e0943b8046410d91f2ff2c02074898}{remove\+Item}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Remove a menu item from the order by name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classOrder_a79baf9f80c1448f5a49e69d3da186a91}{get\+Table}} ()
+\begin{DoxyCompactList}\small\item\em Get the restaurant table associated with the order. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classMenuItem}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classOrder_aee5c6addc2a7fdae304eb5cefd225ff2}{get\+Items}} ()
+\begin{DoxyCompactList}\small\item\em Get the list of menu items in the order. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOrder_abc84ea80031080ead809f77e9081ba86}{set\+Dishes}} (std\+::vector$<$ \mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}} \texorpdfstring{$\ast$}{*} $>$)
+\begin{DoxyCompactList}\small\item\em Get the list prepared dishes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOrder_ac34df81c6d8cf8dee02a62a327995ecf}{add\+Dish}} (\mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}} \texorpdfstring{$\ast$}{*}dish)
+\begin{DoxyCompactList}\small\item\em Add a dish to the list of prepared dishes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOrder_add9497c28bf3db59c28f2c0850c621d4}{add\+Customization}} (std\+::string name, std\+::string customization)
+\begin{DoxyCompactList}\small\item\em Add a customization to a specific menu item in the order. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classOrder_a7c4b920ed34e614043677fda7347ed40}{get\+Order\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the size of the order (number of menu items). \end{DoxyCompactList}\item 
+\Hypertarget{classOrder_a62ff67f913e6d1e539ce2e3f4e0006ea}\label{classOrder_a62ff67f913e6d1e539ce2e3f4e0006ea} 
+double {\bfseries get\+Total} ()
+\begin{DoxyCompactList}\small\item\em Calculate the total cost of the order. \end{DoxyCompactList}\item 
+\Hypertarget{classOrder_a0a03d4d2d5279fbcc6108149b456826e}\label{classOrder_a0a03d4d2d5279fbcc6108149b456826e} 
+void {\bfseries add\+Tip} (double tip)
+\begin{DoxyCompactList}\small\item\em Add a tip to the order. \end{DoxyCompactList}\item 
+\Hypertarget{classOrder_a3f80cdc3b221aa497470ec43fd35d4c3}\label{classOrder_a3f80cdc3b221aa497470ec43fd35d4c3} 
+void {\bfseries split\+Bill} (int count)
+\begin{DoxyCompactList}\small\item\em Split the bill. \end{DoxyCompactList}\item 
+\Hypertarget{classOrder_a0a0ffa4b438fc3f8b5847da148c7c868}\label{classOrder_a0a0ffa4b438fc3f8b5847da148c7c868} 
+void {\bfseries print\+Order} ()
+\begin{DoxyCompactList}\small\item\em Print the order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class representing a customer\textquotesingle{}s order in a restaurant. 
+
+\doxylink{classOrder}{Order} defines the characteristics of a customer\textquotesingle{}s order, including the menu items, table, and order status. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classOrder_a1bb4ba37c82c1ae4646745f2a46ed8d4}\label{classOrder_a1bb4ba37c82c1ae4646745f2a46ed8d4} 
+\index{Order@{Order}!Order@{Order}}
+\index{Order@{Order}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{Order()}{Order()}}
+{\footnotesize\ttfamily Order\+::\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{table }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classOrder}{Order} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & A pointer to the restaurant table associated with the order. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classOrder_add9497c28bf3db59c28f2c0850c621d4}\label{classOrder_add9497c28bf3db59c28f2c0850c621d4} 
+\index{Order@{Order}!addCustomization@{addCustomization}}
+\index{addCustomization@{addCustomization}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{addCustomization()}{addCustomization()}}
+{\footnotesize\ttfamily void Order\+::add\+Customization (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{customization }\end{DoxyParamCaption})}
+
+
+
+Add a customization to a specific menu item in the order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the menu item to customize. \\
+\hline
+{\em customization} & The customization to add to the menu item. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classOrder_ac34df81c6d8cf8dee02a62a327995ecf}\label{classOrder_ac34df81c6d8cf8dee02a62a327995ecf} 
+\index{Order@{Order}!addDish@{addDish}}
+\index{addDish@{addDish}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{addDish()}{addDish()}}
+{\footnotesize\ttfamily void Order\+::add\+Dish (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}} \texorpdfstring{$\ast$}{*}}]{dish }\end{DoxyParamCaption})}
+
+
+
+Add a dish to the list of prepared dishes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dish} & A pointer to the dish to add to the list. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classOrder_aaf5b17dbdfbcd8a38efcc68e9df88eb9}\label{classOrder_aaf5b17dbdfbcd8a38efcc68e9df88eb9} 
+\index{Order@{Order}!addItem@{addItem}}
+\index{addItem@{addItem}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{addItem()}{addItem()}}
+{\footnotesize\ttfamily void Order\+::add\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMenuItem}{Menu\+Item}} \texorpdfstring{$\ast$}{*}}]{item }\end{DoxyParamCaption})}
+
+
+
+Add a menu item to the order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & A pointer to the menu item to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classOrder_aee5c6addc2a7fdae304eb5cefd225ff2}\label{classOrder_aee5c6addc2a7fdae304eb5cefd225ff2} 
+\index{Order@{Order}!getItems@{getItems}}
+\index{getItems@{getItems}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{getItems()}{getItems()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classMenuItem}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ Order\+::get\+Items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the list of menu items in the order. 
+
+\begin{DoxyReturn}{Returns}
+A vector of pointers to the menu items in the order. 
+\end{DoxyReturn}
+\Hypertarget{classOrder_a7c4b920ed34e614043677fda7347ed40}\label{classOrder_a7c4b920ed34e614043677fda7347ed40} 
+\index{Order@{Order}!getOrderSize@{getOrderSize}}
+\index{getOrderSize@{getOrderSize}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{getOrderSize()}{getOrderSize()}}
+{\footnotesize\ttfamily int Order\+::get\+Order\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the size of the order (number of menu items). 
+
+\begin{DoxyReturn}{Returns}
+The size of the order. 
+\end{DoxyReturn}
+\Hypertarget{classOrder_a79baf9f80c1448f5a49e69d3da186a91}\label{classOrder_a79baf9f80c1448f5a49e69d3da186a91} 
+\index{Order@{Order}!getTable@{getTable}}
+\index{getTable@{getTable}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{getTable()}{getTable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*} Order\+::get\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the restaurant table associated with the order. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the restaurant table associated with the order. 
+\end{DoxyReturn}
+\Hypertarget{classOrder_a07e0943b8046410d91f2ff2c02074898}\label{classOrder_a07e0943b8046410d91f2ff2c02074898} 
+\index{Order@{Order}!removeItem@{removeItem}}
+\index{removeItem@{removeItem}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{removeItem()}{removeItem()}}
+{\footnotesize\ttfamily void Order\+::remove\+Item (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Remove a menu item from the order by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the menu item to remove. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classOrder_abc84ea80031080ead809f77e9081ba86}\label{classOrder_abc84ea80031080ead809f77e9081ba86} 
+\index{Order@{Order}!setDishes@{setDishes}}
+\index{setDishes@{setDishes}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{setDishes()}{setDishes()}}
+{\footnotesize\ttfamily void Order\+::set\+Dishes (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classfa__dish}{fa\+\_\+dish}} \texorpdfstring{$\ast$}{*} $>$}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the list prepared dishes. 
+
+\begin{DoxyReturn}{Returns}
+A vector of pointers to prepared dishes. 
+\end{DoxyReturn}
+\Hypertarget{classOrder_a40dfb4d8e05b8cf75609e39a90c3a1df}\label{classOrder_a40dfb4d8e05b8cf75609e39a90c3a1df} 
+\index{Order@{Order}!setStatus@{setStatus}}
+\index{setStatus@{setStatus}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{setStatus()}{setStatus()}}
+{\footnotesize\ttfamily void Order\+::set\+Status (\begin{DoxyParamCaption}\item[{bool}]{status }\end{DoxyParamCaption})}
+
+
+
+Set the status of the order (e.\+g., confirmed or not). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & The status to set for the order. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Order_8h}{Order.\+h}}\item 
+Order.\+cpp\end{DoxyCompactItemize}

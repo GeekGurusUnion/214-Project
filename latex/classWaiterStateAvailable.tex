@@ -1,0 +1,186 @@
+\doxysection{Waiter\+State\+Available Class Reference}
+\hypertarget{classWaiterStateAvailable}{}\label{classWaiterStateAvailable}\index{WaiterStateAvailable@{WaiterStateAvailable}}
+
+
+Represents the available state of a \doxylink{classWaiter}{Waiter}.  
+
+
+
+
+{\ttfamily \#include $<$Waiter\+State\+Available.\+h$>$}
+
+Inheritance diagram for Waiter\+State\+Available\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classWaiterStateAvailable}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWaiterStateAvailable_a51a6645ea2ca944cf1bbc25da1ca7ac7}{Waiter\+State\+Available}} (\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classWaiterState_af7a656b96cb9c1d500505a0b97269ccb}{waiter}})
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classWaiterStateAvailable}{Waiter\+State\+Available}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWaiterStateAvailable_a3f7908370121b7dc47e458b716c076d6}{is\+Available}} ()
+\begin{DoxyCompactList}\small\item\em Check if the \doxylink{classWaiter}{Waiter} is available. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWaiterStateAvailable_a12d5a3569dc1647a54fc342809ddc88d}{is\+Unavailable}} ()
+\begin{DoxyCompactList}\small\item\em Check if the \doxylink{classWaiter}{Waiter} is unavailable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaiterStateAvailable_a6505c4a6cbaf73a4b3be61930570a33a}{set\+Available}} ()
+\begin{DoxyCompactList}\small\item\em Set the \doxylink{classWaiter}{Waiter}\textquotesingle{}s state to available. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaiterStateAvailable_ab42ca43025e091fbdb0c28a9fdd2e5c0}{set\+Unavailable}} ()
+\begin{DoxyCompactList}\small\item\em Set the \doxylink{classWaiter}{Waiter}\textquotesingle{}s state to unavailable. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classWaiterStateAvailable_ae9e82068e1b05afe43d51cd3251189c1}{get\+Waiter}} () const
+\begin{DoxyCompactList}\small\item\em Get the associated \doxylink{classWaiter}{Waiter} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWaiterState}{Waiter\+State}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classWaiterStateAvailable_a9cb4432e4c2d22de0b8847252d1b1fd1}{get\+This}} ()
+\begin{DoxyCompactList}\small\item\em Get a pointer to the current \doxylink{classWaiterState}{Waiter\+State} object (this). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classWaiterState}{Waiter\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWaiterState_a1b8a2c05d2b08604bbe7b6c5843d17f2}{Waiter\+State}} (\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classWaiterState_af7a656b96cb9c1d500505a0b97269ccb}{waiter}})
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classWaiterState}{Waiter\+State}. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Waiter\+State} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classWaiterState}{Waiter\+State} (virtual to allow for derived class destructors). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaiterState_a962beb292f7473e2158244a43d075b97}{set\+Waiter}} (\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classWaiterState_af7a656b96cb9c1d500505a0b97269ccb}{waiter}})
+\begin{DoxyCompactList}\small\item\em Set the associated \doxylink{classWaiter}{Waiter} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classWaiterStateAvailable_a6c0a6c5fc878f5bc36ddfdad05df0d62}\label{classWaiterStateAvailable_a6c0a6c5fc878f5bc36ddfdad05df0d62} 
+std\+::string {\bfseries curr\+State} = "{}Waiter\+State\+Available"{}
+\begin{DoxyCompactList}\small\item\em A string representing the current state ("{}\+Waiter\+State\+Available"{}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classWaiterState}{Waiter\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*} {\bfseries waiter}
+\begin{DoxyCompactList}\small\item\em Pointer to the \doxylink{classWaiter}{Waiter} associated with this state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the available state of a \doxylink{classWaiter}{Waiter}. 
+
+This class is a concrete implementation of the \doxylink{classWaiterState}{Waiter\+State} interface, representing the state where a \doxylink{classWaiter}{Waiter} is available. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classWaiterStateAvailable_a51a6645ea2ca944cf1bbc25da1ca7ac7}\label{classWaiterStateAvailable_a51a6645ea2ca944cf1bbc25da1ca7ac7} 
+\index{WaiterStateAvailable@{WaiterStateAvailable}!WaiterStateAvailable@{WaiterStateAvailable}}
+\index{WaiterStateAvailable@{WaiterStateAvailable}!WaiterStateAvailable@{WaiterStateAvailable}}
+\doxysubsubsection{\texorpdfstring{WaiterStateAvailable()}{WaiterStateAvailable()}}
+{\footnotesize\ttfamily Waiter\+State\+Available\+::\+Waiter\+State\+Available (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*}}]{waiter }\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{classWaiterStateAvailable}{Waiter\+State\+Available}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em waiter} & Pointer to the \doxylink{classWaiter}{Waiter} associated with this state. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classWaiterStateAvailable_a9cb4432e4c2d22de0b8847252d1b1fd1}\label{classWaiterStateAvailable_a9cb4432e4c2d22de0b8847252d1b1fd1} 
+\index{WaiterStateAvailable@{WaiterStateAvailable}!getThis@{getThis}}
+\index{getThis@{getThis}!WaiterStateAvailable@{WaiterStateAvailable}}
+\doxysubsubsection{\texorpdfstring{getThis()}{getThis()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classWaiterState}{Waiter\+State}} \texorpdfstring{$\ast$}{*} Waiter\+State\+Available\+::get\+This (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get a pointer to the current \doxylink{classWaiterState}{Waiter\+State} object (this). 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the current \doxylink{classWaiterState}{Waiter\+State} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classWaiterState_a32d701e81930c431fe37991ea2ff946c}{Waiter\+State}}.
+
+\Hypertarget{classWaiterStateAvailable_ae9e82068e1b05afe43d51cd3251189c1}\label{classWaiterStateAvailable_ae9e82068e1b05afe43d51cd3251189c1} 
+\index{WaiterStateAvailable@{WaiterStateAvailable}!getWaiter@{getWaiter}}
+\index{getWaiter@{getWaiter}!WaiterStateAvailable@{WaiterStateAvailable}}
+\doxysubsubsection{\texorpdfstring{getWaiter()}{getWaiter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*} Waiter\+State\+Available\+::get\+Waiter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the associated \doxylink{classWaiter}{Waiter} object. 
+
+\begin{DoxyNote}{Note}
+The following functions are intended for testing purposes. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Pointer to the \doxylink{classWaiter}{Waiter} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classWaiterState_aa12dbb0dffc359d2eac35d27f3aa5bf3}{Waiter\+State}}.
+
+\Hypertarget{classWaiterStateAvailable_a3f7908370121b7dc47e458b716c076d6}\label{classWaiterStateAvailable_a3f7908370121b7dc47e458b716c076d6} 
+\index{WaiterStateAvailable@{WaiterStateAvailable}!isAvailable@{isAvailable}}
+\index{isAvailable@{isAvailable}!WaiterStateAvailable@{WaiterStateAvailable}}
+\doxysubsubsection{\texorpdfstring{isAvailable()}{isAvailable()}}
+{\footnotesize\ttfamily bool Waiter\+State\+Available\+::is\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if the \doxylink{classWaiter}{Waiter} is available. 
+
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classWaiter}{Waiter} is available, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classWaiterState_a6ca086ade8de6d668ab6126d088aae54}{Waiter\+State}}.
+
+\Hypertarget{classWaiterStateAvailable_a12d5a3569dc1647a54fc342809ddc88d}\label{classWaiterStateAvailable_a12d5a3569dc1647a54fc342809ddc88d} 
+\index{WaiterStateAvailable@{WaiterStateAvailable}!isUnavailable@{isUnavailable}}
+\index{isUnavailable@{isUnavailable}!WaiterStateAvailable@{WaiterStateAvailable}}
+\doxysubsubsection{\texorpdfstring{isUnavailable()}{isUnavailable()}}
+{\footnotesize\ttfamily bool Waiter\+State\+Available\+::is\+Unavailable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if the \doxylink{classWaiter}{Waiter} is unavailable. 
+
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classWaiter}{Waiter} is unavailable, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classWaiterState_a20a68837ed47ff0c9bce4af3bb1c27a5}{Waiter\+State}}.
+
+\Hypertarget{classWaiterStateAvailable_a6505c4a6cbaf73a4b3be61930570a33a}\label{classWaiterStateAvailable_a6505c4a6cbaf73a4b3be61930570a33a} 
+\index{WaiterStateAvailable@{WaiterStateAvailable}!setAvailable@{setAvailable}}
+\index{setAvailable@{setAvailable}!WaiterStateAvailable@{WaiterStateAvailable}}
+\doxysubsubsection{\texorpdfstring{setAvailable()}{setAvailable()}}
+{\footnotesize\ttfamily void Waiter\+State\+Available\+::set\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the \doxylink{classWaiter}{Waiter}\textquotesingle{}s state to available. 
+
+
+
+Implements \mbox{\hyperlink{classWaiterState_ab36db44493c1412747b383ee5ed2e047}{Waiter\+State}}.
+
+\Hypertarget{classWaiterStateAvailable_ab42ca43025e091fbdb0c28a9fdd2e5c0}\label{classWaiterStateAvailable_ab42ca43025e091fbdb0c28a9fdd2e5c0} 
+\index{WaiterStateAvailable@{WaiterStateAvailable}!setUnavailable@{setUnavailable}}
+\index{setUnavailable@{setUnavailable}!WaiterStateAvailable@{WaiterStateAvailable}}
+\doxysubsubsection{\texorpdfstring{setUnavailable()}{setUnavailable()}}
+{\footnotesize\ttfamily void Waiter\+State\+Available\+::set\+Unavailable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the \doxylink{classWaiter}{Waiter}\textquotesingle{}s state to unavailable. 
+
+
+
+Implements \mbox{\hyperlink{classWaiterState_ae347214714dbb0ab1d0a540194c1c5d2}{Waiter\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{WaiterStateAvailable_8h}{Waiter\+State\+Available.\+h}}\item 
+Waiter\+State\+Available.\+cpp\end{DoxyCompactItemize}

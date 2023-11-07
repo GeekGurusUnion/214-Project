@@ -1,0 +1,33 @@
+\doxysection{Colleague.\+h}
+\hypertarget{Colleague_8h_source}{}\label{Colleague_8h_source}\mbox{\hyperlink{Colleague_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COLLEAGUE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ COLLEAGUE\_H}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Colleague\ (Mediator)\ [interface]}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00010\ \ \textcolor{comment}{//\ Forward\ declaration}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMediator}{Mediator}};\ \ \ \ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Order_8h}{Order.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classColleague}{Colleague}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classMediator}{Mediator}}*\ \mbox{\hyperlink{classColleague_a1f2794ce2658d64993f30b60fcad664e}{mediator}};\ }
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classOrder}{Order}}*\ \mbox{\hyperlink{classColleague_a3139f737e1c30b3560822d73a1b97301}{order}}\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classColleague_ab52b173e5efaf1b838937c82a123dd3c}{Colleague}}(\mbox{\hyperlink{classMediator}{Mediator}}*\ \mbox{\hyperlink{classColleague_a1f2794ce2658d64993f30b60fcad664e}{mediator}});}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classColleague_a9f60f1ec88562b8e7201897d6e8cef2f}{\string~Colleague}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classColleague_a909e54c54000f8f31211bc5bfd8db663}{changed}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classColleague_aeed17500dc670c078a6e68c13c4a8687}{setOrder}}(\mbox{\hyperlink{classOrder}{Order}}*\ \mbox{\hyperlink{classColleague_a3139f737e1c30b3560822d73a1b97301}{order}});}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{classOrder}{Order}}*\ \mbox{\hyperlink{classColleague_a95039d0a4b292373c8d3fd1a6e66e597}{getOrder}}();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classColleague_aefc4d0971f764e525aff359ceba0db3a}{handleOrder}}()\ =\ 0;}
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ COLLEAGUE\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,172 @@
+\doxysection{Waiter\+Iterator Class Reference}
+\hypertarget{classWaiterIterator}{}\label{classWaiterIterator}\index{WaiterIterator@{WaiterIterator}}
+
+
+Represents an iterator for a collection of Waiters.  
+
+
+
+
+{\ttfamily \#include $<$Waiter\+Iterator.\+h$>$}
+
+Inheritance diagram for Waiter\+Iterator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classWaiterIterator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWaiterIterator_a0cd4862525f06cdf9f516421299bbd77}{Waiter\+Iterator}} (std\+::vector$<$ \mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*} $>$ waiters)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classWaiterIterator}{Waiter\+Iterator}. \end{DoxyCompactList}\item 
+\Hypertarget{classWaiterIterator_aba947bc8fe0c69e540e9efbc7084ebce}\label{classWaiterIterator_aba947bc8fe0c69e540e9efbc7084ebce} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Waiter\+Iterator} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classWaiterIterator}{Waiter\+Iterator}. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classWaiterIterator_a6ad6d8e6ea870696c5d635259021d4dd}{first}} ()
+\begin{DoxyCompactList}\small\item\em Move the iterator to the first element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classWaiterIterator_af84fdcf394c5dcfbfc5c197be5495eb7}{current\+Item}} ()
+\begin{DoxyCompactList}\small\item\em Get the current \doxylink{classWaiter}{Waiter} item in the iteration. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWaiterIterator_a1ed91fa232764395cdf191dd55958964}{has\+Next}} ()
+\begin{DoxyCompactList}\small\item\em Check if there is a next item in the collection. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classWaiterIterator_a34636a8e70d4f72069cdebdc96f8ed13}{next}} ()
+\begin{DoxyCompactList}\small\item\em Move the iterator to the next item in the collection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaiterIterator_ae0ce6f5573eaefa765ccc17126e06237}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Reset the iterator to the beginning of the collection. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWaiterIterator_a322f01e1a5c4b1a566c3f6b70dd3b3be}{get\+Waiter}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Check if a \doxylink{classWaiter}{Waiter} with the specified name exists in the collection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classIterator}{Iterator}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Iterator} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{classIterator}{Iterator} class. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Iterator} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classIterator}{Iterator} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an iterator for a collection of Waiters. 
+
+This class is a concrete implementation of the \doxylink{classIterator}{Iterator} interface, providing the ability to iterate over a collection of Waiters. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classWaiterIterator_a0cd4862525f06cdf9f516421299bbd77}\label{classWaiterIterator_a0cd4862525f06cdf9f516421299bbd77} 
+\index{WaiterIterator@{WaiterIterator}!WaiterIterator@{WaiterIterator}}
+\index{WaiterIterator@{WaiterIterator}!WaiterIterator@{WaiterIterator}}
+\doxysubsubsection{\texorpdfstring{WaiterIterator()}{WaiterIterator()}}
+{\footnotesize\ttfamily Waiter\+Iterator\+::\+Waiter\+Iterator (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*} $>$}]{waiters }\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{classWaiterIterator}{Waiter\+Iterator}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em waiters} & A vector of \doxylink{classWaiter}{Waiter} pointers to iterate over. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classWaiterIterator_af84fdcf394c5dcfbfc5c197be5495eb7}\label{classWaiterIterator_af84fdcf394c5dcfbfc5c197be5495eb7} 
+\index{WaiterIterator@{WaiterIterator}!currentItem@{currentItem}}
+\index{currentItem@{currentItem}!WaiterIterator@{WaiterIterator}}
+\doxysubsubsection{\texorpdfstring{currentItem()}{currentItem()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classWaiter}{Waiter}} \texorpdfstring{$\ast$}{*} Waiter\+Iterator\+::current\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the current \doxylink{classWaiter}{Waiter} item in the iteration. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the current \doxylink{classWaiter}{Waiter}. 
+\end{DoxyReturn}
+\Hypertarget{classWaiterIterator_a6ad6d8e6ea870696c5d635259021d4dd}\label{classWaiterIterator_a6ad6d8e6ea870696c5d635259021d4dd} 
+\index{WaiterIterator@{WaiterIterator}!first@{first}}
+\index{first@{first}!WaiterIterator@{WaiterIterator}}
+\doxysubsubsection{\texorpdfstring{first()}{first()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} Waiter\+Iterator\+::first (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Move the iterator to the first element. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the first element in the collection. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIterator_a6ecd871a228073a03139b42d2a65d30e}{Iterator}}.
+
+\Hypertarget{classWaiterIterator_a322f01e1a5c4b1a566c3f6b70dd3b3be}\label{classWaiterIterator_a322f01e1a5c4b1a566c3f6b70dd3b3be} 
+\index{WaiterIterator@{WaiterIterator}!getWaiter@{getWaiter}}
+\index{getWaiter@{getWaiter}!WaiterIterator@{WaiterIterator}}
+\doxysubsubsection{\texorpdfstring{getWaiter()}{getWaiter()}}
+{\footnotesize\ttfamily bool Waiter\+Iterator\+::get\+Waiter (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Check if a \doxylink{classWaiter}{Waiter} with the specified name exists in the collection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the \doxylink{classWaiter}{Waiter} to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a \doxylink{classWaiter}{Waiter} with the specified name exists, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classWaiterIterator_a1ed91fa232764395cdf191dd55958964}\label{classWaiterIterator_a1ed91fa232764395cdf191dd55958964} 
+\index{WaiterIterator@{WaiterIterator}!hasNext@{hasNext}}
+\index{hasNext@{hasNext}!WaiterIterator@{WaiterIterator}}
+\doxysubsubsection{\texorpdfstring{hasNext()}{hasNext()}}
+{\footnotesize\ttfamily bool Waiter\+Iterator\+::has\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if there is a next item in the collection. 
+
+\begin{DoxyReturn}{Returns}
+True if there is a next item, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIterator_ac3a1f5cb124b2b89e4cc41900ffd83f6}{Iterator}}.
+
+\Hypertarget{classWaiterIterator_a34636a8e70d4f72069cdebdc96f8ed13}\label{classWaiterIterator_a34636a8e70d4f72069cdebdc96f8ed13} 
+\index{WaiterIterator@{WaiterIterator}!next@{next}}
+\index{next@{next}!WaiterIterator@{WaiterIterator}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} Waiter\+Iterator\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Move the iterator to the next item in the collection. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the next element in the collection. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIterator_a88c13390f7f516c1518792368a17cb14}{Iterator}}.
+
+\Hypertarget{classWaiterIterator_ae0ce6f5573eaefa765ccc17126e06237}\label{classWaiterIterator_ae0ce6f5573eaefa765ccc17126e06237} 
+\index{WaiterIterator@{WaiterIterator}!reset@{reset}}
+\index{reset@{reset}!WaiterIterator@{WaiterIterator}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Waiter\+Iterator\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reset the iterator to the beginning of the collection. 
+
+
+
+Implements \mbox{\hyperlink{classIterator_a32850eb6f82277c063362f18ac36affe}{Iterator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{WaiterIterator_8h}{Waiter\+Iterator.\+h}}\item 
+Waiter\+Iterator.\+cpp\end{DoxyCompactItemize}

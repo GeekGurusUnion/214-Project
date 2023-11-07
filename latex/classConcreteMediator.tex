@@ -1,0 +1,45 @@
+\doxysection{Concrete\+Mediator Class Reference}
+\hypertarget{classConcreteMediator}{}\label{classConcreteMediator}\index{ConcreteMediator@{ConcreteMediator}}
+
+
+A concrete implementation of the \doxylink{classMediator}{Mediator} interface.  
+
+
+
+
+{\ttfamily \#include $<$Concrete\+Mediator.\+h$>$}
+
+Inheritance diagram for Concrete\+Mediator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classConcreteMediator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classConcreteMediator_a856eb6fb78ae6665b6fbb2115d749bed}\label{classConcreteMediator_a856eb6fb78ae6665b6fbb2115d749bed} 
+{\bfseries Concrete\+Mediator} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classConcreteMediator}{Concrete\+Mediator} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classMediator}{Mediator}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Mediator} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{classMediator}{Mediator} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMediator_a445a0fa333ce54ec836e3c8a04276272}{\texorpdfstring{$\sim$}{\string~}\+Mediator}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classMediator}{Mediator} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMediator_aeb54fce3a9d3fbef5f6314c33ae81436}{notify}} (\mbox{\hyperlink{classColleague}{Colleague}} \texorpdfstring{$\ast$}{*}colleague)
+\begin{DoxyCompactList}\small\item\em Notify a colleague within the mediator. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMediator_ad4473a14489b44b3aba41fa8d1d1d34e}{add\+Colleague}} (\mbox{\hyperlink{classColleague}{Colleague}} \texorpdfstring{$\ast$}{*}colleague)
+\begin{DoxyCompactList}\small\item\em Add a colleague to the mediator\textquotesingle{}s list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A concrete implementation of the \doxylink{classMediator}{Mediator} interface. 
+
+\doxylink{classConcreteMediator}{Concrete\+Mediator} is a specific implementation of the \doxylink{classMediator}{Mediator} pattern, responsible for coordinating communication between colleagues (\doxylink{classColleague}{Colleague} instances) within a system. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ConcreteMediator_8h}{Concrete\+Mediator.\+h}}\item 
+Concrete\+Mediator.\+cpp\end{DoxyCompactItemize}

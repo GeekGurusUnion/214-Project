@@ -1,0 +1,36 @@
+\doxysection{Waiter\+State\+Available.\+h}
+\hypertarget{WaiterStateAvailable_8h_source}{}\label{WaiterStateAvailable_8h_source}\mbox{\hyperlink{WaiterStateAvailable_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ WAITER\_STATE\_AVAILABLE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ WAITER\_STATE\_AVAILABLE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ ConcreteState\ (State)}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{WaiterState_8h}{WaiterState.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classWaiterStateAvailable}{WaiterStateAvailable}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classWaiterState}{WaiterState}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classWaiterStateAvailable_a51a6645ea2ca944cf1bbc25da1ca7ac7}{WaiterStateAvailable}}(\mbox{\hyperlink{classWaiter}{Waiter}}*\ \mbox{\hyperlink{classWaiterState_af7a656b96cb9c1d500505a0b97269ccb}{waiter}});}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classWaiterStateAvailable_a3f7908370121b7dc47e458b716c076d6}{isAvailable}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classWaiterStateAvailable_a12d5a3569dc1647a54fc342809ddc88d}{isUnavailable}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWaiterStateAvailable_a6505c4a6cbaf73a4b3be61930570a33a}{setAvailable}}();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWaiterStateAvailable_ab42ca43025e091fbdb0c28a9fdd2e5c0}{setUnavailable}}();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ *\ testing\ *\ //}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{classWaiter}{Waiter}}*\ \mbox{\hyperlink{classWaiterStateAvailable_ae9e82068e1b05afe43d51cd3251189c1}{getWaiter}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{classWaiterState}{WaiterState}}*\ \mbox{\hyperlink{classWaiterStateAvailable_a9cb4432e4c2d22de0b8847252d1b1fd1}{getThis}}();}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00071\ \ \ \ \ std::string\ \mbox{\hyperlink{classWaiterStateAvailable_a6c0a6c5fc878f5bc36ddfdad05df0d62}{currState}}\ =\ \textcolor{stringliteral}{"{}WaiterStateAvailable"{}};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ *\ end\ of\ testing\ *\ //}}
+\DoxyCodeLine{00074\ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WAITER\_STATE\_AVAILABLE\_H}}
+
+\end{DoxyCode}

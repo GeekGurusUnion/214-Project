@@ -1,0 +1,27 @@
+\doxysection{fa\+\_\+dish\+Factory.\+h}
+\hypertarget{fa__dishFactory_8h_source}{}\label{fa__dishFactory_8h_source}\mbox{\hyperlink{fa__dishFactory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{fa__dish_8h}{fa\_dish.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ad__RestaurantOrder_8h}{ad\_RestaurantOrder.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfa__dishFactory}{fa\_dishFactory}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfa__dishFactory_af6e039660082eb4cb9b8d64337c1aaf4}{\string~fa\_dishFactory}}()\ \{\}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfa__dish}{fa\_dish}}\ *\mbox{\hyperlink{classfa__dishFactory_a894a687faa696eedf43a5767f57e90da}{createDish}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classad__RestaurantOrder}{ad\_RestaurantOrder}}\ \&order)\ =\ 0;}
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfa__burgerFactory}{fa\_burgerFactory}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfa__dishFactory}{fa\_dishFactory}}\ \{}
+\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{classfa__dish}{fa\_dish}}\ *\mbox{\hyperlink{classfa__burgerFactory_a54aca35bc733763c9dc2f71d07cc3abe}{createDish}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classad__RestaurantOrder}{ad\_RestaurantOrder}}\ \&order)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfa__pizzaFactory}{fa\_pizzaFactory}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfa__dishFactory}{fa\_dishFactory}}\ \{}
+\DoxyCodeLine{00062\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{classfa__dish}{fa\_dish}}\ *\mbox{\hyperlink{classfa__pizzaFactory_ab1cb0d351ebd310e86105d806fed6c86}{createDish}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classad__RestaurantOrder}{ad\_RestaurantOrder}}\ \&order)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00070\ \};}
+
+\end{DoxyCode}

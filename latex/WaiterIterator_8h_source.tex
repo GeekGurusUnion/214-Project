@@ -1,0 +1,42 @@
+\doxysection{Waiter\+Iterator.\+h}
+\hypertarget{WaiterIterator_8h_source}{}\label{WaiterIterator_8h_source}\mbox{\hyperlink{WaiterIterator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ WAITER\_ITERATOR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ WAITER\_ITERATOR\_H}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ ConcreteIterator\ (Iterator)}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Iterator_8h}{Iterator.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Waiter_8h}{Waiter.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classWaiterIterator}{WaiterIterator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classIterator}{Iterator}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \ std::vector<Waiter*>\ waiters;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ position\ =\ 0;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classWaiterIterator_a0cd4862525f06cdf9f516421299bbd77}{WaiterIterator}}(std::vector<Waiter*>\ waiters);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classWaiterIterator_aba947bc8fe0c69e540e9efbc7084ebce}{\string~WaiterIterator}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{classWaiterIterator_a6ad6d8e6ea870696c5d635259021d4dd}{first}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classWaiter}{Waiter}}*\ \mbox{\hyperlink{classWaiterIterator_af84fdcf394c5dcfbfc5c197be5495eb7}{currentItem}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classWaiterIterator_a1ed91fa232764395cdf191dd55958964}{hasNext}}();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{classWaiterIterator_a34636a8e70d4f72069cdebdc96f8ed13}{next}}();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWaiterIterator_ae0ce6f5573eaefa765ccc17126e06237}{reset}}();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{//\ *\ Testing\ *\ //}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classWaiterIterator_a322f01e1a5c4b1a566c3f6b70dd3b3be}{getWaiter}}(std::string\ name);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{//\ *\ end\ of\ testing\ *\ //}}
+\DoxyCodeLine{00086\ \};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WAITER\_ITERATOR\_H}}
+
+\end{DoxyCode}

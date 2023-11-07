@@ -1,0 +1,83 @@
+\doxysection{Restaurant\+Table.\+h}
+\hypertarget{RestaurantTable_8h_source}{}\label{RestaurantTable_8h_source}\mbox{\hyperlink{RestaurantTable_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RESTAURANT\_TABLE\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RESTAURANT\_TABLE\_H\_}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ ConcreteSubject\ (Observer)}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Context\ (State)}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Invoker\ (Command)}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ ConcreteAggregate\ (Iterator)}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{StateEmpty_8h}{StateEmpty.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Order_8h}{Order.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ConfirmOrder_8h}{ConfirmOrder.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TakeOrder_8h}{TakeOrder.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GenerateBill_8h}{GenerateBill.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CustomizeOrder_8h}{CustomizeOrder.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SplitBill_8h}{SplitBill.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TipOrder_8h}{TipOrder.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MergeTables_8h}{MergeTables.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Complaints_8h}{Complaints.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TableObserver_8h}{TableObserver.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TableIterator_8h}{TableIterator.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <iostream>}\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ Forward\ declarations}}
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classWaiter}{Waiter}};}
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTableObserver}{TableObserver}};}
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classOrder}{Order}};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRestaurantTable}{RestaurantTable}}\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classState}{State}}*\ currentState;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classWaiter}{Waiter}}*\ waiter\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ tableNumber;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ tableSize;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{classOrder}{Order}}*\ order;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{float}\ costPerPerson;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{classRestaurantTable_a45363e30d3dadfcf6c4a0035e0f66832}{RestaurantTable}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ t);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{classRestaurantTable_a65fe8a2798572ea32b17aa82a09337d9}{\string~RestaurantTable}}();}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRestaurantTable_af11d0d951276286223cc8a06d778e3b4}{setState}}(\mbox{\hyperlink{classState}{State}}*\ state);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{classState}{State}}*\ \mbox{\hyperlink{classRestaurantTable_a5040685d535708eee08dcf710098a10b}{getState}}();}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRestaurantTable_a385e5ac605152f50b869d8f06029765b}{occupy}}();}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{classWaiter}{Waiter}}*\ \mbox{\hyperlink{classRestaurantTable_aeb2f3491b0fbdaf03a38981f449edf12}{getWaiter}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRestaurantTable_afb274dfe86692db7c3726d853a7859a9}{setWaiter}}(\mbox{\hyperlink{classWaiter}{Waiter}}*\ waiter);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{classOrder}{Order}}*\ \mbox{\hyperlink{classRestaurantTable_acdbd7dc53f36cd4bfb9ead8e96b79660}{getOrder}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRestaurantTable_a616e55ca36b3bae7ad2824a304fd850f}{isAvailable}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classRestaurantTable_ad782199282d53209188eea46dbbb8c8b}{getTableNumber}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRestaurantTable_a16a963720878f38de5c84c1d9504877c}{printBill}}();}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classRestaurantTable_a6bc7d8e0bee3b5e1d07f020602b33fad}{getTableSize}}();}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRestaurantTable_acc690e180959008249e89d8da2acf7fd}{serve}}();}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classRestaurantTable_a746f51b82ad0a4cbf5225e44db09219c}{getCostPerPerson}}();}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRestaurantTable_a7ad3b88bebe68e504a6d3971b5677e93}{setCostPerPerson}}(\textcolor{keywordtype}{int}\ cost);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classRestaurantTable_a7bd063cc1a3878547a98873bb45e5f3a}{getTableCost}}();}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRestaurantTable_a6ae2bcdbe9890d1e80bb63d89d1c1075}{setTableSize}}(\textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRestaurantTable_a312b3a44bfe0f75aa3c5907879d641f6}{unsetWaiter}}();}
+\DoxyCodeLine{00179\ \};}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ RESTAURANT\_TABLE\_H\_}}
+
+\end{DoxyCode}

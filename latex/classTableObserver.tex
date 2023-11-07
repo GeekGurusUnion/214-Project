@@ -1,0 +1,55 @@
+\doxysection{Table\+Observer Class Reference}
+\hypertarget{classTableObserver}{}\label{classTableObserver}\index{TableObserver@{TableObserver}}
+
+
+Represents a concrete observer for monitoring changes in a \doxylink{classRestaurantTable}{Restaurant\+Table}.  
+
+
+
+
+{\ttfamily \#include $<$Table\+Observer.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTableObserver_a50f9ba2bd933c9fed6e49935fab7911e}{update}} (\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}table, std\+::string item, std\+::string customization, bool is\+Item, \mbox{\hyperlink{classFacade}{Facade}} \texorpdfstring{$\ast$}{*}facade, int count)
+\begin{DoxyCompactList}\small\item\em Update the observer with changes in the \doxylink{classRestaurantTable}{Restaurant\+Table}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a concrete observer for monitoring changes in a \doxylink{classRestaurantTable}{Restaurant\+Table}. 
+
+This class is a concrete implementation of the Observer interface, responsible for receiving and processing updates related to a \doxylink{classRestaurantTable}{Restaurant\+Table}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTableObserver_a50f9ba2bd933c9fed6e49935fab7911e}\label{classTableObserver_a50f9ba2bd933c9fed6e49935fab7911e} 
+\index{TableObserver@{TableObserver}!update@{update}}
+\index{update@{update}!TableObserver@{TableObserver}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Table\+Observer\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRestaurantTable}{Restaurant\+Table}} \texorpdfstring{$\ast$}{*}}]{table,  }\item[{std\+::string}]{item,  }\item[{std\+::string}]{customization,  }\item[{bool}]{is\+Item,  }\item[{\mbox{\hyperlink{classFacade}{Facade}} \texorpdfstring{$\ast$}{*}}]{facade,  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+Update the observer with changes in the \doxylink{classRestaurantTable}{Restaurant\+Table}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Pointer to the \doxylink{classRestaurantTable}{Restaurant\+Table} being observed. \\
+\hline
+{\em item} & The name of the menu item added or removed. \\
+\hline
+{\em customization} & The customization applied to the menu item (if any). \\
+\hline
+{\em is\+Item} & Indicates whether an item was added (true) or removed (false). \\
+\hline
+{\em facade} & Pointer to the \doxylink{classFacade}{Facade} object. \\
+\hline
+{\em count} & The number of tables to merge. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TableObserver_8h}{Table\+Observer.\+h}}\item 
+Table\+Observer.\+cpp\end{DoxyCompactItemize}

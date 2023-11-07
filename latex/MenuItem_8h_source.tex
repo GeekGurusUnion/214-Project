@@ -1,0 +1,37 @@
+\doxysection{Menu\+Item.\+h}
+\hypertarget{MenuItem_8h_source}{}\label{MenuItem_8h_source}\mbox{\hyperlink{MenuItem_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MENUITEM\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MENUITEM\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMenuItem}{MenuItem}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ std::string\ name;\ }
+\DoxyCodeLine{00022\ \ \ \ \ std::vector<std::string>\ customizations\ =\ \{\};\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{double}\ price;\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classMenuItem_a38619cca675e6e1a2ec1bbd342baa867}{MenuItem}}(std::string\ name,\ \textcolor{keywordtype}{double}\ price);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{classMenuItem_a41c6086a4d066256ecb7bfa715059ea2}{\string~MenuItem}}();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classMenuItem_a38619cca675e6e1a2ec1bbd342baa867}{MenuItem}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMenuItem}{MenuItem}}\&\ other);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ \ \ \ \ std::string\ \mbox{\hyperlink{classMenuItem_a1500747998ce2503d0b576e4c3e60101}{getName}}();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classMenuItem_a5b9bbfe9c37ff669a5e3b21c171e28a0}{getPrice}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenuItem_acd77a4e9441eb873b55fc660a8b75af9}{addCustomization}}(std::string\ customization);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMenuItem_a132817f45a9b5499eee0931188fa4a87}{containsCustomization}}(std::string\ customization);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ std::vector<std::string>\ getCustomizations();}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MENUITEM\_H}}
+
+\end{DoxyCode}

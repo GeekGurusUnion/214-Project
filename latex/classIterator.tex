@@ -1,0 +1,112 @@
+\doxysection{Iterator Class Reference}
+\hypertarget{classIterator}{}\label{classIterator}\index{Iterator@{Iterator}}
+
+
+An interface representing an iterator for a collection of elements.  
+
+
+
+
+{\ttfamily \#include $<$Iterator.\+h$>$}
+
+Inheritance diagram for Iterator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classIterator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classIterator_a30f4489aebb0ea1a56da6925d03eecfb}\label{classIterator_a30f4489aebb0ea1a56da6925d03eecfb} 
+{\bfseries Iterator} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{classIterator}{Iterator} class. \end{DoxyCompactList}\item 
+\Hypertarget{classIterator_a0734562e2e7656cef942384a80be702f}\label{classIterator_a0734562e2e7656cef942384a80be702f} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Iterator} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classIterator}{Iterator} class. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classIterator_ac3a1f5cb124b2b89e4cc41900ffd83f6}{has\+Next}} ()=0
+\begin{DoxyCompactList}\small\item\em Check if there is another element to iterate over. \end{DoxyCompactList}\item 
+virtual void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classIterator_a88c13390f7f516c1518792368a17cb14}{next}} ()=0
+\begin{DoxyCompactList}\small\item\em Get the next element in the collection. \end{DoxyCompactList}\item 
+virtual void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classIterator_a6ecd871a228073a03139b42d2a65d30e}{first}} ()=0
+\begin{DoxyCompactList}\small\item\em Reset the iterator to the beginning of the collection. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classIterator_a32850eb6f82277c063362f18ac36affe}{reset}} ()=0
+\begin{DoxyCompactList}\small\item\em Reset the iterator to the end of the collection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An interface representing an iterator for a collection of elements. 
+
+\doxylink{classIterator}{Iterator} provides a common interface for iterating over elements in a collection without exposing the underlying structure of the collection. Concrete iterator classes implement these methods for specific collections. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classIterator_a6ecd871a228073a03139b42d2a65d30e}\label{classIterator_a6ecd871a228073a03139b42d2a65d30e} 
+\index{Iterator@{Iterator}!first@{first}}
+\index{first@{first}!Iterator@{Iterator}}
+\doxysubsubsection{\texorpdfstring{first()}{first()}}
+{\footnotesize\ttfamily virtual void \texorpdfstring{$\ast$}{*} Iterator\+::first (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Reset the iterator to the beginning of the collection. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the first element in the collection. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classTableIterator_ae4d64b07017ce6d43b4a1f48b9e41633}{Table\+Iterator}}, and \mbox{\hyperlink{classWaiterIterator_a6ad6d8e6ea870696c5d635259021d4dd}{Waiter\+Iterator}}.
+
+\Hypertarget{classIterator_ac3a1f5cb124b2b89e4cc41900ffd83f6}\label{classIterator_ac3a1f5cb124b2b89e4cc41900ffd83f6} 
+\index{Iterator@{Iterator}!hasNext@{hasNext}}
+\index{hasNext@{hasNext}!Iterator@{Iterator}}
+\doxysubsubsection{\texorpdfstring{hasNext()}{hasNext()}}
+{\footnotesize\ttfamily virtual bool Iterator\+::has\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Check if there is another element to iterate over. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if there is another element to iterate over, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classTableIterator_a1ae09bf6ee3087c4337ad8954b74d955}{Table\+Iterator}}, and \mbox{\hyperlink{classWaiterIterator_a1ed91fa232764395cdf191dd55958964}{Waiter\+Iterator}}.
+
+\Hypertarget{classIterator_a88c13390f7f516c1518792368a17cb14}\label{classIterator_a88c13390f7f516c1518792368a17cb14} 
+\index{Iterator@{Iterator}!next@{next}}
+\index{next@{next}!Iterator@{Iterator}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily virtual void \texorpdfstring{$\ast$}{*} Iterator\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the next element in the collection. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the next element in the collection. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classTableIterator_a3859864528bb22807b7cbe48d806b61e}{Table\+Iterator}}, and \mbox{\hyperlink{classWaiterIterator_a34636a8e70d4f72069cdebdc96f8ed13}{Waiter\+Iterator}}.
+
+\Hypertarget{classIterator_a32850eb6f82277c063362f18ac36affe}\label{classIterator_a32850eb6f82277c063362f18ac36affe} 
+\index{Iterator@{Iterator}!reset@{reset}}
+\index{reset@{reset}!Iterator@{Iterator}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily virtual void Iterator\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Reset the iterator to the end of the collection. 
+
+
+
+Implemented in \mbox{\hyperlink{classTableIterator_aec53369969e1a9e49d177c1b917cb290}{Table\+Iterator}}, and \mbox{\hyperlink{classWaiterIterator_ae0ce6f5573eaefa765ccc17126e06237}{Waiter\+Iterator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Iterator_8h}{Iterator.\+h}}\end{DoxyCompactItemize}

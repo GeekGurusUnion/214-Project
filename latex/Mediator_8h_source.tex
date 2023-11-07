@@ -1,0 +1,28 @@
+\doxysection{Mediator.\+h}
+\hypertarget{Mediator_8h_source}{}\label{Mediator_8h_source}\mbox{\hyperlink{Mediator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MEDIATOR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MEDIATOR\_H}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Mediator\ (Mediator)\ [interface]}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classColleague}{Colleague}};}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMediator}{Mediator}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ std::vector<Colleague*>\ colleagues;\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{classMediator_aa75ae071194f2da701d98de0f6ac0ba7}{Mediator}}()\ \{\};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classMediator_a445a0fa333ce54ec836e3c8a04276272}{\string~Mediator}}()\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ colleagues.clear();}
+\DoxyCodeLine{00037\ \ \ \ \ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMediator_aeb54fce3a9d3fbef5f6314c33ae81436}{notify}}(\mbox{\hyperlink{classColleague}{Colleague}}*\ colleague);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMediator_ad4473a14489b44b3aba41fa8d1d1d34e}{addColleague}}(\mbox{\hyperlink{classColleague}{Colleague}}*\ colleague);}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MEDIATOR\_H}}
+
+\end{DoxyCode}
