@@ -390,7 +390,7 @@ In this section, we will dive into the reasoning behind the design decisions of 
     - Decouples the order-taking process from the order preparation process.Singleton
     - **The Solution**:
     
-    ![ad.jpg](COS214%20Report%20-%20Flyweight%20Fighters%20b2deade92f784ac29dd38cf2faea6961/ad.jpg)
+    ![ad.jpg](./Diagrams/Readme%20Dump/ad.jpg)
     
 - Ensure that the kitchen has only one head chef that manages the orders and delegates tasks to chefs.
 - Implement a Singleton Pattern to create and ensure a single instance of the `si_headChef`.
@@ -413,7 +413,7 @@ In this section, we will dive into the reasoning behind the design decisions of 
     - A single instance avoids conflicts in kitchen management and ensures that all orders are processed uniformly.
     - Having one head chef leads to efficient kitchen operations.
         
-        ![single.jpg](COS214%20Report%20-%20Flyweight%20Fighters%20b2deade92f784ac29dd38cf2faea6961/single.jpg)
+        ![single.jpg](./Diagrams/Readme%20Dump/single.jpg)
         
 
 ### Factory Method
@@ -432,7 +432,7 @@ In this section, we will dive into the reasoning behind the design decisions of 
     - By centralizing the dish creation process  the complexity associated with managing multiple creation points throughout the application is minimized.
     - The pattern promotes loose coupling between the code that requests a new dish and the code that knows how to make it. which leads to a more robust system.
         
-        ![Kitchen.svg](COS214%20Report%20-%20Flyweight%20Fighters%20b2deade92f784ac29dd38cf2faea6961/Kitchen.svg)
+        ![Kitchen.svg](./Diagrams/Readme%20Dump/Kitchen.svg)
         
 
 ### Chain of Responsibility
@@ -452,7 +452,7 @@ In this section, we will dive into the reasoning behind the design decisions of 
     - This dynamic creation and management of handlers make the system flexible allowing for addition or removal of handlers without drastic changes to the system.
     - New handlers can be introduced and integrated into the chain without affecting existing handlers.
         
-        ![chain.jpg](COS214%20Report%20-%20Flyweight%20Fighters%20b2deade92f784ac29dd38cf2faea6961/chain.jpg)
+        ![chain.jpg](./Diagrams/Readme%20Dump/chain.jpg)
         
 
 ## Design Decisions for the Floor Operations
@@ -466,7 +466,7 @@ The foundation of our design for the floor side involved the use of the Iterator
 
 Waiters needed to execute various commands such as taking orders, customizing orders, confirming orders to be sent to the kitchen and generating a bill for tables. The Iterator pattern facilitated the traversal of both waiters and tables, allowing us to efficiently manage orders, check table availability, and match waiters with suitable tables. This pattern was instrumental in ensuring the orderly flow of operations on the restaurant floor.
 
-![Untitled](COS214%20Report%20-%20Flyweight%20Fighters%20b2deade92f784ac29dd38cf2faea6961/Untitled.png)
+![Untitled](./Diagrams/Readme%20Dump/Untitled.png)
 
 **Command Design Pattern:** 
 
@@ -483,7 +483,7 @@ Each waiter was equipped with the Command design pattern to execute a series of 
 
 This modular approach enhanced the flexibility of the waiters, allowing them to interact with tables and orders in a structured and extensible manner. The Command pattern played a pivotal role in orchestrating these essential tasks within the restaurant floor operations, promoting modularity and maintainability.
 
-![Untitled](COS214%20Report%20-%20Flyweight%20Fighters%20b2deade92f784ac29dd38cf2faea6961/Untitled%201.png)
+![Untitled](./Diagrams/Readme%20Dump/Untitled%201.png)
 
 **State Design Pattern:** 
 
@@ -500,21 +500,21 @@ For waiters, the state pattern allowed them to indicate their availability:
 
 By using the State pattern, we achieved a flexible and organized system for managing the dynamic nature of tables and waiters in the restaurant.
 
-![Untitled](COS214%20Report%20-%20Flyweight%20Fighters%20b2deade92f784ac29dd38cf2faea6961/Untitled%202.png)
+![Untitled](./Diagrams/Readme%20Dump/Untitled%202.png)
 
-![Untitled](COS214%20Report%20-%20Flyweight%20Fighters%20b2deade92f784ac29dd38cf2faea6961/Untitled%203.png)
+![Untitled](./Diagrams/Readme%20Dump/Untitled%203.png)
 
 **Observer Pattern:** 
 
 The Observer Pattern played a vital role in facilitating communication between tables and waiters. When a table wanted to place an order, the Observer Pattern was employed to notify the respective waiter. This notification served as a trigger for the waiter to initiate the order-taking process. The Observer Pattern ensured that relevant parties were informed of events, such as a table wanting to order an item. It provided a mechanism for loosely coupled communication, enhancing the responsiveness of the system to customer requests.
 
-![Untitled](COS214%20Report%20-%20Flyweight%20Fighters%20b2deade92f784ac29dd38cf2faea6961/Untitled%204.png)
+![Untitled](./Diagrams/Readme%20Dump/Untitled%204.png)
 
 **Facade Pattern:** 
 
 While we had a clear idea of which design patterns to use for specific tasks within the restaurant floor operations, integrating them into a cohesive system presented challenges. The multitude of patterns, each serving a distinct purpose, could potentially lead to complex interactions. To streamline and simplify the interaction of these patterns, we introduced the Facade pattern. The Facade provided a unified interface, creating a single point of entry for all the different design patterns employed in the floor side of the restaurant simulator. It allowed us to simulate the floor operations seamlessly by encapsulating the intricate interactions between patterns. The Facade pattern played a pivotal role in making the complex structure of the floor operations more manageable and coherent.
 
-![Untitled](COS214%20Report%20-%20Flyweight%20Fighters%20b2deade92f784ac29dd38cf2faea6961/Untitled%205.png)
+![Untitled](./Diagrams/Readme%20Dump/Untitled%205.png)
 
 **The Mediator:**
 
@@ -526,7 +526,7 @@ The Mediator Pattern acted as a pivotal solution to the problem, serving as the 
 
 This implementation of the Mediator Pattern not only addressed the challenge of linking the two separate sections but also ensured that orders could be processed and completed in a coordinated and organized manner. It played a critical role in streamlining the order flow within the restaurant simulator.
 
-![Untitled](COS214%20Report%20-%20Flyweight%20Fighters%20b2deade92f784ac29dd38cf2faea6961/Untitled%206.png)
+![Untitled](./Diagrams/Readme%20Dump/Untitled%206.png)
 
 ---
 
@@ -536,37 +536,37 @@ This implementation of the Mediator Pattern not only addressed the challenge of 
 
 ### Interaction between Adapter and head chef
 
-![ad_head_seq.png](COS214%20Report%20-%20Flyweight%20Fighters%20b2deade92f784ac29dd38cf2faea6961/ad_head_seq.png)
+![ad_head_seq.png](./Diagrams/Readme%20Dump/ad_head_seq.png)
 
 ### Interaction between head chef and Factory method
 
-![Create BeefBurger.png](COS214%20Report%20-%20Flyweight%20Fighters%20b2deade92f784ac29dd38cf2faea6961/Create_BeefBurger.png)
+![Create BeefBurger.png](./Diagrams/Readme%20Dump/Create_BeefBurger.png)
 
 ---
 
 ### Interaction between head chef and chain of command
 
-![head_chain_seq.png](COS214%20Report%20-%20Flyweight%20Fighters%20b2deade92f784ac29dd38cf2faea6961/head_chain_seq.png)
+![head_chain_seq.png](./Diagrams/Readme%20Dump/head_chain_seq.png)
 
 ### getSeated and getWaiter Sequence Diagram
 
-![seqGetSeated.png](COS214%20Report%20-%20Flyweight%20Fighters%20b2deade92f784ac29dd38cf2faea6961/seqGetSeated.png)
+![seqGetSeated.png](./Diagrams/Readme%20Dump/seqGetSeated.png)
 
 ### Activity Diagram - Floor
 
-![Untitled](COS214%20Report%20-%20Flyweight%20Fighters%20b2deade92f784ac29dd38cf2faea6961/Untitled%207.png)
+![Untitled](./Diagrams/Readme%20Dump/Untitled%207.png)
 
 ### Communication Diagram
 
-![Untitled](COS214%20Report%20-%20Flyweight%20Fighters%20b2deade92f784ac29dd38cf2faea6961/Untitled%208.png)
+![Untitled](./Diagrams/Readme%20Dump/Untitled%208.png)
 
 ### State Diagram
 
-![statediag_final.png](COS214%20Report%20-%20Flyweight%20Fighters%20b2deade92f784ac29dd38cf2faea6961/statediag_final.png)
+![statediag_final.png](./Diagrams/Readme%20Dump/statediag_final.png)
 
 ### Full Class Diagram
 
-![Untitled](COS214%20Report%20-%20Flyweight%20Fighters%20b2deade92f784ac29dd38cf2faea6961/Untitled%209.png)
+![Untitled](./Diagrams/Readme%20Dump/Untitled%209.png)
 
 # Team Members
 
