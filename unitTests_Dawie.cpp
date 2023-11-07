@@ -103,7 +103,7 @@ TEST(IsBurgerFactoryTest, PositiveTesting)
 
     item = "ChickenBurger";
     customizations = {""};
-    EXPECT_EQ("Burger with: buns, lettuce, mayo, Cheese, Bacon, Chicken Breast, Pickle", testBurger(item, customizations));
+    EXPECT_EQ("Burger with: buns, lettuce, mayo, Cheese, Bacon, Chicken Breast, Pickles", testBurger(item, customizations));
 
     item = "BeefBurger";
     customizations = {""};
@@ -138,7 +138,7 @@ TEST(IsHeadChefTest, PositiveTesting)
 
     item = "ChickenBurger";
     customizations = {"ExtraCheese"};
-    EXPECT_EQ("Burger with: buns, lettuce, mayo, Cheese, Bacon, Chicken Breast, Pickle, ExtraCheese", testHeadChef(item, customizations));
+    EXPECT_EQ("Burger with: buns, lettuce, mayo, Cheese, Bacon, Chicken Breast, Pickles, ExtraCheese", testHeadChef(item, customizations));
 
     item = "BeefBurger";
     customizations = {""};
