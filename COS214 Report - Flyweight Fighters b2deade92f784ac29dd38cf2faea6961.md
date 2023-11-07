@@ -347,10 +347,6 @@ In this section, we will dive into the reasoning behind the design decisions of 
     - Decouples the order-taking process from the order preparation process.Singleton
     - **The Solution**:
     
-    [https://www.notion.so](https://www.notion.so)
-    
-    [https://www.notion.so](https://www.notion.so)
-    
     ![ad.jpg](./Diagrams/ad.jpg)
     
 - Ensure that the kitchen has only one head chef that manages the orders and delegates tasks to chefs.
