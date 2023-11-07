@@ -87,12 +87,25 @@ void printCustomizations(Facade* facade, int tableNumber, std::string orderItem)
                     customization = "ExtraCheese";
                     break;
                 case 2:
-                    customization = (orderItem == "BBQChickenPizza") ? "ExtraBacon" : "ExtraGarlic";
+                    if (orderItem == "BBQChickenPizza") {
+                        customization = "ExtraBacon";
+                    } else if (orderItem == "PepperoniPizza") {
+                        customization = "ExtraGarlic";
+                    } else if (orderItem == "HawaiianPizza") {
+                        customization = "ExtraPineapple";
+                    }
                     break;
                 case 3:
-                    customization = (orderItem == "BBQChickenPizza") ? "NoBacon" : "NoGarlic";
+                    if (orderItem == "BBQChickenPizza") {
+                        customization = "NoBacon";
+                    } else if (orderItem == "PepperoniPizza") {
+                        customization = "NoGarlic";
+                    } else if (orderItem == "HawaiianPizza") {
+                        customization = "NoPineapple";
+                    }
                     break;
                 default:
+                    cout << "Invalid option selected." << std::endl;
                     break;
             }
         } else {
@@ -101,9 +114,12 @@ void printCustomizations(Facade* facade, int tableNumber, std::string orderItem)
                     customization = "ExtraCheese";
                     break;
                 case 2:
-                    customization = "NoPickles";
+                    if (orderItem == "ChickenBurger") {
+                        customization = "NoPickles";
+                    }
                     break;
                 default:
+                    cout << "Invalid option selected." << std::endl;
                     break;
             }
         }
