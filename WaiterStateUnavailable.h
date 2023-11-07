@@ -56,7 +56,7 @@ public:
      * @brief Get the associated Waiter object.
      * @return Pointer to the Waiter object.
      */
-    Waiter* getWaiter() const;
+    Waiter* getWaiter() const { return nullptr; };
 
     /**
      * @brief Get a pointer to the current WaiterState object (this).

@@ -10,7 +10,6 @@
 #include <iostream>
 // Forward declaration
 class Waiter;
-class Waiter;
 
 /**
  * @class WaiterState
@@ -75,7 +74,7 @@ public:
      * @brief Get the associated Waiter object.
      * @return Pointer to the Waiter object.
      */
-    virtual Waiter* getWaiter() const;
+    virtual Waiter* getWaiter() const = 0;
 
     /**
      * @brief Get a pointer to the current WaiterState object (this) (pure virtual function).
