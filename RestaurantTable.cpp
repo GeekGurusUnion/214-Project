@@ -65,7 +65,6 @@ int RestaurantTable::getTableSize() {
 
 void RestaurantTable::serve() {
     std::cout << "Waiter " + getWaiter()->getName() + " served:" << std::endl;
-    order->printOrder();
     currentState->serve();
 }
 
