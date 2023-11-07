@@ -2,23 +2,23 @@
 #include "KitchenColleague.h"
 #include "FloorColleague.h"
 
-void Mediator::notify(Colleague* colleague) {
-    for (int i = 0; i < colleagues.size(); i++) {
-        if (colleagues[i] != colleague) {
-            // colleague->setOrder(colleague->getOrder());
+void Mediator::notify(Colleague *colleague)
+{
+    std::cout << "in notify" << std::endl;
+    for (int i = 0; i < colleagues.size(); i++)
+    {
+        std::cout << colleagues.size() << std::endl;
+        if (colleagues[i] != colleague)
+        {
             colleagues[i]->setOrder(colleague->getOrder());
 
-            if (KitchenColleague* kitchen = dynamic_cast<KitchenColleague*>(colleagues[i])){
-                kitchen->handleOrder();
-            } else if (FloorColleague* floor = dynamic_cast<FloorColleague*>(colleagues[i])) {
-                floor->handleOrder();
-            } else {
-                // std::cout << "Mediator: Unknown colleague type.\n";
-            }
+            colleagues[i]->handleOrder();
+            std::cout << "in" << std::endl;
         }
     }
 }
 
-void Mediator::addColleague(Colleague* colleague) {
+void Mediator::addColleague(Colleague *colleague)
+{
     colleagues.push_back(colleague);
 }

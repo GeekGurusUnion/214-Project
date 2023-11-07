@@ -134,7 +134,7 @@ TEST(IsHeadChefTest, PositiveTesting)
 
     item = "DoubleBurger";
     customizations = {"NoCheese"};
-    EXPECT_EQ("Burger with: buns, lettuce, mayo, Beef Patty, Beef Patty", testHeadChef(item, customizations));
+    EXPECT_EQ("Burger with: buns, lettuce, mayo, Bacon, Beef Patty, Beef Patty", testHeadChef(item, customizations));
 
     item = "ChickenBurger";
     customizations = {"ExtraCheese"};
