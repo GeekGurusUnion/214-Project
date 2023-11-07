@@ -95,7 +95,7 @@ public:
      * @param initialComponents A vector of strings representing the initial components of the chicken burger.
      */
     ChickenBurger(const std::vector<std::string> &initialComponents) : fa_burger(initialComponents) {
-        std::list<std::string> ingredients = {"Chicken Breast", "Pickle"};
+        std::list<std::string> ingredients = {"Chicken Breast", "Pickles"};
         for (std::string a: ingredients) {
             addComponent(a);
         }

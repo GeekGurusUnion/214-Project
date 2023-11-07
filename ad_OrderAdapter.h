@@ -20,7 +20,7 @@ public:
      * @brief Constructs an OrderAdapter instance with the given order details.
      * @param details Vector of strings containing order details.
      */
-    ad_OrderAdapter(const std::vector<std::string> &details) : ad_FloorOrder(details) {}
+    ad_OrderAdapter(const std::vector<std::string> &details) ;
 
     /**
      * @brief Destructor for ad_OrderAdapter.

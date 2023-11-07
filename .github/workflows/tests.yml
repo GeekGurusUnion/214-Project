@@ -39,3 +39,5 @@ jobs:
       - name: Build and run Tiaan Tests
         run: make test INCLUDE_TEST=unitTests_Xavier.cpp
 
+      - name: Build and run Keith Tests
+        run: make test INCLUDE_TEST=unitTests_Kitchen.cpp
