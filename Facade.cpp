@@ -145,18 +145,17 @@ int Facade::getSeated(int customerCount) {
         RestaurantTable* table = (RestaurantTable*) tableIterator->first();
         getWaiter(table);
         mergeTables(table, customerCount);
-        if (getTable(getTableNumber(customerCount)) == nullptr) {
-            std::cout << error << "Sorry, there are no available tables at the moment." << resetPrint << std::endl;
-            getTable(getTableNumber(customerCount))->unsetWaiter();
-            return -1;
+        if (table->isAvailable()) {
+            table->unsetWaiter();
         }
         return getTableNumber(customerCount);
     }
 }
 
 int Facade::getTableNumber(int customerCount) {
-    for (int i = 0; i < totalTables; i++) {
-        if (tables[i]->getTableSize() >= customerCount && !tables[i]->isAvailable()) {
+    int i = 0;
+    for (i = 0; i < totalTables; i++) {
+        if (tables[i]->getTableSize() == customerCount && !tables[i]->isAvailable()) {
             return tables[i]->getTableNumber();
         }
     }

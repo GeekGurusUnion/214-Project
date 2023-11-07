@@ -66,7 +66,7 @@ void MergeTables::execute(Facade *f, int count) {
 
     // delete the second table from the facade
     if (table2 != nullptr) {
-        table1->setTableSize(sum);
+        table1->setTableSize(count);
         table1->occupy();
         table2->occupy();
         f->getWaiter(table1);
