@@ -8,6 +8,14 @@
 #include <string>
 #include "ad_RestaurantOrder.h"
 
+/**
+ * @class ad_FloorOrder
+ * @brief Interface for representing an order placed on the restaurant floor.
+ * 
+ * The ad_FloorOrder class is the interface for representing an order placed on the restaurant floor.
+ * It is used in the Adapter design pattern.
+ */
+
 class ad_FloorOrder {
 protected:
     std::vector<std::string> orderDetails; ///< Stores the details of the floor order.

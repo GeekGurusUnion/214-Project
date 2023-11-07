@@ -8,6 +8,14 @@
 #pragma once
 #include "fa_dish.h"
 
+/**
+ * @class ca_handler
+ * @brief Interface for a handler in the Chain of Responsibility pattern.
+ * 
+ * The ca_handler class is the interface for a handler in the Chain of Responsibility pattern.
+ * It defines the interface for handling a customization of a dish.
+ */
+
 class ca_handler {
 public:
     ca_handler* nextHandler;  ///< Pointer to the next handler in the chain.

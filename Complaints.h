@@ -1,11 +1,19 @@
 #ifndef COMPLAINTS_H
 #define COMPLAINTS_H
+
+/**
+ * @file Complaints.h
+ * @brief Declaration of the Complaints class representing a command that allows a waiter to register a complaint from a customer.
+ 
+*/
+
 #include "Command.h"
 // ConcreteCommand (Command)
 
 /**
- * @brief The Complaints class represents a command that allows a waiter to register a complaint from a customer.
- */
+ * @class Complaints
+ * @brief A class representing a command that allows a waiter to register a complaint from a customer.
+*/
 class Complaints : public Command {
 public:
     /**

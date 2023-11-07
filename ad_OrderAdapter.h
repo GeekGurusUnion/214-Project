@@ -6,6 +6,11 @@
 #pragma once
 #include "ad_FloorOrder.h"
 
+/**
+ * @class ad_OrderAdapter
+ * @brief A class representing an adapter for a floor order.
+*/
+
 class ad_OrderAdapter : public ad_FloorOrder {
 private:
     ad_RestaurantOrder *restaurantOrder; ///< Pointer to an ad_RestaurantOrder instance.

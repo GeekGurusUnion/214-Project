@@ -2,15 +2,22 @@
 #define MERGE_TABLES_H
 // ConcreteCommand (Command)
 
+/**
+ * @file MergeTables.h
+ * @brief Declaration of the MergeTables class representing a command to merge tables in a restaurant.
+ */
+
 #include "Command.h"
 //Forward declaration
 class Facade;
 
 /**
- * @brief The MergeTables class represents a Command that merges tables in a restaurant.
+ * @class MergeTables
+ * @brief A class representing a command to merge tables in a restaurant.
  * 
- * This class inherits from the Command class and implements the execute method to merge tables.
+ * MergeTables is a concrete command in the Command design pattern.
  */
+
 class MergeTables : public Command {
     public:
         /**

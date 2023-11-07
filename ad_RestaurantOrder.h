@@ -9,6 +9,14 @@
 
 class fa_dish;
 
+/**
+ * @class ad_RestaurantOrder
+ * @brief A class representing a restaurant order.
+ * 
+ * The ad_RestaurantOrder class represents a restaurant order.
+ * It is used in the Facade design pattern.
+ */
+
 class ad_RestaurantOrder {
 private:
     std::string item; ///< The main item in the order.
