@@ -6,6 +6,8 @@
 
 [Alternate link]: [https://github.com/GeekGurusUnion/214-Project/](https://github.com/GeekGurusUnion/214-Project/)
 
+[![CodeScene Code Health](https://codescene.io/projects/46164/status-badges/code-health)](https://codescene.io/projects/46164)
+
 ### Running the Program
 
 There are no pre-requisites to run this program.
