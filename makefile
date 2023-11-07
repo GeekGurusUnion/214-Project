@@ -38,6 +38,6 @@ lint:
 	clang-tidy $(LINT_FILES) -- -std=c++17
 
 clean:
-	rm -f $(EXECUTABLE) $(OBJ_FILES)
+	rm -f $(wildcard *.o)
 
 
