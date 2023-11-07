@@ -32,8 +32,10 @@ VALGRIND = valgrind
 
 KITCHEN_DIR = kitchen
 
-SRC_FILES = $(wildcard *.cpp) $(wildcard $(KITCHEN_DIR)/*.cpp)
-OBJ_FILES = $(patsubst %.cpp, %.o, $(SRC_FILES))
+LINT_SRC_EXCLUDE = $(wildcard *test*.cpp *Test*.cpp *main*.cpp)
+LINT_FILES := $(filter-out $(LINT_SRC_EXCLUDE), $(wildcard *.cpp) $(wildcard $(KITCHEN_DIR)/*.cpp))
+lint:
+	clang-tidy $(LINT_FILES) -- -std=c++17
 
 # all: $(EXECUTABLE)
 
