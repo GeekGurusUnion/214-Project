@@ -1,0 +1,28 @@
+name: Run Tests
+
+on: [push, pull_request]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install build dependencies
+        run: sudo apt-get update && sudo apt-get install -y cmake g++
+
+      - name: Install Google Test and Google Mock
+        run: |
+          git clone https://github.com/google/googletest.git
+          cd googletest
+          mkdir build
+          cd build
+          cmake ..
+          make
+          sudo make install
+
+      #- name: Build and run Facade Test
+      #  run: make test INCLUDE_TEST=unitTest_Facade.cpp
+
+      - name: Build and run Dawie Tests
+        run: make test INCLUDE_TEST=unitTests_Dawie.cpp

@@ -1,3 +1,4 @@
+#include <iostream>
 #include "si_headChef.h"
 #include "ad_RestaurantOrder.h"
 #include "fa_dishFactory.h"
@@ -23,13 +24,40 @@ ca_handler *si_headChef::createHandlerChain() {
     ca_handler *start = new AddingredientHandler("Cheese");
     ca_handler *current = start;
 
-    ca_handler *next = new RemoveingredientHandler("Onion");
+    ca_handler *next = new RemoveingredientHandler("Cheese");
     current->setNextHandler(next);
     current = next;
 
-    next = new AddingredientHandler("Tomato");
+    next = new AddingredientHandler("Bacon");
     current->setNextHandler(next);
     current = next;
+
+    next = new RemoveingredientHandler("Bacon");
+    current->setNextHandler(next);
+    current = next;
+
+    next = new AddingredientHandler("Garlic");
+    current->setNextHandler(next);
+    current = next;
+
+    next = new RemoveingredientHandler("Garlic");
+    current->setNextHandler(next);
+    current = next;
+
+    next = new AddingredientHandler("Pineapple");
+    current->setNextHandler(next);
+    current = next;
+
+    next = new RemoveingredientHandler("Pineapple");
+    current->setNextHandler(next);
+    current = next;
+
+    next = new AddingredientHandler("Pickles");
+    current->setNextHandler(next);
+    current = next;
+
+    next = new RemoveingredientHandler("Pickles");
+    current->setNextHandler(next);
 
     return start;
 }

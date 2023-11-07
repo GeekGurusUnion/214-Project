@@ -99,22 +99,22 @@ TEST(IsBurgerFactoryTest, PositiveTesting)
 {
     std::string item = "DoubleBurger";
     std::vector<std::string> customizations = {""};
-    EXPECT_EQ("Burger with: buns, lettuce, mayo, cheese, bacon, Beef Patty, Beef Patty", testBurger(item, customizations));
+    EXPECT_EQ("Burger with: buns, lettuce, mayo, Cheese, Bacon, Beef Patty, Beef Patty", testBurger(item, customizations));
 
     item = "ChickenBurger";
     customizations = {""};
-    EXPECT_EQ("Burger with: buns, lettuce, mayo, cheese, bacon, Chicken Breast, Pickle", testBurger(item, customizations));
+    EXPECT_EQ("Burger with: buns, lettuce, mayo, Cheese, Bacon, Chicken Breast, Pickle", testBurger(item, customizations));
 
     item = "BeefBurger";
     customizations = {""};
-    EXPECT_EQ("Burger with: buns, lettuce, mayo, cheese, bacon, Beef Patty", testBurger(item, customizations));
+    EXPECT_EQ("Burger with: buns, lettuce, mayo, Cheese, Bacon, Beef Patty", testBurger(item, customizations));
 }
 
 TEST(IsBurgerFactoryTest, TestPreconditionOneNegative)
 {
     std::string item = "ribBurger";
     std::vector<std::string> customizations = {""};
-    EXPECT_EQ("Burger with: buns, lettuce, mayo, cheese, bacon", testBurger(item, customizations));
+    EXPECT_EQ("Burger with: buns, lettuce, mayo, Cheese, Bacon", testBurger(item, customizations));
 }
 
 // Pizza Testing positive
@@ -129,20 +129,20 @@ TEST(IsHeadChefTest, PositiveTesting)
     EXPECT_EQ("Pizza with: Base, Tomato Sauce, Mozzarella, Pineapple, Ham", testHeadChef(item, customizations));
 
     item = "PepperoniPizza";
-    customizations = {"ExtraTomato", "ExtraCheese"};
-    EXPECT_EQ("Pizza with: Base, Tomato Sauce, Mozzarella, Pepperoni, Garlic, ExtraTomato, ExtraCheese", testHeadChef(item, customizations));
+    customizations = {"ExtraCheese"};
+    EXPECT_EQ("Pizza with: Base, Tomato Sauce, Mozzarella, Pepperoni, Garlic, ExtraCheese", testHeadChef(item, customizations));
 
     item = "DoubleBurger";
-    customizations = {"ExtraTomato"};
-    EXPECT_EQ("Burger with: buns, lettuce, mayo, cheese, bacon, Beef Patty, Beef Patty, ExtraTomato", testHeadChef(item, customizations));
+    customizations = {"NoCheese"};
+    EXPECT_EQ("Burger with: buns, lettuce, mayo, Bacon, Beef Patty, Beef Patty", testHeadChef(item, customizations));
 
     item = "ChickenBurger";
-    customizations = {"ExtraTomato", "ExtraCheese"};
-    EXPECT_EQ("Burger with: buns, lettuce, mayo, cheese, bacon, Chicken Breast, Pickle, ExtraTomato, ExtraCheese", testHeadChef(item, customizations));
+    customizations = {"ExtraCheese"};
+    EXPECT_EQ("Burger with: buns, lettuce, mayo, Cheese, Bacon, Chicken Breast, Pickle, ExtraCheese", testHeadChef(item, customizations));
 
     item = "BeefBurger";
     customizations = {""};
-    EXPECT_EQ("Burger with: buns, lettuce, mayo, cheese, bacon, Beef Patty", testHeadChef(item, customizations));
+    EXPECT_EQ("Burger with: buns, lettuce, mayo, Cheese, Bacon, Beef Patty", testHeadChef(item, customizations));
 }
 
 // headChef testing dish not available

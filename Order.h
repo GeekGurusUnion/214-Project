@@ -69,10 +69,16 @@ public:
     std::vector<MenuItem*> getItems();
 
     /**
+     * @brief Set the list prepared dishes.
+     * @param dishes A vector of pointers to prepared dishes.
+     */
+    void setDishes(std::vector<fa_dish*> dishes);
+
+        /**
      * @brief Get the list prepared dishes.
      * @return A vector of pointers to prepared dishes.
      */
-    void setDishes(std::vector<fa_dish*>);
+    std::vector<fa_dish*> getDishes();
 
     /**
      * @brief Add a dish to the list of prepared dishes.

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.26)
+cmake_minimum_required(VERSION 3.25)
 project(FlyweightFighters_COS214_Project)
 
 # Enable testing
@@ -15,43 +15,164 @@ FetchContent_MakeAvailable(googletest)
 # Define sources for the main project
 set(PROJECT_SOURCES
         main.cpp
-        fa_dish.h
+        ad_FloorOrder.h
+        ad_FloorOrder.cpp
+        ad_OrderAdapter.h
+        ad_OrderAdapter.cpp
+        ad_RestaurantOrder.h
+        ad_RestaurantOrder.cpp
         ca_handler.h
-        si_headChef.h
+        ca_ingredientHandler.h
+        Colleague.cpp
+        Colleague.h
+        Command.h
+        Complaints.h
+        Complaints.cpp
+        ConcreteMediator.h
+        ConcreteMediator.cpp
+        ConfirmOrder.h
+        ConfirmOrder.cpp
+        CustomizeOrder.h
+        CustomizeOrder.cpp
+        fa_burger.h
+        fa_dish.h
+        fa_dish.cpp
         fa_dishFactory.h
         fa_dishFactory.cpp
-        ad_OrderAdapter.h
-        ca_ingredientHandler.h
-        fa_burger.h
-        ad_RestaurantOrder.cpp
-        ad_FloorOrder.cpp
-        ad_OrderAdapter.cpp
-        si_headChef.cpp
-        fa_dish.cpp
         fa_Pizza.h
+        Facade.cpp
+        Facade.h
+        FloorColleague.cpp
+        FloorColleague.h
+        GenerateBill.cpp
+        GenerateBill.h
+        Iterator.h
+        KitchenColleague.h
+        KitchenColleague.cpp
+        Mediator.cpp
+        Mediator.h
+        MenuItem.cpp
+        MenuItem.h
+        MergeTables.cpp
+        MergeTables.h
+        Order.cpp
+        Order.h
+        RestaurantTable.cpp
+        RestaurantTable.h
+        ServeOrder.cpp
+        ServeOrder.h
+        si_headChef.cpp
+        si_headChef.h
+        SplitBill.cpp
+        SplitBill.h
+        State.cpp
+        State.h
+        StateEmpty.h
+        StateEmpty.cpp
+        StateOccupied.h
+        StateOccupied.cpp
+        StateServe.cpp
+        StateServe.h
+        TableIterator.cpp
+        TableIterator.h
+        TableObserver.cpp
+        TableObserver.h
+        TakeOrder.cpp
+        TakeOrder.h
+        TipOrder.cpp
+        TipOrder.h
+        Waiter.cpp
+        Waiter.h
+        WaiterIterator.cpp
+        WaiterIterator.h
+        WaiterState.cpp
+        WaiterState.h
+        WaiterStateAvailable.h
+        WaiterStateAvailable.cpp
+        WaiterStateUnavailable.cpp
+        WaiterStateUnavailable.h
+
 )
 
 # Define sources for the tests
 set(TEST_SOURCES
-        kitchen/factory_unittest.cpp
-        kitchen/headChef_unittest.cpp
-        kitchen/headChefTest.cpp
-        kitchen/factoryTest.cpp
-        fa_dish.h
+        unitTests_Dawie.cpp
+        ad_FloorOrder.h
+        ad_FloorOrder.cpp
+        ad_OrderAdapter.h
+        ad_OrderAdapter.cpp
+        ad_RestaurantOrder.h
+        ad_RestaurantOrder.cpp
         ca_handler.h
-        si_headChef.h
+        ca_ingredientHandler.h
+        Colleague.cpp
+        Colleague.h
+        Command.h
+        Complaints.h
+        Complaints.cpp
+        ConcreteMediator.h
+        ConcreteMediator.cpp
+        ConfirmOrder.h
+        ConfirmOrder.cpp
+        CustomizeOrder.h
+        CustomizeOrder.cpp
+        fa_burger.h
+        fa_dish.h
+        fa_dish.cpp
         fa_dishFactory.h
         fa_dishFactory.cpp
-        ad_OrderAdapter.h
-        ca_ingredientHandler.h
-        fa_burger.h
-        ad_RestaurantOrder.cpp
-        ad_FloorOrder.cpp
-        ad_OrderAdapter.cpp
-        si_headChef.cpp
-        fa_dish.cpp
         fa_Pizza.h
-        test_main.cpp
+        Facade.cpp
+        Facade.h
+        FloorColleague.cpp
+        FloorColleague.h
+        GenerateBill.cpp
+        GenerateBill.h
+        Iterator.h
+        KitchenColleague.h
+        KitchenColleague.cpp
+        Mediator.cpp
+        Mediator.h
+        MenuItem.cpp
+        MenuItem.h
+        MergeTables.cpp
+        MergeTables.h
+        Order.cpp
+        Order.h
+        RestaurantTable.cpp
+        RestaurantTable.h
+        ServeOrder.cpp
+        ServeOrder.h
+        si_headChef.cpp
+        si_headChef.h
+        SplitBill.cpp
+        SplitBill.h
+        State.cpp
+        State.h
+        StateEmpty.h
+        StateEmpty.cpp
+        StateOccupied.h
+        StateOccupied.cpp
+        StateServe.cpp
+        StateServe.h
+        TableIterator.cpp
+        TableIterator.h
+        TableObserver.cpp
+        TableObserver.h
+        TakeOrder.cpp
+        TakeOrder.h
+        TipOrder.cpp
+        TipOrder.h
+        Waiter.cpp
+        Waiter.h
+        WaiterIterator.cpp
+        WaiterIterator.h
+        WaiterState.cpp
+        WaiterState.h
+        WaiterStateAvailable.h
+        WaiterStateAvailable.cpp
+        WaiterStateUnavailable.cpp
+        WaiterStateUnavailable.h
 )
 
 # Define the main executable
